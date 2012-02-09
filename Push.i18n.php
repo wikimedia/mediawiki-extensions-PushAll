@@ -1052,6 +1052,7 @@ $messages['lb'] = array(
 	'right-push' => "Autorisatioun fir d'Push-Fonctionalitéit ze benotzen",
 	'right-bulkpush' => 'Autorisatioun fir méi Säite mateneen per Push an aner Wikien ze transferéieren',
 	'right-pushadmin' => "Autorisatioun fir d'Zil an d'Astellungen vun der Push-Fonctionalitéit z'änneren.",
+	'action-push' => 'Säite pushen',
 	'push-err-captacha' => 'Push op $1 konnt wéint dem Captcha net gemaach ginn.',
 	'push-tab-text' => 'Push',
 	'push-button-text' => 'Push',
