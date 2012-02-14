@@ -1027,6 +1027,13 @@ Pada wiki publik, setel $egPushDirectFileUploads menjadi false.
 Pada wiki pribadi, terapkan tambalan linkd dari dokumentasi Push atau perbarui MediaWiki itu sendiri.',
 );
 
+/** Italian (Italiano)
+ * @author Beta16
+ */
+$messages['it'] = array(
+	'push-tab-embedded-files' => 'File incorporati:',
+);
+
 /** Japanese (日本語)
  * @author Ohgi
  */
