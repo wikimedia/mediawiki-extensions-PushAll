@@ -1263,6 +1263,13 @@ Stel op openbare wiki\'s $egPushDirectFileUploads in op "false".
 Voer de patch waarnaar wordt verwezen in de documentatie van Push uit op besloten wiki\'s of werk MediaWiki zelf bij.',
 );
 
+/** Polish (Polski)
+ * @author BeginaFelicysym
+ */
+$messages['pl'] = array(
+	'push-desc' => 'Lekkie rozszerzenie by przesunąć treść na inne wiki',
+);
+
 /** Portuguese (Português)
  * @author Hamilton Abreu
  */
