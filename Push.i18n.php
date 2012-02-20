@@ -1268,6 +1268,16 @@ Voer de patch waarnaar wordt verwezen in de documentatie van Push uit op beslote
  */
 $messages['pl'] = array(
 	'push-desc' => 'Lekkie rozszerzenie by przesunąć treść na inne wiki',
+	'right-push' => 'Autoryzacja do używania funkcji przesuwania.',
+	'right-bulkpush' => 'Autoryzacja do wykorzystania funkcji przesuwania hurtowego (tj Special:Push).',
+	'right-pushadmin' => 'Upoważnienie do zmiany celów i ustawień przesuwania.',
+	'action-push' => 'strony przesuwania',
+	'action-bulkpush' => 'strony przesuwania hurtowego',
+	'action-pushadmin' => 'konfiguracja przesuwania',
+	'group-pusher' => 'Przesuwacze',
+	'group-pusher-member' => '{{GENDER:$1|przesuwacz|przesuwaczka}}',
+	'grouppage-pusher' => '{{ns:project}}:Przesuwacze',
+	'group-bulkpusher' => 'Przesuwacze hurtowi',
 );
 
 /** Portuguese (Português)
