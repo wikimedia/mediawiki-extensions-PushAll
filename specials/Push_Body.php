@@ -352,7 +352,7 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * Get the OutputPage being used for this instance.
-	 * IndexPager extends ContextSource as of 1.19.
+	 * SpecialPage extends ContextSource as of 1.18.
 	 *
 	 * @since 0.1
 	 *
@@ -364,7 +364,7 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * Get the Language being used for this instance.
-	 * IndexPager extends ContextSource as of 1.19.
+	 * SpecialPage extends ContextSource as of 1.18.
 	 *
 	 * @since 0.1
 	 *
@@ -376,7 +376,7 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * Get the User being used for this instance.
-	 * IndexPager extends ContextSource as of 1.19.
+	 * SpecialPage extends ContextSource as of 1.18.
 	 *
 	 * @since 0.1
 	 *
@@ -388,7 +388,7 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * Get the WebRequest being used for this instance.
-	 * IndexPager extends ContextSource as of 1.19.
+	 * SpecialPage extends ContextSource as of 1.18.
 	 *
 	 * @since 0.1
 	 *
@@ -400,7 +400,7 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * Get the Skin being used for this instance.
-	 * IndexPager extends ContextSource as of 1.19.
+	 * SpecialPage extends ContextSource as of 1.18.
 	 *
 	 * @since 0.1
 	 *
@@ -412,7 +412,7 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * Get the Title being used for this instance.
-	 * IndexPager extends ContextSource as of 1.19.
+	 * SpecialPage extends ContextSource as of 1.18.
 	 *
 	 * @since 0.1
 	 *
