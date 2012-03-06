@@ -33,10 +33,10 @@ class SpecialPush extends SpecialPage {
 	 * Sets headers - this should be called from the execute() method of all derived classes!
 	 */
 	public function setHeaders() {
-		global $wgOut;
-		$wgOut->setArticleRelated( false );
-		$wgOut->setRobotPolicy( "noindex,nofollow" );
-		$wgOut->setPageTitle( $this->getDescription() );
+		$out = $this->getOutput();
+		$out->setArticleRelated( false );
+		$out->setRobotPolicy( "noindex,nofollow" );
+		$out->setPageTitle( $this->getDescription() );
 	}
 
 	/**
@@ -47,27 +47,29 @@ class SpecialPush extends SpecialPage {
 	 * @param string $arg
 	 */
 	public function execute( $arg ) {
-		global $wgOut, $wgUser, $wgRequest, $egPushTargets;
+		global $egPushTargets;
+
+		$req = $this->getRequest();
 
 		$this->setHeaders();
 		$this->outputHeader();
 
 		// If the user is authorized, display the page, if not, show an error.
-		if ( !$this->userCanExecute( $wgUser ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
 
 		if ( count( $egPushTargets ) == 0 ) {
-			$wgOut->addHTML( '<p>' . htmlspecialchars( wfMsg( 'push-tab-no-targets'  ) ) . '</p>' );
+			$this->getOutput()->addHTML( '<p>' . htmlspecialchars( wfMsg( 'push-tab-no-targets'  ) ) . '</p>' );
 			return;
 		}
 
 		$doPush = false;
 
-		if ( $wgRequest->getCheck( 'addcat' ) ) {
-			$pages = $wgRequest->getText( 'pages' );
-			$catname = $wgRequest->getText( 'catname' );
+		if ( $req->getCheck( 'addcat' ) ) {
+			$pages = $req->getText( 'pages' );
+			$catname = $req->getText( 'catname' );
 
 			if ( $catname !== '' && $catname !== null && $catname !== false ) {
 				$t = Title::makeTitleSafe( NS_MAIN, $catname );
@@ -82,9 +84,9 @@ class SpecialPush extends SpecialPage {
 				}
 			}
 		}
-		elseif( $wgRequest->getCheck( 'addns' ) ) {
-			$pages = $wgRequest->getText( 'pages' );
-			$nsindex = $wgRequest->getText( 'nsindex', '' );
+		elseif( $req->getCheck( 'addns' ) ) {
+			$pages = $req->getText( 'pages' );
+			$nsindex = $req->getText( 'nsindex', '' );
 
 			if ( strval( $nsindex ) !== ''  ) {
 				/**
@@ -94,8 +96,8 @@ class SpecialPush extends SpecialPage {
 				if ( $nspages ) $pages .= "\n" . implode( "\n", $nspages );
 			}
 		}
-		elseif( $wgRequest->wasPosted() ) {
-			$pages = $wgRequest->getText( 'pages' );
+		elseif( $req->wasPosted() ) {
+			$pages = $req->getText( 'pages' );
 			if( $pages != '' ) $doPush= true;
 		}
 		else {
@@ -119,7 +121,7 @@ class SpecialPush extends SpecialPage {
 	 * @param string $pages
 	 */
 	protected function doPush( $pages ) {
-		global $wgOut, $wgLang, $wgRequest, $wgSitename, $wgTitle, $egPushTargets, $egPushBulkWorkers, $egPushBatchSize;
+		global $wgSitename, $egPushTargets, $egPushBulkWorkers, $egPushBatchSize;
 
 		$pageSet = array(); // Inverted index of all pages to look up
 
@@ -134,7 +136,7 @@ class SpecialPush extends SpecialPage {
 		}
 
 		// Look up any linked pages if asked...
-		if( $wgRequest->getCheck( 'templates' ) ) {
+		if( $this->getRequest()->getCheck( 'templates' ) ) {
 			$pageSet = PushFunctions::getTemplates( array_keys( $pageSet ), $pageSet );
 		}
 
@@ -145,7 +147,7 @@ class SpecialPush extends SpecialPage {
 
 		if ( count( $egPushTargets ) > 1 ) {
 			foreach ( $egPushTargets as $targetName => $targetUrl ) {
-				if ( $wgRequest->getCheck( str_replace( ' ', '_', $targetName ) ) ) {
+				if ( $this->getRequest()->getCheck( str_replace( ' ', '_', $targetName ) ) ) {
 					$targets[$targetName] = $targetUrl;
 					$links[] = "[$targetUrl $targetName]";
 				}
@@ -155,9 +157,15 @@ class SpecialPush extends SpecialPage {
 			$targets = $egPushTargets;
 		}
 
-		$wgOut->addWikiMsg( 'push-special-pushing-desc', $wgLang->listToText( $links ), $wgLang->formatNum( count( $pages ) ) );
+		$out = $this->getOutput();
 
-		$wgOut->addHTML(
+		$out->addWikiMsg(
+			'push-special-pushing-desc',
+			$this->getLanguage()->listToText( $links ),
+			$this->getLanguage()->formatNum( count( $pages ) )
+		);
+
+		$out->addHTML(
 			Html::hidden( 'siteName', $wgSitename, array( 'id' => 'siteName' ) ) .
 			Html::rawElement(
 				'div',
@@ -171,15 +179,15 @@ class SpecialPush extends SpecialPage {
 					Html::element( 'ul', array( 'id' => 'pushResultList' ) )
 				)
 			) . '<br />' .
-			Html::element( 'a', array( 'href' => $wgTitle->getInternalURL() ), wfMsg( 'push-special-return' ) )
+			Html::element( 'a', array( 'href' => $this->getTitle()->getInternalURL() ), wfMsg( 'push-special-return' ) )
 		);
 
-		$wgOut->addInlineScript(
+		$out->addInlineScript(
 			'var wgPushPages = ' . FormatJson::encode( $pages ) . ';' .
 			'var wgPushTargets = ' . FormatJson::encode( $targets ) . ';' .
 			'var wgPushWorkerCount = ' . $egPushBulkWorkers . ';' .
 			'var wgPushBatchSize = ' . $egPushBatchSize . ';' .
-			'var wgPushIncFiles = ' . ( $wgRequest->getCheck( 'files' ) ? 'true' : 'false' ) . ';'
+			'var wgPushIncFiles = ' . ( $this->getRequest()->getCheck( 'files' ) ? 'true' : 'false' ) . ';'
 		);
 
 		$this->loadJs();
@@ -189,16 +197,18 @@ class SpecialPush extends SpecialPage {
 	 * @since 0.2
 	 */
 	protected function displayPushInterface( $arg, $pages ) {
-		global $wgOut, $wgUser, $wgRequest, $egPushTargets, $egPushIncTemplates, $egPushIncFiles;
+		global $egPushTargets, $egPushIncTemplates, $egPushIncFiles;
 
-		$wgOut->addWikiMsg( 'push-special-description' );
+		$req = $this->getRequest();
+		
+		$this->getOutput()->addWikiMsg( 'push-special-description' );
 
 		$form = Xml::openElement( 'form', array( 'method' => 'post',
 			'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) );
 		$form .= Xml::inputLabel( wfMsg( 'export-addcattext' )    , 'catname', 'catname', 40 ) . '&#160;';
 		$form .= Xml::submitButton( wfMsg( 'export-addcat' ), array( 'name' => 'addcat' ) ) . '<br />';
 
-		$form .= Xml::namespaceSelector( $wgRequest->getText( 'nsindex', '' ), null, 'nsindex', wfMsg( 'export-addnstext' ) ) . '&#160;';
+		$form .= Xml::namespaceSelector( $req->getText( 'nsindex', '' ), null, 'nsindex', wfMsg( 'export-addnstext' ) ) . '&#160;';
 		$form .= Xml::submitButton( wfMsg( 'export-addns' ), array( 'name' => 'addns' ) ) . '<br />';
 
 		$form .= Xml::element( 'textarea', array( 'name' => 'pages', 'cols' => 40, 'rows' => 10 ), $pages, false );
@@ -208,15 +218,15 @@ class SpecialPush extends SpecialPage {
 			wfMsg( 'export-templates' ),
 			'templates',
 			'wpPushTemplates',
-			$wgRequest->wasPosted() ? $wgRequest->getCheck( 'templates' ) : $egPushIncTemplates
+			$req->wasPosted() ? $req->getCheck( 'templates' ) : $egPushIncTemplates
 		) . '<br />';
 
-		if ( $wgUser->isAllowed( 'filepush' ) ) {
+		if ( $this->getUser()->isAllowed( 'filepush' ) ) {
 			$form .= Xml::checkLabel(
 				wfMsg( 'push-special-inc-files' ),
 				'files',
 				'wpPushFiles',
-				$wgRequest->wasPosted() ? $wgRequest->getCheck( 'files' ) : $egPushIncFiles
+				$req->wasPosted() ? $req->getCheck( 'files' ) : $egPushIncFiles
 			) . '<br />';
 		}
 
@@ -229,7 +239,7 @@ class SpecialPush extends SpecialPage {
 
 			foreach ( $egPushTargets as $targetName => $targetUrl ) {
 				$checkName = str_replace( ' ', '_', $targetName );
-				$checked = $wgRequest->wasPosted() ? $wgRequest->getCheck( $checkName ) : true;
+				$checked = $req->wasPosted() ? $req->getCheck( $checkName ) : true;
 				$form .= Xml::checkLabel( $targetName, $checkName, $targetName, $checked ) . '<br />';
 			}
 		}
@@ -237,7 +247,7 @@ class SpecialPush extends SpecialPage {
 		$form .= Xml::submitButton( wfMsg( 'push-special-button-text' ), array( 'style' => 'width: 125px; height: 30px' ) );
 		$form .= Xml::closeElement( 'form' );
 
-		$wgOut->addHTML( $form );
+		$this->getOutput()->addHTML( $form );
 	}
 
 	/**
@@ -320,24 +330,96 @@ class SpecialPush extends SpecialPage {
 	 * @since 0.2
 	 */
 	protected static function loadJs() {
-		global $wgOut;
+		$out = $this->getOutput();
 
 		// For backward compatibility with MW < 1.17.
-		if ( is_callable( array( $wgOut, 'addModules' ) ) ) {
-			$wgOut->addModules( 'ext.push.special' );
+		if ( is_callable( array( $out, 'addModules' ) ) ) {
+			$out->addModules( 'ext.push.special' );
 		}
 		else {
 			global $egPushScriptPath;
 
 			PushFunctions::addJSLocalisation();
 
-			$wgOut->includeJQuery();
+			$out->includeJQuery();
 
-			$wgOut->addHeadItem(
+			$out->addHeadItem(
 				'ext.push.special',
 				Html::linkedScript( $egPushScriptPath . '/specials/ext.push.special.js' )
 			);
 		}
+	}
+
+	/**
+	 * Get the OutputPage being used for this instance.
+	 * IndexPager extends ContextSource as of 1.19.
+	 *
+	 * @since 0.1
+	 *
+	 * @return OutputPage
+	 */
+	public function getOutput() {
+		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getOutput() : $GLOBALS['wgOut'];
+	}
+
+	/**
+	 * Get the Language being used for this instance.
+	 * IndexPager extends ContextSource as of 1.19.
+	 *
+	 * @since 0.1
+	 *
+	 * @return Language
+	 */
+	public function getLanguage() {
+		return method_exists( 'SpecialPage', 'getLanguage' ) ? parent::getLanguage() : $GLOBALS['wgLang'];
+	}
+
+	/**
+	 * Get the User being used for this instance.
+	 * IndexPager extends ContextSource as of 1.19.
+	 *
+	 * @since 0.1
+	 *
+	 * @return User
+	 */
+	public function getUser() {
+		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getUser() : $GLOBALS['wgUser'];
+	}
+
+	/**
+	 * Get the WebRequest being used for this instance.
+	 * IndexPager extends ContextSource as of 1.19.
+	 *
+	 * @since 0.1
+	 *
+	 * @return WebRequest
+	 */
+	public function getRequest() {
+		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getRequest() : $GLOBALS['wgRequest'];
+	}
+
+	/**
+	 * Get the Skin being used for this instance.
+	 * IndexPager extends ContextSource as of 1.19.
+	 *
+	 * @since 0.1
+	 *
+	 * @return Skin
+	 */
+	public function getSkin() {
+		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getSkin() : $GLOBALS['wgSkin'];
+	}
+
+	/**
+	 * Get the Title being used for this instance.
+	 * IndexPager extends ContextSource as of 1.19.
+	 *
+	 * @since 0.1
+	 *
+	 * @return Title
+	 */
+	public function getTitle() {
+		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getTitle() : $GLOBALS['wgTitle'];
 	}
 
 }

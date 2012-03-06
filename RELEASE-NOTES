@@ -8,6 +8,7 @@ Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/t
 (trunk)
 
 * Added missing action- messages.
+* Got rid of RequestContext globals in special page using foreward compatibility code.
 
 === Version 1.1.3 ===
 2011-10-04
