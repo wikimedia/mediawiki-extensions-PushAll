@@ -37,6 +37,13 @@ $messages['en'] = array(
 	'group-filepusher-member' => '{{GENDER:$1|file pusher}}',
 	'grouppage-filepusher' => '{{ns:project}}:File pushers',
 
+	'group-pusher.css'     => '/* CSS placed here will affect pushers only */', # only translate this message to other languages if you have to change it
+	'group-pusher.js'      => '/* JS placed here will affect pushers only */', # only translate this message to other languages if you have to change it
+	'group-bulkpusher.css' => '/* CSS placed here will affect bulkpushers only */', # only translate this message to other languages if you have to change it
+	'group-bulkpusher.js'  => '/* JS placed here will affect bulkpushers only */', # only translate this message to other languages if you have to change it
+	'group-filepusher.css' => '/* CSS placed here will affect filepushers only */', # only translate this message to other languages if you have to change it
+	'group-filepusher.js'  => '/* JS placed here will affect filepushers only */', # only translate this message to other languages if you have to change it
+
 	'push-err-captacha' => 'Could not push to $1 due to captcha.',
 	'push-err-captcha-page' => 'Could not push page $1 to all targets due to CAPTCHA.',
 	'push-err-authentication' => 'Authentication at $1 failed. $2',
