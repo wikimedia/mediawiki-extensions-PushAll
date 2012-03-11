@@ -1368,6 +1368,11 @@ $messages['pl'] = array(
 	'group-pusher-member' => '{{GENDER:$1|przesuwacz|przesuwaczka}}',
 	'grouppage-pusher' => '{{ns:project}}:Przesuwacze',
 	'group-bulkpusher' => 'Przesuwacze hurtowi',
+	'group-bulkpusher-member' => '{{GENDER:$1|przesuwacz hurtowy|przesuwaczka hurtowa}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:Przesuwacze hurtowi',
+	'group-filepusher' => 'Przesuwacze plików',
+	'group-filepusher-member' => '{{GENDER:$1|przesuwacz plików|przesuwaczka plików}}',
+	'grouppage-filepusher' => '{{ns:project}}:Przesuwacze plików',
 );
 
 /** Portuguese (Português)
