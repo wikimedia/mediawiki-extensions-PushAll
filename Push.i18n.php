@@ -1126,12 +1126,14 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Ohgi
+ * @author Shirayuki
  */
 $messages['ja'] = array(
 	'push-add-target' => '対象を追加',
-	'push-tab-files-override' => 'これらのファイルはすでに存在しています： $1',
-	'push-tab-template-override' => 'これらのテンプレートはすでに存在しています： $1',
-	'push-special-target-is' => '対象のウィキ： $1',
+	'push-tab-files-override' => 'これらのファイルは既に存在しています：$1',
+	'push-tab-template-override' => 'これらのテンプレートは既に存在しています：$1',
+	'push-special-target-is' => '対象のウィキ：$1',
+	'push-special-select-targets' => '対象のウィキ：',
 );
 
 /** Colognian (Ripoarisch)
@@ -1606,6 +1608,14 @@ Itakda ang $egPushDirectFileUploads upang maging mali sa pangmadlang mga wiki, o
 	'push-api-err-nofilesupport' => 'Ang katutubong MediaWiki ay walang pagtangkilik para sa pagpapaskil ng mga talaksan.
 Sa pangmadlang mga wiki, itakda ang $egPushDirectFileUploads sa mali.
 Sa pribadong mga wiki, ilapat ang pantapal na nakakawing mula sa dokumentasyon ng Itulak o isapanahon mismo ang MediaWiki.',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'push-tab-last-edit' => 'לעצטע רעדאקטירונג דורך $1 אום $2 $3.',
+	'push-tab-not-created' => 'דער בלאט עקזיסטירט נאך נישט.',
 );
 
 /** Simplified Chinese (‪中文(简体)‬) */
