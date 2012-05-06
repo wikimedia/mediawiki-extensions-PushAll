@@ -329,7 +329,7 @@ class SpecialPush extends SpecialPage {
 	 *
 	 * @since 0.2
 	 */
-	protected static function loadJs() {
+	protected function loadJs() {
 		$out = $this->getOutput();
 
 		// For backward compatibility with MW < 1.17.
