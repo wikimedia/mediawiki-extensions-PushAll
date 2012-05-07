@@ -1129,11 +1129,34 @@ $messages['it'] = array(
  * @author Shirayuki
  */
 $messages['ja'] = array(
+	'push-desc' => '他のウィキにコンテンツをプッシュする軽量な拡張機能',
+	'right-push' => 'プッシュ機能を使用',
+	'right-bulkpush' => '一括プッシュ機能（Special:Push）を使用',
+	'right-pushadmin' => 'プッシュ対象やプッシュ設定を変更',
+	'action-push' => 'ページをプッシュ',
+	'action-bulkpush' => 'ページを一括プッシュ',
+	'action-pushadmin' => 'プッシュの設定を構成',
+	'group-pusher' => 'プッシュ担当者',
+	'group-pusher-member' => '{{GENDER:$1|プッシュ担当者}}',
+	'grouppage-pusher' => '{{ns:project}}:プッシュ担当者',
+	'group-bulkpusher' => '一括プッシュ担当者',
+	'group-bulkpusher-member' => '{{GENDER:$1|一括プッシュ担当者}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:一括プッシュ担当者',
+	'group-filepusher' => 'ファイルプッシュ担当者',
+	'group-filepusher-member' => '{{GENDER:$1|ファイルプッシュ担当者}}',
+	'grouppage-filepusher' => '{{ns:project}}:ファイルプッシュ担当者',
+	'push-tab-text' => 'プッシュ',
+	'push-button-text' => 'プッシュ',
+	'push-button-completed' => 'プッシュ完了',
+	'push-button-failed' => 'プッシュ失敗',
 	'push-add-target' => '対象を追加',
+	'push-button-all' => 'すべてプッシュ',
 	'push-tab-files-override' => 'これらのファイルは既に存在しています：$1',
 	'push-tab-template-override' => 'これらのテンプレートは既に存在しています：$1',
 	'push-special-target-is' => '対象のウィキ：$1',
 	'push-special-select-targets' => '対象のウィキ：',
+	'push-special-push-done' => 'プッシュ完了',
+	'push-special-return' => 'その他のページをプッシュ',
 );
 
 /** Colognian (Ripoarisch)
