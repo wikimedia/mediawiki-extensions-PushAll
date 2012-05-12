@@ -1232,6 +1232,12 @@ $messages['mk'] = array(
 	'group-filepusher' => 'Префрлачки на податотеки',
 	'group-filepusher-member' => '{{GENDER:$1|префрлач на податотеки}}',
 	'grouppage-filepusher' => '{{ns:project}}:Префрлачи_на_податотеки',
+	'group-pusher.css' => '/* Тука поставениот CSS ќе се применува само врз префрлачи */',
+	'group-pusher.js' => '/* Тука поставениот JS ќе се применува само врз префрлачи */',
+	'group-bulkpusher.css' => '/* Тука поставениот CSS ќе се применува само врз префрлачи на големо */',
+	'group-bulkpusher.js' => '/* Тука поставениот JS ќе се применува само врз префрлачи на големо */',
+	'group-filepusher.css' => '/* Тука поставениот CSS ќе се применува само врз префрлачи на податотеки */',
+	'group-filepusher.js' => '/* Тука поставениот JS ќе се применува само врз префрлачи на податотеки */',
 	'push-err-captacha' => 'Не можев да го пренесам $1 поради Captcha.',
 	'push-err-captcha-page' => 'Не можев да ја пренесам страницата $1 на сите одредници заради Captcha.',
 	'push-err-authentication' => 'Потврдувањето на $1 не успеа. $2',
@@ -1380,6 +1386,45 @@ Stel op publieke wiki\'s $egPushDirectFileUploads in op "false" of installeer cU
 	'push-api-err-nofilesupport' => 'De lokale MediaWiki heeft geen ondersteuning voor het doorsturen van bestanden. 
 Stel op openbare wiki\'s $egPushDirectFileUploads in op "false".
 Voer de patch waarnaar wordt verwezen in de documentatie van Push uit op besloten wiki\'s of werk MediaWiki zelf bij.',
+);
+
+/** Pälzisch (Pälzisch)
+ * @author Manuae
+ */
+$messages['pfl'] = array(
+	'push-tab-text' => 'Iwadraache',
+	'push-button-text' => 'Iwadraache',
+	'push-button-pushing' => "Iwadraach's",
+	'push-button-pushing-files' => 'Iwadraach Dadaije',
+	'push-button-completed' => 'Iwadraach isch ferdisch',
+	'push-button-failed' => 'Iwadraach hod ned gklabd',
+	'push-tab-title' => 'Iwadraach $1',
+	'push-import-revision-message' => 'Vun $1 iwadraache.',
+	'push-tab-no-targets' => "S'hod kä Ziel fade Iwadraach. Seds des mol in doine LocalSettings.php Dadai.",
+	'push-tab-push-to' => "Iwadraach's noch $1",
+	'push-remote-page-link' => 'Said $1 uffm Wiki $2',
+	'push-remote-page-link-full' => 'Guggda $1 uffm Wiki $2 oa',
+	'push-button-all' => 'Iwadraach alles',
+	'push-tab-last-edit' => 'Ledschd Ännarung vum Benudza $1 om $2 um $3 Uhr.',
+	'push-tab-not-created' => 'Die Said hods noch ned.',
+	'push-tab-err-fileinfo' => "Ma wes ned, wasfa Dadaije do oigbunde sin. S'isch nix iwadraache worre.",
+	'push-tab-err-filepush-unknown' => 'Dadai iwadraache hod ned gklabd un ma wes ned warum.',
+	'push-tab-err-filepush' => 'Dadai hod ned iwadraache were kenne: $1',
+	'push-tab-no-embedded-files' => '(Uff der Said hods kä Dadaije.)',
+	'push-tab-files-override' => 'Die Dadaije hods schun: $1',
+	'push-tab-template-override' => 'Die Vorlaache hods schun: $1',
+	'push-tab-err-uploaddisabled' => 'S\'Hochlaade vun Dadaije gehd ned. Schdell sischa, das <code>$wgEnableUploads</code> un <code>$wgAllowCopyUploads</code> inde Dadai LocalSettings.php vum Zielwiki uff „true“ schdehd.',
+	'special-push' => 'Saide iwadraache',
+	'push-special-pushing-desc' => 'Iwadraach $2 {{PLURAL:$2|Said|Saide}} noch $1 …',
+	'push-special-button-text' => 'Saide iwadraache',
+	'push-special-target-is' => 'Zielwiki: $1',
+	'push-special-select-targets' => 'Zielwikis:',
+	'push-special-item-pushing' => '$1: Iwadraache …',
+	'push-special-item-completed' => '$1: Iwadraach isch ferdisch',
+	'push-special-item-failed' => '$1: Iwadraach hod net gklabd. $2',
+	'push-special-push-done' => 'Iwadraach isch ferdisch',
+	'push-special-pushing-file' => '$1: Iwadraach Dadai $2 …',
+	'push-special-return' => 'Mea Saide iwaddraache',
 );
 
 /** Polish (Polski)
