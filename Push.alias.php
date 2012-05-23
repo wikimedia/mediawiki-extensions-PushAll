@@ -20,6 +20,11 @@ $specialPageAliases['ar'] = array(
 	'Push' => array( 'دفع' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'Push' => array( 'Tikin' ),
+);
+
 /** Breton (Brezhoneg) */
 $specialPageAliases['br'] = array(
 	'Push' => array( 'Bountañ' ),
@@ -48,6 +53,11 @@ $specialPageAliases['ia'] = array(
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
 	'Push' => array( 'Префрли' ),
+);
+
+/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+$specialPageAliases['nb'] = array(
+	'Push' => array( 'Dytt' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
