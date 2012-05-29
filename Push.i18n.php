@@ -121,6 +121,7 @@ On private wikis, apply the patch linkd from the Push documentation or update Me
  * @author Raymond
  * @author Siebrand
  * @author Umherirrender
+ * @author 아라
  */
 $messages['qqq'] = array(
 	'push-desc' => '{{desc}}',
@@ -139,6 +140,12 @@ $messages['qqq'] = array(
 	'group-filepusher' => '{{doc-group|filepusher}}',
 	'group-filepusher-member' => '{{doc-group|filepusher|member}}',
 	'grouppage-filepusher' => '{{doc-group|filepusher|page}}',
+	'group-pusher.css' => '{{doc-group|pusher}}',
+	'group-pusher.js' => '{{doc-group|pusher}}',
+	'group-bulkpusher.css' => '{{doc-group|bulkpusher}}',
+	'group-bulkpusher.js' => '{{doc-group|bulkpusher}}',
+	'group-filepusher.css' => '{{doc-group|filepusher}}',
+	'group-filepusher.js' => '{{doc-group|filepusher}}',
 	'push-err-authentication' => '$1: wiki name, $2: optional detailed error message',
 	'push-remote-page-link' => '$1: page name, $2: wiki name',
 	'push-remote-page-link-full' => '$1: page name, $2: wiki name',
@@ -1161,6 +1168,22 @@ $messages['ja'] = array(
 	'push-special-select-targets' => '対象のウィキ：',
 	'push-special-push-done' => 'プッシュ完了',
 	'push-special-return' => 'その他のページをプッシュ',
+);
+
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'group-pusher' => '미는자',
+	'group-pusher-member' => '{{GENDER:$1|미는자}}',
+	'grouppage-pusher' => '{{ns:project}}:미는자',
+	'group-filepusher' => '파일 미는자',
+	'group-filepusher-member' => '{{GENDER:$1|파일 미는자}}',
+	'grouppage-filepusher' => '{{ns:project}}:파일 미는자',
+	'group-pusher.css' => '/* 이 CSS 설정은 미는자에만 적용됩니다 */',
+	'group-pusher.js' => '/* 이 자바스크립트 설정은 미는자에만 적용됩니다 */',
+	'group-filepusher.css' => '/* 이 CSS 설정은 파일 미는자에만 적용됩니다 */',
+	'group-filepusher.js' => '/* 이 자바스크립트 설정은 파일 미는자에만 적용됩니다 */',
 );
 
 /** Colognian (Ripoarisch)
