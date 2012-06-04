@@ -744,6 +744,9 @@ $messages['gsw'] = array(
 	'right-push' => 'Syten in anderi Wiki transferiere',
 	'right-bulkpush' => 'Syte gsammlet in anderi Wiki transferiere',
 	'right-pushadmin' => 'Transferyystellige un -ziil ändere',
+	'action-push' => 'Syte transferiere',
+	'action-bulkpush' => 'Syte gsammlet transferiere',
+	'action-pushadmin' => 'Transferyystellige konfiguriere',
 	'group-pusher' => 'Transferierer',
 	'group-pusher-member' => '{{GENDER:$1|Transferierer|Transferiereri}}',
 	'grouppage-pusher' => '{{ns:project}}:Transferierer',
@@ -1253,10 +1256,10 @@ $messages['ko'] = array(
 	'push-special-pushing-file' => '$1: $2 파일을 미는 중...',
 	'push-special-return' => '더 많은 문서 밀기',
 	'push-api-err-nocurl' => 'cURL를 설치하지 않았습니다.
-공용 위키에서 $egPushDirectFileUploads를 false로 설정하거나 공용 위키에 cURL을 설치하세요',
+공개 위키에서 $egPushDirectFileUploads를 false로 설정하거나 비공개 위키에 cURL을 설치하세요',
 	'push-api-err-nofilesupport' => '로컬 MediaWiki에 파일을 게시하는 데에 지원이 없습니다.
-공용 위키의 경우 $egPushDirectFileUploads를 false로 설정하세요.
-개인 위키의 경우 밀기 설명서 또는 MediaWiki 자체에서 업데이트하여 링크한 패치를 적용하세요.',
+공개 위키의 경우 $egPushDirectFileUploads를 false로 설정하세요.
+비공개 위키의 경우 밀기 설명서 또는 MediaWiki 자체에서 업데이트하여 링크한 패치를 적용하세요.',
 );
 
 /** Colognian (Ripoarisch)
