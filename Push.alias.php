@@ -25,7 +25,7 @@ $specialPageAliases['bjn'] = array(
 	'Push' => array( 'Tikin' ),
 );
 
-/** Breton (Brezhoneg) */
+/** Breton (brezhoneg) */
 $specialPageAliases['br'] = array(
 	'Push' => array( 'Bountañ' ),
 );
@@ -33,6 +33,11 @@ $specialPageAliases['br'] = array(
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Push' => array( 'Transfer' ),
+);
+
+/** Zazaki (Zazaki) */
+$specialPageAliases['diq'] = array(
+	'Push' => array( 'Pıploxne' ),
 );
 
 /** Persian (فارسی) */
@@ -45,17 +50,22 @@ $specialPageAliases['ht'] = array(
 	'Push' => array( 'Pouse' ),
 );
 
-/** Interlingua (Interlingua) */
+/** Interlingua (interlingua) */
 $specialPageAliases['ia'] = array(
 	'Push' => array( 'Transferer' ),
 );
 
-/** Macedonian (Македонски) */
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'Push' => array( '밀기' ),
+);
+
+/** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'Push' => array( 'Префрли' ),
 );
 
-/** Norwegian Bokmål (‪Norsk (bokmål)‬) */
+/** Norwegian Bokmål (‪norsk (bokmål)‬) */
 $specialPageAliases['nb'] = array(
 	'Push' => array( 'Dytt' ),
 );
