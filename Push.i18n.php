@@ -227,7 +227,7 @@ $messages['be-tarask'] = array(
 У прыватных вікі трэба ўжыць выпраўленьне linkd з дакумэнтацыі Push, ці наўпрост абнавіць MediaWiki.',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author DCLXVI
  */
 $messages['bg'] = array(
@@ -252,7 +252,7 @@ $messages['bg'] = array(
 	'push-special-obtaining-fileinfo' => '$1: Получаване на информация за файла...',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  * @author Y-M D
  */
@@ -312,7 +312,7 @@ $messages['br'] = array(
 Lakaat $egPushDirectFileUploads da <code>false</code> evit wikioù foran, pe staliañ cURL evit ar wikioù prevez',
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -421,7 +421,7 @@ $messages['diq'] = array(
 	'push-tab-no-used-templates' => '(Na pela dı şabloni çinyê)',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Armando-Martin
  */
 $messages['es'] = array(
@@ -504,14 +504,14 @@ En los wikis públicos, establezca $egPushDirectFileUploads como "false".
 En los wikis privados, aplique el parche linkd de la documentación de Push o actualice el propio MediaWiki.',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Tofu II
  */
 $messages['fi'] = array(
 	'push-add-target' => 'Lisää kohde',
 );
 
-/** French (Français)
+/** French (français)
  * @author Gomoko
  * @author Sherbrooke
  */
@@ -595,7 +595,7 @@ Sur les wikis publics, mettre \$egPushDirectFileUploads à <code>false</code>.
 Sur les wikis privés, appliquer le patch <code>linkd</code> tel qu'expliqué dans la documentation de ''Push'' ou mettre à jour MediaWiki.",
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -973,7 +973,7 @@ Staj na zjawnych wikijach parameter $egPushDirectFileUploads na "false".
 Na priwatnych wikijach nałož patch linkd z dokumentacije Push abo zaktualizuj MediaWiki.',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1127,7 +1127,7 @@ Pada wiki publik, setel $egPushDirectFileUploads menjadi false.
 Pada wiki pribadi, terapkan tambalan linkd dari dokumentasi Push atau perbarui MediaWiki itu sendiri.',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Beta16
  */
 $messages['it'] = array(
@@ -1311,7 +1311,7 @@ $messages['lb'] = array(
 	'push-special-return' => 'Méi Säite pushen',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1526,7 +1526,7 @@ $messages['pfl'] = array(
 	'push-special-return' => 'Mea Saide iwaddraache',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author BeginaFelicysym
  */
 $messages['pl'] = array(
@@ -1548,7 +1548,7 @@ $messages['pl'] = array(
 	'grouppage-filepusher' => '{{ns:project}}:Przesuwacze plików',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Hamilton Abreu
  */
 $messages['pt'] = array(
@@ -1628,7 +1628,7 @@ Nas wikis públicas, defina $egPushDirectFileUploads como "false".
 Nas wikis privadas, aplique o patch referido na documentação do Push, ou actualize o próprio MediaWiki.',
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author DCamer
  * @author Lockal
  * @author MaxSem
@@ -1789,13 +1789,13 @@ $messages['yi'] = array(
 	'push-tab-not-created' => 'דער בלאט עקזיסטירט נאך נישט.',
 );
 
-/** Simplified Chinese (‪中文(简体)‬) */
+/** Simplified Chinese (‪中文（简体）‬) */
 $messages['zh-hans'] = array(
 	'push-add-target' => '新增目标',
 	'push-tab-inc-templates' => '包含模板',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Mark85296341
  */
 $messages['zh-hant'] = array(
