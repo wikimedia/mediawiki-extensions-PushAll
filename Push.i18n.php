@@ -1131,7 +1131,21 @@ Pada wiki pribadi, terapkan tambalan linkd dari dokumentasi Push atau perbarui M
  * @author Beta16
  */
 $messages['it'] = array(
+	'push-remote-pages' => 'Pagine remote',
+	'push-remote-page-link' => '$1 da $2',
+	'push-remote-page-link-full' => 'Vedi $1 da $2',
+	'push-tab-last-edit' => 'Ultima modifica di $1 il $2 alle $3.',
+	'push-tab-not-created' => 'Questa pagina non esiste ancora.',
+	'push-tab-inc-templates' => 'Includi i template',
+	'push-tab-used-templates' => '({{PLURAL:$2|Usa|Usati}} template: $1)',
+	'push-tab-no-used-templates' => '(Nessun template è utilizzato in questa pagina).',
+	'push-tab-inc-files' => 'Includi file incorporati',
 	'push-tab-embedded-files' => 'File incorporati:',
+	'push-tab-no-embedded-files' => '(Nessun file è incorporato in questa pagina).',
+	'push-tab-files-override' => 'Questi file esistono già: $1',
+	'push-tab-template-override' => 'Questi template esistono già: $1',
+	'push-special-target-is' => 'Wiki di destinazione: $1',
+	'push-special-select-targets' => 'Wiki di destinazione:',
 );
 
 /** Japanese (日本語)
