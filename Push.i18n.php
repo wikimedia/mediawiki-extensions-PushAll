@@ -154,7 +154,7 @@ $messages['qqq'] = array(
 	'push-tab-template-override' => 'JavaScript message, no PLURAL available',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -652,7 +652,7 @@ $messages['frp'] = array(
 	'push-special-return' => 'Poussar més de pâges',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -890,7 +890,7 @@ $messages['he'] = array(
 באתרי ויקי פרטיים התקינו את התיקון המקושר מהתיעוד של Push או שדרגו את תוכנת מדיה־ויקי עצמה.',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
