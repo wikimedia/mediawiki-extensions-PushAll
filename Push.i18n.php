@@ -411,7 +411,7 @@ Um Seiten zu transferieren, sind deren Titel im Eingabefeld unten anzugeben (ein
 Der Parameter <code>$egPushDirectFileUploads</code> muss daher für alle öffentlichen Wikis auf false gesetzt werden. Alternativ cURL für alle nichtöffentlichen Wikis installieren.',
 	'push-api-err-nofilesupport' => 'Die lokale MediaWiki-Installation unterstützt nicht das Hochladen von Dateien.
 Auf öffentlichen Wikis muss der Parameter <code>$egPushDirectFileUploads</code> auf false gesetzt werden.
-Auf nichtöffentlichen Wikis muss der über die Dokumentationsseite zu dieser Softwareerweiterung erhältliche Patch angewendet oder die MediaWiki-Installation selbst aktualisiert werden.',
+Auf nichtöffentlichen Wikis muss der über die Dokumentationsseite zu dieser Programmerweiterung erhältliche Patch angewendet oder die MediaWiki-Installation selbst aktualisiert werden.',
 );
 
 /** Zazaki (Zazaki)
@@ -1732,6 +1732,18 @@ $messages['tl'] = array(
 	'right-push' => 'Kapahintulutan upang magamit ang tungkulin ng pagtulak.',
 	'right-bulkpush' => 'Kapahintulutan upang gamitin ang tungkulin ng pabunton na pagtutulak (iyon ay Natatangi:Itulak).',
 	'right-pushadmin' => 'Kapahintulutan upang baguhin ang mga pinupukol ng pagtulak at mga katakdaan sa pagtulak.',
+	'action-push' => 'itulak ang mga pahina',
+	'action-bulkpush' => 'maramihang pagtutulak ng mga pahina',
+	'action-pushadmin' => 'isaayos ang pagtulak',
+	'group-pusher' => 'Mga manunulak',
+	'group-pusher-member' => '{{GENDER:$1|tagatulak}}',
+	'grouppage-pusher' => '{{ns:project}}:Mga tagapagtulak',
+	'group-bulkpusher' => 'Mga tagapagtulak na maramihan',
+	'group-bulkpusher-member' => '{{GENDER:$1|tagatulak na buntunan}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:Tagapagtulak na buntunan',
+	'group-filepusher' => 'Mga tagatulak ng talaksan',
+	'group-filepusher-member' => '{{GENDER:$1|tagapagtulak ng talaksan}}',
+	'grouppage-filepusher' => '{{ns:project}}:Tagapagtulak ng talaksan',
 	'push-err-captacha' => 'Hindi maitulak sa $1 dahil sa captcha.',
 	'push-err-captcha-page' => 'Hindi maitulak ang pahinang $1 papunta sa lahat ng mga pinupukol dahil sa CAPTCHA.',
 	'push-err-authentication' => 'Nabigo ang pagpapatotoo doon sa $1. $2',
