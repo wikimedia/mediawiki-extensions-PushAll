@@ -149,7 +149,10 @@ $messages['qqq'] = array(
 	'push-err-authentication' => '$1: wiki name, $2: optional detailed error message',
 	'push-remote-page-link' => '$1: page name, $2: wiki name',
 	'push-remote-page-link-full' => '$1: page name, $2: wiki name',
-	'push-tab-embedded-files' => '{{Identical|Embedded file}}',
+	'push-tab-inc-templates' => 'This message is about a transfer of several data in one go. Templates can be a part of the transfer.',
+	'push-tab-embedded-files' => '{{Identical|Embedded file}}
+
+This message is about a transfer of several data in one go. Image files can be a part of the transfer.',
 	'push-tab-files-override' => 'JavaScript message, no PLURAL available',
 	'push-tab-template-override' => 'JavaScript message, no PLURAL available',
 );
@@ -1281,6 +1284,30 @@ $messages['ko'] = array(
  */
 $messages['ksh'] = array(
 	'push-desc' => 'E eijfach Zohsazprojramm för Saache en ander Wikis erövver zo bränge.',
+	'group-pusher' => 'Övverdraarer',
+	'group-pusher-member' => '{{GENDER:$1|Övverdraarer}}',
+	'grouppage-pusher' => '{{ns:project}}:Övverdraarer',
+	'group-bulkpusher' => 'Maßßeövverdraarer',
+	'group-bulkpusher-member' => '{{GENDER:$1|Maßßeövverdraarer}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:Maßßeövverdraarer',
+	'group-filepusher' => 'Datteijeövverdraarer',
+	'group-filepusher-member' => '{{GENDER:$1|Datteijeövverdraarer}}',
+	'grouppage-filepusher' => '{{ns:project}}:Datteijeövverdraarer',
+	'group-pusher.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de Siggeövverdraarer */',
+	'group-pusher.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Siggeövverdraarer */',
+	'group-bulkpusher.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de Maßßeövverdraarer */',
+	'group-filepusher.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de Datteijeeövverdraarer */',
+	'group-filepusher.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Datteijeövverdraarer */',
+	'push-tab-text' => 'Övverdraare',
+	'push-button-text' => 'Övverdraare',
+	'push-remote-page-link' => '$1 {{GENDER:en+Dativ|{{ucfirst:$2}}}}',
+	'push-remote-page-link-full' => 'De Sigg „$1“ {{GRAMMAR:em|{{ucfirst:$2}}}} beloore',
+	'push-targets-total' => 'Es jitt ensjesamp {{PLURAL:$1|ei Ziel|$1 Ziele|kein Ziele}}.',
+	'push-tab-not-created' => 'Di Sigg jidd_et noch nit!',
+	'push-tab-inc-templates' => 'De Schablone metnämme',
+	'push-tab-inc-files' => 'Enthallde Datteije metnämme',
+	'push-tab-embedded-files' => 'Enthallde Datteije:',
+	'push-special-inc-files' => 'Enthallde Datteije metnämme',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
