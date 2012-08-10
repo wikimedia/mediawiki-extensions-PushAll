@@ -1669,6 +1669,13 @@ Nas wikis públicas, defina $egPushDirectFileUploads como "false".
 Nas wikis privadas, aplique o patch referido na documentação do Push, ou actualize o próprio MediaWiki.',
 );
 
+/** Romanian (română)
+ * @author Stelistcristi
+ */
+$messages['ro'] = array(
+	'push-tab-embedded-files' => 'Fișiere încorporate:',
+);
+
 /** Russian (русский)
  * @author DCamer
  * @author Lockal
