@@ -1673,6 +1673,8 @@ Nas wikis privadas, aplique o patch referido na documentação do Push, ou actua
  * @author Stelistcristi
  */
 $messages['ro'] = array(
+	'push-add-target' => 'Adaugă ținta',
+	'push-remote-pages' => 'Pagini de la distanță',
 	'push-tab-embedded-files' => 'Fișiere încorporate:',
 );
 
