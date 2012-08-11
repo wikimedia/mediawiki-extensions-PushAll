@@ -1752,6 +1752,13 @@ $messages['ru'] = array(
 На частной вики примените патч linkd из документации Push или обновите саму MediaWiki.',
 );
 
+/** Swahili (Kiswahili)
+ * @author Stephenwanjau
+ */
+$messages['sw'] = array(
+	'push-add-target' => 'Ongeza lengo',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
