@@ -1190,6 +1190,14 @@ $messages['ja'] = array(
 	'push-special-return' => 'その他のページをプッシュ',
 );
 
+/** Georgian (ქართული)
+ * @author David1010
+ */
+$messages['ka'] = array(
+	'push-special-target-is' => 'სამიზნო ვიკი: $1',
+	'push-special-select-targets' => 'სამიზნო ვიკიები:',
+);
+
 /** Korean (한국어)
  * @author 아라
  */
