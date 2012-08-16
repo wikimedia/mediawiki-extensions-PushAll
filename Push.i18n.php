@@ -602,6 +602,8 @@ Sur les wikis privés, appliquer le patch <code>linkd</code> tel qu'expliqué da
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
+	'action-push' => 'poussar les pâges',
+	'action-bulkpush' => 'poussar les pâges en massa',
 	'group-pusher' => 'Poussors',
 	'group-pusher-member' => 'pousso{{GENDER:$1|r|sa}}',
 	'grouppage-pusher' => '{{ns:project}}:Poussors',
