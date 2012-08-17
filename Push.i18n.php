@@ -1134,6 +1134,7 @@ Pada wiki pribadi, terapkan tambalan linkd dari dokumentasi Push atau perbarui M
 
 /** Italian (italiano)
  * @author Beta16
+ * @author F. Cosoleto
  */
 $messages['it'] = array(
 	'push-remote-pages' => 'Pagine remote',
@@ -1151,6 +1152,8 @@ $messages['it'] = array(
 	'push-tab-template-override' => 'Questi template esistono già: $1',
 	'push-special-target-is' => 'Wiki di destinazione: $1',
 	'push-special-select-targets' => 'Wiki di destinazione:',
+	'push-api-err-nocurl' => "cURL non è installato.
+Imposta \$egPushDirectFileUploads a 'false' sui wiki pubblici, o installa cURL per i wiki privati",
 );
 
 /** Japanese (日本語)
