@@ -1184,6 +1184,7 @@ $messages['ja'] = array(
 	'push-button-completed' => 'プッシュ完了',
 	'push-button-failed' => 'プッシュ失敗',
 	'push-add-target' => '対象を追加',
+	'push-remote-pages' => '(リモート ページ)',
 	'push-button-all' => 'すべてプッシュ',
 	'push-tab-push-options' => 'プッシュのオプション：',
 	'push-tab-inc-templates' => 'テンプレートを含める',
