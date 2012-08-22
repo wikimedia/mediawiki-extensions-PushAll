@@ -1684,11 +1684,12 @@ Nas wikis privadas, aplique o patch referido na documentação do Push, ou actua
 );
 
 /** Romanian (română)
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'push-add-target' => 'Adaugă ținta',
-	'push-remote-pages' => 'Pagini de la distanță',
+	'push-add-target' => 'Adaugă o țintă',
+	'push-remote-pages' => 'Pagini la distanță',
 	'push-tab-embedded-files' => 'Fișiere încorporate:',
 );
 
