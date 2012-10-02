@@ -157,7 +157,7 @@ This message is about a transfer of several data in one go. Image files can be a
 	'push-tab-template-override' => 'JavaScript message, no PLURAL available',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -1947,13 +1947,13 @@ $messages['yi'] = array(
 	'push-tab-not-created' => 'דער בלאט עקזיסטירט נאך נישט.',
 );
 
-/** Simplified Chinese (‪中文（简体）‬) */
+/** Simplified Chinese (中文（简体）‎) */
 $messages['zh-hans'] = array(
 	'push-add-target' => '新增目标',
 	'push-tab-inc-templates' => '包含模板',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Mark85296341
  */
 $messages['zh-hant'] = array(
