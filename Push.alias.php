@@ -55,6 +55,11 @@ $specialPageAliases['ia'] = array(
 	'Push' => array( 'Transferer' ),
 );
 
+/** Japanese (日本語) */
+$specialPageAliases['ja'] = array(
+	'Push' => array( 'プッシュ' ),
+);
+
 /** Korean (한국어) */
 $specialPageAliases['ko'] = array(
 	'Push' => array( '밀기' ),
