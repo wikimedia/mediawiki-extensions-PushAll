@@ -1618,13 +1618,13 @@ $messages['pt'] = array(
 	'right-bulkpush' => 'Autorização para usar a funcionalidade de replicação para o exterior em bloco (isto é, a página Special:Push).',
 	'right-pushadmin' => 'Autorização para modificar os destinos e a configuração da replicação para o exterior.',
 	'group-pusher' => 'Replicadores para o exterior',
-	'group-pusher-member' => 'Replicador para o exterior',
+	'group-pusher-member' => 'Replicador para o exterior', # Fuzzy
 	'grouppage-pusher' => '{{ns:project}}:Replicadores_para_o_exterior',
 	'group-bulkpusher' => 'Replicadores em bloco para o exterior',
-	'group-bulkpusher-member' => 'Replicador em bloco para o exterior',
+	'group-bulkpusher-member' => 'Replicador em bloco para o exterior', # Fuzzy
 	'grouppage-bulkpusher' => '{{ns:project}}:Replicadores_em_bloco_para_o_exterior',
 	'group-filepusher' => 'Replicadores de ficheiros para o exterior',
-	'group-filepusher-member' => 'Replicador de ficheiros para o exterior',
+	'group-filepusher-member' => 'Replicador de ficheiros para o exterior', # Fuzzy
 	'grouppage-filepusher' => '{{ns:project}}:Replicadores_de_ficheiros_para_o_exterior',
 	'push-err-captacha' => 'Não foi possível fazer a replicação para $1 devido ao captcha.',
 	'push-err-captcha-page' => 'Não foi possível replicar a página $1 para todos os destinos devido ao captcha.',
@@ -1947,7 +1947,8 @@ $messages['yi'] = array(
 	'push-tab-not-created' => 'דער בלאט עקזיסטירט נאך נישט.',
 );
 
-/** Simplified Chinese (中文（简体）‎) */
+/** Simplified Chinese (中文（简体）‎)
+ */
 $messages['zh-hans'] = array(
 	'push-add-target' => '新增目标',
 	'push-tab-inc-templates' => '包含模板',
@@ -1960,4 +1961,3 @@ $messages['zh-hant'] = array(
 	'push-add-target' => '新增目標',
 	'push-tab-inc-templates' => '包含模板',
 );
-
