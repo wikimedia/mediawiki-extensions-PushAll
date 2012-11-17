@@ -55,6 +55,11 @@ $specialPageAliases['ia'] = array(
 	'Push' => array( 'Transferer' ),
 );
 
+/** Italian (italiano) */
+$specialPageAliases['it'] = array(
+	'Push' => array( 'Spingi' ),
+);
+
 /** Japanese (日本語) */
 $specialPageAliases['ja'] = array(
 	'Push' => array( 'プッシュ' ),
