@@ -94,3 +94,8 @@ $specialPageAliases['nds-nl'] = array(
 $specialPageAliases['nl'] = array(
 	'Push' => array( 'Doorsturen' ),
 );
+
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'Push' => array( 'Spingi' ),
+);
