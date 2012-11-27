@@ -85,7 +85,7 @@ $specialPageAliases['nb'] = array(
 	'Push' => array( 'Dytt' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Push' => array( 'Deursturen' ),
 );
