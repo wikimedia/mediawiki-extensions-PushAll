@@ -1950,6 +1950,14 @@ Sa pangmadlang mga wiki, itakda ang $egPushDirectFileUploads sa mali.
 Sa pribadong mga wiki, ilapat ang pantapal na nakakawing mula sa dokumentasyon ng Itulak o isapanahon mismo ang MediaWiki.',
 );
 
+/** Ukrainian (українська)
+ * @author Base
+ */
+$messages['uk'] = array(
+	'push-desc' => 'Невелике розширення для поширення вмісту до інших вікі',
+	'right-push' => 'Авторизуйтесь щоб використати цю функцію.',
+);
+
 /** Yiddish (ייִדיש)
  * @author פוילישער
  */
