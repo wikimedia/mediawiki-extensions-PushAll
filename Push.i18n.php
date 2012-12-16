@@ -119,12 +119,13 @@ On private wikis, apply the patch linkd from the Push documentation or update Me
  * @author Nike
  * @author Purodha
  * @author Raymond
+ * @author Shirayuki
  * @author Siebrand
  * @author Umherirrender
  * @author 아라
  */
 $messages['qqq'] = array(
-	'push-desc' => '{{desc}}',
+	'push-desc' => '{{desc|name=Push|url=http://www.mediawiki.org/wiki/Extension:Push}}',
 	'right-push' => '{{doc-right|push}}',
 	'right-bulkpush' => '{{doc-right|bulkpush}}',
 	'right-pushadmin' => '{{doc-right|pushadmin}}',
@@ -140,12 +141,12 @@ $messages['qqq'] = array(
 	'group-filepusher' => '{{doc-group|filepusher}}',
 	'group-filepusher-member' => '{{doc-group|filepusher|member}}',
 	'grouppage-filepusher' => '{{doc-group|filepusher|page}}',
-	'group-pusher.css' => '{{doc-group|pusher}}',
-	'group-pusher.js' => '{{doc-group|pusher}}',
-	'group-bulkpusher.css' => '{{doc-group|bulkpusher}}',
-	'group-bulkpusher.js' => '{{doc-group|bulkpusher}}',
-	'group-filepusher.css' => '{{doc-group|filepusher}}',
-	'group-filepusher.js' => '{{doc-group|filepusher}}',
+	'group-pusher.css' => '{{doc-group|pusher|css}}',
+	'group-pusher.js' => '{{doc-group|pusher|js}}',
+	'group-bulkpusher.css' => '{{doc-group|bulkpusher|css}}',
+	'group-bulkpusher.js' => '{{doc-group|bulkpusher|js}}',
+	'group-filepusher.css' => '{{doc-group|filepusher|css}}',
+	'group-filepusher.js' => '{{doc-group|filepusher|js}}',
 	'push-err-authentication' => '$1: wiki name, $2: optional detailed error message',
 	'push-remote-page-link' => '$1: page name, $2: wiki name',
 	'push-remote-page-link-full' => '$1: page name, $2: wiki name',
