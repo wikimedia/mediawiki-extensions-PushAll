@@ -2042,10 +2042,13 @@ Sa pribadong mga wiki, ilapat ang pantapal na nakakawing mula sa dokumentasyon n
 
 /** Ukrainian (українська)
  * @author Base
+ * @author Steve.rusyn
  */
 $messages['uk'] = array(
 	'push-desc' => 'Невелике розширення для поширення вмісту до інших вікі',
 	'right-push' => 'Авторизуйтесь щоб використати цю функцію.',
+	'push-tab-text' => 'Помістити',
+	'push-button-text' => 'Помістити',
 );
 
 /** Yiddish (ייִדיש)
