@@ -1334,6 +1334,7 @@ $messages['ksh'] = array(
 	'group-pusher.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de Siggeövverdraarer */',
 	'group-pusher.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Siggeövverdraarer */',
 	'group-bulkpusher.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de Maßßeövverdraarer */',
+	'group-bulkpusher.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Maßßeövverdraarer */',
 	'group-filepusher.css' => '/* Dat CSS heh aan dä Stell wirrek nur op de Datteijeeövverdraarer */',
 	'group-filepusher.js' => '/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Datteijeövverdraarer */',
 	'push-tab-text' => 'Övverdraare',
@@ -1872,6 +1873,55 @@ $messages['ru'] = array(
 	'push-api-err-nofilesupport' => 'Локальная MediaWiki не поддерживает отправку файлов. 
 На общедоступной вики установите параметр $egPushDirectFileUploads в значение false.
 На частной вики примените патч linkd из документации Push или обновите саму MediaWiki.',
+);
+
+/** Sinhala (සිංහල)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['si'] = array(
+	'action-push' => 'තෙරපුම් පිටු',
+	'action-bulkpush' => 'පිටු තොග පිටින් තෙරපන්න',
+	'group-pusher' => 'තෙරපන්නෝ',
+	'group-pusher-member' => '{{GENDER:$1|තෙරපන්නා}}',
+	'grouppage-pusher' => '{{ns:project}}:තෙරපන්නෝ',
+	'group-bulkpusher' => 'තොග පිටින් තෙරපන්නෝ',
+	'group-bulkpusher-member' => '{{GENDER:$1|තොග පිටින් තෙරපන්නා}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:තොග පිටින් තෙරපන්නෝ',
+	'group-filepusher' => 'ගොනු තෙරපන්නෝ',
+	'group-filepusher-member' => '{{GENDER:$1|ගොනු තෙරපන්නා}}',
+	'grouppage-filepusher' => '{{ns:project}}:ගොනු තෙරපන්නෝ',
+	'push-tab-text' => 'තෙරපන්න',
+	'push-button-text' => 'තෙරපන්න',
+	'push-button-pushing' => 'තෙරපමින්',
+	'push-button-pushing-files' => 'ගොනු තෙරපමින්',
+	'push-button-completed' => 'තෙරපීම සම්පූර්ණයි',
+	'push-button-failed' => 'තෙරපීම අසාර්ථකයි',
+	'push-tab-title' => '$1 තෙරපන්න',
+	'push-targets' => 'තෙරපුම් ඉලක්කයන්',
+	'push-add-target' => 'ඉලක්කයක් එක් කරන්න',
+	'push-tab-push-to' => '$1 වෙත තෙරපන්න',
+	'push-remote-page-link' => '$1 මත $2',
+	'push-button-all' => 'සියල්ලම තෙරපන්න',
+	'push-tab-not-created' => 'මෙම පිටුව තවමත් නොපවතියි.',
+	'push-tab-push-options' => 'තෙරපුම් විකල්පයන්:',
+	'push-tab-inc-templates' => 'සැකිලි ඇතුළත් කරන්න',
+	'push-tab-inc-files' => 'කා වැද්දූ ගොනු අඩංගු කරන්න',
+	'push-tab-err-filepush' => 'ගොනු තෙරපීම අසාර්ථකයි: $1',
+	'push-tab-embedded-files' => 'කා වැද්දූ ගොනු:',
+	'push-tab-files-override' => 'මෙම ගොනු දැනටමත් පවතියි: $1',
+	'push-tab-template-override' => 'මෙම සැකිලි දැනටමත් පවතියි: $1',
+	'special-push' => 'තෙරපුම් පිටු',
+	'push-special-button-text' => 'තෙරපුම් පිටු',
+	'push-special-target-is' => 'ඉලක්කගත විකිය: $1',
+	'push-special-select-targets' => 'ඉලක්කගත විකියන්:',
+	'push-special-item-pushing' => '$1: තෙරපමින්',
+	'push-special-item-completed' => '$1: තෙරපීම සම්පූර්ණයි',
+	'push-special-item-failed' => '$1: තෙරපීම අසාර්ථකයි: $2',
+	'push-special-push-done' => 'තෙරපීම සම්පූර්ණයි',
+	'push-special-inc-files' => 'කා වැද්දූ ගොනු අඩංගු කරන්න',
+	'push-special-obtaining-fileinfo' => '$1: ගොනුවේ තොරතුරු ලබාගනිමින්...',
+	'push-special-pushing-file' => '$1: $2 ගොනුව තෙරපමින්...',
+	'push-special-return' => 'තවත් පිටු තෙරපන්න',
 );
 
 /** Swahili (Kiswahili)
