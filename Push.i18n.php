@@ -1608,15 +1608,16 @@ $messages['pfl'] = array(
 
 /** Polish (polski)
  * @author BeginaFelicysym
+ * @author Matma Rex
  */
 $messages['pl'] = array(
 	'push-desc' => 'Lekkie rozszerzenie by przesunąć treść na inne wiki',
 	'right-push' => 'Autoryzacja do używania funkcji przesuwania.',
-	'right-bulkpush' => 'Autoryzacja do wykorzystania funkcji przesuwania hurtowego (tj Special:Push).',
+	'right-bulkpush' => 'Autoryzacja do wykorzystania funkcji przesuwania hurtowego (tj. Special:Push).',
 	'right-pushadmin' => 'Upoważnienie do zmiany celów i ustawień przesuwania.',
-	'action-push' => 'strony przesuwania',
-	'action-bulkpush' => 'strony przesuwania hurtowego',
-	'action-pushadmin' => 'konfiguracja przesuwania',
+	'action-push' => 'przesuwania stron',
+	'action-bulkpush' => 'hurtowego przesuwania stron',
+	'action-pushadmin' => 'konfigurowania przesuwania',
 	'group-pusher' => 'Przesuwacze',
 	'group-pusher-member' => '{{GENDER:$1|przesuwacz|przesuwaczka}}',
 	'grouppage-pusher' => '{{ns:project}}:Przesuwacze',
@@ -1626,6 +1627,67 @@ $messages['pl'] = array(
 	'group-filepusher' => 'Przesuwacze plików',
 	'group-filepusher-member' => '{{GENDER:$1|przesuwacz plików|przesuwaczka plików}}',
 	'grouppage-filepusher' => '{{ns:project}}:Przesuwacze plików',
+	'push-err-captacha' => 'Nie można przesunąć do $1 ze względu na captchę.',
+	'push-err-captcha-page' => 'Nie można przesunąć strony $1 do żadnego celu ze względu na captchę.',
+	'push-err-authentication' => 'Uwierzytelnianie w $1 nie powiodło się. $2',
+	'push-tab-text' => 'Przesuń',
+	'push-button-text' => 'Przesuń',
+	'push-tab-desc' => 'Ta zakładka pozwala na umieszczenie aktualnej wersji tej strony na jednej lub wielu innych wiki.',
+	'push-button-pushing' => 'Przesuwanie...',
+	'push-button-pushing-files' => 'Przesuwanie plików',
+	'push-button-completed' => 'Przesuwanie zakończone',
+	'push-button-failed' => 'Przesuwanie nie powiodło się',
+	'push-tab-title' => 'Przesuń $1',
+	'push-targets' => 'Cele przesuwania',
+	'push-add-target' => 'Dodaj cel',
+	'push-import-revision-message' => 'Przesunięto z $1.',
+	'push-tab-no-targets' => 'Nie ma żadnych celów, do których można by przesuwać. Dodaj je w swoim pliku LocalSettings.php.',
+	'push-tab-push-to' => 'Przesuń do $1',
+	'push-remote-pages' => 'Zdalne strony',
+	'push-remote-page-link' => '$1 na $2',
+	'push-remote-page-link-full' => 'Zobacz $1 na $2',
+	'push-targets-total' => 'Istniej{{PLURAL:$1|e|ą|e}} w sumie $1 {{PLURAL:$1|cel|cele|celów}}.',
+	'push-button-all' => 'Przesuń wszystkie',
+	'push-tab-last-edit' => 'Ostatnia edycja autorstwa $1 na stronie $2: $3.',
+	'push-tab-not-created' => 'Ta strona jeszcze nie istnieje.',
+	'push-tab-push-options' => 'Opcje przesuwania:',
+	'push-tab-inc-templates' => 'Dołącz szablony',
+	'push-tab-used-templates' => '(Wykorzystywan{{PLURAL:$2|y szablon|e szablony}}: $1)',
+	'push-tab-no-used-templates' => '(Na tej stronie nie są wykorzystywane żadne szablony.)',
+	'push-tab-inc-files' => 'Dołącz osadzone pliki',
+	'push-tab-err-fileinfo' => 'Nie udało się ustalić, jakie pliki są wykorzystywane na tej stronie. Nie przesunięto żadnych.',
+	'push-tab-err-filepush-unknown' => 'Przesuwanie pliku nie powiodło się z nieznanego powodu.',
+	'push-tab-err-filepush' => 'Przesuwanie pliku nie powiodło się: $1',
+	'push-tab-embedded-files' => 'Osadzone pliki:',
+	'push-tab-no-embedded-files' => '(Na tej stronie nie ma osadzonych żadnych plików.)',
+	'push-tab-files-override' => 'Te pliki już istnieją: $1',
+	'push-tab-template-override' => 'Te szablony już istnieją: $1',
+	'push-tab-err-uploaddisabled' => 'Przesyłanie plików jest wyłączone. Upewnij się, że ustawienia $wgEnableUploads i $wgAllowCopyUploads w pliku konfiguracyjnym LocalSettings.php wiki docelowej ustawione na true.',
+	'special-push' => 'Przesuń strony',
+	'push-special-description' => 'Ta strona pozwala umieścić zawartość jednej lub wielu stron na jednej lub wielu innych stronach internetowych typu wiki opartych na silniku MediaWiki.
+
+Aby „przesunąć” strony, wpisz ich tytuły w polu tekstowym poniżej (jeden tytuł w jednej linii) i wciśnij przycisk „Przesuń wszystkie”. Może to zająć dłuższą chwilę.',
+	'push-special-pushing-desc' => 'Przesuwanie $2 {{PLURAL:$2|strony|stron}} do $1...',
+	'push-special-button-text' => 'Przesuń strony',
+	'push-special-target-is' => 'Docelowa wiki: $1',
+	'push-special-select-targets' => 'Docelowe wiki:',
+	'push-special-item-pushing' => '$1: Przesuwanie',
+	'push-special-item-completed' => '$1: Przesuwanie zakończone',
+	'push-special-item-failed' => '$1: Przesuwanie nie powiodło się: $2',
+	'push-special-push-done' => 'Przesuwanie zakończone',
+	'push-special-err-token-failed' => 'Nie można uzyskać tokenu edycyjnego na docelowej wiki.',
+	'push-special-err-pageget-failed' => 'Nie udało się uzyskać lokalnej zawartości strony.',
+	'push-special-err-push-failed' => 'Docelowa wiki odrzuciła przesuwaną stronę.',
+	'push-special-inc-files' => 'Dołącz osadzone pliki',
+	'push-special-err-imginfo-failed' => 'Nie udało się określić, czy jakiekolwiek pliki powinny zostać przesunięte.',
+	'push-special-obtaining-fileinfo' => '$1: Pobieranie informacji o pliku...',
+	'push-special-pushing-file' => '$1: Przesuwanie pliku $2...',
+	'push-special-return' => 'Przesuń więcej stron',
+	'push-api-err-nocurl' => 'cURL nie jest zainstalowany.
+Na publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false, na prywatnej wiki zainstaluj cURL.',
+	'push-api-err-nofilesupport' => 'Lokalne MediaWiki nie obsługuje przesyłania plików.
+Na publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false.
+Na prywatnej wiki zastosuj patch linkd z dokumentacji rozszerzenia Push lub zaktualizuj MediaWiki.',
 );
 
 /** Piedmontese (Piemontèis)
@@ -1882,6 +1944,16 @@ $messages['ro'] = array(
 	'push-tab-embedded-files' => 'Fișiere încorporate:',
 );
 
+/** tarandíne (tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'push-remote-page-link' => '$1 sus a $2',
+	'push-remote-page-link-full' => 'Vide $1 sus a $2',
+	'push-special-target-is' => 'Uicchi de destinazione: $1',
+	'push-special-select-targets' => 'Uicchi de destinazione:',
+);
+
 /** Russian (русский)
  * @author DCamer
  * @author Lockal
@@ -1972,6 +2044,7 @@ $messages['si'] = array(
 	'group-filepusher' => 'ගොනු තෙරපන්නෝ',
 	'group-filepusher-member' => '{{GENDER:$1|ගොනු තෙරපන්නා}}',
 	'grouppage-filepusher' => '{{ns:project}}:ගොනු තෙරපන්නෝ',
+	'push-err-authentication' => '$1 හිදී සහතික කිරීම අසාර්ථකයි. $2',
 	'push-tab-text' => 'තෙරපන්න',
 	'push-button-text' => 'තෙරපන්න',
 	'push-button-pushing' => 'තෙරපමින්',
@@ -1981,11 +2054,13 @@ $messages['si'] = array(
 	'push-tab-title' => '$1 තෙරපන්න',
 	'push-targets' => 'තෙරපුම් ඉලක්කයන්',
 	'push-add-target' => 'ඉලක්කයක් එක් කරන්න',
+	'push-import-revision-message' => '$1 වෙතින් තෙරපන ලදී.',
 	'push-tab-push-to' => '$1 වෙත තෙරපන්න',
 	'push-remote-pages' => 'දුරස්ථ පිටු',
 	'push-remote-page-link' => '$1 මත $2',
 	'push-remote-page-link-full' => '$1 $2 මත නරඹන්න',
 	'push-button-all' => 'සියල්ලම තෙරපන්න',
+	'push-tab-last-edit' => 'අවසන් සංස්කරණය $2 $3 හිදී $1 විසිනි.',
 	'push-tab-not-created' => 'මෙම පිටුව තවමත් නොපවතියි.',
 	'push-tab-push-options' => 'තෙරපුම් විකල්පයන්:',
 	'push-tab-inc-templates' => 'සැකිලි ඇතුළත් කරන්න',
