@@ -1741,35 +1741,37 @@ $messages['pms'] = array(
 	'push-tab-inc-files' => "Comprende dj'archivi ancorporà",
 	'push-tab-err-fileinfo' => "A l'é nen podù otense che archivi a son dovrà dzora a costa pàgina. Gnun a l'é stàit possà.",
 	'push-tab-err-filepush-unknown' => "Ël posson dl'archivi a l'é falì për na rason nen conossùa.",
-	'push-tab-err-filepush' => "Argionta d'archivi falìa: $1",
+	'push-tab-err-filepush' => "Ël posson dl'archivi a l'é falì: $1",
 	'push-tab-embedded-files' => 'Archivi ancorporà:',
-	'push-tab-no-embedded-files' => '(gnun archivi a son ancorporà an sta pagina.)',
+	'push-tab-no-embedded-files' => '(Gnun archivi a son ancorporà an costa pàgina.)',
 	'push-tab-files-override' => 'Sti archivi a esisto già: $1',
 	'push-tab-template-override' => 'Sti stamp a esisto già: $1',
 	'push-tab-err-uploaddisabled' => 'Ij cariagi a son pa abilità. Sigurte che $wgEnableUploads e $wgAllowCopyUploads a sio ampostà an LocalSettings.php dla wiki destinassion.',
-	'special-push' => 'Gionta pagine',
-	'push-special-description' => "Sta pagina at abìlita a gionté ël contnù d'un-a o pi pagine a un-a o pi wiki MediaWiki.",
-	'push-special-pushing-desc' => 'Gionté $2 {{PLURAL:$2|pagina|paggine}} a $1...',
-	'push-special-button-text' => 'Gionta pagine',
+	'special-push' => 'Pàgine da possé',
+	'push-special-description' => "Costa pàgina a lo abìlita a possé ël contnù d'un-a o pi pàgine vers un-a o pi wiki ëd MediaWiki.
+
+Për possé le pàgine, ch'a buta ij tìtoj ant la zòna ëd test sì-sota, un tìtol për linia e ch'a sgnaca ansima a «Possé tut». Për livré sòn a peul andeje dël temp.",
+	'push-special-pushing-desc' => 'Posson ëd $2 {{PLURAL:$2|pàgina|pàgine}} vers $1...',
+	'push-special-button-text' => 'Pàgine da possé',
 	'push-special-target-is' => 'Wiki ëd destinassion: $1',
 	'push-special-select-targets' => 'Wiki ëd destinassion:',
 	'push-special-item-pushing' => '$1: Gionté',
-	'push-special-item-completed' => '$1: Argionta completà',
-	'push-special-item-failed' => '$1: Gionta falìa: $2',
-	'push-special-push-done' => 'Argionta completà',
+	'push-special-item-completed' => '$1: Posson completà',
+	'push-special-item-failed' => "$1: ël posson a l'é falì: $2",
+	'push-special-push-done' => 'Posson completà',
 	'push-special-err-token-failed' => 'As peul pa otense un geton ëd modìfica dzor la wiki ëd destinassion.',
-	'push-special-err-pageget-failed' => 'As peul pa otense ël contnù dla pagina local.',
-	'push-special-err-push-failed' => 'La wiki destinassion a arfuda la pagina giontà.',
-	'push-special-inc-files' => 'Comprend archivi ancorporà',
-	'push-special-err-imginfo-failed' => 'As peul pa determinesse se minca archivi a deuve esse giontà.',
-	'push-special-obtaining-fileinfo' => "$1: Oten-e anformassion dj'archivi...",
-	'push-special-pushing-file' => '$1: Gionté archivi $2...',
-	'push-special-return' => 'Gionta pi pagine',
+	'push-special-err-pageget-failed' => 'As peul pa otense ël contnù dla pàgina local.',
+	'push-special-err-push-failed' => 'La wiki destinassion a arfuda la pàgina possà.',
+	'push-special-inc-files' => "Comprende dj'archivi ancorporà",
+	'push-special-err-imginfo-failed' => "As peul pa determinesse se n'archivi a dev esse possà.",
+	'push-special-obtaining-fileinfo' => "$1: Oteniment d'anformassion an sl'archivi...",
+	'push-special-pushing-file' => "$1: possé l'archivi $2...",
+	'push-special-return' => "Possé pi 'd pàgine",
 	'push-api-err-nocurl' => 'cURL a l\'é pa istalà.
-Ampòsta $egPushDirectFileUploads a fàuss dzora le wiki pùbliche, o istala cURL për wiki privà',
-	'push-api-err-nofilesupport' => 'La MediaWiki local a l\'ha pa apògg për spedì archivi.
-Dzor wiki pùbliche, ampòsta $egPushDirectFileUploads a fàuss.
-Dzor wiki privà, àplica ël pachèt linkd da la documentassion ëd Gionta o agiorna MediaWiki midema.',
+Amposté $egPushDirectFileUploads a fàuss për le wiki pùbliche, o anstalé cURL për le wiki privà',
+	'push-api-err-nofilesupport' => 'La MediaWiki local a manten nen la spedission d\'archivi.
+Dzora le wiki pùbliche, amposté $egPushDirectFileUploads a fàuss.
+Dzora le wiki privà, apliché ël pachèt linkd da la documentassion ëd Possé o agiorné MediaWiki midema.',
 );
 
 /** Portuguese (português)
