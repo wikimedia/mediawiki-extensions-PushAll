@@ -1953,6 +1953,7 @@ $messages['ro'] = array(
 $messages['roa-tara'] = array(
 	'push-remote-page-link' => '$1 sus a $2',
 	'push-remote-page-link-full' => 'Vide $1 sus a $2',
+	'push-button-all' => 'Cazze tutte',
 	'push-special-target-is' => 'Uicchi de destinazione: $1',
 	'push-special-select-targets' => 'Uicchi de destinazione:',
 );
