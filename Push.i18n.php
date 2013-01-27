@@ -2273,8 +2273,30 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
+	'push-desc' => 'Lightweight扩展推送内容到其他wiki',
+	'right-push' => '授权使用推送功能。',
+	'right-bulkpush' => '授权使用批量推送功能（在Special:Push）。',
+	'right-pushadmin' => '授权修改推送目标和推送设置。',
+	'action-push' => '推送页面',
+	'action-bulkpush' => '批量推送页面',
+	'action-pushadmin' => '配置推送',
+	'group-pusher' => '推送者',
+	'group-pusher-member' => '{{GENDER:$1|推送者}}',
+	'grouppage-pusher' => '{{ns:project}}:推送者',
+	'group-bulkpusher' => '批量推送者',
+	'group-bulkpusher-member' => '{{GENDER:$1|批量推送者}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:批量推送者',
+	'group-filepusher' => '文件推送者',
+	'group-filepusher-member' => '{{GENDER:$1|文件推送者}}',
+	'grouppage-filepusher' => '{{ns:project}}:文件推送者',
+	'push-err-captacha' => '由于验证码，无法推送到 $1。',
+	'push-err-captcha-page' => '由于验证码，无法推送页面 $1 到所有目标。',
+	'push-err-authentication' => '在 $1 身份验证失败。$2',
+	'push-tab-text' => '推送',
+	'push-button-text' => '推送',
 	'push-add-target' => '新增目标',
 	'push-tab-inc-templates' => '包含模板',
 );
