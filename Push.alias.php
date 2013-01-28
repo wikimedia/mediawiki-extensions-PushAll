@@ -85,7 +85,7 @@ $specialPageAliases['nb'] = array(
 	'Push' => array( 'Dytt' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Push' => array( 'Deursturen' ),
 );
