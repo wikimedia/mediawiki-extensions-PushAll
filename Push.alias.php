@@ -80,7 +80,7 @@ $specialPageAliases['ml'] = array(
 	'Push' => array( 'ഉന്തുക' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'Push' => array( 'Dytt' ),
 );
