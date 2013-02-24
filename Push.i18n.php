@@ -147,15 +147,71 @@ $messages['qqq'] = array(
 	'group-bulkpusher.js' => '{{doc-group|bulkpusher|js}}',
 	'group-filepusher.css' => '{{doc-group|filepusher|css}}',
 	'group-filepusher.js' => '{{doc-group|filepusher|js}}',
-	'push-err-authentication' => '$1: wiki name, $2: optional detailed error message',
-	'push-remote-page-link' => '$1: page name, $2: wiki name',
-	'push-remote-page-link-full' => '$1: page name, $2: wiki name',
+	'push-err-captacha' => 'Parameters:
+* $1 - the push target name',
+	'push-err-captcha-page' => 'Parameters:
+* $1 - pagename',
+	'push-err-authentication' => 'Parameters:
+* $1 - wiki name
+* $2 - optional detailed error message',
+	'push-tab-text' => '{{Identical|Push}}',
+	'push-button-text' => '{{Identical|Push}}',
+	'push-tab-title' => 'Parameters:
+* $1 - page title',
+	'push-import-revision-message' => 'Parameters:
+* $1 - site name',
+	'push-tab-no-targets' => '{{doc-important|Do not translate "<code>LocalSettings.php</code>".}}',
+	'push-remote-page-link' => 'Parameters:
+* $1 - page name
+* $2 - wiki name',
+	'push-remote-page-link-full' => 'Parameters:
+* $1 - page name
+* $2 - wiki name',
+	'push-targets-total' => 'Parameters:
+* $1 - number of targets',
+	'push-tab-last-edit' => 'Parameters:
+* $1 - username
+* $2 - date
+* $3 - time',
 	'push-tab-inc-templates' => 'This message is about a transfer of several data in one go. Templates can be a part of the transfer.',
+	'push-tab-used-templates' => 'Parameters:
+* $1 - list of templates
+* $2 - number of templates',
 	'push-tab-embedded-files' => '{{Identical|Embedded file}}
 
 This message is about a transfer of several data in one go. Image files can be a part of the transfer.',
-	'push-tab-files-override' => 'JavaScript message, no PLURAL available',
-	'push-tab-template-override' => 'JavaScript message, no PLURAL available',
+	'push-tab-files-override' => 'JavaScript message, no PLURAL available. Parameters:
+* $1 - list of files (1 or more)',
+	'push-tab-template-override' => 'JavaScript message, no PLURAL available. Parameters:
+* $1 - list of templates (1 or more)',
+	'push-tab-err-uploaddisabled' => '{{doc-important|Do not translate "<code>$wgEnableUploads</code>", "<code>$wgAllowCopyUploads</code>" and "<code>LocalSettings.php</code>".}}',
+	'push-special-pushing-desc' => 'Parameters:
+* $1 - list of links (<code><nowiki>[targetURL targetName]</nowiki></code>)
+* $2 - number of pages',
+	'push-special-target-is' => 'Parameters:
+* $1 - a push target
+If there are 2 or more targets, the following message will be used instead of this message:
+* {{msg-mw|push-special-select-targets}}',
+	'push-special-select-targets' => 'Used when there are 2 or more targets.
+
+This message is followed by checkboxes which allow to select the target wikis.
+
+If there is 1 target, the following message will be used instead of this message:
+* {{msg-mw|Push-special-target-is}}',
+	'push-special-item-pushing' => 'Parameters:
+* $1 - filename',
+	'push-special-item-completed' => 'Parameters:
+* $1 - filename',
+	'push-special-item-failed' => 'Parameters:
+* $1 - page name
+* $2 - error message',
+	'push-special-obtaining-fileinfo' => 'Parameters:
+* $1 - filename',
+	'push-special-pushing-file' => 'Parameters:
+* $1 - page name
+* $2 - file name',
+	'push-api-err-nocurl' => '{{doc-important|Do not translate "<code>$egPushDirectFileUploads</code>".}}',
+	'push-api-err-nofilesupport' => '{{doc-important|Do not translate "<code>$egPushDirectFileUploads</code>".}}',
 );
 
 /** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
@@ -1170,7 +1226,7 @@ Imposta \$egPushDirectFileUploads a 'false' sui wiki pubblici, o installa cURL p
 $messages['ja'] = array(
 	'push-desc' => '他のウィキにコンテンツをプッシュする軽量な拡張機能',
 	'right-push' => 'プッシュ機能を使用',
-	'right-bulkpush' => '一括プッシュ機能（Special:Push）を使用',
+	'right-bulkpush' => '一括プッシュ機能 (Special:Push) を使用',
 	'right-pushadmin' => 'プッシュの対象や設定を変更',
 	'action-push' => 'ページのプッシュ',
 	'action-bulkpush' => 'ページを一括プッシュ',
@@ -1201,12 +1257,12 @@ $messages['ja'] = array(
 	'push-tab-push-to' => '$1 へのプッシュ',
 	'push-remote-pages' => '(リモート ページ)',
 	'push-button-all' => 'すべてプッシュ',
-	'push-tab-push-options' => 'プッシュのオプション：',
+	'push-tab-push-options' => 'プッシュのオプション:',
 	'push-tab-inc-templates' => 'テンプレートを含める',
 	'push-tab-err-filepush' => 'ファイルのプッシュに失敗しました: $1',
 	'push-tab-no-embedded-files' => '(このページにはファイルは埋め込まれていません。)',
-	'push-tab-files-override' => 'これらのファイルは既に存在しています：$1',
-	'push-tab-template-override' => 'これらのテンプレートは既に存在しています：$1',
+	'push-tab-files-override' => '以下のファイルは既に存在します: $1',
+	'push-tab-template-override' => '以下のテンプレートは既に存在します: $1',
 	'push-special-pushing-desc' => '$2 {{PLURAL:$2|件のページ}}を $1 にプッシュ中...',
 	'push-special-button-text' => 'ページをプッシュ',
 	'push-special-target-is' => '対象のウィキ: $1',
