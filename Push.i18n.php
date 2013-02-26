@@ -177,9 +177,8 @@ $messages['qqq'] = array(
 	'push-tab-used-templates' => 'Parameters:
 * $1 - list of templates
 * $2 - number of templates',
-	'push-tab-embedded-files' => '{{Identical|Embedded file}}
-
-This message is about a transfer of several data in one go. Image files can be a part of the transfer.',
+	'push-tab-embedded-files' => 'This message is about a transfer of several data in one go. Image files can be a part of the transfer.
+{{Identical|Embedded file}}',
 	'push-tab-files-override' => 'JavaScript message, no PLURAL available. Parameters:
 * $1 - list of files (1 or more)',
 	'push-tab-template-override' => 'JavaScript message, no PLURAL available. Parameters:
