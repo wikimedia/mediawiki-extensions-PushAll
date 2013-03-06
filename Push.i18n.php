@@ -480,6 +480,15 @@ $messages['diq'] = array(
 	'push-tab-no-used-templates' => '(Na pela dı şabloni çinyê)',
 );
 
+/** British English (British English)
+ * @author Shirayuki
+ */
+$messages['en-gb'] = array(
+	'right-push' => 'Authorisation to use push functionality.',
+	'right-bulkpush' => 'Authorisation to use bulk push functionality (ie Special:Push).',
+	'right-pushadmin' => 'Authorisation to modify push targets and push settings.',
+);
+
 /** Spanish (español)
  * @author Armando-Martin
  */
