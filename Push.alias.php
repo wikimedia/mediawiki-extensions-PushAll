@@ -99,3 +99,8 @@ $specialPageAliases['nl'] = array(
 $specialPageAliases['scn'] = array(
 	'Push' => array( 'Spingi' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$specialPageAliases['zh-hans'] = array(
+	'Push' => array( '推' ),
+);
