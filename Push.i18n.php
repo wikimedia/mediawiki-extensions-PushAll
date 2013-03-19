@@ -161,6 +161,8 @@ $messages['qqq'] = array(
 	'push-import-revision-message' => 'Parameters:
 * $1 - site name',
 	'push-tab-no-targets' => '{{doc-important|Do not translate "<code>LocalSettings.php</code>".}}',
+	'push-tab-push-to' => 'Unused at this time. Parameters:
+* $1 - ...',
 	'push-remote-page-link' => 'Parameters:
 * $1 - page name
 * $2 - wiki name',
@@ -177,13 +179,19 @@ $messages['qqq'] = array(
 	'push-tab-used-templates' => 'Parameters:
 * $1 - list of templates
 * $2 - number of templates',
+	'push-tab-err-filepush-unknown' => 'Used as <code>$1</code> in {{msg-mw|Push-tab-err-filepush}}.',
+	'push-tab-err-filepush' => 'Parameters:
+* $1 - error message. Any one of the following messages:
+** {{msg-mw|Push-tab-err-filepush-unknown}}
+** {{msg-mw|Push-tab-err-uploaddisabled}}',
 	'push-tab-embedded-files' => 'This message is about a transfer of several data in one go. Image files can be a part of the transfer.
 {{Identical|Embedded file}}',
 	'push-tab-files-override' => 'JavaScript message, no PLURAL available. Parameters:
 * $1 - list of files (1 or more)',
 	'push-tab-template-override' => 'JavaScript message, no PLURAL available. Parameters:
 * $1 - list of templates (1 or more)',
-	'push-tab-err-uploaddisabled' => '{{doc-important|Do not translate "<code>$wgEnableUploads</code>", "<code>$wgAllowCopyUploads</code>" and "<code>LocalSettings.php</code>".}}',
+	'push-tab-err-uploaddisabled' => '{{doc-important|Do not translate "<code>$wgEnableUploads</code>", "<code>$wgAllowCopyUploads</code>" and "<code>LocalSettings.php</code>".}}
+Used as <code>$1</code> in {{msg-mw|Push-tab-err-filepush}}.',
 	'push-special-pushing-desc' => 'Parameters:
 * $1 - list of links (<code><nowiki>[targetURL targetName]</nowiki></code>)
 * $2 - number of pages',
@@ -1267,10 +1275,12 @@ $messages['ja'] = array(
 	'push-button-all' => 'すべてプッシュ',
 	'push-tab-push-options' => 'プッシュのオプション:',
 	'push-tab-inc-templates' => 'テンプレートを含める',
-	'push-tab-err-filepush' => 'ファイルのプッシュに失敗しました: $1',
+	'push-tab-err-filepush-unknown' => 'ファイルのプッシュが、不明な理由により失敗しました。',
+	'push-tab-err-filepush' => 'ファイルのプッシュに失敗: $1',
 	'push-tab-no-embedded-files' => '(このページにはファイルは埋め込まれていません。)',
 	'push-tab-files-override' => '以下のファイルは既に存在します: $1',
 	'push-tab-template-override' => '以下のテンプレートは既に存在します: $1',
+	'push-tab-err-uploaddisabled' => 'アップロードが有効になっていません。アップロード先のウィキの LocalSettings.php で $wgEnableUploads および $wgAllowCopyUploads が true に設定されていることを確認してください。',
 	'push-special-pushing-desc' => '$2 {{PLURAL:$2|件のページ}}を $1 にプッシュ中...',
 	'push-special-button-text' => 'ページをプッシュ',
 	'push-special-target-is' => '対象のウィキ: $1',
