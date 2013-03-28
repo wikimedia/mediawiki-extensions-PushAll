@@ -192,6 +192,7 @@ $messages['qqq'] = array(
 * $1 - list of templates (1 or more)',
 	'push-tab-err-uploaddisabled' => '{{doc-important|Do not translate "<code>$wgEnableUploads</code>", "<code>$wgAllowCopyUploads</code>" and "<code>LocalSettings.php</code>".}}
 Used as <code>$1</code> in {{msg-mw|Push-tab-err-filepush}}.',
+	'special-push' => '{{doc-special|Push}}',
 	'push-special-pushing-desc' => 'Parameters:
 * $1 - list of links (<code><nowiki>[targetURL targetName]</nowiki></code>)
 * $2 - number of pages',
