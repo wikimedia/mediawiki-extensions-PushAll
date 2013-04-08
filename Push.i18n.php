@@ -2379,6 +2379,7 @@ $messages['yi'] = array(
 );
 
 /** Simplified Chinese (中文（简体）‎)
+ * @author Kuailong
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -2404,7 +2405,10 @@ $messages['zh-hans'] = array(
 	'push-tab-text' => '推送',
 	'push-button-text' => '推送',
 	'push-add-target' => '新增目标',
+	'push-tab-not-created' => '此页面尚不存在。',
 	'push-tab-inc-templates' => '包含模板',
+	'push-tab-no-used-templates' => '（本页面未使用模板。）',
+	'push-special-select-targets' => '目标wiki：',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
