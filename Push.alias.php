@@ -104,3 +104,8 @@ $specialPageAliases['scn'] = array(
 $specialPageAliases['zh-hans'] = array(
 	'Push' => array( '推' ),
 );
+
+/** Traditional Chinese (中文（繁體）‎) */
+$specialPageAliases['zh-hant'] = array(
+	'Push' => array( '推' ),
+);
