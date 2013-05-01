@@ -1962,6 +1962,7 @@ Nas wikis privadas, aplique o patch referido na documentação do Push, ou actua
 
 /** Brazilian Portuguese (português do Brasil)
  * @author Jaideraf
+ * @author Luckas
  */
 $messages['pt-br'] = array(
 	'push-desc' => 'Uma extensão leve para a replicação de conteúdo para outros wikis',
@@ -2010,7 +2011,7 @@ $messages['pt-br'] = array(
 	'push-tab-inc-files' => 'Incluir arquivos incorporados',
 	'push-tab-err-fileinfo' => 'Não foi possível determinar quais arquivos são utilizados nesta página. Não foi replicado nenhum arquivo.',
 	'push-tab-err-filepush-unknown' => 'A replicação externa do arquivo falhou por uma razão desconhecida.',
-	'push-tab-err-filepush' => 'A replicação externa do ficheiro falhou: $1',
+	'push-tab-err-filepush' => 'A replicação externa do arquivo falhou: $1',
 	'push-tab-embedded-files' => 'Arquivos incorporados:',
 	'push-tab-no-embedded-files' => '(Não há arquivos incorporados nesta página).',
 	'push-tab-files-override' => 'Esses arquivos já existem: $1',
