@@ -2061,6 +2061,7 @@ $messages['roa-tara'] = array(
 	'push-tab-text' => 'Spinge',
 	'push-button-text' => 'Spinge',
 	'push-tab-title' => 'Spinge $1',
+	'push-add-target' => "Aggiunge 'na destinazione",
 	'push-tab-push-to' => 'Spinge sus a $1',
 	'push-remote-page-link' => '$1 sus a $2',
 	'push-remote-page-link-full' => 'Vide $1 sus a $2',
