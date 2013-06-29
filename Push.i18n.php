@@ -156,6 +156,7 @@ $messages['qqq'] = array(
 * $2 - optional detailed error message',
 	'push-tab-text' => '{{Identical|Push}}',
 	'push-button-text' => '{{Identical|Push}}',
+	'push-button-pushing' => '{{Identical|Pushing}}',
 	'push-tab-title' => 'Parameters:
 * $1 - page title',
 	'push-import-revision-message' => 'Parameters:
@@ -207,7 +208,8 @@ This message is followed by checkboxes which allow to select the target wikis.
 If there is 1 target, the following message will be used instead of this message:
 * {{msg-mw|Push-special-target-is}}',
 	'push-special-item-pushing' => 'Parameters:
-* $1 - filename',
+* $1 - filename
+{{Identical|Pushing}}',
 	'push-special-item-completed' => 'Parameters:
 * $1 - filename',
 	'push-special-item-failed' => 'Parameters:
