@@ -37,7 +37,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'Push' => array( 'Bıploğne' ),
+	'Push' => array( 'Bıploğné' ),
 );
 
 /** Persian (فارسی) */
