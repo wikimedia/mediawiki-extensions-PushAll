@@ -110,7 +110,7 @@ To push pages, enter the titles in the text box below, one title per line and hi
 Set $egPushDirectFileUploads to false on public wikis, or install cURL for private wikis',
 	'push-api-err-nofilesupport' => 'The local MediaWiki does not have support for posting files.
 On public wikis, set $egPushDirectFileUploads to false.
-On private wikis, apply the patch linkd from the Push documentation or update MediaWiki itself.',
+On private wikis, apply the patch linked from the Push documentation or update MediaWiki itself.',
 );
 
 /** Message documentation (Message documentation)
