@@ -1890,6 +1890,7 @@ Dzora le wiki privà, apliché ël pachèt linkd da la documentassion ëd Possé
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Luckas
  */
 $messages['pt'] = array(
 	'push-desc' => 'Uma extensão ligeira para replicação externa de conteúdos para outras wikis',
@@ -1965,7 +1966,7 @@ Para fazer a replicação externa de páginas, introduza os respectivos títulos
 Defina $egPushDirectFileUploads como "false" nas wikis públicas, ou instale o cURL para wikis privadas',
 	'push-api-err-nofilesupport' => 'O MediaWiki local não tem suporte para a publicação de ficheiros.
 Nas wikis públicas, defina $egPushDirectFileUploads como "false".
-Nas wikis privadas, aplique o patch referido na documentação do Push, ou actualize o próprio MediaWiki.',
+Nas wikis privadas, aplique o patch referido na documentação do Push, ou atualize o próprio MediaWiki.',
 );
 
 /** Brazilian Portuguese (português do Brasil)
