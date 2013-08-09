@@ -79,8 +79,8 @@ $messages['en'] = array(
 	'push-tab-err-filepush' => 'File push failed: $1',	
 	'push-tab-embedded-files' => 'Embedded files:',
 	'push-tab-no-embedded-files' => '(No files are embedded in this page.)',
-	'push-tab-files-override' => 'These files already exist: $1',
-	'push-tab-template-override' => 'These templates already exist: $1',
+	'push-tab-files-override' => '{{PLURAL:$2|This file already exists|These files already exist}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|This template already exists|These templates already exist}}: $1',
 	'push-tab-err-uploaddisabled' => 'Uploads are not enabled. Make sure $wgEnableUploads and $wgAllowCopyUploads are set to true in LocalSettings.php of the target wiki.',
 
 	// Special page
@@ -188,9 +188,11 @@ $messages['qqq'] = array(
 	'push-tab-embedded-files' => 'This message is about a transfer of several data in one go. Image files can be a part of the transfer.
 {{Identical|Embedded file}}',
 	'push-tab-files-override' => 'JavaScript message, no PLURAL available. Parameters:
-* $1 - list of files (1 or more)',
+* $1 - list of files (1 or more)
+* $2 - count of them',
 	'push-tab-template-override' => 'JavaScript message, no PLURAL available. Parameters:
-* $1 - list of templates (1 or more)',
+* $1 - list of templates (1 or more)
+* $2 - count of them',
 	'push-tab-err-uploaddisabled' => '{{doc-important|Do not translate "<code>$wgEnableUploads</code>", "<code>$wgAllowCopyUploads</code>" and "<code>LocalSettings.php</code>".}}
 Used as <code>$1</code> in {{msg-mw|Push-tab-err-filepush}}.',
 	'special-push' => '{{doc-special|Push}}',

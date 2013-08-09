@@ -219,7 +219,10 @@
 			
 			if ( overideTemplates.length > 0 ) {
 				$( '#targettemplateconflicts' + targetId )
-					.text( mw.msg( 'push-tab-template-override', overideTemplates.join( ', ' ) ) )
+					.text( mw.msg( 'push-tab-template-override',
+						overideTemplates.join( ', ' ),
+						overideTemplates.length
+					) )
 					.fadeIn( 'slow' );
 			}
 			else {
@@ -242,7 +245,10 @@
 			
 			if ( overideFiles.length > 0 ) {
 				$( '#targetfileconflicts' + targetId )
-					.text( mw.msg( 'push-tab-files-override', overideFiles.join( ', ' ) ) )
+					.text( mw.msg( 'push-tab-files-override',
+						overideFiles.join( ', ' ),
+						overideFiles.length
+					) )
 					.fadeIn( 'slow' );
 			}
 			else {

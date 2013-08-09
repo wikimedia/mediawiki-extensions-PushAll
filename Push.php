@@ -106,7 +106,7 @@ if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
 	
 	$wgResourceModules['ext.push.tab'] = $moduleTemplate + array(
 		'scripts' => 'includes/ext.push.tab.js',
-		'dependencies' => array(),
+		'dependencies' => array( 'mediawiki.jqueryMsg' ),
 		'messages' => $egPushJSMessages
 	);
 	
