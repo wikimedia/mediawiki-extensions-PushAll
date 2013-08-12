@@ -17,9 +17,9 @@ $messages = array();
 $messages['en'] = array(
 	'push-desc' => 'Lightweight extension to push content to other wikis',
 
-	'right-push' => 'Authorization to use push functionality.',
-	'right-bulkpush' => 'Authorization to use bulk push functionality (ie Special:Push).',
-	'right-pushadmin' => 'Authorization to modify push targets and push settings.',
+	'right-push' => 'Use push functionality',
+	'right-bulkpush' => 'Use bulk push functionality (i.e. Special:Push)',
+	'right-pushadmin' => 'Modify push targets and push settings',
 
 	'action-push' => 'push pages',
 	'action-bulkpush' => 'bulk push pages',
@@ -44,7 +44,7 @@ $messages['en'] = array(
 	'group-filepusher.css' => '/* CSS placed here will affect filepushers only */', # only translate this message to other languages if you have to change it
 	'group-filepusher.js'  => '/* JS placed here will affect filepushers only */', # only translate this message to other languages if you have to change it
 
-	'push-err-captacha' => 'Could not push to $1 due to captcha.',
+	'push-err-captacha' => 'Could not push to $1 due to CAPTCHA.',
 	'push-err-captcha-page' => 'Could not push page $1 to all targets due to CAPTCHA.',
 	'push-err-authentication' => 'Authentication at $1 failed. $2',
 
