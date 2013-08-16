@@ -2379,14 +2379,89 @@ Sa pribadong mga wiki, ilapat ang pantapal na nakakawing mula sa dokumentasyon n
 );
 
 /** Ukrainian (українська)
+ * @author Andriykopanytsia
  * @author Base
  * @author Steve.rusyn
+ * @author SteveR
  */
 $messages['uk'] = array(
 	'push-desc' => 'Невелике розширення для поширення вмісту до інших вікі',
 	'right-push' => 'Авторизуйтесь щоб використати цю функцію.',
+	'right-bulkpush' => 'Увійдіть для використання функції масового поширення (тобто Special:Push).',
+	'right-pushadmin' => 'Увійдіть для зміни цілей та налаштувань поширення',
+	'action-push' => 'сторінки поширення',
+	'action-bulkpush' => 'сторінки масового поширення',
+	'action-pushadmin' => 'налаштувати поширення',
+	'group-pusher' => 'Поширювачі',
+	'group-pusher-member' => '{{GENDER:$1|поширювач|поширювачка}}',
+	'grouppage-pusher' => '{{ns:project}}:Поширювачі',
+	'group-bulkpusher' => 'Масові поширювачі',
+	'group-bulkpusher-member' => '{{GENDER:$1|масовий поширювач|масова поширювачка}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:Масові поширювачі',
+	'group-filepusher' => 'Поширювачі файлів',
+	'group-filepusher-member' => '{{GENDER:$1|файловий поширювач|файлова поширювачка}}',
+	'grouppage-filepusher' => '{{ns:project}}:Файлові поширювачі',
+	'push-err-captacha' => 'Не може поширити до $1  через капчу.',
+	'push-err-captcha-page' => 'Не може поширити сторінку $1 до всіх цілей через капчу.',
+	'push-err-authentication' => 'Авторизація на $1 не вдалася. $2',
 	'push-tab-text' => 'Помістити',
 	'push-button-text' => 'Помістити',
+	'push-tab-desc' => 'Ця вкладка дозволяє розмістити поточну версію цієї сторінки на одну або декількох інших вікі.',
+	'push-button-pushing' => 'Поширення',
+	'push-button-pushing-files' => 'Поширювані файли',
+	'push-button-completed' => 'Поширення завершено',
+	'push-button-failed' => 'Поширення не вдалося',
+	'push-tab-title' => 'Поширення $1',
+	'push-targets' => 'Цілі поширення',
+	'push-add-target' => 'Додати ціль',
+	'push-import-revision-message' => 'Поширено від $1.',
+	'push-tab-no-targets' => 'Немає цілей для поширення. Будь ласка, додайте до вашого файлу LocalSettings.php.',
+	'push-tab-push-to' => 'Поширити на $1',
+	'push-remote-pages' => 'Віддалені сторінки',
+	'push-remote-page-link' => '$1 на $2',
+	'push-remote-page-link-full' => 'Перегляд $1 на $2',
+	'push-targets-total' => 'Всього $1 {{PLURAL:$1|ціль|цілі|цілей}}.',
+	'push-button-all' => 'Поширити усе',
+	'push-tab-last-edit' => 'Останнє редагування від $1 на $2 о $3.',
+	'push-tab-not-created' => 'Ця сторінка ще не існує.',
+	'push-tab-push-options' => 'Параметри поширення:',
+	'push-tab-inc-templates' => 'Включати шаблони',
+	'push-tab-used-templates' => '(Використано {{PLURAL:$2|шаблон|шаблони|шаблонів}}: $1)',
+	'push-tab-no-used-templates' => '(Шаблони не використовуються на цій сторінці.)',
+	'push-tab-inc-files' => 'Включати вбудовані файли',
+	'push-tab-err-fileinfo' => 'Не вдалося отримати які файли використовуються на цій сторінці. Жодний не був розміщений.',
+	'push-tab-err-filepush-unknown' => 'Збій поширення файлу з невідомої причини.',
+	'push-tab-err-filepush' => 'Збій поширення файлу: $1',
+	'push-tab-embedded-files' => 'Вбудовані файли:',
+	'push-tab-no-embedded-files' => '(Немає файлів вбудованих у цю сторінку).',
+	'push-tab-files-override' => 'Ці файли вже існують: $1',
+	'push-tab-template-override' => 'Ці шаблони вже існують: $1',
+	'push-tab-err-uploaddisabled' => 'Завантаження не увімкнені. Переконайтеся, що параметри $wgEnableUploads і $wgAllowCopyUploads у файлі налаштувань LocalSettings.php задані як true.',
+	'special-push' => 'Поширити сторінки',
+	'push-special-description' => 'Ця сторінка дозволяє поширити вміст однієї або декількох сторінок на одне або декілька інших вікі на рушії Медіавікі.
+
+Для того, щоб поширити сторінки, введіть назви в текстовому полі нижче, один заголовок на рядок та натисніть кнопку «Поширити все». Це може зайняти деякий час.',
+	'push-special-pushing-desc' => 'Поширення $2 {{PLURAL:$2|сторінки|сторінок}} на $1...',
+	'push-special-button-text' => 'Поширити сторінки',
+	'push-special-target-is' => 'Цільова вікі: $1',
+	'push-special-select-targets' => 'Цільові вікі:',
+	'push-special-item-pushing' => '$1: Поширення',
+	'push-special-item-completed' => '$1: Поширення завершено',
+	'push-special-item-failed' => '$1: Збій поширення: $2',
+	'push-special-push-done' => 'Поширення завершено',
+	'push-special-err-token-failed' => 'Не вдалося отримати маркер редагування на цільовій вікі.',
+	'push-special-err-pageget-failed' => 'Неможливо отримати локальний вміст сторінок.',
+	'push-special-err-push-failed' => 'Цільова вікі відмовилася розмістити сторінку.',
+	'push-special-inc-files' => 'Включати вбудовані файли',
+	'push-special-err-imginfo-failed' => 'Не вдалося визначити, чи є будь-які файли для поширення.',
+	'push-special-obtaining-fileinfo' => '$1: Отримання відомостей про файл...',
+	'push-special-pushing-file' => '$1: Поширення файлу $2...',
+	'push-special-return' => 'Поширити більше сторінок',
+	'push-api-err-nocurl' => 'cURL не встановлено.
+Задайте значення $egPushDirectFileUploads як false для громадських вікі або установіть cURL для приватних вікі',
+	'push-api-err-nofilesupport' => 'Локальна Медіавікі не підтримує відправку файлів.
+На загальнодоступній вікі задайте параметру $egPushDirectFileUploads значення false.
+На приватній вікі застосуйте патч, пов\'язаний з документацією про поширення або поновіть саму Медіавікі.',
 );
 
 /** Yiddish (ייִדיש)
