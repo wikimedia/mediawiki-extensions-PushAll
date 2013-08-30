@@ -147,10 +147,14 @@ $messages['qqq'] = array(
 	'group-bulkpusher.js' => '{{doc-group|bulkpusher|js}}',
 	'group-filepusher.css' => '{{doc-group|filepusher|css}}',
 	'group-filepusher.js' => '{{doc-group|filepusher|js}}',
-	'push-err-captacha' => 'Parameters:
-* $1 - the push target name',
-	'push-err-captcha-page' => 'Parameters:
-* $1 - pagename',
+	'push-err-captacha' => 'Used as error message. Parameters:
+* $1 - the push target name
+See also:
+* {{msg-mw|Push-err-captcha-page}}',
+	'push-err-captcha-page' => 'Used as error message. Parameters:
+* $1 - pagename
+See also:
+* {{msg-mw|Push-err-captacha}}',
 	'push-err-authentication' => 'Parameters:
 * $1 - wiki name
 * $2 - optional detailed error message',
@@ -403,12 +407,13 @@ $messages['bs'] = array(
 
 /** German (Deutsch)
  * @author Kghbln
+ * @author Metalhead64
  */
 $messages['de'] = array(
 	'push-desc' => 'Ermöglicht den einfachen Transfer von Inhalten eines Wikis in ein anderes',
-	'right-push' => 'Seiten in andere Wikis transferieren',
-	'right-bulkpush' => 'Seiten gesammelt in andere Wikis transferieren',
-	'right-pushadmin' => 'Transfereinstellungen und -ziele ändern',
+	'right-push' => 'Transferfunktionalität benutzen',
+	'right-bulkpush' => 'Sammeltransferfunktionalität benutzen (z.&nbsp;B. Special:Push)',
+	'right-pushadmin' => 'Transferziele und -einstellungen ändern',
 	'action-push' => 'Seiten zu transferieren',
 	'action-bulkpush' => 'Seiten gesammelt zu transferieren',
 	'action-pushadmin' => 'Transfereinstellungen zu konfigurieren',
@@ -596,9 +601,9 @@ $messages['fi'] = array(
  */
 $messages['fr'] = array(
 	'push-desc' => "Extension peu gourmande servant à pousser (''push'' en anglais) du contenu vers d'autres wikis",
-	'right-push' => "Autorisation d'utiliser les fonctionnalités de ''Push''.",
-	'right-bulkpush' => "Autorisation d'utiliser les fonctionnalités de ''Push'' en vrac (c'est-à-dire ''Special:Push'').",
-	'right-pushadmin' => "Autorisation de modifier les cibles et les paramètres de ''Push''.",
+	'right-push' => 'Utiliser la fonctionnalité de push.',
+	'right-bulkpush' => 'Utiliser la fonctionnalité de push en masse (c’est-à-dire Special:Push).',
+	'right-pushadmin' => 'Modifier les cibles et les paramètres de push.',
 	'action-push' => 'pousser les pages',
 	'action-bulkpush' => 'pousser les pages en masse',
 	'action-pushadmin' => 'configurer la publication',
@@ -1265,6 +1270,7 @@ $messages['ja'] = array(
 	'group-bulkpusher.js' => '/* ここに記述したJSは一括プッシュ担当者のみに影響します */',
 	'group-filepusher.css' => '/* ここに記述したCSSはファイルプッシュ担当者のみに影響します */',
 	'group-filepusher.js' => '/* ここに記述したJSはファイルプッシュ担当者のみに影響します */',
+	'push-err-captacha' => 'CAPTCHA のため、$1 にプッシュできませんでした。',
 	'push-tab-text' => 'プッシュ',
 	'push-button-text' => 'プッシュ',
 	'push-button-pushing' => 'プッシュ中',
@@ -1462,9 +1468,9 @@ $messages['ksh'] = array(
  */
 $messages['lb'] = array(
 	'push-desc' => 'Erweiderung déi en einfachen Transfert (Push) vun Inhalt op aner Wikien erméiglecht',
-	'right-push' => "Autorisatioun fir d'Push-Fonctionalitéit ze benotzen",
-	'right-bulkpush' => 'Autorisatioun fir méi Säite mateneen an aner Wikien ze transferéieren (kuckt Special:Push)',
-	'right-pushadmin' => "Autorisatioun fir d'Zil an d'Astellungen vun der Push-Fonctionalitéit z'änneren.",
+	'right-push' => 'Push-Fonctionalitéit ze benotzen',
+	'right-bulkpush' => 'Autorisatioun fir méi Säite mateneen an aner Wikien ze transferéieren (kuckt Special:Push)', # Fuzzy
+	'right-pushadmin' => "Autorisatioun fir d'Zil an d'Astellungen vun der Push-Fonctionalitéit z'änneren.", # Fuzzy
 	'action-push' => 'Säite transferéieren',
 	'action-bulkpush' => 'vill Säite mateneen ze transferéieren',
 	'action-pushadmin' => 'Transfert astellen',
@@ -1510,9 +1516,9 @@ $messages['lb'] = array(
  */
 $messages['mk'] = array(
 	'push-desc' => 'Мал додаток за пренесување на содржини од едно на други викија',
-	'right-push' => 'Потврда на сметка за да работи функцијата за пренесување.',
-	'right-bulkpush' => 'Потврда на сметка за да работи функцијата за групно пренесување (т.е. Special:Push).',
-	'right-pushadmin' => 'Потврда на сметка за измена на одредниците и поставките за пренесување.',
+	'right-push' => 'Употреба на функцијата за пренесување',
+	'right-bulkpush' => 'Употреба на функцијата за групно пренесување (т.е. Special:Push).',
+	'right-pushadmin' => 'Измена на одредниците и поставките за пренесување',
 	'action-push' => 'пренеси страници',
 	'action-bulkpush' => 'пренеси страници на големо',
 	'action-pushadmin' => 'поставки за преносот',
