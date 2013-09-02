@@ -191,12 +191,12 @@ See also:
 ** {{msg-mw|Push-tab-err-uploaddisabled}}',
 	'push-tab-embedded-files' => 'This message is about a transfer of several data in one go. Image files can be a part of the transfer.
 {{Identical|Embedded file}}',
-	'push-tab-files-override' => 'JavaScript message, no PLURAL available. Parameters:
+	'push-tab-files-override' => 'JavaScript message. Parameters:
 * $1 - list of files (1 or more)
-* $2 - count of them',
-	'push-tab-template-override' => 'JavaScript message, no PLURAL available. Parameters:
+* $2 - number of files, for PLURAL support',
+	'push-tab-template-override' => 'JavaScript message. Parameters:
 * $1 - list of templates (1 or more)
-* $2 - count of them',
+* $2 - number of templates, for PLURAL support',
 	'push-tab-err-uploaddisabled' => '{{doc-important|Do not translate "<code>$wgEnableUploads</code>", "<code>$wgAllowCopyUploads</code>" and "<code>LocalSettings.php</code>".}}
 Used as <code>$1</code> in {{msg-mw|Push-tab-err-filepush}}.',
 	'special-push' => '{{doc-special|Push}}',
@@ -461,8 +461,8 @@ $messages['de'] = array(
 	'push-tab-err-filepush' => 'Dateitransfer fehlgeschlagen: $1',
 	'push-tab-embedded-files' => 'Eingebettete Dateien:',
 	'push-tab-no-embedded-files' => '(Auf dieser Seite gibt es keine eingebetteten Dateien.)',
-	'push-tab-files-override' => 'Diese Dateien sind bereits vorhanden: $1', # Fuzzy
-	'push-tab-template-override' => 'Diese Vorlagen sind bereits vorhanden: $1', # Fuzzy
+	'push-tab-files-override' => '{{PLURAL:$2|Diese Datei ist|Diese Dateien sind}} bereits vorhanden: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|Diese Vorlage ist|Diese Vorlagen sind}} bereits vorhanden: $1',
 	'push-tab-err-uploaddisabled' => 'Das Hochladen von Dateien ist nicht möglich. Die Parameter <code>$wgEnableUploads</code> und <code>$wgAllowCopyUploads</code> müssen in der Datei LocalSettings.php des Zielwikis auf „true“ gesetzt werden.',
 	'special-push' => 'Seiten transferieren',
 	'push-special-description' => 'Diese Spezialseite ermöglicht es den Inhalt einer oder mehrerer Seiten zu einem oder mehreren anderen Wikis zu transferieren.
@@ -799,8 +799,8 @@ $messages['gl'] = array(
 	'push-tab-err-filepush' => 'O empuxe do ficheiro fallou: $1',
 	'push-tab-embedded-files' => 'Ficheiros embelecidos:',
 	'push-tab-no-embedded-files' => '(Non hai ningún ficheiro nesta páxina.)',
-	'push-tab-files-override' => 'Estes ficheiros xa existen: $1', # Fuzzy
-	'push-tab-template-override' => 'Estes modelos xa existen: $1', # Fuzzy
+	'push-tab-files-override' => '{{PLURAL:$2|Este ficheiro xa existe|Estes ficheiros xa existen}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|Este modelo xa existe|Estes modelos xa existen}}: $1',
 	'push-tab-err-uploaddisabled' => 'As cargas non están habilitadas. Asegúrese de que as configuracións $wgEnableUploads e mais $wgAllowCopyUploads estean definidas como "true" no ficheiro LocalSettings.php do wiki de destino.',
 	'special-push' => 'Empurrar as páxinas',
 	'push-special-description' => 'Esta páxina permite empurrar o contido dunha ou máis páxinas ata un ou máis wikis de MediaWiki.
@@ -1289,8 +1289,8 @@ $messages['ja'] = array(
 	'push-tab-err-filepush-unknown' => 'ファイルのプッシュが、不明な理由により失敗しました。',
 	'push-tab-err-filepush' => 'ファイルのプッシュに失敗: $1',
 	'push-tab-no-embedded-files' => '(このページにはファイルは埋め込まれていません。)',
-	'push-tab-files-override' => '以下のファイルは既に存在します: $1', # Fuzzy
-	'push-tab-template-override' => '以下のテンプレートは既に存在します: $1', # Fuzzy
+	'push-tab-files-override' => '{{PLURAL:$2|以下のファイルは既に存在します}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|以下のテンプレートは既に存在します}}: $1',
 	'push-tab-err-uploaddisabled' => 'アップロードが有効になっていません。アップロード先のウィキの LocalSettings.php で $wgEnableUploads および $wgAllowCopyUploads が true に設定されていることを確認してください。',
 	'push-special-pushing-desc' => '$2 {{PLURAL:$2|件のページ}}を $1 にプッシュ中...',
 	'push-special-button-text' => 'ページをプッシュ',
