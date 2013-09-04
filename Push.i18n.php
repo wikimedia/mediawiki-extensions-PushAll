@@ -1348,10 +1348,10 @@ $messages['ka'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'push-desc' => '다른 위키에 컨텐트를 밀어넣는 가벼운 확장 기능',
-	'right-push' => '밀기 기능을 사용하여 인증합니다.',
-	'right-bulkpush' => '대량 밀기 기능 (즉 특수기능:밀기)를 사용하여 인증합니다.',
-	'right-pushadmin' => '밀기 대상과 밀기 설정을 수정하여 인증합니다.',
+	'push-desc' => '다른 위키에 내용을 밀어넣는 가벼운 확장 기능',
+	'right-push' => '밀기 기능을 사용하기',
+	'right-bulkpush' => '대량 밀기 기능(즉 특수:밀기)를 사용하기',
+	'right-pushadmin' => '밀기 대상과 밀기 설정 수정하기',
 	'action-push' => '문서 밀기',
 	'action-bulkpush' => '문서 대량 밀기',
 	'action-pushadmin' => '밀기 구성',
@@ -1403,8 +1403,8 @@ $messages['ko'] = array(
 	'push-tab-err-filepush' => '파일 밀기 실패: $1',
 	'push-tab-embedded-files' => '포함한 파일:',
 	'push-tab-no-embedded-files' => '(이 문서에 포함한 파일이 없습니다.)',
-	'push-tab-files-override' => '파일이 이미 존재함: $1',
-	'push-tab-template-override' => '틀이 이미 존재함: $1',
+	'push-tab-files-override' => '{{PLURAL:$2|이 파일이 이미 존재합니다|이러한 파일이 이미 존재합니다}}: $1',
+	'push-tab-template-override' => '틀이 이미 존재함: $1', # Fuzzy
 	'push-tab-err-uploaddisabled' => '올리기가 활성화되지 않았습니다. 대상 위키의 LocalSettings.php의 $wgEnableUploads와 $wgAllowCopyUploads 설정이 true로 되어있는지 확인하세요.',
 	'special-push' => '문서 밀기',
 	'push-special-description' => '이 문서에는 하나 이상의 MediaWiki 위키에 하나 이상의 문서의 밀 콘텐트가 있습니다.
