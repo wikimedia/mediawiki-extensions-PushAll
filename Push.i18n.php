@@ -509,12 +509,13 @@ $messages['en-gb'] = array(
 
 /** Spanish (español)
  * @author Armando-Martin
+ * @author Fitoschido
  */
 $messages['es'] = array(
 	'push-desc' => 'Extensión ligera para transferir contenidos a otros wikis',
-	'right-push' => 'Autorización para usar la funcionalidad de transferencia.',
-	'right-bulkpush' => 'Autorización para usar la funcionalidad de transferencia en masa (es decir, Special:Push).',
-	'right-pushadmin' => 'Autorización para modificar los destinos y la configuración de las transferencias.',
+	'right-push' => 'Autorización para usar la funcionalidad de transferencia.', # Fuzzy
+	'right-bulkpush' => 'Autorización para usar la funcionalidad de transferencia en masa (es decir, Special:Push).', # Fuzzy
+	'right-pushadmin' => 'Autorización para modificar los destinos y la configuración de las transferencias.', # Fuzzy
 	'action-push' => 'transferir páginas',
 	'action-bulkpush' => 'transferir páginas en bloque',
 	'action-pushadmin' => 'configurar las transferencias',
@@ -560,8 +561,8 @@ $messages['es'] = array(
 	'push-tab-err-filepush' => 'Falló la transferencia del archivo: $1',
 	'push-tab-embedded-files' => 'Archivos incrustados:',
 	'push-tab-no-embedded-files' => '(No hay ningún archivo incrustado en esta página.)',
-	'push-tab-files-override' => 'Estos archivos ya existen: $1',
-	'push-tab-template-override' => 'Estas plantillas ya existen: $1',
+	'push-tab-files-override' => 'Estos archivos ya existen: $1', # Fuzzy
+	'push-tab-template-override' => '{{PLURAL:$2|Esta plantilla ya existe|Estas plantillas ya existen}}: $1',
 	'push-tab-err-uploaddisabled' => 'Las cargas no están habilitadas. Asegúrese de que las variables $wgEnableUploads y $wgAllowCopyUploads estén definidas con el valor "true" en el archivo LocalSettings.php del wiki de destino.',
 	'special-push' => 'Transferir páginas',
 	'push-special-description' => 'Esta página permite transferir el contenido de una o más páginas hasta uno o más wikis de MediaWiki.
@@ -1498,7 +1499,7 @@ $messages['lb'] = array(
 	'push-tab-inc-files' => 'Agebonne Fichieren abannen',
 	'push-tab-embedded-files' => 'Agebonne Fichieren:',
 	'push-tab-no-embedded-files' => '(An dëser Säit si keng Fichieren agebonn.)',
-	'push-tab-files-override' => 'Dës Fichiere gëtt et schonn: $1', # Fuzzy
+	'push-tab-files-override' => '{{PLURAL:$2|Dëse Fichier|Dës Fichiere}} gëtt et schonn: $1',
 	'push-tab-template-override' => 'Dës {{PLURAL:$2|Schabloun|Schabloune}} gëtt et schonn: $1',
 	'special-push' => 'Säiten transferéieren',
 	'push-special-button-text' => 'Säite pushen',
