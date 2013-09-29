@@ -1238,8 +1238,8 @@ $messages['it'] = array(
 	'push-tab-inc-files' => 'Includi file incorporati',
 	'push-tab-embedded-files' => 'File incorporati:',
 	'push-tab-no-embedded-files' => '(Nessun file è incorporato in questa pagina).',
-	'push-tab-files-override' => 'Questi file esistono già: $1',
-	'push-tab-template-override' => 'Questi template esistono già: $1',
+	'push-tab-files-override' => '{{PLURAL:$2|Questo file esiste|Questi file esistono}} già: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|Questo template esiste|Questi template esistono}} già: $1',
 	'push-special-target-is' => 'Wiki di destinazione: $1',
 	'push-special-select-targets' => 'Wiki di destinazione:',
 	'push-api-err-nocurl' => "cURL non è installato.
@@ -2163,18 +2163,22 @@ $messages['roa-tara'] = array(
  * @author DCamer
  * @author Lockal
  * @author MaxSem
+ * @author Okras
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'push-desc' => 'Небольшое расширение для помещения содержимого в другие вики',
-	'right-push' => 'Авторизуйтесь чтобы использовать эту функцию.',
-	'right-bulkpush' => 'Авторизуйтесь чтобы использовать эту объёмную функцию (например, Служебная:Push)',
-	'right-pushadmin' => 'Авторизуйтесь чтобы изменять настройки и направления размещения.',
+	'right-push' => 'Использовать функцию размещения в других вики-проектах',
+	'right-bulkpush' => 'Использовать массовый перенос (например, Служебная:Push)',
+	'right-pushadmin' => 'Изменять цели и настройки переноса',
+	'action-push' => 'перенос страниц',
+	'action-bulkpush' => 'массовый перенос страниц',
+	'action-pushadmin' => 'настройку переноса',
 	'push-err-captacha' => 'Не удалось разместить на $1 из-за капчи.',
 	'push-err-captcha-page' => 'Невозможно разместить страницу $1 по всем целям из-за CAPTCHA.',
 	'push-err-authentication' => 'Сбой аутентификации в $1. $2',
 	'push-tab-text' => 'Разместить',
-	'push-button-text' => 'Поместить',
+	'push-button-text' => 'Разместить',
 	'push-tab-desc' => 'Эта вкладка позволяет разместить текущею версию этой страницы на одну или нескольких других вики.',
 	'push-button-pushing' => 'Размещение',
 	'push-button-pushing-files' => 'Размещаемые файлы',
@@ -2203,8 +2207,8 @@ $messages['ru'] = array(
 	'push-tab-err-filepush' => 'Сбой размещения файла. $1',
 	'push-tab-embedded-files' => 'Встроенные файлы:',
 	'push-tab-no-embedded-files' => '(На этой странице нет встроенных файлов.)',
-	'push-tab-files-override' => 'Следующие файлы уже существуют: $1',
-	'push-tab-template-override' => 'Следующие шаблоны уже существуют: $1',
+	'push-tab-files-override' => '{{PLURAL:$2|Этот файл уже существует|Следующие файлы уже существуют}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|Этот шаблон уже существует|Следующие шаблоны уже существуют}}: $1',
 	'push-tab-err-uploaddisabled' => 'Загрузки не включены. Убедитесь, что параметры $wgEnableUploads и $wgAllowCopyUploads в файле настроек LocalSettings.php установлены в true.',
 	'special-push' => 'Разместить страницы',
 	'push-special-description' => 'Эта страница позволяет разместить содержимое одной или нескольких страниц на одну или несколько других вики-сайтов на движке MediaWiki.
