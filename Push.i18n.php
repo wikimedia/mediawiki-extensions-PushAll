@@ -1468,10 +1468,11 @@ $messages['ksh'] = array(
 
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'push-desc' => 'Erweiderung déi en einfachen Transfert (Push) vun Inhalt op aner Wikien erméiglecht',
-	'right-push' => 'Push-Fonctionalitéit ze benotzen',
+	'right-push' => 'Push-Funktionalitéit ze benotzen',
 	'right-bulkpush' => "Benotzt d'Funktionalitéit fir méi Säite mateneen an aner Wikien ze transferéieren (kuckt Special:Push)",
 	'right-pushadmin' => 'Push-Ziler a Push-Astellungen änneren',
 	'action-push' => 'Säite transferéieren',
@@ -1482,7 +1483,7 @@ $messages['lb'] = array(
 	'push-button-text' => 'Push',
 	'push-button-pushing-files' => 'Fichiere ginn transferéiert',
 	'push-button-completed' => 'Push ofgeschloss',
-	'push-button-failed' => 'Transfert huet net fonctionnéiert',
+	'push-button-failed' => 'Push huet net funktionéiert',
 	'push-tab-title' => '$1 transferéieren',
 	'push-add-target' => 'Zil derbäisetzen',
 	'push-tab-push-to' => 'Op $1 transferéieren',
@@ -1507,7 +1508,7 @@ $messages['lb'] = array(
 	'push-special-select-targets' => 'Zielwikien:',
 	'push-special-item-pushing' => '$1: Gett transferéiert...',
 	'push-special-item-completed' => '$1: Transfert ofgeschloss',
-	'push-special-item-failed' => '$1: Transfert huet net fonctionnéiert: $2',
+	'push-special-item-failed' => '$1: Push huet net funktionéiert: $2',
 	'push-special-push-done' => 'Transfert ofgeschloss',
 	'push-special-err-push-failed' => 'Zilwiki huet déi transferéiert Säit refuséiert.',
 	'push-special-inc-files' => 'Agebonne Fichieren abannen',
@@ -2174,6 +2175,15 @@ $messages['ru'] = array(
 	'action-push' => 'перенос страниц',
 	'action-bulkpush' => 'массовый перенос страниц',
 	'action-pushadmin' => 'настройку переноса',
+	'group-pusher' => 'Переносящие',
+	'group-pusher-member' => '{{GENDER:$1|переносящий|переносящая}}',
+	'grouppage-pusher' => '{{ns:project}}:Переносящие',
+	'group-bulkpusher' => 'Массово переносящие',
+	'group-bulkpusher-member' => '{{GENDER:$1|массовый переносчик}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:Массово переносящие',
+	'group-filepusher' => 'Переносящие файлы',
+	'group-filepusher-member' => '{{GENDER:$1|переносящий файлы|переносящая файлы}}',
+	'grouppage-filepusher' => '{{ns:project}}:Переносящие файлы',
 	'push-err-captacha' => 'Не удалось разместить на $1 из-за капчи.',
 	'push-err-captcha-page' => 'Невозможно разместить страницу $1 по всем целям из-за CAPTCHA.',
 	'push-err-authentication' => 'Сбой аутентификации в $1. $2',
