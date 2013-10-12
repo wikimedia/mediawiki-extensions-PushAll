@@ -103,7 +103,7 @@ $specialPageAliases['scn'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
-	'Push' => array( '推' ),
+	'Push' => array( '推送' ),
 );
 
 /** Traditional Chinese (中文（繁體）‎) */
