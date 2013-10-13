@@ -407,6 +407,13 @@ $messages['bs'] = array(
 	'push-special-item-completed' => '$1: Premještanje završeno',
 );
 
+/** Chechen (нохчийн)
+ * @author Умар
+ */
+$messages['ce'] = array(
+	'push-button-all' => 'Массо дӀатардан',
+);
+
 /** German (Deutsch)
  * @author Kghbln
  * @author Metalhead64
