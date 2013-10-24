@@ -2309,6 +2309,16 @@ $messages['si'] = array(
 	'push-special-return' => 'තවත් පිටු තෙරපන්න',
 );
 
+/** Swedish (svenska)
+ * @author Jopparn
+ */
+$messages['sv'] = array(
+	'push-err-authentication' => 'Autentisering på $1 misslyckades. $2',
+	'push-add-target' => 'Lägg till målet',
+	'push-remote-page-link-full' => 'Visa $1 på $2',
+	'push-targets-total' => 'Det finns totalt $1 {{PLURAL:$1|mål}}.',
+);
+
 /** Swahili (Kiswahili)
  * @author Stephenwanjau
  */
