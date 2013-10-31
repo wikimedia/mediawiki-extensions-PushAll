@@ -416,9 +416,11 @@ class SpecialPush extends SpecialPage {
 	 *
 	 * @since 0.1
 	 *
+	 * @param boolean $subPage
+	 *
 	 * @return Title
 	 */
-	public function getTitle() {
+	public function getTitle( $subPage = false ) {
 		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getTitle() : $GLOBALS['wgTitle'];
 	}
 
