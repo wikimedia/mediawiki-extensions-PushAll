@@ -509,9 +509,9 @@ $messages['diq'] = array(
  * @author Shirayuki
  */
 $messages['en-gb'] = array(
-	'right-push' => 'Authorisation to use push functionality.', # Fuzzy
-	'right-bulkpush' => 'Authorisation to use bulk push functionality (ie Special:Push).', # Fuzzy
-	'right-pushadmin' => 'Authorisation to modify push targets and push settings.', # Fuzzy
+	'right-push' => 'Use push functionality',
+	'right-bulkpush' => 'Use bulk push functionality (i.e. Special:Push)',
+	'right-pushadmin' => 'Modify push targets and push settings',
 );
 
 /** Spanish (español)
