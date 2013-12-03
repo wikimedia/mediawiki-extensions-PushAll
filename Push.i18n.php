@@ -1415,7 +1415,7 @@ $messages['ko'] = array(
 	'push-tab-template-override' => '{{PLURAL:$2|이 틀이 이미 존재합니다|이러한 틀이 이미 존재합니다}}: $1',
 	'push-tab-err-uploaddisabled' => '올리기가 활성화되지 않았습니다. 대상 위키의 LocalSettings.php의 $wgEnableUploads와 $wgAllowCopyUploads 설정이 true로 되어있는지 확인하세요.',
 	'special-push' => '문서 밀기',
-	'push-special-description' => '이 문서에는 하나 이상의 MediaWiki 위키에 하나 이상의 문서의 밀 콘텐트가 있습니다.
+	'push-special-description' => '이 문서에는 하나 이상의 미디어위키 위키에 하나 이상의 문서의 밀 콘텐트가 있습니다.
 
 문서를 밀려면 아래의 텍스트 상자에 한 줄에 하나의 제목을 입력하고 모두 밀기를 누루세요. 이를 완료하는 데 시간이 걸릴 수 있습니다.',
 	'push-special-pushing-desc' => '$1(으)로 $2 문서를 미는 중...',
@@ -1436,9 +1436,9 @@ $messages['ko'] = array(
 	'push-special-return' => '더 많은 문서 밀기',
 	'push-api-err-nocurl' => 'cURL를 설치하지 않았습니다.
 공개 위키에서 $egPushDirectFileUploads를 false로 설정하거나 비공개 위키에 cURL을 설치하세요',
-	'push-api-err-nofilesupport' => '로컬 MediaWiki에 파일을 게시하는 데에 지원이 없습니다.
+	'push-api-err-nofilesupport' => '로컬 미디어위키에 파일을 게시하는 데에 지원이 없습니다.
 공개 위키의 경우 $egPushDirectFileUploads를 false로 설정하세요.
-비공개 위키의 경우 밀기 설명서 또는 MediaWiki 자체에서 업데이트하여 링크한 패치를 적용하세요.',
+비공개 위키의 경우 밀기 설명서 또는 미디어위키 자체에서 업데이트하여 링크한 패치를 적용하세요.',
 );
 
 /** Colognian (Ripoarisch)
