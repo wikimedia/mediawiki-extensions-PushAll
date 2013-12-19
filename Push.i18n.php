@@ -2625,10 +2625,35 @@ $messages['zh-hans'] = array(
 	'push-tab-not-created' => '此页面尚不存在。',
 	'push-tab-push-options' => '推送选项：',
 	'push-tab-inc-templates' => '包含模板',
-	'push-tab-used-templates' => '（使用的模板：$1个）', # Fuzzy
+	'push-tab-used-templates' => '（已使用模板：$1个）', # Fuzzy
 	'push-tab-no-used-templates' => '（本页面未使用模板。）',
 	'push-tab-inc-files' => '包括嵌入的文件',
+	'push-tab-err-fileinfo' => '无法获知此页面上使用了哪些文件。没有被推送。',
+	'push-tab-err-filepush-unknown' => '文件推送失败，原因未知。',
+	'push-tab-err-filepush' => '文件推送失败：$1',
+	'push-tab-embedded-files' => '嵌入的文件：',
+	'push-tab-no-embedded-files' => '（没有文件嵌入此页）',
+	'push-tab-files-override' => '{{PLURAL:$2|此文件已存在|这些文件已存在}}：$1',
+	'push-tab-template-override' => '{{PLURAL:$2|此模板已存在|这些模板已存在}}：$1',
+	'push-tab-err-uploaddisabled' => '上传没有启用。请确保目标wiki的LocalSettings.php中的$wgEnableUploads和$wgAllowCopyUploads已设为true。',
+	'special-push' => '推送页面',
+	'push-special-pushing-desc' => '正在推送$2个页面到$1...',
+	'push-special-button-text' => '推送页面',
+	'push-special-target-is' => '目标wiki：$1',
 	'push-special-select-targets' => '目标wiki：',
+	'push-special-item-pushing' => '$1：正在推送',
+	'push-special-item-completed' => '$1：推送完成',
+	'push-special-item-failed' => '$1：推送失败：$2',
+	'push-special-push-done' => '推送完成',
+	'push-special-err-token-failed' => '无法获得目标wiki的编辑令牌。',
+	'push-special-err-pageget-failed' => '无法获得本地页面的内容。',
+	'push-special-err-push-failed' => '目标wiki拒绝了推送的页面。',
+	'push-special-inc-files' => '包括嵌入的文件',
+	'push-special-obtaining-fileinfo' => '$1：正在获取文件信息...',
+	'push-special-pushing-file' => '$1：正在推送文件$2...',
+	'push-special-return' => '推送更多页面',
+	'push-api-err-nocurl' => '未安装cURL。
+在公共wiki上设置$egPushDirectFileUploads为false，或者安装cURL适用私人wiki。',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
