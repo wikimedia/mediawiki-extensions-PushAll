@@ -160,8 +160,16 @@ See also:
 * $2 - optional detailed error message',
 	'push-tab-text' => '{{Identical|Push}}',
 	'push-button-text' => '{{Identical|Push}}',
+	'push-tab-desc' => 'Used as description for the tab.
+
+The page title for this message is {{msg-mw|Push-tab-title}}.',
 	'push-button-pushing' => '{{Identical|Pushing}}',
-	'push-tab-title' => 'Parameters:
+	'push-tab-title' => 'Used as page title.
+
+Followed by:
+* {{msg-mw|Push-tab-desc}}.
+
+Parameters:
 * $1 - page title',
 	'push-import-revision-message' => 'Parameters:
 * $1 - site name',
