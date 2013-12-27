@@ -179,7 +179,7 @@ class SpecialPush extends SpecialPage {
 					Html::element( 'ul', array( 'id' => 'pushResultList' ) )
 				)
 			) . '<br />' .
-			Html::element( 'a', array( 'href' => $this->getTitle()->getInternalURL() ), wfMsg( 'push-special-return' ) )
+			Html::element( 'a', array( 'href' => $this->getPageTitle()->getInternalURL() ), wfMsg( 'push-special-return' ) )
 		);
 
 		$out->addInlineScript(
@@ -204,7 +204,7 @@ class SpecialPush extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'push-special-description' );
 
 		$form = Xml::openElement( 'form', array( 'method' => 'post',
-			'action' => $this->getTitle()->getLocalUrl( 'action=submit' ) ) );
+			'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ) );
 		$form .= Xml::inputLabel( wfMsg( 'export-addcattext' )    , 'catname', 'catname', 40 ) . '&#160;';
 		$form .= Xml::submitButton( wfMsg( 'export-addcat' ), array( 'name' => 'addcat' ) ) . '<br />';
 
@@ -420,8 +420,8 @@ class SpecialPush extends SpecialPage {
 	 *
 	 * @return Title
 	 */
-	public function getTitle( $subPage = false ) {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getTitle() : $GLOBALS['wgTitle'];
+	public function getPageTitle( $subPage = false ) {
+		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getPageTitle() : $GLOBALS['wgTitle'];
 	}
 
 }
