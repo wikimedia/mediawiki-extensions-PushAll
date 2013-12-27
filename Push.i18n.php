@@ -420,6 +420,7 @@ $messages['bs'] = array(
  */
 $messages['ce'] = array(
 	'push-button-all' => 'Массо дӀатардан',
+	'push-tab-not-created' => 'Иштта агӀо хӀинца а яц.',
 );
 
 /** German (Deutsch)
