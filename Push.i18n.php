@@ -1424,7 +1424,7 @@ $messages['ko'] = array(
 	'push-tab-template-override' => '{{PLURAL:$2|이 틀이 이미 존재합니다|이러한 틀이 이미 존재합니다}}: $1',
 	'push-tab-err-uploaddisabled' => '올리기가 활성화되지 않았습니다. 대상 위키의 LocalSettings.php의 $wgEnableUploads와 $wgAllowCopyUploads 설정이 true로 되어있는지 확인하세요.',
 	'special-push' => '문서 밀기',
-	'push-special-description' => '이 문서에는 하나 이상의 미디어위키 위키에 하나 이상의 문서의 밀 콘텐트가 있습니다.
+	'push-special-description' => '이 문서에는 하나 이상의 미디어위키 위키에 하나 이상의 문서의 밀 내용이 있습니다.
 
 문서를 밀려면 아래의 텍스트 상자에 한 줄에 하나의 제목을 입력하고 모두 밀기를 누루세요. 이를 완료하는 데 시간이 걸릴 수 있습니다.',
 	'push-special-pushing-desc' => '$1(으)로 $2 문서를 미는 중...',
@@ -1436,7 +1436,7 @@ $messages['ko'] = array(
 	'push-special-item-failed' => '$1: 밀기 실패: $2',
 	'push-special-push-done' => '밀기 완료',
 	'push-special-err-token-failed' => '대상 위키에 편집 토큰을 가져올 수 없습니다.',
-	'push-special-err-pageget-failed' => '로컬 문서 콘텐트를 가져올 수 없습니다.',
+	'push-special-err-pageget-failed' => '로컬 문서 내용을 가져올 수 없습니다.',
 	'push-special-err-push-failed' => '대상 위키에서 문서를 미는 것을 거부했습니다.',
 	'push-special-inc-files' => '포함한 파일 포함',
 	'push-special-err-imginfo-failed' => '밀어내야 할 어떠한 파일도 확인할 수 없습니다.',
