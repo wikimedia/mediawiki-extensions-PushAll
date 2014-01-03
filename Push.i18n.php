@@ -273,7 +273,7 @@ $messages['be-tarask'] = array(
 	'push-tab-not-created' => 'Гэтая старонка пакуль не існуе.',
 	'push-tab-push-options' => 'Налады распаўсюджваньня:',
 	'push-tab-inc-templates' => 'Уключыць шаблёны',
-	'push-tab-used-templates' => '({{PLURAL:$2|Выкарыстаны шаблён|Выкарыстаныя шаблёны}}: $1)',
+	'push-tab-used-templates' => '({{PLURAL:$2|1=Выкарыстаны шаблён|Выкарыстаныя шаблёны}}: $1)', # Fuzzy
 	'push-tab-no-used-templates' => '(На гэтай старонцы не выкарыстоўваюцца шаблёны.)',
 	'push-tab-inc-files' => 'Уключыць убудаваныя файлы',
 	'push-tab-err-fileinfo' => 'Немагчыма выявіць, якія файлы выкарыстоўваюцца на гэтай старонцы. Ні адзін ня быў распаўсюджаны.',
@@ -2219,13 +2219,13 @@ $messages['ru'] = array(
 	'push-remote-pages' => 'Удалённые страницы',
 	'push-remote-page-link' => '$1 на $2',
 	'push-remote-page-link-full' => 'Просмотреть $1 на $2',
-	'push-targets-total' => 'Всего $1 {{PLURAL:$1|направление|направления}}.',
+	'push-targets-total' => 'Всего $1 {{PLURAL:$1|1=направление|направления}}.', # Fuzzy
 	'push-button-all' => 'Разместить все',
 	'push-tab-last-edit' => 'Последняя правка $1 $2 в $3.',
 	'push-tab-not-created' => 'Этой страницы ещё не существует.',
 	'push-tab-push-options' => 'Настройки размещения:',
 	'push-tab-inc-templates' => 'Включать шаблоны',
-	'push-tab-used-templates' => '({{PLURAL:$2|Шаблон|Шаблоны}}: $1)',
+	'push-tab-used-templates' => '({{PLURAL:$2|1=Шаблон|Шаблоны}}: $1)', # Fuzzy
 	'push-tab-no-used-templates' => '(На этой странице нет шаблонов)',
 	'push-tab-inc-files' => 'Включая встроенные файлы',
 	'push-tab-err-fileinfo' => 'Не удалось установить какие файлы используются на этой странице. Ни один не был размещён.',
@@ -2233,14 +2233,14 @@ $messages['ru'] = array(
 	'push-tab-err-filepush' => 'Сбой размещения файла. $1',
 	'push-tab-embedded-files' => 'Встроенные файлы:',
 	'push-tab-no-embedded-files' => '(На этой странице нет встроенных файлов.)',
-	'push-tab-files-override' => '{{PLURAL:$2|Этот файл уже существует|Следующие файлы уже существуют}}: $1',
-	'push-tab-template-override' => '{{PLURAL:$2|Этот шаблон уже существует|Следующие шаблоны уже существуют}}: $1',
+	'push-tab-files-override' => '{{PLURAL:$2|1=Этот файл уже существует|Следующие файлы уже существуют}}: $1', # Fuzzy
+	'push-tab-template-override' => '{{PLURAL:$2|1=Этот шаблон уже существует|Следующие шаблоны уже существуют}}: $1', # Fuzzy
 	'push-tab-err-uploaddisabled' => 'Загрузки не включены. Убедитесь, что параметры $wgEnableUploads и $wgAllowCopyUploads в файле настроек LocalSettings.php установлены в true.',
 	'special-push' => 'Разместить страницы',
 	'push-special-description' => 'Эта страница позволяет разместить содержимое одной или нескольких страниц на одну или несколько других вики-сайтов на движке MediaWiki.
 
 Для того, чтобы разместить страницы, введите названия в текстовом поле ниже, один заголовок на строку, и нажмите «Разместить все». Это может занять некоторое время.',
-	'push-special-pushing-desc' => 'Размещение $2 {{PLURAL:$2|страницы|страниц}} на $1...',
+	'push-special-pushing-desc' => 'Размещение $2 {{PLURAL:$2|1=страницы|страниц}} на $1...', # Fuzzy
 	'push-special-button-text' => 'Разместить страницы',
 	'push-special-target-is' => 'Целевой вики-сайт: $1',
 	'push-special-select-targets' => 'Целевые вики-сайты:',
@@ -2550,14 +2550,14 @@ $messages['uk'] = array(
 	'push-tab-err-filepush' => 'Збій поширення файлу: $1',
 	'push-tab-embedded-files' => 'Вбудовані файли:',
 	'push-tab-no-embedded-files' => '(Немає файлів вбудованих у цю сторінку).',
-	'push-tab-files-override' => '{{PLURAL:$2|Цей файл вже існує|Ці файли вже існують}}: $1',
-	'push-tab-template-override' => '{{PLURAL:$2|Цей шаблон вже існує|Ці шаблони вже існують}}: $1',
+	'push-tab-files-override' => '{{PLURAL:$2|1=Цей файл вже існує|Ці файли вже існують}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|1=Цей шаблон вже існує|Ці шаблони вже існують}}: $1',
 	'push-tab-err-uploaddisabled' => 'Завантаження не увімкнені. Переконайтеся, що параметри $wgEnableUploads і $wgAllowCopyUploads у файлі налаштувань LocalSettings.php задані як true.',
 	'special-push' => 'Поширити сторінки',
 	'push-special-description' => 'Ця сторінка дозволяє поширити вміст однієї або декількох сторінок на одне або декілька інших вікі на рушії Медіавікі.
 
 Для того, щоб поширити сторінки, введіть назви в текстовому полі нижче, один заголовок на рядок та натисніть кнопку «Поширити все». Це може зайняти деякий час.',
-	'push-special-pushing-desc' => 'Поширення $2 {{PLURAL:$2|сторінки|сторінок}} на $1...',
+	'push-special-pushing-desc' => 'Поширення $2 {{PLURAL:$2|1=сторінки|сторінок}} на $1...',
 	'push-special-button-text' => 'Поширити сторінки',
 	'push-special-target-is' => 'Цільова вікі: $1',
 	'push-special-select-targets' => 'Цільові вікі:',
