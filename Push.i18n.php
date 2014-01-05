@@ -2590,6 +2590,7 @@ $messages['yi'] = array(
 
 /** Simplified Chinese (中文（简体）‎)
  * @author Kuailong
+ * @author Liuxinyu970226
  * @author Yfdyh000
  */
 $messages['zh-hans'] = array(
@@ -2634,7 +2635,7 @@ $messages['zh-hans'] = array(
 	'push-tab-not-created' => '此页面尚不存在。',
 	'push-tab-push-options' => '推送选项：',
 	'push-tab-inc-templates' => '包含模板',
-	'push-tab-used-templates' => '（已使用模板：$1个）', # Fuzzy
+	'push-tab-used-templates' => '（已使用{{PLURAL:$2|模板}}：$1个）',
 	'push-tab-no-used-templates' => '（本页面未使用模板。）',
 	'push-tab-inc-files' => '包括嵌入的文件',
 	'push-tab-err-fileinfo' => '无法获知此页面上使用了哪些文件。没有被推送。',
