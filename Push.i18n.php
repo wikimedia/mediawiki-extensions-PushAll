@@ -1089,9 +1089,9 @@ Na priwatnych wikijach nałož patch linkd z dokumentacije Push abo zaktualizuj 
  */
 $messages['ia'] = array(
 	'push-desc' => 'Extension simple pro transferer contento a altere wikis',
-	'right-push' => 'Autorisation a usar le functionalitate de transferimento.', # Fuzzy
-	'right-bulkpush' => 'Autorisation a usar le functionalitate de transferimento in massa (i.e. Special:Push).', # Fuzzy
-	'right-pushadmin' => 'Autorisation a modificar destinationes e configurationes de transferimento.', # Fuzzy
+	'right-push' => 'Usar le functionalitate de transferimento',
+	'right-bulkpush' => 'Usar le functionalitate de transferimento in massa (i.e. Special:Push)',
+	'right-pushadmin' => 'Modificar destinationes e configurationes de transferimento',
 	'action-push' => 'transferer paginas',
 	'action-bulkpush' => 'transferer paginas in massa',
 	'action-pushadmin' => 'configurar transferimento',
@@ -1137,8 +1137,8 @@ $messages['ia'] = array(
 	'push-tab-err-filepush' => 'Transferimento de file fallite: $1',
 	'push-tab-embedded-files' => 'File incastrate',
 	'push-tab-no-embedded-files' => '(Nulle file es incastrate in iste pagina.)',
-	'push-tab-files-override' => 'Iste files ja existe: $1', # Fuzzy
-	'push-tab-template-override' => 'Iste patronos ja exite: $1', # Fuzzy
+	'push-tab-files-override' => 'Iste {{PLURAL:$2|file|files}} jam existe: $1',
+	'push-tab-template-override' => 'Iste {{PLURAL:$2|patrono|patronos}} jam existe: $1',
 	'push-tab-err-uploaddisabled' => 'Le incargamento non es activate. Assecura te que le variabiles $wgEnableUploads e $wgAllowCopyUploads sia specificate como "true" in le file LocalSettings.php del wiki de destination.',
 	'special-push' => 'Transferer paginas',
 	'push-special-description' => 'Iste pagina permitte transferer le contento de un o plus paginas a un o plus wikis MediaWiki.
@@ -2178,6 +2178,7 @@ $messages['roa-tara'] = array(
 
 /** Russian (русский)
  * @author DCamer
+ * @author Kaganer
  * @author Lockal
  * @author MaxSem
  * @author Okras
@@ -2219,13 +2220,13 @@ $messages['ru'] = array(
 	'push-remote-pages' => 'Удалённые страницы',
 	'push-remote-page-link' => '$1 на $2',
 	'push-remote-page-link-full' => 'Просмотреть $1 на $2',
-	'push-targets-total' => 'Всего $1 {{PLURAL:$1|1=направление|направления}}.', # Fuzzy
+	'push-targets-total' => 'Всего $1 {{PLURAL:$1|направление|направлений|направления}}.',
 	'push-button-all' => 'Разместить все',
 	'push-tab-last-edit' => 'Последняя правка $1 $2 в $3.',
 	'push-tab-not-created' => 'Этой страницы ещё не существует.',
 	'push-tab-push-options' => 'Настройки размещения:',
 	'push-tab-inc-templates' => 'Включать шаблоны',
-	'push-tab-used-templates' => '({{PLURAL:$2|1=Шаблон|Шаблоны}}: $1)', # Fuzzy
+	'push-tab-used-templates' => '({{PLURAL:$2|1=Использован шаблон|Использованные шаблоны}}: $1)',
 	'push-tab-no-used-templates' => '(На этой странице нет шаблонов)',
 	'push-tab-inc-files' => 'Включая встроенные файлы',
 	'push-tab-err-fileinfo' => 'Не удалось установить какие файлы используются на этой странице. Ни один не был размещён.',
@@ -2233,14 +2234,14 @@ $messages['ru'] = array(
 	'push-tab-err-filepush' => 'Сбой размещения файла. $1',
 	'push-tab-embedded-files' => 'Встроенные файлы:',
 	'push-tab-no-embedded-files' => '(На этой странице нет встроенных файлов.)',
-	'push-tab-files-override' => '{{PLURAL:$2|1=Этот файл уже существует|Следующие файлы уже существуют}}: $1', # Fuzzy
-	'push-tab-template-override' => '{{PLURAL:$2|1=Этот шаблон уже существует|Следующие шаблоны уже существуют}}: $1', # Fuzzy
+	'push-tab-files-override' => '{{PLURAL:$2|1=Этот файл уже существует|Следующие файлы уже существуют}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|1=Этот шаблон уже существует|Следующие шаблоны уже существуют}}: $1',
 	'push-tab-err-uploaddisabled' => 'Загрузки не включены. Убедитесь, что параметры $wgEnableUploads и $wgAllowCopyUploads в файле настроек LocalSettings.php установлены в true.',
 	'special-push' => 'Разместить страницы',
 	'push-special-description' => 'Эта страница позволяет разместить содержимое одной или нескольких страниц на одну или несколько других вики-сайтов на движке MediaWiki.
 
 Для того, чтобы разместить страницы, введите названия в текстовом поле ниже, один заголовок на строку, и нажмите «Разместить все». Это может занять некоторое время.',
-	'push-special-pushing-desc' => 'Размещение $2 {{PLURAL:$2|1=страницы|страниц}} на $1...', # Fuzzy
+	'push-special-pushing-desc' => 'Отправка $2 {{PLURAL:$2|страницы|страниц}} на $1...',
 	'push-special-button-text' => 'Разместить страницы',
 	'push-special-target-is' => 'Целевой вики-сайт: $1',
 	'push-special-select-targets' => 'Целевые вики-сайты:',
