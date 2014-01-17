@@ -1613,8 +1613,8 @@ $messages['mk'] = array(
 	'push-special-obtaining-fileinfo' => '$1: Преземам податотечни податоци...',
 	'push-special-pushing-file' => '$1: Ја пренесувам податотеката $2...',
 	'push-special-return' => 'Пренеси уште страници',
-	'push-api-err-nocurl' => 'cURL не е инсталиран.
-Наместете го $egPushDirectFileUploads на „false“ на јавните викија, или пак инсталирајте го cURL на приватните викија',
+	'push-api-err-nocurl' => 'cURL не е воспоставен.
+Наместете го $egPushDirectFileUploads на „false“ на јавните викија, или пак воспоставете го cURL на приватните викија',
 	'push-api-err-nofilesupport' => 'Локалниот МедијаВики нема поддршка за објавување на податотеки.
 На јавни викија, наместете го $egPushDirectFileUploads на „false“.
 На приватни викија, ставете ја поправката linkd од документацијата на Push или подновете го самиот МедијаВики.',
