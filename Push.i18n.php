@@ -607,6 +607,28 @@ En los wikis públicos, establezca $egPushDirectFileUploads como "false".
 En los wikis privados, aplique el parche linkd de la documentación de Push o actualice el propio MediaWiki.',
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'push-add-target' => 'افزودن هدف',
+	'push-remote-pages' => 'کنترل صفحات',
+	'push-remote-page-link' => '$1 در $2',
+	'push-remote-page-link-full' => 'مشاهدهٔ $1 در $2',
+	'push-tab-last-edit' => 'آخرین ویرایش توسط $1 در $2 در $3.',
+	'push-tab-not-created' => 'این صفحه هنوز وجود ندارد.',
+	'push-tab-inc-templates' => 'شامل شدن الگوها',
+	'push-tab-used-templates' => '(استفاده شده {{PLURAL:$2|الگو|الگوهای}}: $1)',
+	'push-tab-no-used-templates' => '(هیچ الگویی در این صفحه استفاده نشده‌است.)',
+	'push-tab-inc-files' => 'شامل پوشه‌های ضمیمه شده',
+	'push-tab-embedded-files' => 'پوشه‌های ضمیمه شده:',
+	'push-tab-no-embedded-files' => '(هیچ پوشه‌ای در این صفحه ضمیمه نشده‌است.)',
+	'push-special-target-is' => 'هدف ویکی: $1',
+	'push-special-select-targets' => 'هدف ویکی‌ها:',
+	'push-special-inc-files' => 'شامل پوشه‌های ضمیمه شده',
+	'push-special-obtaining-fileinfo' => '$1: در حال به دست آوردن اطلاعات پوشه...',
+);
+
 /** Finnish (suomi)
  * @author Tofu II
  */
