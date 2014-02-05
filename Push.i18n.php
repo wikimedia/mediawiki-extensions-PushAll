@@ -639,6 +639,7 @@ $messages['fi'] = array(
 /** French (français)
  * @author Gomoko
  * @author Sherbrooke
+ * @author Verdy p
  */
 $messages['fr'] = array(
 	'push-desc' => "Extension peu gourmande servant à pousser (''push'' en anglais) du contenu vers d'autres wikis",
@@ -653,10 +654,16 @@ $messages['fr'] = array(
 	'grouppage-pusher' => '{{ns:project}}:Pousseurs',
 	'group-bulkpusher' => 'Pousseurs en masse',
 	'group-bulkpusher-member' => '{{GENDER:$1|pousseur en masse}}',
-	'grouppage-bulkpusher' => '{{ns:project}}:Pousseurs_en_masse',
+	'grouppage-bulkpusher' => '{{ns:project}}:Pousseurs en masse',
 	'group-filepusher' => 'Pousseurs de fichier',
 	'group-filepusher-member' => '{{GENDER:$1|pousseur de fichier}}',
 	'grouppage-filepusher' => '{{ns:project}}:Pousseurs_de_fichier',
+	'group-pusher.css' => '/* Le CSS placé ici n’affectera que les pousseurs */',
+	'group-pusher.js' => '/* Le Javascript placé ici n’affectera que les pousseurs */',
+	'group-bulkpusher.css' => '/* Le CSS placé ici n’affectera que les pousseurs en masse */',
+	'group-bulkpusher.js' => '/* Le Javascript placé ici n’affectera que les pousseurs en masse */',
+	'group-filepusher.css' => '/* Le CSS placé ici n’affectera que les pousseurs de fichiers */',
+	'group-filepusher.js' => '/* Le Javascript placé ici n’affectera que les pousseurs de fichiers */',
 	'push-err-captacha' => "Impossible de pousser vers $1 en raison d'un CAPTCHA.",
 	'push-err-captcha-page' => 'Impossible de pousser la page $1 vers toutes les cibles en raison de CAPTCHA.',
 	'push-err-authentication' => "Échec de l'authentification à $1. $2",
