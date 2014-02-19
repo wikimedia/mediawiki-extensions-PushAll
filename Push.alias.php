@@ -21,6 +21,11 @@ $specialPageAliases['ar'] = array(
 	'Push' => array( 'دفع' ),
 );
 
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'Push' => array( 'دفع' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'Push' => array( 'Tikin' ),
@@ -99,6 +104,11 @@ $specialPageAliases['nl'] = array(
 /** Sicilian (sicilianu) */
 $specialPageAliases['scn'] = array(
 	'Push' => array( 'Spingi' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'Push' => array( 'Đẩy' ),
 );
 
 /** Simplified Chinese (中文（简体）‎) */
