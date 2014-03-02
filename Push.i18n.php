@@ -632,6 +632,7 @@ $messages['fa'] = array(
 	'push-err-authentication' => 'اعتبارنامه در $1 انجام نشد. $2',
 	'push-tab-text' => 'فشار',
 	'push-button-text' => 'فشار',
+	'push-tab-desc' => 'این تب به شما برای تحت فشار فرار دادن نسخهٔ فعلی این صفحه به یک یا چند ویکی دیگر اجازه می‌دهد.',
 	'push-button-pushing' => 'فشار دادن',
 	'push-button-pushing-files' => 'فشار دادن پوشه‌ها',
 	'push-button-completed' => 'فشار کامل شد',
@@ -640,6 +641,7 @@ $messages['fa'] = array(
 	'push-targets' => 'اهداف فشار',
 	'push-add-target' => 'افزودن هدف',
 	'push-import-revision-message' => 'فشار از $1.',
+	'push-tab-no-targets' => 'هیچ اهدافی برای تحت فشار قرار دادن وجود ندارد. لطفاً برخی را به پوشهٔ LocalSettings.php اضافه کنید.',
 	'push-tab-push-to' => 'فشار به $1',
 	'push-remote-pages' => 'کنترل صفحات',
 	'push-remote-page-link' => '$1 در $2',
@@ -653,11 +655,18 @@ $messages['fa'] = array(
 	'push-tab-used-templates' => '(استفاده شده {{PLURAL:$2|الگو|الگوهای}}: $1)',
 	'push-tab-no-used-templates' => '(هیچ الگویی در این صفحه استفاده نشده‌است.)',
 	'push-tab-inc-files' => 'شامل پوشه‌های ضمیمه شده',
+	'push-tab-err-fileinfo' => 'پوشه‌هایی را که در این صفحه استفاده شدند را نتوانست به دست آورد. هیچ یک تحت فشار قرار نگزفته‌اند.',
 	'push-tab-err-filepush-unknown' => 'فشار پوشه به دلیل ناشناخته‌ای انجام نشد.',
 	'push-tab-err-filepush' => 'فشار پوشه انجام نشد: $1',
 	'push-tab-embedded-files' => 'پوشه‌های ضمیمه شده:',
 	'push-tab-no-embedded-files' => '(هیچ پوشه‌ای در این صفحه ضمیمه نشده‌است.)',
+	'push-tab-files-override' => '{{PLURAL:$2|این پوشه در حال حاضر وجود دارد|این پوشه‌ها در حال حاضر وجود دارند}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|این الگو در حال حاضر وج.د دارد|این الگوها در حال حاضر وجود دارند}}: $1',
+	'push-tab-err-uploaddisabled' => 'انتقالات فعال نیستند. مطمئن شوید که  $wgEnableUploads و $wgAllowCopyUploads به درستی در LocalSettings.php ویکی هدف تنظیم هستند.',
 	'special-push' => 'صفحات فشار',
+	'push-special-description' => 'این صفحه شما را قادر به تحت فشار قرار دادن محتوای یک یا چند صفحه به یک یا چند ویکی مدیاویکی، می‌کند.
+برای تحت فشار قرار دان صفحات، عناوین را در جعبه متن زیر وارد کنید، یک عنوان در هر خط وارد کنید و همه را تحت فشار قرار دهید. 
+این می تواند مدتی برای کامل شدن طول بکشد.',
 	'push-special-pushing-desc' => 'فشار دادن  $2 {{PLURAL:$2| صفحه|صفحات}} به $1 ...',
 	'push-special-button-text' => 'صفحات فشار',
 	'push-special-target-is' => 'هدف ویکی: $1',
@@ -674,6 +683,11 @@ $messages['fa'] = array(
 	'push-special-obtaining-fileinfo' => '$1: در حال به دست آوردن اطلاعات پوشه...',
 	'push-special-pushing-file' => '$1: فشار دادن پوشهٔ $2 ...',
 	'push-special-return' => 'فشار بیشتر صفحات',
+	'push-api-err-nocurl' => 'یوآر‌ال نصب نشده‌است.
+$eg انتقالات پوشهٔ مستقیم تحت فشار غلط را در ویکی‌های عمومی تنظیم کنید، یا یوآر‌ال را برای ویکی‌های خصوصی نصب کنید',
+	'push-api-err-nofilesupport' => 'مدیاویکی داخلی برای پوشه‌های ارسالی پشتیبانی ندارد.
+در ویکی‌های عمومی،انتقالات پوشه مستقیم تحت فشار غلط را به $egPushDirectFileUploads تنظیم کنید.
+در ویکی‌های خصوصی، وصلهٔ لینک شده را از مستندات تحت فشار یا به روز رسانی خود مدیاویکی درخواست کنید.',
 );
 
 /** Finnish (suomi)
