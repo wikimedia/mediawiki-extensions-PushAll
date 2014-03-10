@@ -1022,10 +1022,11 @@ Uff nit-öffentliche Wikis muess de Patch aagwändet werde, wo über d Dokumenta
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author Inkbug
  */
 $messages['he'] = array(
 	'push-desc' => 'הרחבה קלילה לדחיפת תוכן לאתרי ויקי אחרים',
-	'right-push' => 'לאשר שימוש בפעולת הדחיפה.', # Fuzzy
+	'right-push' => 'שימוש בפעולת הדחיפה.',
 	'right-bulkpush' => 'לאשר שימוש בדחיפת דפים מרובים (למשל Special:Push)', # Fuzzy
 	'right-pushadmin' => 'לאשר לשנות יעדי דחיפה ותצורת דחיפה.', # Fuzzy
 	'push-err-captacha' => 'דחיפה ל{{GRAMMAR:תחילית|$1}} לא הצליחה בכלל CAPTCHA',
@@ -1061,8 +1062,8 @@ $messages['he'] = array(
 	'push-tab-err-filepush' => 'דחיפת קובץ נכשלה: $1',
 	'push-tab-embedded-files' => 'קבצים מוטבעים:',
 	'push-tab-no-embedded-files' => '(אין קבצים מוטבעים בדף הזה.)',
-	'push-tab-files-override' => 'הקבצים האלה כבר קיימים: $1', # Fuzzy
-	'push-tab-template-override' => 'התבניות האלו כבר קיימות: $1', # Fuzzy
+	'push-tab-files-override' => '{{PLURAL:$2|הקובץ הזה כבר קיים|הקבצים האלה כבר קיימים}}: $1',
+	'push-tab-template-override' => '{{PLURAL:$2|התבנית הזו כבר קיימת|התבניות האלו כבר קיימות}}: $1',
 	'push-tab-err-uploaddisabled' => 'העלאות אינן מופעלות. יש לוודא כי ערך המשתנים ‎$wgEnableUploads ו־‎$wgEnableUploads הוא true בוויקי היעד.',
 	'special-push' => 'דחיפת דפים',
 	'push-special-description' => 'הדף הזה מאפשר לכם לדחוף דף אחד או יותר לאתר ויקי אחד או יותר שמשתמש במדיה־ויקי.
