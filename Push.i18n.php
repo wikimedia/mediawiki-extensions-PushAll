@@ -2739,6 +2739,8 @@ $messages['zh-hans'] = array(
 	'push-tab-template-override' => '{{PLURAL:$2|此模板已存在|这些模板已存在}}：$1',
 	'push-tab-err-uploaddisabled' => '上传没有启用。请确保目标wiki的LocalSettings.php中的$wgEnableUploads和$wgAllowCopyUploads已设为true。',
 	'special-push' => '推送页面',
+	'push-special-description' => '此页面允许您推送一个或更多页面内容至一个或更多基于MediaWiki的wiki。
+要推送页面，在下方方框中输入标题，每行一个标题并点击推送。这可能需要一段时间后才可完成。',
 	'push-special-pushing-desc' => '正在推送$2个页面到$1...',
 	'push-special-button-text' => '推送页面',
 	'push-special-target-is' => '目标wiki：$1',
