@@ -609,6 +609,7 @@ En los wikis privados, aplique el parche linkd de la documentación de Push o ac
 
 /** Persian (فارسی)
  * @author Armin1392
+ * @author Ebraminio
  */
 $messages['fa'] = array(
 	'push-desc' => 'فرمت سبک وزن برای فشار محتوا به ویکی‌های دیگر',
@@ -687,7 +688,7 @@ $messages['fa'] = array(
 $eg انتقالات پوشهٔ مستقیم تحت فشار غلط را در ویکی‌های عمومی تنظیم کنید، یا یوآر‌ال را برای ویکی‌های خصوصی نصب کنید',
 	'push-api-err-nofilesupport' => 'مدیاویکی داخلی برای پوشه‌های ارسالی پشتیبانی ندارد.
 در ویکی‌های عمومی،انتقالات پوشه مستقیم تحت فشار غلط را به $egPushDirectFileUploads تنظیم کنید.
-در ویکی‌های خصوصی، وصلهٔ لینک شده را از مستندات تحت فشار یا به روز رسانی خود مدیاویکی درخواست کنید.',
+در ویکی‌های خصوصی، وصلهٔ پیوندشده را از مستندات تحت فشار یا به‌روزرسانی خود مدیاویکی درخواست کنید.',
 );
 
 /** Finnish (suomi)
@@ -1023,12 +1024,25 @@ Uff nit-öffentliche Wikis muess de Patch aagwändet werde, wo über d Dokumenta
 /** Hebrew (עברית)
  * @author Amire80
  * @author Inkbug
+ * @author Yona b
  */
 $messages['he'] = array(
 	'push-desc' => 'הרחבה קלילה לדחיפת תוכן לאתרי ויקי אחרים',
 	'right-push' => 'שימוש בפעולת הדחיפה.',
-	'right-bulkpush' => 'לאשר שימוש בדחיפת דפים מרובים (למשל Special:Push)', # Fuzzy
-	'right-pushadmin' => 'לאשר לשנות יעדי דחיפה ותצורת דחיפה.', # Fuzzy
+	'right-bulkpush' => 'השתמשו בלחיצת דפים מרובים (למשל Special:Push)',
+	'right-pushadmin' => 'משנה יעדי לחיצה ותצורת לחיצה.',
+	'action-push' => 'דחיפת דפים',
+	'action-bulkpush' => 'דחיפת דפים מרובים',
+	'action-pushadmin' => 'קביעת תצורת דחיפה',
+	'group-pusher' => 'דוחפים',
+	'group-pusher-member' => '{{GENDER:$1|דוחף|דוחפת}}',
+	'grouppage-pusher' => '{{ns:project}}:דוחפים',
+	'group-bulkpusher' => 'דוחפים בכמויות',
+	'group-bulkpusher-member' => '{{GENDER:$1|דוחף בכמויות|דוחפת בכמויות}}',
+	'grouppage-bulkpusher' => '{{ns:project}}:דוחפים בכמויות',
+	'group-filepusher' => 'דוחפי קבצים',
+	'group-filepusher-member' => '{{GENDER:$1|דוחף קבצים|דוחפת קבצים}}',
+	'grouppage-filepusher' => '{{ns:project}}:דוחפי דפים',
 	'push-err-captacha' => 'דחיפה ל{{GRAMMAR:תחילית|$1}} לא הצליחה בכלל CAPTCHA',
 	'push-err-captcha-page' => 'דחיפת הדף $1 לכל היעדים לא התאפשרה בגלל CAPTCHA.',
 	'push-err-authentication' => 'אימות ב{{GRAMMAR:תחילית|$1}} נכשל. $2',
