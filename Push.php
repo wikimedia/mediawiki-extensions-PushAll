@@ -1,8 +1,7 @@
 <?php
-
 /**
  * Initialization file for the Push extension.
- * 
+ *
  * Documentation:	 		http://www.mediawiki.org/wiki/Extension:Push
  * Support					http://www.mediawiki.org/wiki/Extension_talk:Push
  * Source code:             http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push
@@ -24,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-define( 'Push_VERSION', '1.1.4 alpha' );
+define( 'Push_VERSION', '1.2.0 alpha' );
 
 $wgExtensionCredits['other'][] = array(
 	'path' => __FILE__,
@@ -42,6 +41,7 @@ $egPushScriptPath = ( $useExtensionPath ? $wgExtensionAssetsPath : $wgScriptPath
 $egPushIP = dirname( __FILE__ );
 unset( $useExtensionPath );
 
+$wgMessagesDirs['Push'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Push'] 			= $egPushIP . '/Push.i18n.php';
 $wgExtensionMessagesFiles['PushAlias'] 			= $egPushIP . '/Push.alias.php';
 
@@ -103,18 +103,18 @@ if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
 		'remoteBasePath' => $egPushScriptPath,
 		'group' => 'ext.push'
 	);
-	
+
 	$wgResourceModules['ext.push.tab'] = $moduleTemplate + array(
 		'scripts' => 'includes/ext.push.tab.js',
 		'dependencies' => array( 'mediawiki.jqueryMsg' ),
 		'messages' => $egPushJSMessages
 	);
-	
+
 	$wgResourceModules['ext.push.special'] = $moduleTemplate + array(
 		'scripts' => 'specials/ext.push.special.js',
 		'dependencies' => array(),
 		'messages' => $egPushJSMessages
-	);	
+	);
 }
 
 require_once 'Push_Settings.php';
