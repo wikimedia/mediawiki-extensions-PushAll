@@ -3,10 +3,11 @@
         "authors": [
             "Kuailong",
             "Liuxinyu970226",
-            "Yfdyh000"
+            "Yfdyh000",
+            "Hudafu"
         ]
     },
-    "push-desc": "Lightweight扩展推送内容到其他wiki",
+    "push-desc": "推送内容至其他wiki的轻量扩展程序",
     "right-push": "使用推送功能",
     "right-bulkpush": "使用批量推送功能（即Special:Push）",
     "right-pushadmin": "修改推送目标和推送设置",
