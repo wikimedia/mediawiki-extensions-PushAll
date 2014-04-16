@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "פוילישער"
-        ]
-    },
-    "push-tab-last-edit": "לעצטע רעדאקטירונג דורך $1 אום $2 $3.",
-    "push-tab-not-created": "דער בלאט עקזיסטירט נאך נישט."
+	"@metadata": {
+		"authors": [
+			"פוילישער"
+		]
+	},
+	"push-tab-last-edit": "לעצטע רעדאקטירונג דורך $1 אום $2 $3.",
+	"push-tab-not-created": "דער בלאט עקזיסטירט נאך נישט."
 }
