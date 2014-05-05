@@ -37,6 +37,7 @@
 	"push-import-revision-message": "Työnnetty kohteesta $1.",
 	"push-tab-no-targets": "Kohteita ei ole määritelty. Lisää vähintään yksi kohde LocalSettings.php tiedostoon.",
 	"push-tab-push-to": "Työnnä kohteeseen $1",
+	"push-remote-pages": "Kohdesivut",
 	"push-remote-page-link": "Sivu $1 kohteessa $2",
 	"push-remote-page-link-full": "Näytä sivu $1 kohteessa $2",
 	"push-targets-total": "Yhteensä $1 {{PLURAL:$1|target|kohdetta}}.",
