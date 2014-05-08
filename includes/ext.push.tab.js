@@ -295,9 +295,9 @@
 	
 	function setButtonToImgPush( button, pages, targetUrl, targetName ) {
 		var images = window.wgPushPageFiles.concat( window.wgPushTemplateFiles );
-		var currentFile = images.pop();
 		
 		if ( images.length > 0 && $('#checkIncFiles').length != 0 && $('#checkIncFiles').attr('checked') ) {
+			var currentFile = images.pop();
 			button.innerHTML = mw.msg( 'push-button-pushing-files' );
 			initiateImagePush( button, pages, targetUrl, targetName, images, currentFile );
 		}
