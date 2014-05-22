@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Luckas"
+			"Luckas",
+			"Vitorvicentevalente"
 		]
 	},
 	"push-desc": "Uma extensão ligeira para replicação externa de conteúdos para outras wikis",
-	"right-push": "Autorização para usar a funcionalidade de replicação para o exterior.",
+	"right-push": "Usar funcionalidade de replicação",
 	"right-bulkpush": "Autorização para usar a funcionalidade de replicação para o exterior em bloco (isto é, a página Special:Push).",
 	"right-pushadmin": "Autorização para modificar os destinos e a configuração da replicação para o exterior.",
 	"group-pusher": "Replicadores para o exterior",
