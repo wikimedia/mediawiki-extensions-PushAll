@@ -73,8 +73,10 @@
 	"push-special-err-pageget-failed": "无法获得本地页面的内容。",
 	"push-special-err-push-failed": "目标wiki拒绝了推送的页面。",
 	"push-special-inc-files": "包括嵌入的文件",
+	"push-special-err-imginfo-failed": "无法确定文件是否需要被推送。",
 	"push-special-obtaining-fileinfo": "$1：正在获取文件信息...",
 	"push-special-pushing-file": "$1：正在推送文件$2...",
 	"push-special-return": "推送更多页面",
-	"push-api-err-nocurl": "未安装cURL。\n在公共wiki上设置$egPushDirectFileUploads为false，或者安装cURL适用私人wiki。"
+	"push-api-err-nocurl": "未安装cURL。\n在公共wiki上设置$egPushDirectFileUploads为false，或者安装cURL适用私人wiki。",
+	"push-api-err-nofilesupport": "本地MediaWiki尚不提供对发布文件的支持。在公开wiki，将$egPushDirectFileUploads设置为false即可。在私有wiki，请求链接自推送文档的补丁或更新MediaWiki本身。"
 }
