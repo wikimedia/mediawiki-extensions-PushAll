@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Armando-Martin",
-			"Fitoschido"
+			"Fitoschido",
+			"Macofe"
 		]
 	},
 	"push-desc": "Extensión ligera para transferir contenidos a otros wikis",
-	"right-push": "Autorización para usar la funcionalidad de transferencia.",
-	"right-bulkpush": "Autorización para usar la funcionalidad de transferencia en masa (es decir, Special:Push).",
-	"right-pushadmin": "Autorización para modificar los destinos y la configuración de las transferencias.",
+	"right-push": "Usar la funcionalidad de transferencia.",
+	"right-bulkpush": "Usar la funcionalidad de transferencia en masa (es decir, Special:Push).",
+	"right-pushadmin": "Modificar los destinos y la configuración de las transferencias",
 	"action-push": "transferir páginas",
 	"action-bulkpush": "transferir páginas en bloque",
 	"action-pushadmin": "configurar las transferencias",
@@ -54,7 +55,7 @@
 	"push-tab-err-filepush": "Falló la transferencia del archivo: $1",
 	"push-tab-embedded-files": "Archivos incrustados:",
 	"push-tab-no-embedded-files": "(No hay ningún archivo incrustado en esta página.)",
-	"push-tab-files-override": "Estos archivos ya existen: $1",
+	"push-tab-files-override": "{{PLURAL:$2|Este archivo ya existe|Estos archivos ya existen}}: $1",
 	"push-tab-template-override": "{{PLURAL:$2|Esta plantilla ya existe|Estas plantillas ya existen}}: $1",
 	"push-tab-err-uploaddisabled": "Las cargas no están habilitadas. Asegúrese de que las variables $wgEnableUploads y $wgAllowCopyUploads estén definidas con el valor \"true\" en el archivo LocalSettings.php del wiki de destino.",
 	"special-push": "Transferir páginas",
