@@ -35,7 +35,7 @@ class ApiPush extends ApiBase {
 			$this->dieUsageMsg( array( 'badaccess-groups' ) );
 		}
 
-		global $egPushLoginUser, $egPushLoginPass, $egPushLoginUsers, $egPushLoginPasswords;
+		global $egPushLoginUser, $egPushLoginPass, $egPushLoginUsers, $egPushLoginPasswords, $egPushLoginDomain, $egPushLoginDomains;
 
 		$params = $this->extractRequestParams();
 
@@ -49,10 +49,12 @@ class ApiPush extends ApiBase {
 
 		PushFunctions::flipKeys( $egPushLoginUsers, 'users' );
 		PushFunctions::flipKeys( $egPushLoginPasswords, 'passwds' );
+		PushFunctions::flipKeys( $egPushLoginDomains, 'domains' );
 
 		foreach ( $params['targets'] as &$target ) {
 			$user = false;
 			$pass = false;
+			$domain = false;
 
 			if ( array_key_exists( $target, $egPushLoginUsers ) && array_key_exists( $target, $egPushLoginPasswords ) ) {
 				$user = $egPushLoginUsers[$target];
@@ -62,6 +64,12 @@ class ApiPush extends ApiBase {
 				$user = $egPushLoginUser;
 				$pass = $egPushLoginPass;
 			}
+			if ( array_key_exists( $target, $egPushLoginDomains ) ) {
+				$domain = $egPushLoginDomains[$target];
+			}
+			elseif ( $egPushLoginDomain != '' ) {
+				$domain = $egPushLoginDomain;
+			}
 
 			if ( substr( $target, -1 ) !== '/' ) {
 				$target .= '/';
@@ -70,7 +78,7 @@ class ApiPush extends ApiBase {
 			$target .= 'api.php';
 
 			if ( $user !== false ) {
-				$this->doLogin( $user, $pass, $target );
+				$this->doLogin( $user, $pass, $domain, $target );
 			}
 		}
 
@@ -105,13 +113,16 @@ class ApiPush extends ApiBase {
 	 * @param CookieJar $cookie
 	 * @param integer $attemtNr
 	 */
-	protected function doLogin( $user, $password, $target, $token = null, $cookieJar = null, $attemtNr = 0 ) {
+	protected function doLogin( $user, $password, $domain, $target, $token = null, $cookieJar = null, $attemtNr = 0 ) {
 		$requestData = array(
 			'action' => 'login',
 			'format' => 'json',
 			'lgname' => $user,
 			'lgpassword' => $password
 		);
+		if ( $domain != false )
+			$requestData['lgdomain'] = $domain;
+
 
 		if ( !is_null( $token ) ) {
 			$requestData['lgtoken'] = $token;
@@ -140,7 +151,7 @@ class ApiPush extends ApiBase {
 				&& property_exists( $response->login, 'result' ) ) {
 
 				if ( $response->login->result == 'NeedToken' && $attemtNr < 3 ) {
-					$this->doLogin( $user, $password, $target, $response->login->token, $req->getCookieJar(), $attemtNr );
+					$this->doLogin( $user, $password, $domain, $target, $response->login->token, $req->getCookieJar(), $attemtNr );
 				}
 				elseif ( $response->login->result == 'Success' ) {
 					$this->cookieJars[$target] = $req->getCookieJar();
