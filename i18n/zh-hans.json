@@ -5,7 +5,8 @@
 			"Liuxinyu970226",
 			"Yfdyh000",
 			"Hudafu",
-			"Mywood"
+			"Mywood",
+			"Cwek"
 		]
 	},
 	"push-desc": "推送内容至其他wiki的轻量扩展程序",
@@ -48,7 +49,7 @@
 	"push-tab-last-edit": "最后编辑由$1，于$3在$2。",
 	"push-tab-not-created": "此页面尚不存在。",
 	"push-tab-push-options": "推送选项：",
-	"push-tab-inc-templates": "包括模板",
+	"push-tab-inc-templates": "包含模板",
 	"push-tab-used-templates": "（已使用{{PLURAL:$2|模板}}：$1个）",
 	"push-tab-no-used-templates": "（本页面未使用模板。）",
 	"push-tab-inc-files": "包括嵌入的文件",
