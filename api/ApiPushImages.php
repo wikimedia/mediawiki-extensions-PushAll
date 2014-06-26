@@ -262,7 +262,12 @@ class ApiPushImages extends ApiBase {
 		);
 
 		if ( $egPushDirectFileUploads ) {
-			$requestData['file'] = '@' . $imagePage->getFile()->getPath();
+			$file = $imagePage->getFile();
+			$be = $file->getRepo()->getBackend();
+			$localFile = $be->getLocalReference(
+				array( 'src' => $file->getPath() )
+			);
+			$requestData['file'] = '@' . $localFile->getPath();
 		}
 		else {
 			$requestData['url'] = $imagePage->getDisplayedFile()->getFullUrl();
@@ -282,7 +287,10 @@ class ApiPushImages extends ApiBase {
 				$this->dieUsage( wfMsg( 'push-api-err-nofilesupport' ), 'image-push-nofilesupport' );
 			}
 			else {
-				$req = new CurlHttpRequest( $target, $reqArgs );
+				$httpEngine = Http::$httpEngine;
+				Http::$httpEngine = 'curl';
+				$req = MWHttpRequest::factory($target, $reqArgs);
+				Http::$httpEngine = $httpEngine;
 			}
 		}
 		else {
@@ -297,13 +305,13 @@ class ApiPushImages extends ApiBase {
 
 		if ( $status->isOK() ) {
 			$response = $req->getContent();
-			
+
 			$this->getResult()->addValue(
 				null,
 				null,
 				FormatJson::decode( $response )
 			);
-			
+
 			wfRunHooks( 'PushAPIAfterImagePush', array( $title, $target, $token, $response ) );
 		}
 		else {
