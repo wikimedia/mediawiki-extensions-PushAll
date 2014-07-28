@@ -208,7 +208,15 @@ class SpecialPush extends SpecialPage {
 		$form .= Xml::inputLabel( wfMsg( 'export-addcattext' )    , 'catname', 'catname', 40 ) . '&#160;';
 		$form .= Xml::submitButton( wfMsg( 'export-addcat' ), array( 'name' => 'addcat' ) ) . '<br />';
 
-		$form .= Xml::namespaceSelector( $req->getText( 'nsindex', '' ), null, 'nsindex', wfMsg( 'export-addnstext' ) ) . '&#160;';
+		$form .= Html::namespaceSelector( array(
+			'selected' => $req->getText( 'nsindex', '' ),
+			'all' => null,
+			'label' => wfMsg( 'export-addnstext' ),
+		), array(
+			'name' => 'nsindex',
+			'id' => 'namespace',
+			'class' => 'namespaceselector',
+		) ) . '&#160;';
 		$form .= Xml::submitButton( wfMsg( 'export-addns' ), array( 'name' => 'addns' ) ) . '<br />';
 
 		$form .= Xml::element( 'textarea', array( 'name' => 'pages', 'cols' => 40, 'rows' => 10 ), $pages, false );
