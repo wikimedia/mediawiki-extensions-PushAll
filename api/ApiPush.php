@@ -398,13 +398,6 @@ class ApiPush extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'missingparam', 'page' ),
-			array( 'missingparam', 'targets' ),
-		) );
-	}
-
 	protected function getExamples() {
 		return array(
 			'api.php?action=push&page=Main page&targets=http://en.wikipedia.org/w',

@@ -357,13 +357,6 @@ class ApiPushImages extends ApiBase {
 		);
 	}
 
-	public function getPossibleErrors() {
-		return array_merge( parent::getPossibleErrors(), array(
-			array( 'missingparam', 'images' ),
-			array( 'missingparam', 'targets' ),
-		) );
-	}
-
 	protected function getExamples() {
 		return array(
 			'api.php?action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w',
