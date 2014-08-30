@@ -118,5 +118,5 @@ $specialPageAliases['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎) */
 $specialPageAliases['zh-hant'] = array(
-	'Push' => array( '推' ),
+	'Push' => array( '推播' ),
 );
