@@ -9,7 +9,8 @@
 			"Shirayuki",
 			"Siebrand",
 			"Umherirrender",
-			"아라"
+			"아라",
+			"Nemo bis"
 		]
 	},
 	"push-desc": "{{desc|name=Push|url=http://www.mediawiki.org/wiki/Extension:Push}}",
@@ -41,7 +42,7 @@
 	"push-button-text": "{{Identical|Push}}",
 	"push-tab-desc": "Used as description for the tab.\n\nThe page title for this message is {{msg-mw|Push-tab-title}}.",
 	"push-button-pushing": "{{Identical|Pushing}}",
-	"push-tab-title": "Used as page title.\n\nFollowed by:\n* {{msg-mw|Push-tab-desc}}.\n\nParameters:\n* $1 - page title",
+	"push-tab-title": "Used as page title, or as label of a tab which operates the \"Push\" function offer by the extension.\n\nFollowed by:\n* {{msg-mw|Push-tab-desc}}.\n\nParameters:\n* $1 - page title",
 	"push-import-revision-message": "Parameters:\n* $1 - site name",
 	"push-tab-no-targets": "{{doc-important|Do not translate \"<code>LocalSettings.php</code>\".}}",
 	"push-tab-push-to": "Unused at this time. Parameters:\n* $1 - ...",
