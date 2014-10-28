@@ -44,7 +44,7 @@
 	"push-remote-pages": "Удалённые страницы",
 	"push-remote-page-link": "$1 на $2",
 	"push-remote-page-link-full": "Просмотреть $1 на $2",
-	"push-targets-total": "Всего $1 {{PLURAL:$1|направление|направлений|направления}}.",
+	"push-targets-total": "Всего $1 {{PLURAL:$1|направление|направления|направлений}}.",
 	"push-button-all": "Разместить все",
 	"push-tab-last-edit": "Последняя правка $1 $2 в $3.",
 	"push-tab-not-created": "Этой страницы ещё не существует.",
