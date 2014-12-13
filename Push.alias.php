@@ -111,6 +111,11 @@ $specialPageAliases['vi'] = array(
 	'Push' => array( 'Đẩy' ),
 );
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = array(
+	'Push' => array( '推送', '推播' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Push' => array( '推送' ),
