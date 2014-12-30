@@ -193,7 +193,14 @@ class ApiPush extends ApiBase {
 
 		$api = new ApiMain( new FauxRequest( $requestData, true ), true );
 		$api->execute();
-		$response = $api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$response = $api->getResult()->getResultData();
+			$response = ApiResult::transformForBC( $response );
+			$response = ApiResult::transformForTypes( $response, array( 'BC' => true ) );
+			$response = ApiResult::removeMetadata( $response );
+		} else {
+			$response = $api->getResultData();
+		}
 
 		$revision = false;
 

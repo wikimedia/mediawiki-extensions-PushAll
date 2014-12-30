@@ -419,7 +419,11 @@ final class PushTab {
 		
 		$api = new ApiMain( new FauxRequest( $requestData, true ), true );
 		$api->execute();
-		$response = $api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$response = ApiResult::removeMetadata( $api->getResult()->getResultData() );
+		} else {
+			$response = $api->getResultData();
+		}
 
 		if ( is_array( $response ) && array_key_exists( 'query', $response ) && array_key_exists( 'pages', $response['query'] ) ) {
 			foreach ( $response['query']['pages'] as $page ) {
