@@ -22,6 +22,7 @@
 	"group-filepusher.js": "/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Datteijeövverdraarer */",
 	"push-tab-text": "Övverdraare",
 	"push-button-text": "Övverdraare",
+	"push-tab-title": "De Sigg „$1“ övverdrahre",
 	"push-remote-page-link": "$1 {{GENDER:en+Dativ|{{ucfirst:$2}}}}",
 	"push-remote-page-link-full": "De Sigg „$1“ {{GRAMMAR:em|{{ucfirst:$2}}}} beloore",
 	"push-targets-total": "Es jitt ensjesamp {{PLURAL:$1|ei Ziel|$1 Ziele|kein Ziele}}.",
@@ -29,5 +30,7 @@
 	"push-tab-inc-templates": "De Schablone metnämme",
 	"push-tab-inc-files": "Enthallde Datteije metnämme",
 	"push-tab-embedded-files": "Enthallde Datteije:",
+	"push-tab-files-override": "{{PLURAL:$2|Di Dattei es|Di Datteije sin|Kein Datteie sin}} ald doh: $1",
+	"push-tab-template-override": "{{PLURAL:$2|Di Schbalohn es|Di Schablohne sin|Kein Schablohn es}} ald doh: $1",
 	"push-special-inc-files": "Enthallde Datteije metnämme"
 }
