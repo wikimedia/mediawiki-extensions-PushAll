@@ -13,7 +13,7 @@
 			"Nemo bis"
 		]
 	},
-	"push-desc": "{{desc|name=Push|url=http://www.mediawiki.org/wiki/Extension:Push}}",
+	"push-desc": "{{desc|name=Push|url=https://www.mediawiki.org/wiki/Extension:Push}}",
 	"right-push": "{{doc-right|push}}",
 	"right-bulkpush": "{{doc-right|bulkpush}}",
 	"right-pushadmin": "{{doc-right|pushadmin}}",
