@@ -76,6 +76,11 @@ $specialPageAliases['ko'] = array(
 	'Push' => array( '밀기' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'Push' => array( 'نیائن' ),
+);
+
 /** Macedonian (македонски) */
 $specialPageAliases['mk'] = array(
 	'Push' => array( 'Префрли' ),
