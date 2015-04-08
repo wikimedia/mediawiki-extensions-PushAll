@@ -26,6 +26,11 @@ $specialPageAliases['arz'] = array(
 	'Push' => array( 'دفع' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'Push' => array( 'پوش' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'Push' => array( 'Tikin' ),
