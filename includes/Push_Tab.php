@@ -420,7 +420,7 @@ final class PushTab {
 		$api = new ApiMain( new FauxRequest( $requestData, true ), true );
 		$api->execute();
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$response = ApiResult::removeMetadata( $api->getResult()->getResultData() );
+			$response = $api->getResult()->getResultData( null, array( 'Strip' => 'all' ) );
 		} else {
 			$response = $api->getResultData();
 		}
