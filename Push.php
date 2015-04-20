@@ -66,6 +66,8 @@ $wgHooks['AdminLinks'][] = 'PushHooks::addToAdminLinks';
 
 $wgAvailableRights[] = 'push';
 $wgAvailableRights[] = 'pushadmin';
+$wgAvailableRights[] = 'filepush';
+$wgAvailableRights[] = 'bulkpush';
 
 $egPushJSMessages = array(
 	'push-button-pushing',
