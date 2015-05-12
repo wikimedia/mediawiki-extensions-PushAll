@@ -21,7 +21,7 @@ $specialPageAliases['ar'] = array(
 	'Push' => array( 'دفع' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'Push' => array( 'دفع' ),
 );
@@ -81,7 +81,7 @@ $specialPageAliases['ko'] = array(
 	'Push' => array( '밀기' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'Push' => array( 'نیائن' ),
 );
