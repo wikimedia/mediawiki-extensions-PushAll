@@ -25,7 +25,7 @@
 	"push-tab-title": "De Sigg „$1“ övverdrahre",
 	"push-remote-page-link": "$1 {{GENDER:en+Dativ|{{ucfirst:$2}}}}",
 	"push-remote-page-link-full": "De Sigg „$1“ {{GRAMMAR:em|{{ucfirst:$2}}}} beloore",
-	"push-targets-total": "Es jitt ensjesamp {{PLURAL:$1|ei Ziel|$1 Ziele|kein Ziele}}.",
+	"push-targets-total": "Es jitt ensjesamp {{PLURAL:$1|ei Zihl|$1 Zihle|kein Zihle}}.",
 	"push-tab-not-created": "Di Sigg jidd_et noch nit!",
 	"push-tab-inc-templates": "De Schablone metnämme",
 	"push-tab-inc-files": "Enthallde Datteije metnämme",
