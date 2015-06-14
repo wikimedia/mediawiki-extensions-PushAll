@@ -20,6 +20,8 @@
 	"group-bulkpusher.js": "/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Maßßeövverdraarer */",
 	"group-filepusher.css": "/* Dat CSS heh aan dä Stell wirrek nur op de Datteijeeövverdraarer */",
 	"group-filepusher.js": "/* Dat JavaSkrep heh aan dä Stell wirrek nur op de Datteijeövverdraarer */",
+	"push-err-captacha": "Mer kunnte dat nit op „$1“ afflivvere weil e <span style=\"text-transform:uppercase\" title=\"Jät zom Ennjävve, öm ze zeije, dadd ene Minsch vör em Kompjuhter sez\">Kaptscha</span>s em Wähsch wohr.",
+	"push-err-captcha-page": "Mer kunnte di Sigg „$1“ nit obb alle Zihle afflivvere. Et wohre <span style=\"text-transform:uppercase\" title=\"Jät zom Ennjävve, öm ze zeije, dadd ene Minsch vör em Kompjuhter sez\">Kaptscha</span>s em Wähsch.",
 	"push-tab-text": "Övverdraare",
 	"push-button-text": "Övverdraare",
 	"push-tab-title": "De Sigg „$1“ övverdrahre",
