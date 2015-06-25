@@ -432,4 +432,7 @@ class SpecialPush extends SpecialPage {
 		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getPageTitle() : $GLOBALS['wgTitle'];
 	}
 
+	protected function getGroupName() {
+		return 'pagetools';
+	}
 }

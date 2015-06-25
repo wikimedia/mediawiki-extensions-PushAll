@@ -53,7 +53,6 @@ $wgAutoloadClasses['PushFunctions'] 		= $egPushIP . '/includes/Push_Functions.ph
 $wgAutoloadClasses['SpecialPush'] 			= $egPushIP . '/specials/Push_Body.php';
 
 $wgSpecialPages['Push'] = 'SpecialPush';
-$wgSpecialPageGroups['Push'] = 'pagetools';
 
 $wgAPIModules['push'] = 'ApiPush';
 $wgAPIModules['pushimages'] = 'ApiPushImages';
