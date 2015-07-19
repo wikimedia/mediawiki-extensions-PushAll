@@ -59,7 +59,7 @@
 	"push-tab-template-override": "{{PLURAL:$2|Esta plantilla ya existe|Estas plantillas ya existen}}: $1",
 	"push-tab-err-uploaddisabled": "Las cargas no están habilitadas. Asegúrese de que las variables $wgEnableUploads y $wgAllowCopyUploads estén definidas con el valor \"true\" en el archivo LocalSettings.php del wiki de destino.",
 	"special-push": "Transferir páginas",
-	"push-special-description": "Esta página permite transferir el contenido de una o más páginas hasta uno o más wikis de MediaWiki.\n\nPara transferir páginas, introduzca los títulos en la caja de texto de abajo (un título por línea) y haga clic en el botón Transferir todo. Esto puede tardar un tiempo hasta su finalización.",
+	"push-special-description": "Esta página permite transferir el contenido de una o más páginas hasta uno o más wikis de MediaWiki.\n\nPara transferir páginas, escribe los títulos en el cuadro de texto de abajo (un título por línea) y haz clic en el botón Transferir todo. Esto puede tardar un tiempo hasta su finalización.",
 	"push-special-pushing-desc": "Transfiriendo $2 {{PLURAL:$2|página|páginas}} hacia $1...",
 	"push-special-button-text": "Transferir páginas",
 	"push-special-target-is": "Wiki de destino: $1",
