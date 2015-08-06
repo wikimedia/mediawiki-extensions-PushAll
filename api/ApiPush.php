@@ -246,7 +246,7 @@ class ApiPush extends ApiBase {
 			if ( $token !== false ) {
 				$doPush = true;
 
-				wfRunHooks( 'PushAPIBeforePush', array( &$title, &$revision, &$target, &$token, &$doPush ) );
+				Hooks::run( 'PushAPIBeforePush', array( &$title, &$revision, &$target, &$token, &$doPush ) );
 
 				if ( $doPush ) {
 					$this->pushToTarget( $title, $revision, $target, $token );
@@ -371,7 +371,7 @@ class ApiPush extends ApiBase {
 		if ( $status->isOK() ) {
 			$response = $req->getContent();
 			$this->editResponses[] = $response;
-			wfRunHooks( 'PushAPIAfterPush', array( $title, $revision, $target, $token, $response ) );
+			Hooks::run( 'PushAPIAfterPush', array( $title, $revision, $target, $token, $response ) );
 		}
 		else {
 			$this->dieUsage( wfMsg( 'push-special-err-push-failed' ), 'page-push-failed' );

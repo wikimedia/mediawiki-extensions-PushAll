@@ -170,7 +170,7 @@ class ApiPushImages extends ApiBase {
 			if ( $token !== false ) {
 				$doPush = true;
 
-				wfRunHooks( 'PushAPIBeforeImagePush', array( &$title, &$target, &$token, &$doPush ) );
+				Hooks::run( 'PushAPIBeforeImagePush', array( &$title, &$target, &$token, &$doPush ) );
 
 				if ( $doPush ) {
 					$this->pushToTarget( $title, $target, $token );
@@ -322,7 +322,7 @@ class ApiPushImages extends ApiBase {
 				FormatJson::decode( $response )
 			);
 
-			wfRunHooks( 'PushAPIAfterImagePush', array( $title, $target, $token, $response ) );
+			Hooks::run( 'PushAPIAfterImagePush', array( $title, $target, $token, $response ) );
 		}
 		else {
 			$this->dieUsage( wfMsg( 'push-special-err-push-failed' ), 'page-push-failed' );
