@@ -89,8 +89,6 @@ final class PushTab {
 			
 			PushFunctions::addJSLocalisation();
 			
-			$wgOut->includeJQuery();
-			
 			$wgOut->addHeadItem(
 				'ext.push.tab',
 				Html::linkedScript( $egPushScriptPath . '/includes/ext.push.tab.js' )

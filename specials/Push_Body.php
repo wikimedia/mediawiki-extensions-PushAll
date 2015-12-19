@@ -349,8 +349,6 @@ class SpecialPush extends SpecialPage {
 
 			PushFunctions::addJSLocalisation();
 
-			$out->includeJQuery();
-
 			$out->addHeadItem(
 				'ext.push.special',
 				Html::linkedScript( $egPushScriptPath . '/specials/ext.push.special.js' )
