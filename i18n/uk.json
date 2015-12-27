@@ -4,7 +4,8 @@
 			"Andriykopanytsia",
 			"Base",
 			"Steve.rusyn",
-			"SteveR"
+			"SteveR",
+			"Piramidion"
 		]
 	},
 	"push-desc": "Невелике розширення для поширення вмісту до інших вікі",
@@ -78,5 +79,5 @@
 	"push-special-pushing-file": "$1: Поширення файлу $2...",
 	"push-special-return": "Поширити більше сторінок",
 	"push-api-err-nocurl": "cURL не встановлено.\nЗадайте значення $egPushDirectFileUploads як false для громадських вікі або установіть cURL для приватних вікі",
-	"push-api-err-nofilesupport": "Локальна Медіавікі не підтримує відправку файлів.\nНа загальнодоступній вікі задайте параметру $egPushDirectFileUploads значення false.\nНа приватній вікі застосуйте патч, пов'язаний з документацією про поширення або поновіть саму Медіавікі."
+	"push-api-err-nofilesupport": "Локальна MediaWiki не підтримує відправлення файлів.\nНа загальнодоступній вікі задайте параметру $egPushDirectFileUploads значення false.\nНа приватній вікі застосуйте патч, пов'язаний з документацією про поширення або поновіть саму MediaWiki."
 }
