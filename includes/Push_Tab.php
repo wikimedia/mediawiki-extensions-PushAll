@@ -108,9 +108,8 @@ final class PushTab {
 		$wgOut->setPageTitle( wfMsgExt( 'push-tab-title', 'parsemag', $article->getTitle()->getText() ) );
 		
 		if ( !$wgUser->isAllowed( 'push' ) ) {
-			$wgOut->permissionRequired( 'push' );
-			return false;
-		}		
+			throw new PermissionsError( 'push' );
+		}
 		
 		$wgOut->addHTML( '<p>' . htmlspecialchars( wfMsg( 'push-tab-desc'  ) ) . '</p>' );
 		
