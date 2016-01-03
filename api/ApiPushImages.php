@@ -143,15 +143,15 @@ class ApiPushImages extends ApiBase {
 					$this->cookieJars[$target] = $req->getCookieJar();
 				}
 				else {
-					$this->dieUsage( wfMsgExt( 'push-err-authentication', 'parsemag', $target, '' ), 'authentication-failed' );
+					$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 				}
 			}
 			else {
-				$this->dieUsage( wfMsgExt( 'push-err-authentication', 'parsemag', $target, '' ), 'authentication-failed' );
+				$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 			}
 		}
 		else {
-			$this->dieUsage( wfMsgExt( 'push-err-authentication', 'parsemag', $target, '' ), 'authentication-failed' );
+			$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 		}
 	}
 
@@ -239,11 +239,11 @@ class ApiPushImages extends ApiBase {
 				$this->dieUsage( $response->query->error->message, 'token-request-failed' );
 			}
 			else {
-				$this->dieUsage( wfMsg( 'push-special-err-token-failed' ), 'token-request-failed' );
+				$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
 			}
 		}
 		else {
-			$this->dieUsage( wfMsg( 'push-special-err-token-failed' ), 'token-request-failed' );
+			$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
 		}
 
 		return $token;
@@ -291,10 +291,10 @@ class ApiPushImages extends ApiBase {
 
 		if ( $egPushDirectFileUploads ) {
 			if ( !function_exists( 'curl_init' ) ) {
-				$this->dieUsage( wfMsg( 'push-api-err-nocurl' ), 'image-push-nocurl' );
+				$this->dieUsage( wfMessage( 'push-api-err-nocurl' )->text(), 'image-push-nocurl' );
 			}
 			elseif ( !defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' ) || !CurlHttpRequest::SUPPORTS_FILE_POSTS ) {
-				$this->dieUsage( wfMsg( 'push-api-err-nofilesupport' ), 'image-push-nofilesupport' );
+				$this->dieUsage( wfMessage( 'push-api-err-nofilesupport' )->text(), 'image-push-nofilesupport' );
 			}
 			else {
 				$httpEngine = Http::$httpEngine;
@@ -325,7 +325,7 @@ class ApiPushImages extends ApiBase {
 			Hooks::run( 'PushAPIAfterImagePush', array( $title, $target, $token, $response ) );
 		}
 		else {
-			$this->dieUsage( wfMsg( 'push-special-err-push-failed' ), 'page-push-failed' );
+			$this->dieUsage( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
 		}
 	}
 

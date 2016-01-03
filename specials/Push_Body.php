@@ -26,7 +26,7 @@ class SpecialPush extends SpecialPage {
 	 * @see SpecialPage::getDescription
 	 */
 	public function getDescription() {
-		return wfMsg( 'special-' . strtolower( $this->getName() ) );
+		return $this->msg( 'special-' . strtolower( $this->getName() ) )->text();
 	}
 
 	/**
@@ -61,7 +61,7 @@ class SpecialPush extends SpecialPage {
 		}
 
 		if ( count( $egPushTargets ) == 0 ) {
-			$this->getOutput()->addHTML( '<p>' . htmlspecialchars( wfMsg( 'push-tab-no-targets'  ) ) . '</p>' );
+			$this->getOutput()->addHTML( '<p>' . $this->msg( 'push-tab-no-targets'  )->escaped() . '</p>' );
 			return;
 		}
 
@@ -179,7 +179,7 @@ class SpecialPush extends SpecialPage {
 					Html::element( 'ul', array( 'id' => 'pushResultList' ) )
 				)
 			) . '<br />' .
-			Html::element( 'a', array( 'href' => $this->getPageTitle()->getInternalURL() ), wfMsg( 'push-special-return' ) )
+			Html::element( 'a', array( 'href' => $this->getPageTitle()->getInternalURL() ), $this->msg( 'push-special-return' )->text() )
 		);
 
 		$out->addInlineScript(
@@ -205,25 +205,25 @@ class SpecialPush extends SpecialPage {
 
 		$form = Xml::openElement( 'form', array( 'method' => 'post',
 			'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ) );
-		$form .= Xml::inputLabel( wfMsg( 'export-addcattext' )    , 'catname', 'catname', 40 ) . '&#160;';
-		$form .= Xml::submitButton( wfMsg( 'export-addcat' ), array( 'name' => 'addcat' ) ) . '<br />';
+		$form .= Xml::inputLabel( $this->msg( 'export-addcattext' )->text() , 'catname', 'catname', 40 ) . '&#160;';
+		$form .= Xml::submitButton( $this->msg( 'export-addcat' )->text(), array( 'name' => 'addcat' ) ) . '<br />';
 
 		$form .= Html::namespaceSelector( array(
 			'selected' => $req->getText( 'nsindex', '' ),
 			'all' => null,
-			'label' => wfMsg( 'export-addnstext' ),
+			'label' => $this->msg( 'export-addnstext' )->text(),
 		), array(
 			'name' => 'nsindex',
 			'id' => 'namespace',
 			'class' => 'namespaceselector',
 		) ) . '&#160;';
-		$form .= Xml::submitButton( wfMsg( 'export-addns' ), array( 'name' => 'addns' ) ) . '<br />';
+		$form .= Xml::submitButton( $this->msg( 'export-addns' )->text(), array( 'name' => 'addns' ) ) . '<br />';
 
 		$form .= Xml::element( 'textarea', array( 'name' => 'pages', 'cols' => 40, 'rows' => 10 ), $pages, false );
 		$form .= '<br />';
 
 		$form .= Xml::checkLabel(
-			wfMsg( 'export-templates' ),
+			$this->msg( 'export-templates' )->text(),
 			'templates',
 			'wpPushTemplates',
 			$req->wasPosted() ? $req->getCheck( 'templates' ) : $egPushIncTemplates
@@ -231,7 +231,7 @@ class SpecialPush extends SpecialPage {
 
 		if ( $this->getUser()->isAllowed( 'filepush' ) ) {
 			$form .= Xml::checkLabel(
-				wfMsg( 'push-special-inc-files' ),
+				$this->msg( 'push-special-inc-files' )->text(),
 				'files',
 				'wpPushFiles',
 				$req->wasPosted() ? $req->getCheck( 'files' ) : $egPushIncFiles
@@ -240,10 +240,10 @@ class SpecialPush extends SpecialPage {
 
 		if ( count( $egPushTargets ) == 1 ) {
 			$names = array_keys( $egPushTargets );
-			$form .= '<b>' . htmlspecialchars( wfMsgExt( 'push-special-target-is', 'parsemag', $names[0] ) ) . '</b><br />';
+			$form .= '<b>' . $this->msg( 'push-special-target-is', $names[0] )->parse() . '</b><br />';
 		}
 		else {
-			$form .= '<b>' . htmlspecialchars( wfMsg( 'push-special-select-targets' ) ) . '</b><br />';
+			$form .= '<b>' . $this->msg( 'push-special-select-targets' )->escaped() . '</b><br />';
 
 			foreach ( $egPushTargets as $targetName => $targetUrl ) {
 				$checkName = str_replace( ' ', '_', $targetName );
@@ -252,7 +252,7 @@ class SpecialPush extends SpecialPage {
 			}
 		}
 
-		$form .= Xml::submitButton( wfMsg( 'push-special-button-text' ), array( 'style' => 'width: 125px; height: 30px' ) );
+		$form .= Xml::submitButton( $this->msg( 'push-special-button-text' )->text(), array( 'style' => 'width: 125px; height: 30px' ) );
 		$form .= Xml::closeElement( 'form' );
 
 		$this->getOutput()->addHTML( $form );

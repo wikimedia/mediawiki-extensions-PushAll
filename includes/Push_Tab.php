@@ -29,7 +29,7 @@ final class PushTab {
 			global $wgRequest;
 			
 			$content_actions['push'] = array(
-				'text' => wfMsg( 'push-tab-text' ),
+				'text' => wfMessage( 'push-tab-text' )->text(),
 				'class' => $wgRequest->getVal( 'action' ) == 'push' ? 'selected' : '',
 				'href' => $title->getLocalURL( 'action=push' )
 			);
@@ -105,16 +105,16 @@ final class PushTab {
 	public static function displayPushPage( Article $article ) {
 		global $wgOut, $wgUser, $wgTitle, $wgSitename, $egPushTargets;
 		
-		$wgOut->setPageTitle( wfMsgExt( 'push-tab-title', 'parsemag', $article->getTitle()->getText() ) );
+		$wgOut->setPageTitle( wfmessage( 'push-tab-title', $article->getTitle()->getText() )->parse() );
 		
 		if ( !$wgUser->isAllowed( 'push' ) ) {
 			throw new PermissionsError( 'push' );
 		}
 		
-		$wgOut->addHTML( '<p>' . htmlspecialchars( wfMsg( 'push-tab-desc'  ) ) . '</p>' );
+		$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-desc'  )->escaped() . '</p>' );
 		
 		if ( count( $egPushTargets ) == 0 ) {
-			$wgOut->addHTML( '<p>' . htmlspecialchars( wfMsg( 'push-tab-no-targets'  ) ) . '</p>' );
+			$wgOut->addHTML( '<p>' . wfMesssage( 'push-tab-no-targets'  )->escaped() . '</p>' );
 			return false;
 		}
 		
@@ -147,12 +147,12 @@ final class PushTab {
 				Html::element(
 					'th',
 					array( 'width' => '200px' ),
-					wfMsg( 'push-targets' )
+					wfMessage( 'push-targets' )->text()
 				) .
 				Html::element(
 					'th',
 					array( 'style' => 'min-width:400px;' ),
-					wfMsg( 'push-remote-pages' )
+					wfMessage( 'push-remote-pages' )->text()
 				) .
 				Html::element(
 					'th',
@@ -174,7 +174,7 @@ final class PushTab {
 				Html::element(
 					'th',
 					array( 'colspan' => 2, 'style' => 'text-align: left' ),
-					wfMsgExt( 'push-targets-total', 'parsemag', $wgLang->formatNum( count( $egPushTargets ) ) )
+					wfMessage( 'push-targets-total' )->numParams( count( $egPushTargets ) )->parse()
 				) .
 				Html::rawElement(
 					'th',
@@ -185,7 +185,7 @@ final class PushTab {
 							'id' => 'push-all-button',
 							'style' => 'width: 125px; height: 30px',
 						),
-						wfMsg( 'push-button-all' )
+						wfmessage( 'push-button-all' )->text()
 					)				
 				)
 			);			
@@ -234,7 +234,7 @@ final class PushTab {
 						'rel' => 'nofollow',
 						'id' => 'targetlink' . $targetId
 					),
-					wfMsgExt( 'push-remote-page-link', 'parsemag', $wgTitle->getFullText(), $name ) 
+					wfMessage( 'push-remote-page-link', $wgTitle->getFullText(), $name )->parse()
 				) . 
 				Html::element(
 					'div',
@@ -277,7 +277,7 @@ final class PushTab {
 						'targetid' => $targetId,
 						'targetname' => $name
 					),
-					wfMsg( 'push-button-text' )
+					wfMessage( 'push-button-text' )->text()
 				)
 			)
 		);
@@ -291,7 +291,7 @@ final class PushTab {
 	protected static function displayPushOptions() {
 		global $wgOut, $wgUser, $wgTitle;
 		
-		$wgOut->addHTML( '<h3>' . htmlspecialchars( wfMsg( 'push-tab-push-options' ) ) . '</h3>' );
+		$wgOut->addHTML( '<h3>' . wfMessage( 'push-tab-push-options' )->escaped() . '</h3>' );
 		
 		$usedTemplates = array_keys(
 			PushFunctions::getTemplates(
@@ -336,15 +336,16 @@ final class PushTab {
 				Html::element(
 					'label',
 					array( 'id' => 'lblIncTemplates', 'for' => 'checkIncTemplates' ),
-					wfMsg( 'push-tab-inc-templates' )
+					wfmessage( 'push-tab-inc-templates' )->text()
 				) .		
 				'&#160;' . 
 				Html::rawElement(
 					'div',
 					array( 'style' => 'display:none; opacity:0', 'id' => 'txtTemplateList' ),
 					count( $templates ) > 0 ?
-						 wfMsgExt( 'push-tab-used-templates', 'parseinline', $wgLang->listToText( $templates ), count( $templates ) ) :
-						 htmlspecialchars( wfMsg( 'push-tab-no-used-templates' ) )
+						wfmessage( 'push-tab-used-templates',
+							$wgLang->listToText( $templates ), count( $templates ) )->parse() :
+							wfMessage( 'push-tab-no-used-templates' )->escaped()
 				)				
 			)
 		);		
@@ -384,7 +385,7 @@ final class PushTab {
 				Html::element(
 					'label',
 					array( 'id' => 'lblIncFiles', 'for' => 'checkIncFiles' ),
-					wfMsg( 'push-tab-inc-files' )
+					wfMessage( 'push-tab-inc-files' )->text()
 				) .		
 				'&#160;' . 
 				Html::rawElement(

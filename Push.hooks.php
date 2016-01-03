@@ -20,7 +20,7 @@ final class PushHooks {
 	 * @return true
 	 */
 	public static function addToAdminLinks( &$admin_links_tree ) {
-	    $ioSection = $admin_links_tree->getSection( wfMsg( 'adminlinks_importexport' ) );
+	    $ioSection = $admin_links_tree->getSection( wfMessage( 'adminlinks_importexport' )->text() );
 	    $mainRow = $ioSection->getRow( 'main' );
 	    $mainRow->addItem( ALItem::newFromSpecialPage( 'Push' ) );
 	    

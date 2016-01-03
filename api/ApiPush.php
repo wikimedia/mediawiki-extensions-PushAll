@@ -157,15 +157,15 @@ class ApiPush extends ApiBase {
 					$this->cookieJars[$target] = $req->getCookieJar();
 				}
 				else {
-					$this->dieUsage( wfMsgExt( 'push-err-authentication', 'parsemag', $target, '' ), 'authentication-failed' );
+					$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 				}
 			}
 			else {
-				$this->dieUsage( wfMsgExt( 'push-err-authentication', 'parsemag', $target, '' ), 'authentication-failed' );
+				$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 			}
 		}
 		else {
-			$this->dieUsage( wfMsgExt( 'push-err-authentication', 'parsemag', $target, '' ), 'authentication-failed' );
+			$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 		}
 	}
 
@@ -220,11 +220,11 @@ class ApiPush extends ApiBase {
 				$revision = $response['query']['pages'][$first]['revisions'][0];
 			}
 			else {
-				$this->dieUsage( wfMsg( 'push-special-err-pageget-failed' ), 'page-get-failed' );
+				$this->dieUsage( wfMessage( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
 			}
 		}
 		else {
-			$this->dieUsage( wfMsg( 'push-special-err-pageget-failed' ), 'page-get-failed' );
+			$this->dieUsage( wfMessage( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
 		}
 
 		return $revision;
@@ -315,11 +315,11 @@ class ApiPush extends ApiBase {
 				$this->dieUsage( $response->query->error->message, 'token-request-failed' );
 			}
 			else {
-				$this->dieUsage( wfMsg( 'push-special-err-token-failed' ), 'token-request-failed' );
+				$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
 			}
 		}
 		else {
-			$this->dieUsage( wfMsg( 'push-special-err-token-failed' ), 'token-request-failed' );
+			$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
 		}
 
 		return $token;
@@ -338,12 +338,11 @@ class ApiPush extends ApiBase {
 	protected function pushToTarget( Title $title, array $revision, $target, $token ) {
 		global $wgSitename;
 
-		$summary = wfMsgExt(
+		$summary = wfMessage(
 			'push-import-revision-message',
-			'parsemag',
 			$wgSitename
 			//$revision['user']
-		);
+		)->parse();
 
 		$requestData = array(
 			'action' => 'edit',
@@ -374,7 +373,7 @@ class ApiPush extends ApiBase {
 			Hooks::run( 'PushAPIAfterPush', array( $title, $revision, $target, $token, $response ) );
 		}
 		else {
-			$this->dieUsage( wfMsg( 'push-special-err-push-failed' ), 'page-push-failed' );
+			$this->dieUsage( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
 		}
 	}
 
