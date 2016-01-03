@@ -24,7 +24,7 @@ final class PushFunctions {
 		$data = array();
 	
 		foreach ( $egPushJSMessages as $msg ) {
-			$data[$msg] = wfMsgNoTrans( $msg );
+			$data[$msg] = wfMessage( $msg )->plain();
 		}
 	
 		$wgOut->addInlineScript( 'var wgPushMessages = ' . FormatJson::encode( $data ) . ';' );		
