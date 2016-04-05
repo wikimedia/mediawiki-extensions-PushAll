@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"AnakngAraw"
+			"AnakngAraw",
+			"Jojit fb"
 		]
 	},
 	"push-desc": "Dugtong na magaang ang timbang upang maitulak ang nilalaman sa ibang mga wiki",
@@ -19,7 +20,7 @@
 	"grouppage-bulkpusher": "{{ns:project}}:Tagapagtulak na buntunan",
 	"group-filepusher": "Mga tagatulak ng talaksan",
 	"group-filepusher-member": "{{GENDER:$1|tagapagtulak ng talaksan}}",
-	"grouppage-filepusher": "{{ns:project}}:Tagapagtulak ng talaksan",
+	"grouppage-filepusher": "{{ns:project}}:Tagapagtulak ng file",
 	"group-pusher.css": "/* Ang inilagay na Mga Pilas ng Estilong Lumalagaslas (Cascading Style Sheets o CSS) dito ay makakaapekto lamang sa mga tagapagtulak */",
 	"group-pusher.js": "/* Ang JavaScript o JS na inilagay dito ay makakaapekto lamang sa mga tagapagtulak */",
 	"group-bulkpusher.css": "/* Ang inilagay na Mga Pilas ng Estilong Lumalagaslas (Cascading Style Sheets o CSS) dito ay makakaapekto lamang sa mga tagapagtulak ng bunton */",
