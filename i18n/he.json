@@ -3,12 +3,13 @@
 		"authors": [
 			"Amire80",
 			"Inkbug",
-			"Yona b"
+			"Yona b",
+			"Guycn2"
 		]
 	},
 	"push-desc": "הרחבה קלילה לדחיפת תוכן לאתרי ויקי אחרים",
 	"right-push": "שימוש בפעולת הדחיפה.",
-	"right-bulkpush": "השתמשו בלחיצת דפים מרובים (למשל Special:Push)",
+	"right-bulkpush": "שימוש בלחיצת דפים מרובים (באמצעות הדף \"Special:Push\")",
 	"right-pushadmin": "משנה יעדי לחיצה ותצורת לחיצה.",
 	"action-push": "דחיפת דפים",
 	"action-bulkpush": "דחיפת דפים מרובים",
