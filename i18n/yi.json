@@ -4,6 +4,11 @@
 			"פוילישער"
 		]
 	},
+	"action-push": "שטופן בלעטער",
+	"push-tab-text": "שטופן",
+	"push-button-text": "שטופן",
 	"push-tab-last-edit": "לעצטע רעדאקטירונג דורך $1 אום $2 $3.",
-	"push-tab-not-created": "דער בלאט עקזיסטירט נאך נישט."
+	"push-tab-not-created": "דער בלאט עקזיסטירט נאך נישט.",
+	"push-special-select-targets": "צילוויקיס:",
+	"push-special-item-pushing": "$1: שטופן"
 }
