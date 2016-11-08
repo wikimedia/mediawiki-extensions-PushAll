@@ -54,7 +54,7 @@
 	"push-tab-no-embedded-files": "(Não há nenhum ficheiro incorporado nesta página).",
 	"push-tab-files-override": "{{PLURAL:$2|Este ficheiro já existe|Estes ficheiros já existem}}: $1",
 	"push-tab-template-override": "{{PLURAL:$2|Esta predefinição já existe|Estas predefinições já existem}}: $1",
-	"push-tab-err-uploaddisabled": "Os uploads não foram possibilitados. Certifique-se que $wgEnableUploads e $wgAllowCopyUploads estão definidas como \"true\" no ficheiro LocalSettings.php da wiki de destino.",
+	"push-tab-err-uploaddisabled": "Os uploads não foram possibilitados. Certifique-se de que $wgEnableUploads e $wgAllowCopyUploads estão definidas como \"true\" no ficheiro LocalSettings.php da wiki de destino.",
 	"special-push": "Replicação externa de páginas",
 	"push-special-description": "Esta página permite-lhe fazer a replicação externa de uma ou mais páginas, para uma ou mais wikis MediaWiki.\n\nPara fazer a replicação externa de páginas, introduza os respectivos títulos na caixa de texto abaixo, um título por linha e clique \"Replicar todas\". A operação pode demorar algum tempo.",
 	"push-special-pushing-desc": "A replicar $2 {{PLURAL:$2|página|páginas}} para a $1...",
