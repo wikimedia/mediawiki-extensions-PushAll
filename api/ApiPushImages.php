@@ -344,23 +344,22 @@ class ApiPushImages extends ApiBase {
 		);
 	}
 
-	public function getParamDescription() {
-		return array(
-			'images' => 'The names of the images to push. Delimitered by |',
-			'targets' => 'The urls of the wikis to push to. Delimitered by |',
-		);
-	}
-
-	public function getDescription() {
-		return array(
-			'Pushes the content of one ore more pages to one or more target wikis.'
-		);
-	}
-
+	/*
+	* @deprecated since MediaWiki core 1.25
+	*/
 	protected function getExamples() {
 		return array(
 			'api.php?action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w',
 		);
 	}
 
+	/**
+	* @see ApiBase::getExamplesMessages()
+	*/
+	protected function getExamplesMessages() {
+		return array(
+			'action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w'
+				=> 'apihelp-pushimages-example',
+		);
+	}
 }

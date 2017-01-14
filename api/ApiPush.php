@@ -392,23 +392,22 @@ class ApiPush extends ApiBase {
 		);
 	}
 
-	public function getParamDescription() {
-		return array(
-			'page' => 'The names of the page to push. Delimitered by |',
-			'targets' => 'The urls of the wikis to push to. Delimitered by |',
-		);
-	}
-
-	public function getDescription() {
-		return array(
-			'Pushes the content of one ore more pages to one or more target wikis.'
-		);
-	}
-
+	/*
+	* @deprecated since MediaWiki core 1.25
+	*/
 	protected function getExamples() {
 		return array(
 			'api.php?action=push&page=Main page&targets=http://en.wikipedia.org/w',
 		);
 	}
 
+	/**
+	* @see ApiBase::getExamplesMessages()
+	*/
+	protected function getExamplesMessages() {
+		return array(
+			'action=push&page=Main page&targets=http://en.wikipedia.org/w'
+				=> 'apihelp-push-example',
+		);
+	}
 }

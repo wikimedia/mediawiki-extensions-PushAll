@@ -90,5 +90,13 @@
 	"push-special-pushing-file": "Parameters:\n* $1 - page name\n* $2 - file name",
 	"push-special-return": "Used as link text",
 	"push-api-err-nocurl": "{{doc-important|Do not translate \"<code>$egPushDirectFileUploads</code>\".}}",
-	"push-api-err-nofilesupport": "{{doc-important|Do not translate \"<code>$egPushDirectFileUploads</code>\".}}"
+	"push-api-err-nofilesupport": "{{doc-important|Do not translate \"<code>$egPushDirectFileUploads</code>\".}}",
+	"apihelp-push-description": "{{doc-apihelp-description|push}}",
+	"apihelp-push-param-page": "{{doc-apihelp-param|push|page}}",
+	"apihelp-push-param-targets": "{{doc-apihelp-param|push|targets}}",
+	"apihelp-push-example": "{{doc-apihelp-example|push}}",
+	"apihelp-pushimages-description": "{{doc-apihelp-description|pushimages}}",
+	"apihelp-pushimages-param-images": "{{doc-apihelp-param|pushimages|images}}",
+	"apihelp-pushimages-param-targets": "{{doc-apihelp-param|pushimages|targets}}",
+	"apihelp-pushimages-example": "{{doc-apihelp-example|pushimages}}"
 }

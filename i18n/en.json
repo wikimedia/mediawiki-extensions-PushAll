@@ -81,5 +81,13 @@
 	"push-special-pushing-file": "$1: Pushing file $2...",
 	"push-special-return": "Push more pages",
 	"push-api-err-nocurl": "cURL is not installed.\nSet $egPushDirectFileUploads to false on public wikis, or install cURL for private wikis",
-	"push-api-err-nofilesupport": "The local MediaWiki does not have support for posting files.\nOn public wikis, set $egPushDirectFileUploads to false.\nOn private wikis, apply the patch linked from the Push documentation or update MediaWiki itself."
+	"push-api-err-nofilesupport": "The local MediaWiki does not have support for posting files.\nOn public wikis, set $egPushDirectFileUploads to false.\nOn private wikis, apply the patch linked from the Push documentation or update MediaWiki itself.",
+	"apihelp-push-description": "Pushes the content of one ore more pages to one or more target wikis.",
+	"apihelp-push-param-page": "The names of the page to push.",
+	"apihelp-push-param-targets": "The urls of the wikis to push to.",
+	"apihelp-push-example": "Push page 'Main page' to the English Wikipedia.",
+	"apihelp-pushimages-description": "Pushes the content of one ore more pages to one or more target wikis.",
+	"apihelp-pushimages-param-images": "The names of the images to push.",
+	"apihelp-pushimages-param-targets": "The urls of the wikis to push to.",
+	"apihelp-pushimages-example": "Push file 'Foo.bar' to the English Wikipedia."
 }
