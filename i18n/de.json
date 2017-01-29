@@ -76,5 +76,13 @@
 	"push-special-pushing-file": "$1: Transferiere Datei $2 …",
 	"push-special-return": "Weitere Seiten transferieren",
 	"push-api-err-nocurl": "cURL ist nicht installiert.\nDer Parameter <code>$egPushDirectFileUploads</code> muss daher für alle öffentlichen Wikis auf false gesetzt werden. Alternativ cURL für alle nichtöffentlichen Wikis installieren.",
-	"push-api-err-nofilesupport": "Die lokale MediaWiki-Installation unterstützt nicht das Hochladen von Dateien.\nAuf öffentlichen Wikis muss der Parameter <code>$egPushDirectFileUploads</code> auf false gesetzt werden.\nAuf nichtöffentlichen Wikis muss der über die Dokumentationsseite zu dieser Programmerweiterung erhältliche Patch angewendet oder die MediaWiki-Installation selbst aktualisiert werden."
+	"push-api-err-nofilesupport": "Die lokale MediaWiki-Installation unterstützt nicht das Hochladen von Dateien.\nAuf öffentlichen Wikis muss der Parameter <code>$egPushDirectFileUploads</code> auf false gesetzt werden.\nAuf nichtöffentlichen Wikis muss der über die Dokumentationsseite zu dieser Programmerweiterung erhältliche Patch angewendet oder die MediaWiki-Installation selbst aktualisiert werden.",
+	"apihelp-push-description": "Transferiert den Inhalt einer oder mehrerer Seiten in ein oder mehrere Zielwikis.",
+	"apihelp-push-param-page": "Die Namen der zu transferierenden Seiten.",
+	"apihelp-push-param-targets": "Die URLs der Wikis, zu denen der Transfer stattfinden soll.",
+	"apihelp-push-example": "Transferiert die Seite „Hauptseite“ in die englischsprachige Wikipedia.",
+	"apihelp-pushimages-description": "Transferiert den Inhalt einer oder mehrerer Seiten in ein oder mehrere Zielwikis.",
+	"apihelp-pushimages-param-images": "Die Namen der zu transferierenden Bilder.",
+	"apihelp-pushimages-param-targets": "Die URLs der Wikis, zu denen der Transfer stattfinden soll.",
+	"apihelp-pushimages-example": "Transferiert die Datei „Foo.bar“ in die englischsprachige Wikipedia."
 }

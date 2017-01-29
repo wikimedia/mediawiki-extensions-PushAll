@@ -81,5 +81,13 @@
 	"push-special-pushing-file": "$1: Ја пренесувам податотеката $2...",
 	"push-special-return": "Пренеси уште страници",
 	"push-api-err-nocurl": "cURL не е воспоставен.\nНаместете го $egPushDirectFileUploads на „false“ на јавните викија, или пак воспоставете го cURL на личните викија",
-	"push-api-err-nofilesupport": "Месниот МедијаВики нема поддршка за објавување на податотеки.\nНа јавни викија, наместете го $egPushDirectFileUploads на „false“.\nНа лични викија, ставете ја поправката linkd од документацијата на Push или подновете го самиот МедијаВики."
+	"push-api-err-nofilesupport": "Месниот МедијаВики нема поддршка за објавување на податотеки.\nНа јавни викија, наместете го $egPushDirectFileUploads на „false“.\nНа лични викија, ставете ја поправката linkd од документацијата на Push или подновете го самиот МедијаВики.",
+	"apihelp-push-description": "Ја префрла содржината од една или повеќе страници на едно или повеќе целни викија.",
+	"apihelp-push-param-page": "Имињата на страниците за префрлање.",
+	"apihelp-push-param-targets": "URL-а на викијата на кои се префрла.",
+	"apihelp-push-example": "Префрли ја „Главна страница“ на Википедија на англиски.",
+	"apihelp-pushimages-description": "Ја префрла содржината од една или повеќе страници на едно или повеќе целни викија.",
+	"apihelp-pushimages-param-images": "Имињата на сликите за префрлање.",
+	"apihelp-pushimages-param-targets": "URL-а на викијата на кои се префрла.",
+	"apihelp-pushimages-example": "Префрли ја податотеката „Foo.bar“ на Википедија на англиски."
 }

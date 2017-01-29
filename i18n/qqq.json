@@ -10,7 +10,8 @@
 			"Siebrand",
 			"Umherirrender",
 			"아라",
-			"Nemo bis"
+			"Nemo bis",
+			"Liuxinyu970226"
 		]
 	},
 	"push-desc": "{{desc|name=Push|url=https://www.mediawiki.org/wiki/Extension:Push}}",
@@ -94,9 +95,9 @@
 	"apihelp-push-description": "{{doc-apihelp-description|push}}",
 	"apihelp-push-param-page": "{{doc-apihelp-param|push|page}}",
 	"apihelp-push-param-targets": "{{doc-apihelp-param|push|targets}}",
-	"apihelp-push-example": "{{doc-apihelp-example|push}}",
+	"apihelp-push-example": "{{doc-apihelp-example|push}}\n{{doc-important|Please translate \"English Wikipedia\" literally}}",
 	"apihelp-pushimages-description": "{{doc-apihelp-description|pushimages}}",
 	"apihelp-pushimages-param-images": "{{doc-apihelp-param|pushimages|images}}",
 	"apihelp-pushimages-param-targets": "{{doc-apihelp-param|pushimages|targets}}",
-	"apihelp-pushimages-example": "{{doc-apihelp-example|pushimages}}"
+	"apihelp-pushimages-example": "{{doc-apihelp-example|pushimages}}\n{{doc-important|Please translate \"English Wikipedia\" literally}}"
 }
