@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"BeginaFelicysym",
-			"Matma Rex"
+			"Matma Rex",
+			"Chrumps"
 		]
 	},
 	"push-desc": "Lekkie rozszerzenie by przesunąć treść na inne wiki",
-	"right-push": "Autoryzacja do używania funkcji przesuwania.",
-	"right-bulkpush": "Autoryzacja do wykorzystania funkcji przesuwania hurtowego (tj. Special:Push).",
-	"right-pushadmin": "Upoważnienie do zmiany celów i ustawień przesuwania.",
+	"right-push": "Użycie funkcji przesuwania",
+	"right-bulkpush": "Użycie funkcji przesuwania hurtowego (tj. Special:Push)",
+	"right-pushadmin": "Zmiana celów i ustawień przesuwania",
 	"action-push": "przesuwania stron",
 	"action-bulkpush": "hurtowego przesuwania stron",
 	"action-pushadmin": "konfigurowania przesuwania",
@@ -54,8 +55,8 @@
 	"push-tab-err-filepush": "Przesuwanie pliku nie powiodło się: $1",
 	"push-tab-embedded-files": "Osadzone pliki:",
 	"push-tab-no-embedded-files": "(Na tej stronie nie ma osadzonych żadnych plików.)",
-	"push-tab-files-override": "Te pliki już istnieją: $1",
-	"push-tab-template-override": "Te szablony już istnieją: $1",
+	"push-tab-files-override": "{{PLURAL:$2|Ten plik już istnieje|Te pliki już istnieją}}: $1",
+	"push-tab-template-override": "{{PLURAL:$2|Ten szablon już istnieje|Te szablony już istnieją}}: $1",
 	"push-tab-err-uploaddisabled": "Przesyłanie plików jest wyłączone. Upewnij się, że ustawienia $wgEnableUploads i $wgAllowCopyUploads w pliku konfiguracyjnym LocalSettings.php wiki docelowej ustawione na true.",
 	"special-push": "Przesuń strony",
 	"push-special-description": "Ta strona pozwala umieścić zawartość jednej lub wielu stron na jednej lub wielu innych stronach internetowych typu wiki opartych na silniku MediaWiki.\n\nAby „przesunąć” strony, wpisz ich tytuły w polu tekstowym poniżej (jeden tytuł w jednej linii) i wciśnij przycisk „Przesuń wszystkie”. Może to zająć dłuższą chwilę.",
@@ -76,5 +77,7 @@
 	"push-special-pushing-file": "$1: Przesuwanie pliku $2...",
 	"push-special-return": "Przesuń więcej stron",
 	"push-api-err-nocurl": "cURL nie jest zainstalowany.\nNa publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false, na prywatnej wiki zainstaluj cURL.",
-	"push-api-err-nofilesupport": "Lokalne MediaWiki nie obsługuje przesyłania plików.\nNa publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false.\nNa prywatnej wiki zastosuj patch linkd z dokumentacji rozszerzenia Push lub zaktualizuj MediaWiki."
+	"push-api-err-nofilesupport": "Lokalne MediaWiki nie obsługuje przesyłania plików.\nNa publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false.\nNa prywatnej wiki zastosuj patch linkd z dokumentacji rozszerzenia Push lub zaktualizuj MediaWiki.",
+	"apihelp-push-description": "Przesuwanie treści jednej lub wielu stron do jednej lub wielu docelowych wiki.",
+	"apihelp-pushimages-param-images": "Nazwy ilustracji do przesunięcia."
 }
