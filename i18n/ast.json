@@ -75,5 +75,13 @@
 	"push-special-pushing-file": "$1: Tresfiriendo'l ficheru $2...",
 	"push-special-return": "Tresferir más páxines",
 	"push-api-err-nocurl": "cURL nun ta instaláu.\nConfigura $egPushDirectFileUploads como falsu nes wikis públiques, o instala cURL nes wikis privaes",
-	"push-api-err-nofilesupport": "La MediaWiki llocal nun tien encontu pa publicar ficheros.\nNes wikis públiques, establez $egPushDirectFileUploads como \"false\".\nNes wikis privaes, aplica'l parche al qu'enllaza la documentación de Push o actualiza'l propiu MediaWiki."
+	"push-api-err-nofilesupport": "La MediaWiki llocal nun tien encontu pa publicar ficheros.\nNes wikis públiques, establez $egPushDirectFileUploads como \"false\".\nNes wikis privaes, aplica'l parche al qu'enllaza la documentación de Push o actualiza'l propiu MediaWiki.",
+	"apihelp-push-description": "Xube'l conteníu d'una o más páxines a una o más wikis de destín.",
+	"apihelp-push-param-page": "Los nomes de les páxines a xubir.",
+	"apihelp-push-param-targets": "Los nomes de les wikis a les que xubila.",
+	"apihelp-push-example": "Xubir la páxina «Main page» a la Wikipedia n'ingles.",
+	"apihelp-pushimages-description": "Xube'l conteníu d'una o más páxines a una o más wikis de destín.",
+	"apihelp-pushimages-param-images": "Los nomes de les imáxenes a xubir.",
+	"apihelp-pushimages-param-targets": "Les URL de les wikis a les que xubila.",
+	"apihelp-pushimages-example": "Xubir el ficheru «Foo.bar» a la Wikipedia n'ingles."
 }
