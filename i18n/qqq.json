@@ -93,10 +93,12 @@
 	"push-api-err-nocurl": "{{doc-important|Do not translate \"<code>$egPushDirectFileUploads</code>\".}}",
 	"push-api-err-nofilesupport": "{{doc-important|Do not translate \"<code>$egPushDirectFileUploads</code>\".}}",
 	"apihelp-push-description": "{{doc-apihelp-description|push}}",
+	"apihelp-push-summary": "{{doc-apihelp-summary|push}}",
 	"apihelp-push-param-page": "{{doc-apihelp-param|push|page}}",
 	"apihelp-push-param-targets": "{{doc-apihelp-param|push|targets}}",
 	"apihelp-push-example": "{{doc-apihelp-example|push}}\n{{doc-important|Please translate \"English Wikipedia\" literally}}",
 	"apihelp-pushimages-description": "{{doc-apihelp-description|pushimages}}",
+	"apihelp-pushimages-summary": "{{doc-apihelp-summary|pushimages}}",
 	"apihelp-pushimages-param-images": "{{doc-apihelp-param|pushimages|images}}",
 	"apihelp-pushimages-param-targets": "{{doc-apihelp-param|pushimages|targets}}",
 	"apihelp-pushimages-example": "{{doc-apihelp-example|pushimages}}\n{{doc-important|Please translate \"English Wikipedia\" literally}}"
