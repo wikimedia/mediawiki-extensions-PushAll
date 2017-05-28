@@ -65,7 +65,7 @@
 	"push-tab-no-embedded-files": "(Aucun fichier joint dans cette page.)",
 	"push-tab-files-override": "{{PLURAL:$2|Ce fichier existe|Ces fichiers existent}} déjà : $1",
 	"push-tab-template-override": "{{PLURAL:$2|Ce modèle existe|Ces modèles existent}} déjà : $1",
-	"push-tab-err-uploaddisabled": "Les téléchargements ne sont pas activés. Assurez-vous que $wgEnableUploads et $wgAllowCopyUploads sont mis à ''true'' dans le fichier LocalSettings.php du wiki cible.",
+	"push-tab-err-uploaddisabled": "Les téléversements ne sont pas activés. Assurez-vous que $wgEnableUploads et $wgAllowCopyUploads sont mis à ''true'' dans le fichier LocalSettings.php du wiki cible.",
 	"special-push": "Pages à pousser",
 	"push-special-description": "Cette page permet de pousser (''push'' en anglais) le contenu d'une ou plusieurs pages vers un ou plusieurs wikis de MediaWiki.\n\nPour pousser les pages, entrez les titres dans la zone de texte ci-dessous, un titre par ligne et cliquez sur ''Pousser tout''. Cela peut prendre un certain temps pour se terminer.",
 	"push-special-pushing-desc": "Poussée de $2 {{PLURAL:$2|page|pages}} vers $1...",
