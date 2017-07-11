@@ -46,7 +46,7 @@
 	"push-targets": "推送目标",
 	"push-add-target": "新增目标",
 	"push-import-revision-message": "已从$1推送。",
-	"push-tab-no-targets": "还没有要推送的目标。请添加一些到你的LocalSettings.php文件。",
+	"push-tab-no-targets": "还没有要推送的目标。请添加一些到您的LocalSettings.php文件。",
 	"push-tab-push-to": "推送到$1",
 	"push-remote-pages": "远程页面",
 	"push-remote-page-link": "$2上的$1",
