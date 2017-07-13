@@ -87,10 +87,12 @@
 	"push-api-err-nocurl": "cURL n'est pas installé.\nMettre $​​egPushDirectFileUploads à <code>false</code> pour des wikis publics, ou installer cURL pour les wikis privés",
 	"push-api-err-nofilesupport": "Le MediaWiki local ne prend pas en charge le téléversement de fichiers.\nSur les wikis publics, mettre $egPushDirectFileUploads à <code>false</code>.\nSur les wikis privés, appliquer la rustine <code>linkd</code> tel qu’expliqué dans la documentation de ''Push'' ou mettre à jour MediaWiki.",
 	"apihelp-push-description": "Pousse le contenu d’une ou plusieurs pages vers un ou plusieurs wikis cibles.",
+	"apihelp-push-summary": "Pousse le contenu d’au moins une page vers au moins un wiki cible.",
 	"apihelp-push-param-page": "Les noms de la page à pousser.",
 	"apihelp-push-param-targets": "Les URL des wikis à pousser.",
 	"apihelp-push-example": "Pousser la page 'Accueil' vers Wikimédia en anglais.",
 	"apihelp-pushimages-description": "Pousse le contenu d’une ou plusieurs pages vers un ou plusieurs wikis cibles.",
+	"apihelp-pushimages-summary": "Pousse le contenu d’au moins une page vers au moins un wiki cible.",
 	"apihelp-pushimages-param-images": "Les noms des images à pousser.",
 	"apihelp-pushimages-param-targets": "Les URL des wikis à pousser.",
 	"apihelp-pushimages-example": "Pousser le fichier 'Foo.bar' vers Wikimédia en anglais."
