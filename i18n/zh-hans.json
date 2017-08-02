@@ -89,10 +89,12 @@
 	"push-api-err-nocurl": "未安装cURL。\n在公共wiki上设置$egPushDirectFileUploads为false，或者安装cURL适用私人wiki。",
 	"push-api-err-nofilesupport": "本地MediaWiki尚不提供对发布文件的支持。在公开wiki，将$egPushDirectFileUploads设置为false即可。在私有wiki，请求链接自推送文档的补丁或更新MediaWiki本身。",
 	"apihelp-push-description": "推送一个或多个页面的内容至一个或多个目标wiki。",
+	"apihelp-push-summary": "推送一个或多个页面的内容至一个或多个目标wiki。",
 	"apihelp-push-param-page": "要推送的页面名称。",
 	"apihelp-push-param-targets": "推送目标wiki的url。",
 	"apihelp-push-example": "推送页面“Main page”至英语维基百科。",
 	"apihelp-pushimages-description": "推送一个或多个页面的内容至一个或多个目标wiki。",
+	"apihelp-pushimages-summary": "推送一个或多个页面的内容至一个或多个目标wiki。",
 	"apihelp-pushimages-param-images": "要推送的图片名称。",
 	"apihelp-pushimages-param-targets": "推送目标wiki的url。",
 	"apihelp-pushimages-example": "推送文件“Foo.bar”至英语维基百科。"
