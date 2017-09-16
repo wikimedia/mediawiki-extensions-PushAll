@@ -81,10 +81,12 @@
 	"push-api-err-nocurl": "cURL не встановлено.\nЗадайте значення $egPushDirectFileUploads як false для громадських вікі або установіть cURL для приватних вікі",
 	"push-api-err-nofilesupport": "Локальна MediaWiki не підтримує відправлення файлів.\nНа загальнодоступній вікі задайте параметру $egPushDirectFileUploads значення false.\nНа приватній вікі застосуйте патч, пов'язаний з документацією про поширення або поновіть саму MediaWiki.",
 	"apihelp-push-description": "Переносить вміст однієї або більше сторінок до однієї або більше цільових вікі.",
+	"apihelp-push-summary": "Переносить вміст однієї або більше сторінок до однієї або більше цільових вікі.",
 	"apihelp-push-param-page": "Назви сторінок, які слід перенести.",
 	"apihelp-push-param-targets": "URL-адреси вікі, куди слід перенести сторінки.",
 	"apihelp-push-example": "Перенести сторінку «Main page» до англійської Вікіпедії.",
 	"apihelp-pushimages-description": "Переносить вміст однієї або більше сторінок до однієї або більше цільових вікі.",
+	"apihelp-pushimages-summary": "Переносить вміст однієї або більше сторінок до однієї або більше цільових вікі.",
 	"apihelp-pushimages-param-images": "Назви зображень, які слід перенести.",
 	"apihelp-pushimages-param-targets": "URL-адреси вікі, до яких слід виконати перенесення.",
 	"apihelp-pushimages-example": "Перенести файл «Foo.bar» до англійської Вікіпедії."
