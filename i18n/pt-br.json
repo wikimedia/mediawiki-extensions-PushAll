@@ -3,7 +3,8 @@
 		"authors": [
 			"Jaideraf",
 			"Luckas",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"push-desc": "Uma extensão leve para enviar conteúdo para outras wikis",
@@ -85,10 +86,12 @@
 	"push-api-err-nocurl": "cURL não está instalado.\nDefina $egPushDirectFileUploads como \"false\" nas wikis públicas ou instale o cURL para wikis privadas",
 	"push-api-err-nofilesupport": "O MediaWiki local não tem suporte para a postagem de arquivos.\nNas wikis públicas, defina $egPushDirectFileUploads como \"false\".\nNas wikis privadas, aplique o patch referido na documentação do Push ou atualize o próprio MediaWiki.",
 	"apihelp-push-description": "Envia o conteúdo de uma ou mais páginas para uma ou mais wikis de destino.",
+	"apihelp-push-summary": "Difunde o conteúdo de uma ou mais páginas para uma ou mais wikis de destino.",
 	"apihelp-push-param-page": "Os nomes das páginas para enviar.",
 	"apihelp-push-param-targets": "Os URLs das wikis para onde enviar.",
 	"apihelp-push-example": "Enviar a página 'Main page' para a Wikipédia Inglesa.",
 	"apihelp-pushimages-description": "Envia o conteúdo de uma ou mais páginas para uma ou mais wikis de destino.",
+	"apihelp-pushimages-summary": "Difunde o conteúdo de uma ou mais páginas para uma ou mais wikis de destino.",
 	"apihelp-pushimages-param-images": "Os nomes das imagens para enviar.",
 	"apihelp-pushimages-param-targets": "Os URLs das wikis para onde enviar.",
 	"apihelp-pushimages-example": "Enviar o arquivo 'Foo.bar' para a Wikipédia Inglesa."
