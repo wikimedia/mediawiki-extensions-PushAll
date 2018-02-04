@@ -37,7 +37,7 @@
 	"push-err-authentication": "在 $1 身份验证失败。$2",
 	"push-tab-text": "推送",
 	"push-button-text": "推送",
-	"push-tab-desc": "此标签允许你推送此页面的当前版本到一个或多个其他wiki。",
+	"push-tab-desc": "此标签允许您推送此页面的当前版本到一个或多个其他wiki。",
 	"push-button-pushing": "推送中",
 	"push-button-pushing-files": "正在推送文件",
 	"push-button-completed": "推送完成",
