@@ -1,0 +1,166 @@
+{
+	"name": "Push",
+	"version": "2.0.0",
+	"author": [
+		"[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Push",
+	"descriptionmsg": "push-desc",
+	"type": "other",
+	"APIModules": {
+		"push": "ApiPush",
+		"pushimages": "ApiPushImages"
+	},
+	"AvailableRights": [
+		"push",
+		"pushadmin",
+		"filepush",
+		"bulkpush"
+	],
+	"SpecialPages": {
+		"Push": "SpecialPush"
+	},
+	"MessagesDirs": {
+		"Push": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"PushAlias": "Push.alias.php"
+	},
+	"AutoloadClasses": {
+		"PushHooks": "Push.hooks.php",
+		"ApiPush": "api/ApiPush.php",
+		"ApiPushImages": "api/ApiPushImages.php",
+		"PushTab": "includes/Push_Tab.php",
+		"PushFunctions": "includes/Push_Functions.php",
+		"SpecialPush": "specials/Push_Body.php"
+	},
+	"ResourceModules": {
+		"ext.push.tab": {
+			"remoteBasePath": "/extensions/Push",
+			"group": "ext.push",
+			"scripts": "includes/ext.push.tab.js",
+			"dependencies": [
+				"mediawiki.jqueryMsg"
+			],
+			"messages": [
+				"push-button-pushing",
+				"push-button-completed",
+				"push-button-failed",
+				"push-import-revision-message",
+				"push-button-text",
+				"push-button-all",
+				"push-special-item-pushing",
+				"push-special-item-completed",
+				"push-special-item-failed",
+				"push-special-push-done",
+				"push-err-captacha",
+				"push-tab-last-edit",
+				"push-tab-not-created",
+				"push-err-captcha-page",
+				"push-button-pushing-files",
+				"push-special-err-imginfo-failed",
+				"push-special-obtaining-fileinfo",
+				"push-special-pushing-file",
+				"push-tab-err-fileinfo",
+				"push-tab-err-filepush",
+				"push-tab-err-filepush-unknown",
+				"push-tab-embedded-files",
+				"push-tab-no-embedded-files",
+				"push-tab-files-override",
+				"push-tab-template-override",
+				"push-tab-err-uploaddisabled"
+			]
+		},
+		"ext.push.special": {
+			"remoteBasePath": "/extensions/Push",
+			"group": "ext.push",
+			"scripts": "specials/ext.push.special.js",
+			"dependencies": [],
+			"messages": [
+				"push-button-pushing",
+				"push-button-completed",
+				"push-button-failed",
+				"push-import-revision-message",
+				"push-button-text",
+				"push-button-all",
+				"push-special-item-pushing",
+				"push-special-item-completed",
+				"push-special-item-failed",
+				"push-special-push-done",
+				"push-err-captacha",
+				"push-tab-last-edit",
+				"push-tab-not-created",
+				"push-err-captcha-page",
+				"push-button-pushing-files",
+				"push-special-err-imginfo-failed",
+				"push-special-obtaining-fileinfo",
+				"push-special-pushing-file",
+				"push-tab-err-fileinfo",
+				"push-tab-err-filepush",
+				"push-tab-err-filepush-unknown",
+				"push-tab-embedded-files",
+				"push-tab-no-embedded-files",
+				"push-tab-files-override",
+				"push-tab-template-override",
+				"push-tab-err-uploaddisabled"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": ""
+	},
+	"Hooks": {
+		"UnknownAction": "PushTab::onUnknownAction",
+		"SkinTemplateTabs": "PushTab::displayTab",
+		"SkinTemplateNavigation": "PushTab::displayTab2",
+		"AdminLinks": "PushHooks::addToAdminLinks"
+	},
+	"config_prefix": "eg",
+	"config": {
+		"PushTargets": {
+			"value": []
+		},
+		"PushLoginUser": {
+			"value": ""
+		},
+		"PushLoginPass": {
+			"value": ""
+		},
+		"PushLoginDomain": {
+			"value": ""
+		},
+		"PushLoginUsers": {
+			"value": []
+		},
+		"PushLoginPasswords": {
+			"value": []
+		},
+		"PushLoginDomains": {
+			"value": []
+		},
+		"PushAllowLogin": {
+			"value": true
+		},
+		"PushIncFiles": {
+			"value": false
+		},
+		"PushIncTemplates": {
+			"value": false
+		},
+		"PushDirectFileUploads": {
+			"value": true
+		},
+		"PushShowTab": {
+			"value": false
+		},
+		"PushBulkWorkers": {
+			"value": 3
+		},
+		"PushBatchSize": {
+			"value": 3
+		}
+	},
+	"manifest_version": 2
+}
