@@ -1,7 +1,8 @@
 These is the install file for the Push extension.
+	
+Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Push
+Latest version of the install file: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push/INSTALL?view=co
 
-Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Push
-Latest version of the install file: https://phabricator.wikimedia.org/diffusion/EPUS/browse/master/INSTALL
 
 == Installation ==
 
@@ -9,15 +10,15 @@ Once you have downloaded the code, place the ''Push'' directory within your Medi
 Then add the following code to your [[Manual:LocalSettings.php|LocalSettings.php]] file:
 
 # Push
-wfLoadExtension( "Push" );
+require_once( "$IP/extensions/Push/Push.php" );
 
 == Configuration ==
 
 Configuration of push is done by adding simple PHP statements to your [[Manual:LocalSettings.php|LocalSettings.php]]
 file. These statements need to be placed AFTER the inclusion of Push. The options are listed below and their default
-is set in the [https://phabricator.wikimedia.org/diffusion/EPUS/browse/master/Push_Settings.php push settings file].
-You should NOT modify the settings file, but can have a look at it to get an idea of how to use the settings, in case
-the below descriptions do not suffice.
+is set in the [http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push/Push_Settings.php?view=markup push
+settings file]. You should NOT modify the settings file, but can have a look at it to get an idea of how to use the 
+ettings, in case the below descriptions do not suffice.
 
 === Push targets ===
 

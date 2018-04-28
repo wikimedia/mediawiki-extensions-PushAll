@@ -1,14 +1,8 @@
 These are the release notes for the Push extension.
+	
+Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Push
+Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push/RELEASE-NOTES?view=co
 
-Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Push
-Latest version of the release notes: https://phabricator.wikimedia.org/diffusion/EPUS/browse/master/RELEASE-NOTES
-
-=== Version 2.0.0 ===
-2018-04-06
-
-* Converted to use extension registration.
-* Fixed HTTP links to HTTPS links to mediawiki.org.
-* Fixed links to source code to phabricator diffusion.
 
 === Version 1.1.4 ===
 (trunk)
