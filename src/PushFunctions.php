@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Statis class with utility methods for the Push extension.
+ * Static class with utility methods for the Push extension.
  *
  * @since 0.2
  *

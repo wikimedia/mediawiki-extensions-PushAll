@@ -110,7 +110,7 @@ class SpecialPush extends SpecialPage {
 		if ( $doPush ) {
 			$this->doPush( $pages );
 		} else {
-			$this->displayPushInterface( $arg, $pages );
+			$this->displayPushInterface( $pages );
 		}
 	}
 
@@ -181,7 +181,11 @@ class SpecialPush extends SpecialPage {
 					Html::element( 'ul', [ 'id' => 'pushResultList' ] )
 				)
 			) . '<br />' .
-			Html::element( 'a', [ 'href' => $this->getPageTitle()->getInternalURL() ], $this->msg( 'push-special-return' )->text() )
+			Html::element(
+				'a',
+				[ 'href' => $this->getPageTitle()->getInternalURL() ],
+				$this->msg( 'push-special-return' )->text()
+			)
 		);
 
 		$out->addInlineScript(
@@ -197,8 +201,9 @@ class SpecialPush extends SpecialPage {
 
 	/**
 	 * @since 0.2
+	 * @param string $pages
 	 */
-	protected function displayPushInterface( $arg, $pages ) {
+	protected function displayPushInterface( $pages ) {
 		global $egPushTargets, $egPushIncTemplates, $egPushIncFiles;
 
 		$req = $this->getRequest();
@@ -211,8 +216,16 @@ class SpecialPush extends SpecialPage {
 				'action' => $this->getPageTitle()->getLocalURL( 'action=submit' )
 			]
 		);
-		$form .= Xml::inputLabel( $this->msg( 'export-addcattext' )->text(), 'catname', 'catname', 40 ) . '&#160;';
-		$form .= Xml::submitButton( $this->msg( 'export-addcat' )->text(), [ 'name' => 'addcat' ] ) . '<br />';
+		$form .= Xml::inputLabel(
+			$this->msg( 'export-addcattext' )->text(),
+			'catname',
+			'catname',
+			40
+			) . '&#160;';
+		$form .= Xml::submitButton(
+			$this->msg( 'export-addcat' )->text(),
+			[ 'name' => 'addcat' ]
+			) . '<br />';
 
 		$form .= Html::namespaceSelector( [
 			'selected' => $req->getText( 'nsindex', '' ),
@@ -223,9 +236,17 @@ class SpecialPush extends SpecialPage {
 			'id' => 'namespace',
 			'class' => 'namespaceselector',
 		] ) . '&#160;';
-		$form .= Xml::submitButton( $this->msg( 'export-addns' )->text(), [ 'name' => 'addns' ] ) . '<br />';
+		$form .= Xml::submitButton(
+			$this->msg( 'export-addns' )->text(),
+			[ 'name' => 'addns' ]
+			) . '<br />';
 
-		$form .= Xml::element( 'textarea', [ 'name' => 'pages', 'cols' => 40, 'rows' => 10 ], $pages, false );
+		$form .= Xml::element(
+			'textarea',
+			[ 'name' => 'pages', 'cols' => 40, 'rows' => 10 ],
+			$pages,
+			false
+		);
 		$form .= '<br />';
 
 		$form .= Xml::checkLabel(
@@ -257,7 +278,10 @@ class SpecialPush extends SpecialPage {
 			}
 		}
 
-		$form .= Xml::submitButton( $this->msg( 'push-special-button-text' )->text(), [ 'style' => 'width: 125px; height: 30px' ] );
+		$form .= Xml::submitButton(
+			$this->msg( 'push-special-button-text' )->text(),
+			[ 'style' => 'width: 125px; height: 30px' ]
+		);
 		$form .= Xml::closeElement( 'form' );
 
 		$this->getOutput()->addHTML( $form );

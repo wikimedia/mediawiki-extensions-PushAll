@@ -55,13 +55,13 @@
 		"PushAlias": "Push.alias.php"
 	},
 	"AutoloadClasses": {
-		"PushHooks": "Push.hooks.php",
-		"ApiPushBase": "api/ApiPushBase.php",
-		"ApiPush": "api/ApiPush.php",
-		"ApiPushImages": "api/ApiPushImages.php",
-		"PushTab": "includes/Push_Tab.php",
-		"PushFunctions": "includes/Push_Functions.php",
-		"SpecialPush": "specials/Push_Body.php"
+		"PushHooks": "src/PushHooks.php",
+		"ApiPushBase": "src/api/ApiPushBase.php",
+		"ApiPush": "src/api/ApiPush.php",
+		"ApiPushImages": "src/api/ApiPushImages.php",
+		"PushTab": "src/PushTab.php",
+		"PushFunctions": "src/PushFunctions.php",
+		"SpecialPush": "src/SpecialPush.php"
 	},
 	"ResourceModules": {
 		"ext.push.tab": {

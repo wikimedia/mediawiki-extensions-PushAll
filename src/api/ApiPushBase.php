@@ -18,12 +18,16 @@ abstract class ApiPushBase extends ApiBase {
 	 *
 	 * @param string $user
 	 * @param string $password
+	 * @param string $domain
 	 * @param string $target
-	 * @param string $token
-	 * @param CookieJar|null $cookie
-	 * @param int|null $attemtNr
+	 * @param string|null $token
+	 * @param null $cookieJar
+	 * @param int $attemtNr
+	 * @throws ApiUsageException
 	 */
-	protected function doLogin( $user, $password, $domain, $target, $token = null, $cookieJar = null, $attemtNr = 0 ) {
+	protected function doLogin(
+		$user, $password, $domain, $target, $token = null, $cookieJar = null, $attemtNr = 0
+	) {
 		$requestData = [
 			'action' => 'login',
 			'format' => 'json',
@@ -38,7 +42,7 @@ abstract class ApiPushBase extends ApiBase {
 			$requestData['lgtoken'] = $token;
 		}
 
-		$req = PushFunctions::getHttpRequest( $target,
+		$req = MWHttpRequest::factory( $target,
 			[
 				'postData' => $requestData,
 				'method' => 'POST',
@@ -61,17 +65,33 @@ abstract class ApiPushBase extends ApiBase {
 				&& property_exists( $response->login, 'result' ) ) {
 
 				if ( $response->login->result == 'NeedToken' && $attemtNr < 3 ) {
-					$this->doLogin( $user, $password, $domain, $target, $response->login->token, $req->getCookieJar(), $attemtNr );
+					$this->doLogin(
+						$user,
+						$password,
+						$domain,
+						$target,
+						$response->login->token,
+						$req->getCookieJar(),
+						$attemtNr
+					);
 				} elseif ( $response->login->result == 'Success' ) {
 					$this->cookieJars[$target] = $req->getCookieJar();
 				} else {
-					$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
+					$this->dieUsage(
+						wfMessage( 'push-err-authentication', $target, '' )->parse(),
+						'authentication-failed'
+					);
 				}
 			} else {
-				$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
+				$this->dieUsage(
+					wfMessage( 'push-err-authentication', $target, '' )->parse(),
+					'authentication-failed'
+				);
 			}
 		} else {
-			$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
+			$this->dieUsage(
+				wfMessage( 'push-err-authentication', $target, '' )->parse(),
+				'authentication-failed' );
 		}
 	}
 
@@ -101,7 +121,7 @@ abstract class ApiPushBase extends ApiBase {
 			$parts[] = $key . '=' . urlencode( $value );
 		}
 
-		$req = PushFunctions::getHttpRequest( $target . '?' . implode( '&', $parts ),
+		$req = MWHttpRequest::factory( $target . '?' . implode( '&', $parts ),
 			[
 				'method' => 'GET',
 				'timeout' => 'default'
@@ -130,13 +150,22 @@ abstract class ApiPushBase extends ApiBase {
 
 			if ( property_exists( $response->query->pages->$first, 'edittoken' ) ) {
 				$token = $response->query->pages->$first->edittoken;
-			} elseif ( !is_null( $response ) && property_exists( $response, 'query' ) && property_exists( $response->query, 'error' ) ) {
+			} elseif (
+				!is_null( $response )
+				&& property_exists( $response, 'query' )
+				&& property_exists( $response->query, 'error' )
+			) {
 				$this->dieUsage( $response->query->error->message, 'token-request-failed' );
 			} else {
-				$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
+				$this->dieUsage(
+					wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed'
+				);
 			}
 		} else {
-			$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
+			$this->dieUsage(
+				wfMessage( 'push-special-err-token-failed' )->text(),
+				'token-request-failed'
+			);
 		}
 
 		return $token;
@@ -161,16 +190,19 @@ abstract class ApiPushBase extends ApiBase {
 			$pass = false;
 			$domain = false;
 
-			if ( array_key_exists( $target, $egPushLoginUsers ) && array_key_exists( $target, $egPushLoginPasswords ) ) {
+			if (
+				array_key_exists( $target, $egPushLoginUsers )
+				&& array_key_exists( $target, $egPushLoginPasswords )
+			) {
 				$user = $egPushLoginUsers[$target];
 				$pass = $egPushLoginPasswords[$target];
-			} elseif ( $egPushLoginUser != '' && $egPushLoginPass != '' ) {
+			} elseif ( $egPushLoginUser !== '' && $egPushLoginPass !== '' ) {
 				$user = $egPushLoginUser;
 				$pass = $egPushLoginPass;
 			}
 			if ( array_key_exists( $target, $egPushLoginDomains ) ) {
 				$domain = $egPushLoginDomains[$target];
-			} elseif ( $egPushLoginDomain != '' ) {
+			} elseif ( $egPushLoginDomain !== '' ) {
 				$domain = $egPushLoginDomain;
 			}
 

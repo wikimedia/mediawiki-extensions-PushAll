@@ -14,6 +14,9 @@ final class PushTab {
 
 	/**
 	 * Adds an "action" (i.e., a tab) to allow pushing the current article.
+	 * @param $obj
+	 * @param $content_actions
+	 * @return bool
 	 */
 	public static function displayTab( $obj, &$content_actions ) {
 		global $wgUser, $egPushTargets;
@@ -45,6 +48,9 @@ final class PushTab {
 	/**
 	 * Function currently called only for the 'Vector' skin, added in
 	 * MW 1.16 - will possibly be called for additional skins later
+	 * @param $obj
+	 * @param $links
+	 * @return bool
 	 */
 	public static function displayTab2( $obj, &$links ) {
 		global $egPushShowTab;
@@ -79,6 +85,9 @@ final class PushTab {
 	 * special pages)
 	 *
 	 * @since 0.1
+	 * @param Article $article
+	 * @return bool
+	 * @throws PermissionsError
 	 */
 	public static function displayPushPage( Article $article ) {
 		global $wgOut, $wgUser, $wgTitle, $wgSitename, $egPushTargets;
@@ -401,7 +410,11 @@ final class PushTab {
 			$response = $api->getResultData();
 		}
 
-		if ( is_array( $response ) && array_key_exists( 'query', $response ) && array_key_exists( 'pages', $response['query'] ) ) {
+		if (
+			is_array( $response )
+			&& array_key_exists( 'query', $response )
+			&& array_key_exists( 'pages', $response['query'] )
+		) {
 			foreach ( $response['query']['pages'] as $page ) {
 				if ( array_key_exists( 'images', $page ) ) {
 					foreach ( $page['images'] as $image ) {

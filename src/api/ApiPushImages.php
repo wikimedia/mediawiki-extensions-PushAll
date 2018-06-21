@@ -92,9 +92,18 @@ class ApiPushImages extends ApiPushBase {
 
 		if ( $egPushDirectFileUploads ) {
 			if ( !function_exists( 'curl_init' ) ) {
-				$this->dieUsage( wfMessage( 'push-api-err-nocurl' )->text(), 'image-push-nocurl' );
-			} elseif ( !defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' ) || !CurlHttpRequest::SUPPORTS_FILE_POSTS ) {
-				$this->dieUsage( wfMessage( 'push-api-err-nofilesupport' )->text(), 'image-push-nofilesupport' );
+				$this->dieUsage(
+					wfMessage( 'push-api-err-nocurl' )->text(),
+					'image-push-nocurl'
+				);
+			} elseif (
+				!defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' )
+				|| !CurlHttpRequest::SUPPORTS_FILE_POSTS
+			) {
+				$this->dieUsage(
+					wfMessage( 'push-api-err-nofilesupport' )->text(),
+					'image-push-nofilesupport'
+				);
 			} else {
 				$httpEngine = Http::$httpEngine;
 				Http::$httpEngine = 'curl';
