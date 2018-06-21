@@ -21,7 +21,7 @@ final class PushFunctions {
 	public static function addJSLocalisation() {
 		global $egPushJSMessages, $wgOut;
 
-		$data = array();
+		$data = [];
 
 		foreach ( $egPushJSMessages as $msg ) {
 			$data[$msg] = wfMessage( $msg )->plain();
@@ -39,14 +39,13 @@ final class PushFunctions {
 	 *
 	 * @param Title $title
 	 *
-	 * @return integer
+	 * @return int
 	 */
 	public static function getRevisionToPush( Title $title ) {
 		if ( defined( 'APPROVED_REVS_VERSION' ) ) {
 			$revId = ApprovedRevs::getApprovedRevID( $title );
 			return $revId ? $revId : $title->getLatestRevID();
-		}
-		else {
+		} else {
 			return $title->getLatestRevID();
 		}
 	}
@@ -64,8 +63,8 @@ final class PushFunctions {
 	public static function getTemplates( $inputPages, $pageSet ) {
 		return self::getLinks( $inputPages, $pageSet,
 			'templatelinks',
-			array( 'tl_namespace AS namespace', 'tl_title AS title' ),
-			array( 'page_id=tl_from' )
+			[ 'tl_namespace AS namespace', 'tl_title AS title' ],
+			[ 'page_id=tl_from' ]
 		);
 	}
 
@@ -75,29 +74,29 @@ final class PushFunctions {
 	 * @since 0.4
 	 */
 	protected static function getLinks( $inputPages, $pageSet, $table, $fields, $join ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
-		foreach( $inputPages as $page ) {
+		foreach ( $inputPages as $page ) {
 			$title = Title::newFromText( $page );
 
-			if( $title ) {
+			if ( $title ) {
 				$pageSet[$title->getPrefixedText()] = true;
 				/// @todo Fixme: May or may not be more efficient to batch these
 				///        by namespace when given multiple input pages.
 				$result = $dbr->select(
-					array( 'page', $table ),
+					[ 'page', $table ],
 					$fields,
 					array_merge(
 						$join,
-						array(
+						[
 							'page_namespace' => $title->getNamespace(),
 							'page_title' => $title->getDBkey()
-						)
+						]
 					),
 					__METHOD__
 				);
 
-				foreach( $result as $row ) {
+				foreach ( $result as $row ) {
 					$template = Title::makeTitle( $row->namespace, $row->title );
 					$pageSet[$template->getPrefixedText()] = true;
 				}
@@ -117,14 +116,14 @@ final class PushFunctions {
 	 * @param string $id Some string to identify the array and keep track of it having been flipped.
 	 */
 	public static function flipKeys( array &$arr, $id ) {
-		static $handledArrays = array();
+		static $handledArrays = [];
 
 		if ( !in_array( $id, $handledArrays ) ) {
 			$handledArrays[] = $id;
 
 			global $egPushTargets;
 
-			$flipped = array();
+			$flipped = [];
 
 			foreach ( $arr as $key => $value ) {
 				if ( array_key_exists( $key, $egPushTargets ) ) {
@@ -149,8 +148,8 @@ final class PushFunctions {
 	 */
 	public static function getHttpRequest( $target, $args ) {
 		return call_user_func_array(
-			array( ( class_exists( 'MWHttpRequest' ) ? 'MWHttpRequest' : 'HttpRequest' ), 'factory' ),
-			array( $target, $args )
+			[ ( class_exists( 'MWHttpRequest' ) ? 'MWHttpRequest' : 'HttpRequest' ), 'factory' ],
+			[ $target, $args ]
 		);
 	}
 

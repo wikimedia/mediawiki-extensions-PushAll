@@ -61,7 +61,7 @@ class SpecialPush extends SpecialPage {
 		}
 
 		if ( count( $egPushTargets ) == 0 ) {
-			$this->getOutput()->addHTML( '<p>' . $this->msg( 'push-tab-no-targets'  )->escaped() . '</p>' );
+			$this->getOutput()->addHTML( '<p>' . $this->msg( 'push-tab-no-targets' )->escaped() . '</p>' );
 			return;
 		}
 
@@ -80,34 +80,33 @@ class SpecialPush extends SpecialPage {
 					 * during the export in a single query.
 					 */
 					$catpages = $this->getPagesFromCategory( $t );
-					if ( $catpages ) $pages .= "\n" . implode( "\n", $catpages );
+					if ( $catpages ) { $pages .= "\n" . implode( "\n", $catpages );
+					}
 				}
 			}
-		}
-		elseif( $req->getCheck( 'addns' ) ) {
+		} elseif ( $req->getCheck( 'addns' ) ) {
 			$pages = $req->getText( 'pages' );
 			$nsindex = $req->getText( 'nsindex', '' );
 
-			if ( strval( $nsindex ) !== ''  ) {
+			if ( strval( $nsindex ) !== '' ) {
 				/**
 				 * Same implementation as above, so same @todo
 				 */
 				$nspages = $this->getPagesFromNamespace( $nsindex );
-				if ( $nspages ) $pages .= "\n" . implode( "\n", $nspages );
+				if ( $nspages ) { $pages .= "\n" . implode( "\n", $nspages );
+				}
 			}
-		}
-		elseif( $req->wasPosted() ) {
+		} elseif ( $req->wasPosted() ) {
 			$pages = $req->getText( 'pages' );
-			if( $pages != '' ) $doPush= true;
-		}
-		else {
+			if ( $pages != '' ) { $doPush = true;
+			}
+		} else {
 			$pages = '';
 		}
 
 		if ( $doPush ) {
 			$this->doPush( $pages );
-		}
-		else {
+		} else {
 			$this->displayPushInterface( $arg, $pages );
 		}
 	}
@@ -123,27 +122,28 @@ class SpecialPush extends SpecialPage {
 	protected function doPush( $pages ) {
 		global $wgSitename, $egPushTargets, $egPushBulkWorkers, $egPushBatchSize;
 
-		$pageSet = array(); // Inverted index of all pages to look up
+		// Inverted index of all pages to look up
+		$pageSet = [];
 
 		// Split up and normalize input
-		foreach( explode( "\n", $pages ) as $pageName ) {
+		foreach ( explode( "\n", $pages ) as $pageName ) {
 			$pageName = trim( $pageName );
 			$title = Title::newFromText( $pageName );
-			if( $title && $title->getInterwiki() == '' && $title->getText() !== '' ) {
+			if ( $title && $title->getInterwiki() == '' && $title->getText() !== '' ) {
 				// Only record each page once!
 				$pageSet[$title->getPrefixedText()] = true;
 			}
 		}
 
 		// Look up any linked pages if asked...
-		if( $this->getRequest()->getCheck( 'templates' ) ) {
+		if ( $this->getRequest()->getCheck( 'templates' ) ) {
 			$pageSet = PushFunctions::getTemplates( array_keys( $pageSet ), $pageSet );
 		}
 
 		$pages = array_keys( $pageSet );
 
-		$targets = array();
-		$links = array();
+		$targets = [];
+		$links = [];
 
 		if ( count( $egPushTargets ) > 1 ) {
 			foreach ( $egPushTargets as $targetName => $targetUrl ) {
@@ -152,8 +152,7 @@ class SpecialPush extends SpecialPage {
 					$links[] = "[$targetUrl $targetName]";
 				}
 			}
-		}
-		else {
+		} else {
 			$targets = $egPushTargets;
 		}
 
@@ -166,20 +165,20 @@ class SpecialPush extends SpecialPage {
 		);
 
 		$out->addHTML(
-			Html::hidden( 'siteName', $wgSitename, array( 'id' => 'siteName' ) ) .
+			Html::hidden( 'siteName', $wgSitename, [ 'id' => 'siteName' ] ) .
 			Html::rawElement(
 				'div',
-				array(
+				[
 					'id' => 'pushResultDiv',
 					'style' => 'width: 100%; height: 300px; overflow: auto'
-				),
+				],
 				Html::rawElement(
 					'div',
-					array( 'class' => 'innerResultBox' ),
-					Html::element( 'ul', array( 'id' => 'pushResultList' ) )
+					[ 'class' => 'innerResultBox' ],
+					Html::element( 'ul', [ 'id' => 'pushResultList' ] )
 				)
 			) . '<br />' .
-			Html::element( 'a', array( 'href' => $this->getPageTitle()->getInternalURL() ), $this->msg( 'push-special-return' )->text() )
+			Html::element( 'a', [ 'href' => $this->getPageTitle()->getInternalURL() ], $this->msg( 'push-special-return' )->text() )
 		);
 
 		$out->addInlineScript(
@@ -200,26 +199,26 @@ class SpecialPush extends SpecialPage {
 		global $egPushTargets, $egPushIncTemplates, $egPushIncFiles;
 
 		$req = $this->getRequest();
-		
+
 		$this->getOutput()->addWikiMsg( 'push-special-description' );
 
-		$form = Xml::openElement( 'form', array( 'method' => 'post',
-			'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ) );
-		$form .= Xml::inputLabel( $this->msg( 'export-addcattext' )->text() , 'catname', 'catname', 40 ) . '&#160;';
-		$form .= Xml::submitButton( $this->msg( 'export-addcat' )->text(), array( 'name' => 'addcat' ) ) . '<br />';
+		$form = Xml::openElement( 'form', [ 'method' => 'post',
+			'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ] );
+		$form .= Xml::inputLabel( $this->msg( 'export-addcattext' )->text(), 'catname', 'catname', 40 ) . '&#160;';
+		$form .= Xml::submitButton( $this->msg( 'export-addcat' )->text(), [ 'name' => 'addcat' ] ) . '<br />';
 
-		$form .= Html::namespaceSelector( array(
+		$form .= Html::namespaceSelector( [
 			'selected' => $req->getText( 'nsindex', '' ),
 			'all' => null,
 			'label' => $this->msg( 'export-addnstext' )->text(),
-		), array(
+		], [
 			'name' => 'nsindex',
 			'id' => 'namespace',
 			'class' => 'namespaceselector',
-		) ) . '&#160;';
-		$form .= Xml::submitButton( $this->msg( 'export-addns' )->text(), array( 'name' => 'addns' ) ) . '<br />';
+		] ) . '&#160;';
+		$form .= Xml::submitButton( $this->msg( 'export-addns' )->text(), [ 'name' => 'addns' ] ) . '<br />';
 
-		$form .= Xml::element( 'textarea', array( 'name' => 'pages', 'cols' => 40, 'rows' => 10 ), $pages, false );
+		$form .= Xml::element( 'textarea', [ 'name' => 'pages', 'cols' => 40, 'rows' => 10 ], $pages, false );
 		$form .= '<br />';
 
 		$form .= Xml::checkLabel(
@@ -241,8 +240,7 @@ class SpecialPush extends SpecialPage {
 		if ( count( $egPushTargets ) == 1 ) {
 			$names = array_keys( $egPushTargets );
 			$form .= '<b>' . $this->msg( 'push-special-target-is', $names[0] )->parse() . '</b><br />';
-		}
-		else {
+		} else {
 			$form .= '<b>' . $this->msg( 'push-special-select-targets' )->escaped() . '</b><br />';
 
 			foreach ( $egPushTargets as $targetName => $targetUrl ) {
@@ -252,7 +250,7 @@ class SpecialPush extends SpecialPage {
 			}
 		}
 
-		$form .= Xml::submitButton( $this->msg( 'push-special-button-text' )->text(), array( 'style' => 'width: 125px; height: 30px' ) );
+		$form .= Xml::submitButton( $this->msg( 'push-special-button-text' )->text(), [ 'style' => 'width: 125px; height: 30px' ] );
 		$form .= Xml::closeElement( 'form' );
 
 		$this->getOutput()->addHTML( $form );
@@ -272,20 +270,20 @@ class SpecialPush extends SpecialPage {
 
 		$name = $title->getDBkey();
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
-			array( 'page', 'categorylinks' ),
-			array( 'page_namespace', 'page_title' ),
-			array( 'cl_from=page_id', 'cl_to' => $name ),
+			[ 'page', 'categorylinks' ],
+			[ 'page_namespace', 'page_title' ],
+			[ 'cl_from=page_id', 'cl_to' => $name ],
 			__METHOD__,
-			array( 'LIMIT' => '5000' )
+			[ 'LIMIT' => '5000' ]
 		);
 
-		$pages = array();
+		$pages = [];
 
 		foreach ( $res as $row ) {
 			$n = $row->page_title;
-			if ($row->page_namespace) {
+			if ( $row->page_namespace ) {
 				$ns = $wgContLang->getNsText( $row->page_namespace );
 				$n = $ns . ':' . $n;
 			}
@@ -300,23 +298,23 @@ class SpecialPush extends SpecialPage {
 	 *
 	 * @since 0.2
 	 *
-	 * @param integer $nsindex
+	 * @param int $nsindex
 	 *
 	 * @return array
 	 */
 	protected function getPagesFromNamespace( $nsindex ) {
 		global $wgContLang;
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'page',
-			array( 'page_namespace', 'page_title' ),
-			array( 'page_namespace' => $nsindex ),
+			[ 'page_namespace', 'page_title' ],
+			[ 'page_namespace' => $nsindex ],
 			__METHOD__,
-			array( 'LIMIT' => '5000' )
+			[ 'LIMIT' => '5000' ]
 		);
 
-		$pages = array();
+		$pages = [];
 
 		foreach ( $res as $row ) {
 			$n = $row->page_title;
@@ -341,10 +339,9 @@ class SpecialPush extends SpecialPage {
 		$out = $this->getOutput();
 
 		// For backward compatibility with MW < 1.17.
-		if ( is_callable( array( $out, 'addModules' ) ) ) {
+		if ( is_callable( [ $out, 'addModules' ] ) ) {
 			$out->addModules( 'ext.push.special' );
-		}
-		else {
+		} else {
 			global $egPushScriptPath;
 
 			PushFunctions::addJSLocalisation();
@@ -422,7 +419,7 @@ class SpecialPush extends SpecialPage {
 	 *
 	 * @since 0.1
 	 *
-	 * @param boolean $subPage
+	 * @param bool $subPage
 	 *
 	 * @return Title
 	 */

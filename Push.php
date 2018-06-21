@@ -9,7 +9,7 @@
  * @file Push.php
  * @ingroup Push
  *
- * @licence GNU GPL v3+
+ * @license GPL-3.0-or-later
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
 
@@ -25,20 +25,20 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 define( 'Push_VERSION', '1.2.0 alpha' );
 
-$wgExtensionCredits['other'][] = array(
+$wgExtensionCredits['other'][] = [
 	'path' => __FILE__,
 	'name' => 'Push',
 	'version' => Push_VERSION,
-	'author' => array(
+	'author' => [
 		'[http://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]',
-	),
+	],
 	'url' => 'https://www.mediawiki.org/wiki/Extension:Push',
 	'descriptionmsg' => 'push-desc'
-);
+];
 
 $useExtensionPath = version_compare( $wgVersion, '1.16', '>=' ) && isset( $wgExtensionAssetsPath ) && $wgExtensionAssetsPath;
 $egPushScriptPath = ( $useExtensionPath ? $wgExtensionAssetsPath : $wgScriptPath . '/extensions' ) . '/Push';
-$egPushIP = dirname( __FILE__ );
+$egPushIP = __DIR__;
 unset( $useExtensionPath );
 
 $wgMessagesDirs['Push'] = __DIR__ . '/i18n';
@@ -67,7 +67,7 @@ $wgAvailableRights[] = 'pushadmin';
 $wgAvailableRights[] = 'filepush';
 $wgAvailableRights[] = 'bulkpush';
 
-$egPushJSMessages = array(
+$egPushJSMessages = [
 	'push-button-pushing',
 	'push-button-completed',
 	'push-button-failed',
@@ -94,27 +94,27 @@ $egPushJSMessages = array(
 	'push-tab-files-override',
 	'push-tab-template-override',
 	'push-tab-err-uploaddisabled'
-);
+];
 
 // For backward compatibility with MW < 1.17.
 if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-	$moduleTemplate = array(
-		'localBasePath' => dirname( __FILE__ ),
+	$moduleTemplate = [
+		'localBasePath' => __DIR__,
 		'remoteBasePath' => $egPushScriptPath,
 		'group' => 'ext.push'
-	);
+	];
 
-	$wgResourceModules['ext.push.tab'] = $moduleTemplate + array(
+	$wgResourceModules['ext.push.tab'] = $moduleTemplate + [
 		'scripts' => 'includes/ext.push.tab.js',
-		'dependencies' => array( 'mediawiki.jqueryMsg' ),
+		'dependencies' => [ 'mediawiki.jqueryMsg' ],
 		'messages' => $egPushJSMessages
-	);
+	];
 
-	$wgResourceModules['ext.push.special'] = $moduleTemplate + array(
+	$wgResourceModules['ext.push.special'] = $moduleTemplate + [
 		'scripts' => 'specials/ext.push.special.js',
-		'dependencies' => array(),
+		'dependencies' => [],
 		'messages' => $egPushJSMessages
-	);
+	];
 }
 
 require_once 'Push_Settings.php';

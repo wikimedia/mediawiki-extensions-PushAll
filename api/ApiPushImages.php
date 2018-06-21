@@ -20,7 +20,7 @@ class ApiPushImages extends ApiBase {
 	 *
 	 * @var array
 	 */
-	protected $cookieJars = array();
+	protected $cookieJars = [];
 
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
@@ -30,7 +30,7 @@ class ApiPushImages extends ApiBase {
 		global $wgUser;
 
 		if ( !$wgUser->isAllowed( 'push' ) || $wgUser->isBlocked() ) {
-			$this->dieUsageMsg( array( 'badaccess-groups' ) );
+			$this->dieUsageMsg( [ 'badaccess-groups' ] );
 		}
 
 		global $egPushLoginUser, $egPushLoginPass, $egPushLoginUsers, $egPushLoginPasswords, $egPushLoginDomain, $egPushLoginDomains;
@@ -38,11 +38,11 @@ class ApiPushImages extends ApiBase {
 		$params = $this->extractRequestParams();
 
 		if ( !isset( $params['images'] ) ) {
-			$this->dieUsageMsg( array( 'missingparam', 'images' ) );
+			$this->dieUsageMsg( [ 'missingparam', 'images' ] );
 		}
 
 		if ( !isset( $params['targets'] ) ) {
-			$this->dieUsageMsg( array( 'missingparam', 'targets' ) );
+			$this->dieUsageMsg( [ 'missingparam', 'targets' ] );
 		}
 
 		PushFunctions::flipKeys( $egPushLoginUsers, 'users' );
@@ -57,15 +57,13 @@ class ApiPushImages extends ApiBase {
 			if ( array_key_exists( $target, $egPushLoginUsers ) && array_key_exists( $target, $egPushLoginPasswords ) ) {
 				$user = $egPushLoginUsers[$target];
 				$pass = $egPushLoginPasswords[$target];
-			}
-			elseif ( $egPushLoginUser != '' && $egPushLoginPass != '' ) {
+			} elseif ( $egPushLoginUser != '' && $egPushLoginPass != '' ) {
 				$user = $egPushLoginUser;
 				$pass = $egPushLoginPass;
 			}
 			if ( array_key_exists( $target, $egPushLoginDomains ) ) {
 				$domain = $egPushLoginDomains[$target];
-			}
-			elseif ( $egPushLoginDomain != '' ) {
+			} elseif ( $egPushLoginDomain != '' ) {
 				$domain = $egPushLoginDomain;
 			}
 
@@ -97,29 +95,30 @@ class ApiPushImages extends ApiBase {
 	 * @param string $password
 	 * @param string $target
 	 * @param string $token
-	 * @param CookieJar $cookie
-	 * @param integer $attemtNr
+	 * @param CookieJar|null $cookie
+	 * @param int|null $attemtNr
 	 */
 	protected function doLogin( $user, $password, $domain, $target, $token = null, $cookieJar = null, $attemtNr = 0 ) {
-		$requestData = array(
+		$requestData = [
 			'action' => 'login',
 			'format' => 'json',
 			'lgname' => $user,
 			'lgpassword' => $password
-		);
-		if ( $domain != false )
+		];
+		if ( $domain != false ) {
 			$requestData['lgdomain'] = $domain;
+		}
 
 		if ( !is_null( $token ) ) {
 			$requestData['lgtoken'] = $token;
 		}
 
 		$req = PushFunctions::getHttpRequest( $target,
-			array(
+			[
 				'postData' => $requestData,
 				'method' => 'POST',
 				'timeout' => 'default'
-			)
+			]
 		);
 
 		if ( !is_null( $cookieJar ) ) {
@@ -138,19 +137,15 @@ class ApiPushImages extends ApiBase {
 
 				if ( $response->login->result == 'NeedToken' && $attemtNr < 3 ) {
 					$this->doLogin( $user, $password, $domain, $target, $response->login->token, $req->getCookieJar(), $attemtNr );
-				}
-				elseif ( $response->login->result == 'Success' ) {
+				} elseif ( $response->login->result == 'Success' ) {
 					$this->cookieJars[$target] = $req->getCookieJar();
-				}
-				else {
+				} else {
 					$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 				}
-			}
-			else {
+			} else {
 				$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 			}
-		}
-		else {
+		} else {
 			$this->dieUsage( wfMessage( 'push-err-authentication', $target, '' )->parse(), 'authentication-failed' );
 		}
 	}
@@ -170,7 +165,7 @@ class ApiPushImages extends ApiBase {
 			if ( $token !== false ) {
 				$doPush = true;
 
-				Hooks::run( 'PushAPIBeforeImagePush', array( &$title, &$target, &$token, &$doPush ) );
+				Hooks::run( 'PushAPIBeforeImagePush', [ &$title, &$target, &$token, &$doPush ] );
 
 				if ( $doPush ) {
 					$this->pushToTarget( $title, $target, $token );
@@ -191,25 +186,25 @@ class ApiPushImages extends ApiBase {
 	 * @return string or false
 	 */
 	protected function getEditToken( Title $title, $target ) {
-		$requestData = array(
+		$requestData = [
 			'action' => 'query',
 			'format' => 'json',
 			'intoken' => 'edit',
 			'prop' => 'info',
 			'titles' => $title->getFullText(),
-		);
+		];
 
-		$parts = array();
+		$parts = [];
 
 		foreach ( $requestData as $key => $value ) {
 			$parts[] = $key . '=' . urlencode( $value );
 		}
 
 		$req = PushFunctions::getHttpRequest( $target . '?' . implode( '&', $parts ),
-			array(
+			[
 				'method' => 'GET',
 				'timeout' => 'default'
-			)
+			]
 		);
 
 		if ( array_key_exists( $target, $this->cookieJars ) ) {
@@ -234,15 +229,12 @@ class ApiPushImages extends ApiBase {
 
 			if ( property_exists( $response->query->pages->$first, 'edittoken' ) ) {
 				$token = $response->query->pages->$first->edittoken;
-			}
-			elseif ( !is_null( $response ) && property_exists( $response, 'query' ) && property_exists( $response->query, 'error' ) ) {
+			} elseif ( !is_null( $response ) && property_exists( $response, 'query' ) && property_exists( $response->query, 'error' ) ) {
 				$this->dieUsage( $response->query->error->message, 'token-request-failed' );
-			}
-			else {
+			} else {
 				$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
 			}
-		}
-		else {
+		} else {
 			$this->dieUsage( wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed' );
 		}
 
@@ -263,47 +255,43 @@ class ApiPushImages extends ApiBase {
 
 		$imagePage = new ImagePage( $title );
 
-		$requestData = array(
+		$requestData = [
 			'action' => 'upload',
 			'format' => 'json',
 			'token' => $token,
 			'filename' => $title->getText(),
 			'ignorewarnings' => '1'
-		);
+		];
 
 		if ( $egPushDirectFileUploads ) {
 			$file = $imagePage->getFile();
 			$be = $file->getRepo()->getBackend();
 			$localFile = $be->getLocalReference(
-				array( 'src' => $file->getPath() )
+				[ 'src' => $file->getPath() ]
 			);
 			$requestData['file'] = '@' . $localFile->getPath();
-		}
-		else {
+		} else {
 			$requestData['url'] = $imagePage->getDisplayedFile()->getFullUrl();
 		}
 
-		$reqArgs = array(
+		$reqArgs = [
 			'method' => 'POST',
 			'timeout' => 'default',
 			'postData' => $requestData
-		);
+		];
 
 		if ( $egPushDirectFileUploads ) {
 			if ( !function_exists( 'curl_init' ) ) {
 				$this->dieUsage( wfMessage( 'push-api-err-nocurl' )->text(), 'image-push-nocurl' );
-			}
-			elseif ( !defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' ) || !CurlHttpRequest::SUPPORTS_FILE_POSTS ) {
+			} elseif ( !defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' ) || !CurlHttpRequest::SUPPORTS_FILE_POSTS ) {
 				$this->dieUsage( wfMessage( 'push-api-err-nofilesupport' )->text(), 'image-push-nofilesupport' );
-			}
-			else {
+			} else {
 				$httpEngine = Http::$httpEngine;
 				Http::$httpEngine = 'curl';
-				$req = MWHttpRequest::factory($target, $reqArgs);
+				$req = MWHttpRequest::factory( $target, $reqArgs );
 				Http::$httpEngine = $httpEngine;
 			}
-		}
-		else {
+		} else {
 			$req = PushFunctions::getHttpRequest( $target, $reqArgs );
 		}
 
@@ -322,44 +310,43 @@ class ApiPushImages extends ApiBase {
 				FormatJson::decode( $response )
 			);
 
-			Hooks::run( 'PushAPIAfterImagePush', array( $title, $target, $token, $response ) );
-		}
-		else {
+			Hooks::run( 'PushAPIAfterImagePush', [ $title, $target, $token, $response ] );
+		} else {
 			$this->dieUsage( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
 		}
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'images' => array(
+		return [
+			'images' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				//ApiBase::PARAM_REQUIRED => true,
-			),
-			'targets' => array(
+				// ApiBase::PARAM_REQUIRED => true,
+			],
+			'targets' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				//ApiBase::PARAM_REQUIRED => true,
-			),
-		);
-	}
-
-	/*
-	* @deprecated since MediaWiki core 1.25
-	*/
-	protected function getExamples() {
-		return array(
-			'api.php?action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w',
-		);
+				// ApiBase::PARAM_REQUIRED => true,
+			],
+		];
 	}
 
 	/**
-	* @see ApiBase::getExamplesMessages()
-	*/
+	 * @deprecated since MediaWiki core 1.25
+	 */
+	protected function getExamples() {
+		return [
+			'api.php?action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w',
+		];
+	}
+
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w'
 				=> 'apihelp-pushimages-example',
-		);
+		];
 	}
 }

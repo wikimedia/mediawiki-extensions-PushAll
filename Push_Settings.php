@@ -20,11 +20,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 # List of targets that can be pushed to.
 # The array keys are the target names, and the values are the target urls (path to api.php without the '/api.php' part)
-# Example: $egPushTargets['English Wikipedia'] = 'http://en.wikipedia.org/w'; 
-$egPushTargets = array();
+# Example: $egPushTargets['English Wikipedia'] = 'http://en.wikipedia.org/w';
+$egPushTargets = [];
 
 # Push rights.
-//$wgGroupPermissions['*']['push'] = true;
+// $wgGroupPermissions['*']['push'] = true;
 $wgGroupPermissions['autoconfirmed']['push'] = true;
 $wgGroupPermissions['sysop']['push'] = true;
 $wgGroupPermissions['autoconfirmed']['bulkpush'] = true;
@@ -53,7 +53,7 @@ $egPushIncTemplates = false;
 # This is the default choice.
 $egPushIncFiles = false;
 
-# Indicated if login options should be added to the push interface or not. 
+# Indicated if login options should be added to the push interface or not.
 $egPushAllowLogin = true;
 
 # Default login data. When set, the values will always be used when there is
@@ -66,9 +66,9 @@ $egPushLoginDomain = '';
 # Array keys should be the urls assigned in the $egPushTargets array.
 # When set, the values will always be used when there is
 # no login interface. If there is, they will be filled in as default.
-$egPushLoginUsers = array();
-$egPushLoginPasswords = array();
-$egPushLoginDomains = array();
+$egPushLoginUsers = [];
+$egPushLoginPasswords = [];
+$egPushLoginDomains = [];
 
 # The amount of push 'workers' (simultanious push requests) on Special:Push.
 $egPushBulkWorkers = 3;

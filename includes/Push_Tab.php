@@ -28,11 +28,11 @@ final class PushTab {
 
 			global $wgRequest;
 
-			$content_actions['push'] = array(
+			$content_actions['push'] = [
 				'text' => wfMessage( 'push-tab-text' )->text(),
 				'class' => $wgRequest->getVal( 'action' ) == 'push' ? 'selected' : '',
 				'href' => $title->getLocalURL( 'action=push' )
-			);
+			];
 		}
 
 		return true;
@@ -65,8 +65,7 @@ final class PushTab {
 	public static function onUnknownAction( $action, Article $article ) {
 		if ( $action == 'push' ) {
 			return self::displayPushPage( $article );
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
@@ -81,10 +80,9 @@ final class PushTab {
 		global $wgOut;
 
 		// For backward compatibility with MW < 1.17.
-		if ( is_callable( array( $wgOut, 'addModules' ) ) ) {
+		if ( is_callable( [ $wgOut, 'addModules' ] ) ) {
 			$wgOut->addModules( 'ext.push.tab' );
-		}
-		else {
+		} else {
 			global $egPushScriptPath;
 
 			PushFunctions::addJSLocalisation();
@@ -111,18 +109,18 @@ final class PushTab {
 			throw new PermissionsError( 'push' );
 		}
 
-		$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-desc'  )->escaped() . '</p>' );
+		$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-desc' )->escaped() . '</p>' );
 
 		if ( count( $egPushTargets ) == 0 ) {
-			$wgOut->addHTML( '<p>' . wfMesssage( 'push-tab-no-targets'  )->escaped() . '</p>' );
+			$wgOut->addHTML( '<p>' . wfMesssage( 'push-tab-no-targets' )->escaped() . '</p>' );
 			return false;
 		}
 
 		self::loadJs();
 
 		$wgOut->addHTML(
-			Html::hidden( 'pageName', $wgTitle->getFullText(), array( 'id' => 'pageName' ) ) .
-			Html::hidden( 'siteName', $wgSitename, array( 'id' => 'siteName' ) )
+			Html::hidden( 'pageName', $wgTitle->getFullText(), [ 'id' => 'pageName' ] ) .
+			Html::hidden( 'siteName', $wgSitename, [ 'id' => 'siteName' ] )
 		);
 
 		self::displayPushList();
@@ -138,29 +136,29 @@ final class PushTab {
 	 * @since 0.1
 	 */
 	protected static function displayPushList() {
-		global $wgOut, $egPushTargets, $wgLang;
+		global $wgOut, $egPushTargets;
 
-		$items = array(
+		$items = [
 			Html::rawElement(
 				'tr',
-				array(),
+				[],
 				Html::element(
 					'th',
-					array( 'width' => '200px' ),
+					[ 'width' => '200px' ],
 					wfMessage( 'push-targets' )->text()
 				) .
 				Html::element(
 					'th',
-					array( 'style' => 'min-width:400px;' ),
+					[ 'style' => 'min-width:400px;' ],
 					wfMessage( 'push-remote-pages' )->text()
 				) .
 				Html::element(
 					'th',
-					array( 'width' => '125px' ),
+					[ 'width' => '125px' ],
 					''
 				)
 			)
-		);
+		];
 
 		foreach ( $egPushTargets as $name => $url ) {
 			$items[] = self::getPushItem( $name, $url );
@@ -170,21 +168,21 @@ final class PushTab {
 		if ( count( $egPushTargets ) > 1 ) {
 			$items[] = Html::rawElement(
 				'tr',
-				array(),
+				[],
 				Html::element(
 					'th',
-					array( 'colspan' => 2, 'style' => 'text-align: left' ),
+					[ 'colspan' => 2, 'style' => 'text-align: left' ],
 					wfMessage( 'push-targets-total' )->numParams( count( $egPushTargets ) )->parse()
 				) .
 				Html::rawElement(
 					'th',
-					array( 'width' => '125px' ),
+					[ 'width' => '125px' ],
 					Html::element(
 						'button',
-						array(
+						[
 							'id' => 'push-all-button',
 							'style' => 'width: 125px; height: 30px',
-						),
+						],
 						wfmessage( 'push-button-all' )->text()
 					)
 				)
@@ -194,7 +192,7 @@ final class PushTab {
 		$wgOut->addHtml(
 			Html::rawElement(
 				'table',
-				array( 'class' => 'wikitable', 'width' => '50%' ),
+				[ 'class' => 'wikitable', 'width' => '50%' ],
 				implode( "\n", $items )
 			)
 		);
@@ -218,65 +216,65 @@ final class PushTab {
 
 		return Html::rawElement(
 			'tr',
-			array(),
+			[],
 			Html::element(
 				'td',
-				array(),
+				[],
 				$name
 			) .
 			Html::rawElement(
 				'td',
-				array( 'height' => '45px' ),
+				[ 'height' => '45px' ],
 				Html::element(
 					'a',
-					array(
+					[
 						'href' => $url . '/index.php?title=' . $wgTitle->getFullText(),
 						'rel' => 'nofollow',
 						'id' => 'targetlink' . $targetId
-					),
+					],
 					wfMessage( 'push-remote-page-link', $wgTitle->getFullText(), $name )->parse()
 				) .
 				Html::element(
 					'div',
-					array(
+					[
 						'id' => 'targetinfo' . $targetId,
 						'style' => 'display:none; color:darkgray'
-					)
+					]
 				) .
 				Html::element(
 					'div',
-					array(
+					[
 						'id' => 'targettemplateconflicts' . $targetId,
 						'style' => 'display:none; color:darkgray'
-					)
+					]
 				) .
 				Html::element(
 					'div',
-					array(
+					[
 						'id' => 'targetfileconflicts' . $targetId,
 						'style' => 'display:none; color:darkgray'
-					)
+					]
 				) .
 				Html::element(
 					'div',
-					array(
+					[
 						'id' => 'targeterrors' . $targetId,
 						'style' => 'display:none; color:darkred'
-					)
+					]
 				)
 			) .
 			Html::rawElement(
 				'td',
-				array(),
+				[],
 				Html::element(
 					'button',
-					array(
+					[
 						'class' => 'push-button',
 						'pushtarget' => $url,
 						'style' => 'width: 125px; height: 30px',
 						'targetid' => $targetId,
 						'targetname' => $name
-					),
+					],
 					wfMessage( 'push-button-text' )->text()
 				)
 			)
@@ -295,8 +293,8 @@ final class PushTab {
 
 		$usedTemplates = array_keys(
 			PushFunctions::getTemplates(
-				array( $wgTitle->getFullText() ),
-				array( $wgTitle->getFullText() => true )
+				[ $wgTitle->getFullText() ],
+				[ $wgTitle->getFullText() => true ]
 			)
 		);
 
@@ -331,17 +329,17 @@ final class PushTab {
 		$wgOut->addHTML(
 			Html::rawElement(
 				'div',
-				array( 'id' => 'divIncTemplates', 'style' => 'display: table-row' ),
-				Xml::check( 'checkIncTemplates', $egPushIncTemplates, array( 'id' => 'checkIncTemplates' ) ) .
+				[ 'id' => 'divIncTemplates', 'style' => 'display: table-row' ],
+				Xml::check( 'checkIncTemplates', $egPushIncTemplates, [ 'id' => 'checkIncTemplates' ] ) .
 				Html::element(
 					'label',
-					array( 'id' => 'lblIncTemplates', 'for' => 'checkIncTemplates' ),
+					[ 'id' => 'lblIncTemplates', 'for' => 'checkIncTemplates' ],
 					wfmessage( 'push-tab-inc-templates' )->text()
 				) .
 				'&#160;' .
 				Html::rawElement(
 					'div',
-					array( 'style' => 'display:none; opacity:0', 'id' => 'txtTemplateList' ),
+					[ 'style' => 'display:none; opacity:0', 'id' => 'txtTemplateList' ],
 					count( $templates ) > 0 ?
 						wfmessage( 'push-tab-used-templates',
 							$wgLang->listToText( $templates ), count( $templates ) )->parse() :
@@ -361,9 +359,9 @@ final class PushTab {
 	protected static function displayIncFilesOption( array $templates ) {
 		global $wgOut, $wgTitle, $egPushIncFiles, $wgScript;
 
-		$allFiles = self::getImagesForPages( array( $wgTitle->getFullText() ) );
+		$allFiles = self::getImagesForPages( [ $wgTitle->getFullText() ] );
 		$templateFiles = self::getImagesForPages( $templates );
-		$pageFiles = array();
+		$pageFiles = [];
 
 		foreach ( $allFiles as $file ) {
 			if ( !in_array( $file, $templateFiles ) ) {
@@ -380,17 +378,17 @@ final class PushTab {
 		$wgOut->addHTML(
 			Html::rawElement(
 				'div',
-				array( 'id' => 'divIncFiles', 'style' => 'display: table-row' ),
-				Xml::check( 'checkIncFiles', $egPushIncFiles, array( 'id' => 'checkIncFiles' ) ) .
+				[ 'id' => 'divIncFiles', 'style' => 'display: table-row' ],
+				Xml::check( 'checkIncFiles', $egPushIncFiles, [ 'id' => 'checkIncFiles' ] ) .
 				Html::element(
 					'label',
-					array( 'id' => 'lblIncFiles', 'for' => 'checkIncFiles' ),
+					[ 'id' => 'lblIncFiles', 'for' => 'checkIncFiles' ],
 					wfMessage( 'push-tab-inc-files' )->text()
 				) .
 				'&#160;' .
 				Html::rawElement(
 					'div',
-					array( 'style' => 'display:none; opacity:0', 'id' => 'txtFileList' ),
+					[ 'style' => 'display:none; opacity:0', 'id' => 'txtFileList' ],
 					''
 				)
 			)
@@ -405,20 +403,20 @@ final class PushTab {
 	 * @return array
 	 */
 	protected static function getImagesForPages( array $pages ) {
-		$images = array();
+		$images = [];
 
-		$requestData = array(
+		$requestData = [
 			'action' => 'query',
 			'format' => 'json',
 			'prop' => 'images',
 			'titles' => implode( '|', $pages ),
 			'imlimit' => 500
-		);
+		];
 
 		$api = new ApiMain( new FauxRequest( $requestData, true ), true );
 		$api->execute();
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$response = $api->getResult()->getResultData( null, array( 'Strip' => 'all' ) );
+			$response = $api->getResult()->getResultData( null, [ 'Strip' => 'all' ] );
 		} else {
 			$response = $api->getResultData();
 		}
