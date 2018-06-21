@@ -45,6 +45,7 @@ $wgMessagesDirs['Push'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['PushAlias'] 			= $egPushIP . '/Push.alias.php';
 
 $wgAutoloadClasses['PushHooks'] 			= $egPushIP . '/Push.hooks.php';
+$wgAutoloadClasses['ApiPushBase'] 			= $egPushIP . '/api/ApiPushBase.php';
 $wgAutoloadClasses['ApiPush'] 				= $egPushIP . '/api/ApiPush.php';
 $wgAutoloadClasses['ApiPushImages'] 		= $egPushIP . '/api/ApiPushImages.php';
 $wgAutoloadClasses['PushTab'] 				= $egPushIP . '/includes/Push_Tab.php';
