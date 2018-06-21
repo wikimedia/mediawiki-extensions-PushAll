@@ -29,14 +29,6 @@ class ApiPush extends ApiPushBase {
 
 		$params = $this->extractRequestParams();
 
-		if ( !isset( $params['page'] ) ) {
-			$this->dieUsageMsg( [ 'missingparam', 'page' ] );
-		}
-
-		if ( !isset( $params['targets'] ) ) {
-			$this->dieUsageMsg( [ 'missingparam', 'targets' ] );
-		}
-
 		PushFunctions::flipKeys( $egPushLoginUsers, 'users' );
 		PushFunctions::flipKeys( $egPushLoginPasswords, 'passwds' );
 		PushFunctions::flipKeys( $egPushLoginDomains, 'domains' );
@@ -201,7 +193,7 @@ class ApiPush extends ApiPushBase {
 			'token' => $token,
 		];
 
-		$req = PushFunctions::getHttpRequest( $target,
+		$req = MWHttpRequest::factory( $target,
 			[
 				'method' => 'POST',
 				'timeout' => 'default',
@@ -229,22 +221,13 @@ class ApiPush extends ApiPushBase {
 			'page' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				// ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_REQUIRED => true,
 			],
 			'targets' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				// ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_REQUIRED => true,
 			],
-		];
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	protected function getExamples() {
-		return [
-			'api.php?action=push&page=Main page&targets=http://en.wikipedia.org/w',
 		];
 	}
 

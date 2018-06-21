@@ -134,23 +134,4 @@ final class PushFunctions {
 			$arr = $flipped;
 		}
 	}
-
-	/**
-	 * Returns a new instance of the (MW)HttpRequest class.
-	 * This is needed to take care of the rename that happened in MediaWiki 1.17.
-	 *
-	 * @since 0.5
-	 *
-	 * @param string $target
-	 * @param array $args
-	 *
-	 * @return (MW)HttpRequest
-	 */
-	public static function getHttpRequest( $target, $args ) {
-		return call_user_func_array(
-			[ ( class_exists( 'MWHttpRequest' ) ? 'MWHttpRequest' : 'HttpRequest' ), 'factory' ],
-			[ $target, $args ]
-		);
-	}
-
 }

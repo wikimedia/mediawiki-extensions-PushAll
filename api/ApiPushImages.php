@@ -27,14 +27,6 @@ class ApiPushImages extends ApiPushBase {
 
 		$params = $this->extractRequestParams();
 
-		if ( !isset( $params['images'] ) ) {
-			$this->dieUsageMsg( [ 'missingparam', 'images' ] );
-		}
-
-		if ( !isset( $params['targets'] ) ) {
-			$this->dieUsageMsg( [ 'missingparam', 'targets' ] );
-		}
-
 		PushFunctions::flipKeys( $egPushLoginUsers, 'users' );
 		PushFunctions::flipKeys( $egPushLoginPasswords, 'passwds' );
 		PushFunctions::flipKeys( $egPushLoginDomains, 'domains' );
@@ -151,7 +143,7 @@ class ApiPushImages extends ApiPushBase {
 				Http::$httpEngine = $httpEngine;
 			}
 		} else {
-			$req = PushFunctions::getHttpRequest( $target, $reqArgs );
+			$req = MWHttpRequest::factory( $target, $reqArgs );
 		}
 
 		if ( array_key_exists( $target, $this->cookieJars ) ) {
@@ -180,22 +172,13 @@ class ApiPushImages extends ApiPushBase {
 			'images' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				// ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_REQUIRED => true,
 			],
 			'targets' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_ISMULTI => true,
-				// ApiBase::PARAM_REQUIRED => true,
+				ApiBase::PARAM_REQUIRED => true,
 			],
-		];
-	}
-
-	/**
-	 * @deprecated since MediaWiki core 1.25
-	 */
-	protected function getExamples() {
-		return [
-			'api.php?action=pushimages&images=File:Foo.bar&targets=http://en.wikipedia.org/w',
 		];
 	}
 

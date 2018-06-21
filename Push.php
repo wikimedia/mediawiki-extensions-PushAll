@@ -23,7 +23,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-define( 'Push_VERSION', '1.2.0 alpha' );
+define( 'Push_VERSION', '1.3.0 alpha' );
 
 $wgExtensionCredits['other'][] = [
 	'path' => __FILE__,
@@ -36,10 +36,12 @@ $wgExtensionCredits['other'][] = [
 	'descriptionmsg' => 'push-desc'
 ];
 
-$useExtensionPath = version_compare( $wgVersion, '1.16', '>=' ) && isset( $wgExtensionAssetsPath ) && $wgExtensionAssetsPath;
-$egPushScriptPath = ( $useExtensionPath ? $wgExtensionAssetsPath : $wgScriptPath . '/extensions' ) . '/Push';
+$egPushScriptPath = (
+	isset( $wgExtensionAssetsPath ) && $wgExtensionAssetsPath
+		? $wgExtensionAssetsPath
+		: $wgScriptPath . '/extensions'
+	) . '/Push';
 $egPushIP = __DIR__;
-unset( $useExtensionPath );
 
 $wgMessagesDirs['Push'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['PushAlias'] 			= $egPushIP . '/Push.alias.php';
@@ -97,25 +99,22 @@ $egPushJSMessages = [
 	'push-tab-err-uploaddisabled'
 ];
 
-// For backward compatibility with MW < 1.17.
-if ( defined( 'MW_SUPPORTS_RESOURCE_MODULES' ) ) {
-	$moduleTemplate = [
-		'localBasePath' => __DIR__,
-		'remoteBasePath' => $egPushScriptPath,
-		'group' => 'ext.push'
-	];
+$moduleTemplate = [
+	'localBasePath' => __DIR__,
+	'remoteBasePath' => $egPushScriptPath,
+	'group' => 'ext.push'
+];
 
-	$wgResourceModules['ext.push.tab'] = $moduleTemplate + [
-		'scripts' => 'includes/ext.push.tab.js',
-		'dependencies' => [ 'mediawiki.jqueryMsg' ],
-		'messages' => $egPushJSMessages
-	];
+$wgResourceModules['ext.push.tab'] = $moduleTemplate + [
+	'scripts' => 'includes/ext.push.tab.js',
+	'dependencies' => [ 'mediawiki.jqueryMsg' ],
+	'messages' => $egPushJSMessages
+];
 
-	$wgResourceModules['ext.push.special'] = $moduleTemplate + [
-		'scripts' => 'specials/ext.push.special.js',
-		'dependencies' => [],
-		'messages' => $egPushJSMessages
-	];
-}
+$wgResourceModules['ext.push.special'] = $moduleTemplate + [
+	'scripts' => 'specials/ext.push.special.js',
+	'dependencies' => [],
+	'messages' => $egPushJSMessages
+];
 
 require_once 'Push_Settings.php';
