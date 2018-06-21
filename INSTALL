@@ -1,8 +1,7 @@
 These is the install file for the Push extension.
-	
-Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Push
-Latest version of the install file: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push/INSTALL?view=co
 
+Extension page on mediawiki.org: http://www.mediawiki.org/wiki/Extension:Push
+Latest version of the install file: https://github.com/wikimedia/mediawiki-extensions-Push/blob/master/INSTALL
 
 == Installation ==
 
@@ -10,14 +9,14 @@ Once you have downloaded the code, place the ''Push'' directory within your Medi
 Then add the following code to your [[Manual:LocalSettings.php|LocalSettings.php]] file:
 
 # Push
-require_once( "$IP/extensions/Push/Push.php" );
+wfLoadExtension( 'Push' );
 
 == Configuration ==
 
 Configuration of push is done by adding simple PHP statements to your [[Manual:LocalSettings.php|LocalSettings.php]]
 file. These statements need to be placed AFTER the inclusion of Push. The options are listed below and their default
-is set in the [http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push/Push_Settings.php?view=markup push
-settings file]. You should NOT modify the settings file, but can have a look at it to get an idea of how to use the 
+is set in the [https://github.com/wikimedia/mediawiki-extensions-Push/blob/master/extension.json push
+settings file]. You should NOT modify the settings file, but can have a look at it to get an idea of how to use the
 ettings, in case the below descriptions do not suffice.
 
 === Push targets ===
@@ -72,7 +71,7 @@ Cookie::validateCookieDomain. It can be fixed by replacing this method by it's M
 As of version 0.5 of Push, you can choose to push the files used in the page you are pushing. This is done by checking
 'Include files' on the push interface. You can set the default check-state with the <code>$egPushIncFiles</code> setting.
 Keep in mind you need the 'filepush' right to use this functionality, so the checkbox won't show up when you are not
-logged in using the default rights. 
+logged in using the default rights.
 
 To successfully push any file, you need to have sufficient privileges '''on the target wiki''' (which probably means
 you'll have to authenticate), and the target wiki needs to be configured so it accepts uploads. You need to have
@@ -90,5 +89,5 @@ setting the value of <code>$egPushBulkWorkers</code>. Putting it to high might r
 
 === Push batch size ===
 
-The maximum amount of targets to push a page to in one go. Currently only used on Special:Push.  
+The maximum amount of targets to push a page to in one go. Currently only used on Special:Push.
 Set using <code>$egPushBatchSize</code> Defaults to 3.
