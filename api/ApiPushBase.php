@@ -141,4 +141,52 @@ abstract class ApiPushBase extends ApiBase {
 
 		return $token;
 	}
+
+	public function execute() {
+		global $wgUser, $egPushLoginUser, $egPushLoginPass, $egPushLoginUsers,
+			$egPushLoginPasswords, $egPushLoginDomain, $egPushLoginDomains;
+
+		if ( !$wgUser->isAllowed( 'push' ) || $wgUser->isBlocked() ) {
+			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+		}
+
+		$params = $this->extractRequestParams();
+
+		PushFunctions::flipKeys( $egPushLoginUsers, 'users' );
+		PushFunctions::flipKeys( $egPushLoginPasswords, 'passwds' );
+		PushFunctions::flipKeys( $egPushLoginDomains, 'domains' );
+
+		foreach ( $params['targets'] as &$target ) {
+			$user = false;
+			$pass = false;
+			$domain = false;
+
+			if ( array_key_exists( $target, $egPushLoginUsers ) && array_key_exists( $target, $egPushLoginPasswords ) ) {
+				$user = $egPushLoginUsers[$target];
+				$pass = $egPushLoginPasswords[$target];
+			} elseif ( $egPushLoginUser != '' && $egPushLoginPass != '' ) {
+				$user = $egPushLoginUser;
+				$pass = $egPushLoginPass;
+			}
+			if ( array_key_exists( $target, $egPushLoginDomains ) ) {
+				$domain = $egPushLoginDomains[$target];
+			} elseif ( $egPushLoginDomain != '' ) {
+				$domain = $egPushLoginDomain;
+			}
+
+			if ( substr( $target, -1 ) !== '/' ) {
+				$target .= '/';
+			}
+
+			$target .= 'api.php';
+
+			if ( $user !== false ) {
+				$this->doLogin( $user, $pass, $domain, $target );
+			}
+		}
+
+		$this->doModuleExecute();
+	}
+
+	abstract protected function doModuleExecute();
 }
