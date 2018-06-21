@@ -37,7 +37,7 @@ class ApiPushImages extends ApiPushBase {
 	 */
 	protected function doPush( Title $title, array $targets ) {
 		foreach ( $targets as $target ) {
-			$token = $this->getEditToken( $title, $target );
+			$token = $this->getEditToken( $target );
 
 			if ( $token !== false ) {
 				$doPush = true;
@@ -107,11 +107,11 @@ class ApiPushImages extends ApiPushBase {
 			} else {
 				$httpEngine = Http::$httpEngine;
 				Http::$httpEngine = 'curl';
-				$req = MWHttpRequest::factory( $target, $reqArgs );
+				$req = MWHttpRequest::factory( $target, $reqArgs, __METHOD__ );
 				Http::$httpEngine = $httpEngine;
 			}
 		} else {
-			$req = MWHttpRequest::factory( $target, $reqArgs );
+			$req = MWHttpRequest::factory( $target, $reqArgs, __METHOD__ );
 		}
 
 		if ( array_key_exists( $target, $this->cookieJars ) ) {

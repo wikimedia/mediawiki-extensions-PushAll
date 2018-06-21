@@ -47,7 +47,8 @@ abstract class ApiPushBase extends ApiBase {
 				'postData' => $requestData,
 				'method' => 'POST',
 				'timeout' => 'default'
-			]
+			],
+			__METHOD__
 		);
 
 		if ( !is_null( $cookieJar ) ) {
@@ -58,40 +59,39 @@ abstract class ApiPushBase extends ApiBase {
 
 		$attemtNr++;
 
-		if ( $status->isOK() ) {
-			$response = FormatJson::decode( $req->getContent() );
+		if ( !$status->isOK() ) {
+			$this->dieUsage(
+				wfMessage( 'push-err-authentication', $target, '' )->parse(),
+				'authentication-failed'
+			);
+		}
 
-			if ( property_exists( $response, 'login' )
-				&& property_exists( $response->login, 'result' ) ) {
+		$response = FormatJson::decode( $req->getContent() );
 
-				if ( $response->login->result == 'NeedToken' && $attemtNr < 3 ) {
-					$this->doLogin(
-						$user,
-						$password,
-						$domain,
-						$target,
-						$response->login->token,
-						$req->getCookieJar(),
-						$attemtNr
-					);
-				} elseif ( $response->login->result == 'Success' ) {
-					$this->cookieJars[$target] = $req->getCookieJar();
-				} else {
-					$this->dieUsage(
-						wfMessage( 'push-err-authentication', $target, '' )->parse(),
-						'authentication-failed'
-					);
-				}
-			} else {
-				$this->dieUsage(
-					wfMessage( 'push-err-authentication', $target, '' )->parse(),
-					'authentication-failed'
-				);
-			}
+		if ( !property_exists( $response, 'login' ) || !property_exists( $response->login, 'result' ) ) {
+			$this->dieUsage(
+				wfMessage( 'push-err-authentication', $target, '' )->parse(),
+				'authentication-failed'
+			);
+		}
+
+		if ( $response->login->result == 'NeedToken' && $attemtNr < 3 ) {
+			$this->doLogin(
+				$user,
+				$password,
+				$domain,
+				$target,
+				$response->login->token,
+				$req->getCookieJar(),
+				$attemtNr
+			);
+		} elseif ( $response->login->result == 'Success' ) {
+			$this->cookieJars[$target] = $req->getCookieJar();
 		} else {
 			$this->dieUsage(
 				wfMessage( 'push-err-authentication', $target, '' )->parse(),
-				'authentication-failed' );
+				'authentication-failed'
+			);
 		}
 	}
 
@@ -101,31 +101,24 @@ abstract class ApiPushBase extends ApiBase {
 	 *
 	 * @since 0.3
 	 *
-	 * @param Title $title
 	 * @param string $target
 	 *
 	 * @return string|false
 	 */
-	protected function getEditToken( Title $title, $target ) {
+	protected function getEditToken( $target ) {
 		$requestData = [
 			'action' => 'query',
 			'format' => 'json',
-			'intoken' => 'edit',
-			'prop' => 'info',
-			'titles' => $title->getFullText(),
+			'meta' => 'tokens',
+			'type' => 'csrf',
 		];
 
-		$parts = [];
-
-		foreach ( $requestData as $key => $value ) {
-			$parts[] = $key . '=' . urlencode( $value );
-		}
-
-		$req = MWHttpRequest::factory( $target . '?' . implode( '&', $parts ),
+		$req = MWHttpRequest::factory( wfAppendQuery( $target, $requestData ),
 			[
 				'method' => 'GET',
 				'timeout' => 'default'
-			]
+			],
+			__METHOD__
 		);
 
 		if ( array_key_exists( $target, $this->cookieJars ) ) {
@@ -138,29 +131,26 @@ abstract class ApiPushBase extends ApiBase {
 
 		$token = false;
 
-		if ( !is_null( $response )
+		if (
+			$response === null
+			|| !property_exists( $response, 'query' )
+			|| !property_exists( $response->query, 'tokens' )
+			|| count( $response->query->tokens ) !== 1
+		) {
+			$this->dieUsage(
+				wfMessage( 'push-special-err-token-failed' )->text(),
+				'token-request-failed'
+			);
+		}
+
+		if ( property_exists( $response->query->tokens, 'csrftoken' ) ) {
+			$token = $response->query->tokens->csrftoken;
+		} elseif (
+			!is_null( $response )
 			&& property_exists( $response, 'query' )
-			&& property_exists( $response->query, 'pages' )
-			&& count( $response->query->pages ) > 0 ) {
-
-			foreach ( $response->query->pages as $key => $value ) {
-				$first = $key;
-				break;
-			}
-
-			if ( property_exists( $response->query->pages->$first, 'edittoken' ) ) {
-				$token = $response->query->pages->$first->edittoken;
-			} elseif (
-				!is_null( $response )
-				&& property_exists( $response, 'query' )
-				&& property_exists( $response->query, 'error' )
-			) {
-				$this->dieUsage( $response->query->error->message, 'token-request-failed' );
-			} else {
-				$this->dieUsage(
-					wfMessage( 'push-special-err-token-failed' )->text(), 'token-request-failed'
-				);
-			}
+			&& property_exists( $response->query, 'error' )
+		) {
+			$this->dieUsage( $response->query->error->message, 'token-request-failed' );
 		} else {
 			$this->dieUsage(
 				wfMessage( 'push-special-err-token-failed' )->text(),

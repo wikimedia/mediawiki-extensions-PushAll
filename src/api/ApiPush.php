@@ -111,7 +111,7 @@ class ApiPush extends ApiPushBase {
 	 */
 	protected function doPush( Title $title, array $revision, array $targets ) {
 		foreach ( $targets as $target ) {
-			$token = $this->getEditToken( $title, $target );
+			$token = $this->getEditToken( $target );
 
 			if ( $token !== false ) {
 				$doPush = true;
@@ -158,7 +158,8 @@ class ApiPush extends ApiPushBase {
 				'method' => 'POST',
 				'timeout' => 'default',
 				'postData' => $requestData
-			]
+			],
+		__METHOD__
 		);
 
 		if ( array_key_exists( $target, $this->cookieJars ) ) {
