@@ -13,26 +13,8 @@
 final class PushFunctions {
 
 	/**
-	 * Adds the needed JS messages to the page output.
-	 * This is for backward compatibility with pre-RL MediaWiki.
-	 *
-	 * @since 0.2
-	 */
-	public static function addJSLocalisation() {
-		global $egPushJSMessages, $wgOut;
-
-		$data = [];
-
-		foreach ( $egPushJSMessages as $msg ) {
-			$data[$msg] = wfMessage( $msg )->plain();
-		}
-
-		$wgOut->addInlineScript( 'var wgPushMessages = ' . FormatJson::encode( $data ) . ';' );
-	}
-
-	/**
 	 * Returns the latest revision.
-	 * Has support for the Approvedrevs extension, and will
+	 * Has support for the ApprovedRevs extension, and will
 	 * return the latest approved revision where appropriate.
 	 *
 	 * @since 0.2
@@ -44,10 +26,10 @@ final class PushFunctions {
 	public static function getRevisionToPush( Title $title ) {
 		if ( defined( 'APPROVED_REVS_VERSION' ) ) {
 			$revId = ApprovedRevs::getApprovedRevID( $title );
-			return $revId ? $revId : $title->getLatestRevID();
-		} else {
-			return $title->getLatestRevID();
+			return $revId ?: $title->getLatestRevID();
 		}
+
+		return $title->getLatestRevID();
 	}
 
 	/**

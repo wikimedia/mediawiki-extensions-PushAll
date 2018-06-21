@@ -18,10 +18,14 @@ final class PushTab {
 	public static function displayTab( $obj, &$content_actions ) {
 		global $wgUser, $egPushTargets;
 
-		// Make sure that this is not a special page, the page has contents, and the user can push.
+		/**
+		 * Make sure that this is not a special page, the page has contents, and the user can push.
+		 *
+		 * @var Title $title
+		 */
 		$title = $obj->getTitle();
 		if (
-			$title->getNamespace() != NS_SPECIAL
+			$title->getNamespace() !== NS_SPECIAL
 			&& $title->exists()
 			&& $wgUser->isAllowed( 'push' )
 			&& count( $egPushTargets ) > 0 ) {
@@ -63,35 +67,11 @@ final class PushTab {
 	 * @return true
 	 */
 	public static function onUnknownAction( $action, Article $article ) {
-		if ( $action == 'push' ) {
-			return self::displayPushPage( $article );
-		} else {
+		if ( $action !== 'push' ) {
 			return true;
 		}
-	}
 
-	/**
-	 * Loads the needed JavaScript.
-	 * Takes care of non-RL compatibility.
-	 *
-	 * @since 0.1
-	 */
-	protected static function loadJs() {
-		global $wgOut;
-
-		// For backward compatibility with MW < 1.17.
-		if ( is_callable( [ $wgOut, 'addModules' ] ) ) {
-			$wgOut->addModules( 'ext.push.tab' );
-		} else {
-			global $egPushScriptPath;
-
-			PushFunctions::addJSLocalisation();
-
-			$wgOut->addHeadItem(
-				'ext.push.tab',
-				Html::linkedScript( $egPushScriptPath . '/includes/ext.push.tab.js' )
-			);
-		}
+		return self::displayPushPage( $article );
 	}
 
 	/**
@@ -103,7 +83,7 @@ final class PushTab {
 	public static function displayPushPage( Article $article ) {
 		global $wgOut, $wgUser, $wgTitle, $wgSitename, $egPushTargets;
 
-		$wgOut->setPageTitle( wfmessage( 'push-tab-title', $article->getTitle()->getText() )->parse() );
+		$wgOut->setPageTitle( wfMessage( 'push-tab-title', $article->getTitle()->getText() )->parse() );
 
 		if ( !$wgUser->isAllowed( 'push' ) ) {
 			throw new PermissionsError( 'push' );
@@ -112,11 +92,11 @@ final class PushTab {
 		$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-desc' )->escaped() . '</p>' );
 
 		if ( count( $egPushTargets ) == 0 ) {
-			$wgOut->addHTML( '<p>' . wfMesssage( 'push-tab-no-targets' )->escaped() . '</p>' );
+			$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-no-targets' )->escaped() . '</p>' );
 			return false;
 		}
 
-		self::loadJs();
+		$wgOut->addModules( 'ext.push.tab' );
 
 		$wgOut->addHTML(
 			Html::hidden( 'pageName', $wgTitle->getFullText(), [ 'id' => 'pageName' ] ) .
@@ -183,13 +163,13 @@ final class PushTab {
 							'id' => 'push-all-button',
 							'style' => 'width: 125px; height: 30px',
 						],
-						wfmessage( 'push-button-all' )->text()
+						wfMessage( 'push-button-all' )->text()
 					)
 				)
 			);
 		}
 
-		$wgOut->addHtml(
+		$wgOut->addHTML(
 			Html::rawElement(
 				'table',
 				[ 'class' => 'wikitable', 'width' => '50%' ],
@@ -334,14 +314,14 @@ final class PushTab {
 				Html::element(
 					'label',
 					[ 'id' => 'lblIncTemplates', 'for' => 'checkIncTemplates' ],
-					wfmessage( 'push-tab-inc-templates' )->text()
+					wfMessage( 'push-tab-inc-templates' )->text()
 				) .
 				'&#160;' .
 				Html::rawElement(
 					'div',
 					[ 'style' => 'display:none; opacity:0', 'id' => 'txtTemplateList' ],
 					count( $templates ) > 0 ?
-						wfmessage( 'push-tab-used-templates',
+						wfMessage( 'push-tab-used-templates',
 							$wgLang->listToText( $templates ), count( $templates ) )->parse() :
 							wfMessage( 'push-tab-no-used-templates' )->escaped()
 				)

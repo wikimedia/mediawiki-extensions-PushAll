@@ -80,7 +80,8 @@ class SpecialPush extends SpecialPage {
 					 * during the export in a single query.
 					 */
 					$catpages = $this->getPagesFromCategory( $t );
-					if ( $catpages ) { $pages .= "\n" . implode( "\n", $catpages );
+					if ( $catpages ) {
+						$pages .= "\n" . implode( "\n", $catpages );
 					}
 				}
 			}
@@ -93,12 +94,14 @@ class SpecialPush extends SpecialPage {
 				 * Same implementation as above, so same @todo
 				 */
 				$nspages = $this->getPagesFromNamespace( $nsindex );
-				if ( $nspages ) { $pages .= "\n" . implode( "\n", $nspages );
+				if ( $nspages ) {
+					$pages .= "\n" . implode( "\n", $nspages );
 				}
 			}
 		} elseif ( $req->wasPosted() ) {
 			$pages = $req->getText( 'pages' );
-			if ( $pages != '' ) { $doPush = true;
+			if ( $pages != '' ) {
+				$doPush = true;
 			}
 		} else {
 			$pages = '';
@@ -189,7 +192,7 @@ class SpecialPush extends SpecialPage {
 			'var wgPushIncFiles = ' . ( $this->getRequest()->getCheck( 'files' ) ? 'true' : 'false' ) . ';'
 		);
 
-		$this->loadJs();
+		$out->addModules( 'ext.push.special' );
 	}
 
 	/**
@@ -202,8 +205,12 @@ class SpecialPush extends SpecialPage {
 
 		$this->getOutput()->addWikiMsg( 'push-special-description' );
 
-		$form = Xml::openElement( 'form', [ 'method' => 'post',
-			'action' => $this->getPageTitle()->getLocalUrl( 'action=submit' ) ] );
+		$form = Xml::openElement( 'form',
+			[
+				'method' => 'post',
+				'action' => $this->getPageTitle()->getLocalURL( 'action=submit' )
+			]
+		);
 		$form .= Xml::inputLabel( $this->msg( 'export-addcattext' )->text(), 'catname', 'catname', 40 ) . '&#160;';
 		$form .= Xml::submitButton( $this->msg( 'export-addcat' )->text(), [ 'name' => 'addcat' ] ) . '<br />';
 
@@ -327,104 +334,6 @@ class SpecialPush extends SpecialPage {
 			$pages[] = $n;
 		}
 		return $pages;
-	}
-
-	/**
-	 * Loads the needed JavaScript.
-	 * Takes care of non-RL compatibility.
-	 *
-	 * @since 0.2
-	 */
-	protected function loadJs() {
-		$out = $this->getOutput();
-
-		// For backward compatibility with MW < 1.17.
-		if ( is_callable( [ $out, 'addModules' ] ) ) {
-			$out->addModules( 'ext.push.special' );
-		} else {
-			global $egPushScriptPath;
-
-			PushFunctions::addJSLocalisation();
-
-			$out->addHeadItem(
-				'ext.push.special',
-				Html::linkedScript( $egPushScriptPath . '/specials/ext.push.special.js' )
-			);
-		}
-	}
-
-	/**
-	 * Get the OutputPage being used for this instance.
-	 * SpecialPage extends ContextSource as of 1.18.
-	 *
-	 * @since 0.1
-	 *
-	 * @return OutputPage
-	 */
-	public function getOutput() {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getOutput() : $GLOBALS['wgOut'];
-	}
-
-	/**
-	 * Get the Language being used for this instance.
-	 * SpecialPage extends ContextSource as of 1.18.
-	 *
-	 * @since 0.1
-	 *
-	 * @return Language
-	 */
-	public function getLanguage() {
-		return method_exists( 'SpecialPage', 'getLanguage' ) ? parent::getLanguage() : $GLOBALS['wgLang'];
-	}
-
-	/**
-	 * Get the User being used for this instance.
-	 * SpecialPage extends ContextSource as of 1.18.
-	 *
-	 * @since 0.1
-	 *
-	 * @return User
-	 */
-	public function getUser() {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getUser() : $GLOBALS['wgUser'];
-	}
-
-	/**
-	 * Get the WebRequest being used for this instance.
-	 * SpecialPage extends ContextSource as of 1.18.
-	 *
-	 * @since 0.1
-	 *
-	 * @return WebRequest
-	 */
-	public function getRequest() {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getRequest() : $GLOBALS['wgRequest'];
-	}
-
-	/**
-	 * Get the Skin being used for this instance.
-	 * SpecialPage extends ContextSource as of 1.18.
-	 *
-	 * @since 0.1
-	 *
-	 * @return Skin
-	 */
-	public function getSkin() {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getSkin() : $GLOBALS['wgSkin'];
-	}
-
-	/**
-	 * Get the Title being used for this instance.
-	 * SpecialPage extends ContextSource as of 1.18.
-	 *
-	 * @since 0.1
-	 *
-	 * @param bool $subPage
-	 *
-	 * @return Title
-	 */
-	public function getPageTitle( $subPage = false ) {
-		return version_compare( $GLOBALS['wgVersion'], '1.18', '>' ) ? parent::getPageTitle() : $GLOBALS['wgTitle'];
 	}
 
 	protected function getGroupName() {

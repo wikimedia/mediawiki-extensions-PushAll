@@ -120,7 +120,8 @@ class ApiPush extends ApiPushBase {
 		if ( $response !== false
 			&& array_key_exists( 'query', $response )
 			&& array_key_exists( 'pages', $response['query'] )
-			&& count( $response['query']['pages'] ) > 0 ) {
+			&& count( $response['query']['pages'] ) > 0
+		) {
 
 			foreach ( $response['query']['pages'] as $key => $value ) {
 				$first = $key;
