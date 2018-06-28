@@ -4,7 +4,8 @@
 			"Mark85296341",
 			"Kly",
 			"Liuxinyu970226",
-			"Sanmosa"
+			"Sanmosa",
+			"A2093064"
 		]
 	},
 	"push-desc": "推送內容到其它 wiki 的小巧擴充",
@@ -16,7 +17,7 @@
 	"action-pushadmin": "設置推送",
 	"group-pusher": "推送者",
 	"group-pusher-member": "{{GENDER:$1|推送者}}",
-	"grouppage-pusher": "{{ns:project}}:用戶",
+	"grouppage-pusher": "{{ns:project}}:推送者",
 	"group-bulkpusher": "批量推送者",
 	"group-bulkpusher-member": "{{GENDER:$1|批量推送者}}",
 	"grouppage-bulkpusher": "{{ns:project}}:批量推送者",
