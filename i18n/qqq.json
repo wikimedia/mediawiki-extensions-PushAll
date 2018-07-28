@@ -18,6 +18,7 @@
 	"right-push": "{{doc-right|push}}",
 	"right-bulkpush": "{{doc-right|bulkpush}}",
 	"right-pushadmin": "{{doc-right|pushadmin}}",
+	"right-filepush": "{{doc-right|filepush}}",
 	"action-push": "{{doc-action|push}}",
 	"action-bulkpush": "{{doc-action|bulkpush}}",
 	"action-pushadmin": "{{doc-action|pushadmin}}",

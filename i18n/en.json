@@ -8,6 +8,7 @@
 	"right-push": "Use push functionality",
 	"right-bulkpush": "Use bulk push functionality (i.e. Special:Push)",
 	"right-pushadmin": "Modify push targets and push settings",
+	"right-filepush": "Push files to other wikis",
 	"action-push": "push pages",
 	"action-bulkpush": "bulk push pages",
 	"action-pushadmin": "configure push",
