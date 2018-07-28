@@ -9,6 +9,7 @@
 	"right-push": "Transferfunktionalität benutzen",
 	"right-bulkpush": "Sammeltransferfunktionalität benutzen (z.&nbsp;B. Special:Push)",
 	"right-pushadmin": "Transferziele und -einstellungen ändern",
+	"right-filepush": "Dateien in andere Wikis transferieren",
 	"action-push": "Seiten zu transferieren",
 	"action-bulkpush": "Seiten gesammelt zu transferieren",
 	"action-pushadmin": "Transfereinstellungen zu konfigurieren",
