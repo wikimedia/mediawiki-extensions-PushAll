@@ -10,6 +10,7 @@
 	"right-push": "Usar funcionalidade de difusão",
 	"right-bulkpush": "Usar a funcionalidade de difusão em bloco (isto é, a página Special:Push)",
 	"right-pushadmin": "Modificar os destinos e a configuração da difusão",
+	"right-filepush": "Difundir ficheiros para outras wikis",
 	"action-push": "difundir páginas",
 	"action-bulkpush": "difundir páginas em bloco",
 	"action-pushadmin": "configurar difusão",

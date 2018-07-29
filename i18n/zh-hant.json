@@ -12,6 +12,7 @@
 	"right-push": "使用推送功能",
 	"right-bulkpush": "使用推送功能（註：即 Special:Push）",
 	"right-pushadmin": "變更推送目標與推送設定",
+	"right-filepush": "推送檔案至其它 wiki",
 	"action-push": "推送頁面",
 	"action-bulkpush": "批量推送頁面",
 	"action-pushadmin": "設置推送",

@@ -10,6 +10,7 @@
 	"right-push": "Użycie funkcji przesuwania",
 	"right-bulkpush": "Użycie funkcji przesuwania hurtowego (tj. Special:Push)",
 	"right-pushadmin": "Zmiana celów i ustawień przesuwania",
+	"right-filepush": "Przesyłanie plików do innych wiki",
 	"action-push": "przesuwania stron",
 	"action-bulkpush": "hurtowego przesuwania stron",
 	"action-pushadmin": "konfigurowania przesuwania",
