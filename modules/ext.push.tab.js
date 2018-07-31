@@ -1,6 +1,6 @@
 /**
  * JavaScript for the Push tab in the Push extension.
- * @see http://www.mediawiki.org/wiki/Extension:Push
+ * @see https://www.mediawiki.org/wiki/Extension:Push
  *
  * @author Jeroen De Dauw <jeroendedauw at gmail dot com>
  */

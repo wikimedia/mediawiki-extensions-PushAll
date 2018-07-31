@@ -1,7 +1,7 @@
 <?php
 /**
- * Documentation:	 		http://www.mediawiki.org/wiki/Extension:Push
- * Support					http://www.mediawiki.org/wiki/Extension_talk:Push
+ * Documentation:	 		https://www.mediawiki.org/wiki/Extension:Push
+ * Support					https://www.mediawiki.org/wiki/Extension_talk:Push
  * Source code:             http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push
  *
  * @file Push.php
