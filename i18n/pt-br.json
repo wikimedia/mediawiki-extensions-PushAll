@@ -11,6 +11,7 @@
 	"right-push": "Usar funcionalidade de envio",
 	"right-bulkpush": "Usar a funcionalidade de envio em massa (Special:Push)",
 	"right-pushadmin": "Modificar destinos e configurações de envio",
+	"right-filepush": "Difundir arquivos para outras wikis",
 	"action-push": "enviar páginas",
 	"action-bulkpush": "enviar páginas em massa",
 	"action-pushadmin": "configurar envio",
