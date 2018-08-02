@@ -4,14 +4,15 @@
 			"Armando-Martin",
 			"Fitoschido",
 			"Macofe",
-			"MarcoAurelio"
+			"MarcoAurelio",
+			"Tiberius1701"
 		]
 	},
 	"push-desc": "Extensión ligera para transferir contenidos a otros wikis",
 	"right-push": "Usar la funcionalidad de transferencia.",
 	"right-bulkpush": "Usar la funcionalidad de transferencia en masa (es decir, Special:Push).",
 	"right-pushadmin": "Modificar los destinos y la configuración de las transferencias",
-	"right-filepush": "Transferir archivos a otra wiki",
+	"right-filepush": "Transferir archivos a otras wikis",
 	"action-push": "transferir páginas",
 	"action-bulkpush": "transferir páginas en bloque",
 	"action-pushadmin": "configurar las transferencias",
