@@ -8,6 +8,7 @@
 	"right-push": "Usar la función de tresferencia.",
 	"right-bulkpush": "Usar la función de tresferencia en masa (esto ye, Special:Push).",
 	"right-pushadmin": "Camudar los destinos y configuración de les tresferencies",
+	"right-filepush": "Tresferir ficheros a otres wikis",
 	"action-push": "tresferir páxines",
 	"action-bulkpush": "tresferir páxines en masa",
 	"action-pushadmin": "configurar les tresferencies",
