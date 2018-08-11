@@ -8,6 +8,7 @@
 	"right-push": "استخدم وظيفة الدفع",
 	"right-bulkpush": "استخدام وظيفة الدفع الكمي (أي Special:Push)",
 	"right-pushadmin": "تعديل أهداف الدفع وإعدادات الدفع",
+	"right-filepush": "دفع الملفات إلى ويكيات أخرى",
 	"action-push": "دفع الصفحات",
 	"action-bulkpush": "دفع الصفحات كميا",
 	"action-pushadmin": "تكوين دفع",
