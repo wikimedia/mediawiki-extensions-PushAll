@@ -7,131 +7,130 @@
  *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  */
-// @codingStandardsIgnoreFile
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English (English) */
-$specialPageAliases['en'] = array(
-	'Push' => array( 'Push' ),
-);
+$specialPageAliases['en'] = [
+	'Push' => [ 'Push' ],
+];
 
 /** Arabic (العربية) */
-$specialPageAliases['ar'] = array(
-	'Push' => array( 'دفع' ),
-);
+$specialPageAliases['ar'] = [
+	'Push' => [ 'دفع' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$specialPageAliases['arz'] = array(
-	'Push' => array( 'دفع' ),
-);
+$specialPageAliases['arz'] = [
+	'Push' => [ 'دفع' ],
+];
 
 /** Western Balochi (بلوچی رخشانی) */
-$specialPageAliases['bgn'] = array(
-	'Push' => array( 'پوش' ),
-);
+$specialPageAliases['bgn'] = [
+	'Push' => [ 'پوش' ],
+];
 
 /** Banjar (Bahasa Banjar) */
-$specialPageAliases['bjn'] = array(
-	'Push' => array( 'Tikin' ),
-);
+$specialPageAliases['bjn'] = [
+	'Push' => [ 'Tikin' ],
+];
 
 /** Breton (brezhoneg) */
-$specialPageAliases['br'] = array(
-	'Push' => array( 'Bountañ' ),
-);
+$specialPageAliases['br'] = [
+	'Push' => [ 'Bountañ' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'Push' => array( 'Transfer' ),
-);
+$specialPageAliases['de'] = [
+	'Push' => [ 'Transfer' ],
+];
 
 /** Zazaki (Zazaki) */
-$specialPageAliases['diq'] = array(
-	'Push' => array( 'Bıploğné' ),
-);
+$specialPageAliases['diq'] = [
+	'Push' => [ 'Bıploğné' ],
+];
 
 /** Persian (فارسی) */
-$specialPageAliases['fa'] = array(
-	'Push' => array( 'پوش' ),
-);
+$specialPageAliases['fa'] = [
+	'Push' => [ 'پوش' ],
+];
 
 /** Haitian (Kreyòl ayisyen) */
-$specialPageAliases['ht'] = array(
-	'Push' => array( 'Pouse' ),
-);
+$specialPageAliases['ht'] = [
+	'Push' => [ 'Pouse' ],
+];
 
 /** Interlingua (interlingua) */
-$specialPageAliases['ia'] = array(
-	'Push' => array( 'Transferer' ),
-);
+$specialPageAliases['ia'] = [
+	'Push' => [ 'Transferer' ],
+];
 
 /** Italian (italiano) */
-$specialPageAliases['it'] = array(
-	'Push' => array( 'Spingi' ),
-);
+$specialPageAliases['it'] = [
+	'Push' => [ 'Spingi' ],
+];
 
 /** Japanese (日本語) */
-$specialPageAliases['ja'] = array(
-	'Push' => array( 'プッシュ' ),
-);
+$specialPageAliases['ja'] = [
+	'Push' => [ 'プッシュ' ],
+];
 
 /** Korean (한국어) */
-$specialPageAliases['ko'] = array(
-	'Push' => array( '밀기' ),
-);
+$specialPageAliases['ko'] = [
+	'Push' => [ '밀기' ],
+];
 
 /** Northern Luri (لۊری شومالی) */
-$specialPageAliases['lrc'] = array(
-	'Push' => array( 'نیائن' ),
-);
+$specialPageAliases['lrc'] = [
+	'Push' => [ 'نیائن' ],
+];
 
 /** Macedonian (македонски) */
-$specialPageAliases['mk'] = array(
-	'Push' => array( 'Префрли' ),
-);
+$specialPageAliases['mk'] = [
+	'Push' => [ 'Префрли' ],
+];
 
 /** Malayalam (മലയാളം) */
-$specialPageAliases['ml'] = array(
-	'Push' => array( 'ഉന്തുക' ),
-);
+$specialPageAliases['ml'] = [
+	'Push' => [ 'ഉന്തുക' ],
+];
 
 /** Norwegian Bokmål (norsk bokmål) */
-$specialPageAliases['nb'] = array(
-	'Push' => array( 'Dytt' ),
-);
+$specialPageAliases['nb'] = [
+	'Push' => [ 'Dytt' ],
+];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
-$specialPageAliases['nds-nl'] = array(
-	'Push' => array( 'Deursturen' ),
-);
+$specialPageAliases['nds-nl'] = [
+	'Push' => [ 'Deursturen' ],
+];
 
 /** Dutch (Nederlands) */
-$specialPageAliases['nl'] = array(
-	'Push' => array( 'Doorsturen' ),
-);
+$specialPageAliases['nl'] = [
+	'Push' => [ 'Doorsturen' ],
+];
 
 /** Sicilian (sicilianu) */
-$specialPageAliases['scn'] = array(
-	'Push' => array( 'Spingi' ),
-);
+$specialPageAliases['scn'] = [
+	'Push' => [ 'Spingi' ],
+];
 
 /** Vietnamese (Tiếng Việt) */
-$specialPageAliases['vi'] = array(
-	'Push' => array( 'Đẩy' ),
-);
+$specialPageAliases['vi'] = [
+	'Push' => [ 'Đẩy' ],
+];
 
 /** Chinese (中文) */
-$specialPageAliases['zh'] = array(
-	'Push' => array( '推送', '推播' ),
-);
+$specialPageAliases['zh'] = [
+	'Push' => [ '推送', '推播' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$specialPageAliases['zh-hans'] = array(
-	'Push' => array( '推送' ),
-);
+$specialPageAliases['zh-hans'] = [
+	'Push' => [ '推送' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$specialPageAliases['zh-hant'] = array(
-	'Push' => array( '推播' ),
-);
+$specialPageAliases['zh-hant'] = [
+	'Push' => [ '推播' ],
+];
