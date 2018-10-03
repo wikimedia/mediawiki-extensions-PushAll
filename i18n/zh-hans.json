@@ -7,13 +7,15 @@
 			"Hudafu",
 			"Mywood",
 			"Cwek",
-			"Impersonator 1"
+			"Impersonator 1",
+			"A Chinese Wikipedian"
 		]
 	},
 	"push-desc": "推送内容至其他wiki的轻量扩展程序",
 	"right-push": "使用推送功能",
 	"right-bulkpush": "使用批量推送功能（即Special:Push）",
 	"right-pushadmin": "修改推送目标和推送设置",
+	"right-filepush": "把文件放到其他的Wiki上",
 	"action-push": "推送页面",
 	"action-bulkpush": "批量推送页面",
 	"action-pushadmin": "配置推送",
