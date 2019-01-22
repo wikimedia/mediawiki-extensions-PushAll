@@ -2,13 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Tofu II",
-			"Syreeni"
+			"Syreeni",
+			"Pyscowicz"
 		]
 	},
 	"push-desc": "Laajennus sisällön siirtämiseen wikistä toiseen",
 	"right-push": "Käytä työntötoimintoa",
 	"right-bulkpush": "Käytä massatyöntötoimintoa (esim. Special:Push)",
 	"right-pushadmin": "Muokkaa työntökohteita ja asetuksia",
+	"right-filepush": "Siirtää tiedostoja muihin wikeihin",
 	"action-push": "työntää sivuja",
 	"action-bulkpush": "massatyöntää sivuja",
 	"action-pushadmin": "muokata työntöasetuksia",
@@ -74,5 +76,7 @@
 	"push-special-obtaining-fileinfo": "$1: Noudetaan tiedoston tietoja...",
 	"push-special-pushing-file": "$1: Työnnetään tiedostoa $2...",
 	"push-special-return": "Työnnä lisää sivuja",
-	"push-api-err-nocurl": "cURL laajennusta ei ole asennettu.\nAseta $egPushDirectFileUploads arvoksi false julkisissa wikeissä tai yksityisissä wikeissä asenna cURL"
+	"push-api-err-nocurl": "cURL laajennusta ei ole asennettu.\nAseta $egPushDirectFileUploads arvoksi false julkisissa wikeissä tai yksityisissä wikeissä asenna cURL",
+	"apihelp-push-example": "Siirrä sivu 'Main page' englanninkieliseen Wikipediaan.",
+	"apihelp-pushimages-example": "Siirrä tiedosto 'Foo.bar' englanninkieliseen Wikipediaan"
 }
