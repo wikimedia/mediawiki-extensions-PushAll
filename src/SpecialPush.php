@@ -188,13 +188,13 @@ class SpecialPush extends SpecialPage {
 			)
 		);
 
-		$out->addInlineScript(
-			'var wgPushPages = ' . FormatJson::encode( $pages ) . ';' .
-			'var wgPushTargets = ' . FormatJson::encode( $targets ) . ';' .
-			'var wgPushWorkerCount = ' . $egPushBulkWorkers . ';' .
-			'var wgPushBatchSize = ' . $egPushBatchSize . ';' .
-			'var wgPushIncFiles = ' . ( $this->getRequest()->getCheck( 'files' ) ? 'true' : 'false' ) . ';'
-		);
+		$out->addJsConfigVars( [
+			'wgPushPages' => $pages,
+			'wgPushTargets' => $targets,
+			'wgPushWorkerCount' => $egPushBulkWorkers,
+			'wgPushBatchSize' => $egPushBatchSize,
+			'wgPushIncFiles' => $this->getRequest()->getCheck( 'files' ),
+		] );
 
 		$out->addModules( 'ext.push.special' );
 	}
