@@ -10,7 +10,7 @@
 	"right-bulkpush": "一括プッシュ機能 (Special:Push) を使用",
 	"right-pushadmin": "プッシュの対象や設定を変更",
 	"action-push": "ページのプッシュ",
-	"action-bulkpush": "ページを一括プッシュ",
+	"action-bulkpush": "ページの一括プッシュ",
 	"action-pushadmin": "プッシュの設定の変更",
 	"group-pusher": "プッシュ担当者",
 	"group-pusher-member": "{{GENDER:$1|プッシュ担当者}}",
