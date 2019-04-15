@@ -15,6 +15,7 @@
 	"right-bulkpush": "Utiliser la fonctionnalité de push en masse (c’est-à-dire Special:Push).",
 	"action-pushadmin": "configurer la publication",
 	"right-pushadmin": "Modifier les cibles et les paramètres de push.",
+	"action-filepush": "pousser les fichiers vers les autres wikis",
 	"right-filepush": "Créer des fichiers sur d'autres wikis",
 	"group-pusher": "Pousseurs",
 	"group-pusher-member": "{{GENDER:$1|pousseur}}",
