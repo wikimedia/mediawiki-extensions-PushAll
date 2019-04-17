@@ -12,6 +12,7 @@
 	"right-bulkpush": "Sammeltransferfunktionalität benutzen (z.&nbsp;B. Special:Push)",
 	"action-pushadmin": "Transfereinstellungen zu konfigurieren",
 	"right-pushadmin": "Transferziele und -einstellungen ändern",
+	"action-filepush": "Dateien in andere Wikis zu transferieren",
 	"right-filepush": "Dateien in andere Wikis transferieren",
 	"group-pusher": "Transferierer",
 	"group-pusher-member": "{{GENDER:$1|Transferierer|Transferiererin}}",
