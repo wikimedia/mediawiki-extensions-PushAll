@@ -5,7 +5,8 @@
 			"Base",
 			"Steve.rusyn",
 			"SteveR",
-			"Piramidion"
+			"Piramidion",
+			"Vlad5250"
 		]
 	},
 	"push-desc": "Невелике розширення для поширення вмісту до інших вікі",
@@ -15,6 +16,7 @@
 	"right-bulkpush": "Використовувати функції масового поширення (тобто Special:Push).",
 	"action-pushadmin": "налаштувати поширення",
 	"right-pushadmin": "Змінити цілі та налаштування поширення",
+	"action-filepush": "пересилання файлів до інших вікі",
 	"right-filepush": "пересилання файлів до інших вікі",
 	"group-pusher": "Поширювачі",
 	"group-pusher-member": "{{GENDER:$1|поширювач|поширювачка}}",
