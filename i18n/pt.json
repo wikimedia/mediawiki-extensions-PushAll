@@ -13,6 +13,7 @@
 	"right-bulkpush": "Usar a funcionalidade de difusão em bloco (isto é, a página Special:Push)",
 	"action-pushadmin": "configurar difusão",
 	"right-pushadmin": "Modificar os destinos e a configuração da difusão",
+	"action-filepush": "difundir ficheiros para outras wikis",
 	"right-filepush": "Difundir ficheiros para outras wikis",
 	"group-pusher": "Difusores",
 	"group-pusher-member": "{{GENDER:$1|difusor|difusora}}",
