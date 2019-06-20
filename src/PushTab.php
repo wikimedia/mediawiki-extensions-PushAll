@@ -307,9 +307,7 @@ final class PushTab {
 	protected static function displayIncTemplatesOption( array $templates ) {
 		global $wgOut, $wgLang, $egPushIncTemplates;
 
-		$wgOut->addInlineScript(
-			'var wgPushTemplates = ' . FormatJson::encode( $templates ) . ';'
-		);
+		$wgOut->addJsConfigVars( 'wgPushTemplates', $templates );
 
 		foreach ( $templates as &$template ) {
 			$template = "[[$template]]";
