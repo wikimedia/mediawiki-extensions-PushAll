@@ -66,7 +66,7 @@
 	"push-special-item-completed": "$1: Transferimento complete",
 	"push-special-item-failed": "$1: Transferimento fallite: $2",
 	"push-special-push-done": "Transferimento complete",
-	"push-special-err-token-failed": "Non poteva obtener un indicio de modification in le wiki de destination.",
+	"push-special-err-token-failed": "Non poteva obtener un token de modification in le wiki de destination.",
 	"push-special-err-pageget-failed": "Non poteva obtener le contento del pagina local.",
 	"push-special-err-push-failed": "Le wiki de destination refusava le pagina transferite.",
 	"push-special-inc-files": "Includer files incastrate",
