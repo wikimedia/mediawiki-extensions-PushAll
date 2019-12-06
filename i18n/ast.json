@@ -11,6 +11,7 @@
 	"right-bulkpush": "Usar la función de tresferencia en masa (esto ye, Special:Push).",
 	"action-pushadmin": "configurar les tresferencies",
 	"right-pushadmin": "Camudar los destinos y configuración de les tresferencies",
+	"action-filepush": "tresferir ficheros a otres wikis",
 	"right-filepush": "Tresferir ficheros a otres wikis",
 	"group-pusher": "Tresferidores",
 	"group-pusher-member": "{{GENDER:$1|tresferidor|tresferidora}}",
