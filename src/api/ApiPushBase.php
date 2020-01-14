@@ -38,7 +38,7 @@ abstract class ApiPushBase extends ApiBase {
 			$requestData['lgdomain'] = $domain;
 		}
 
-		if ( !is_null( $token ) ) {
+		if ( $token !== null ) {
 			$requestData['lgtoken'] = $token;
 		}
 
@@ -51,7 +51,7 @@ abstract class ApiPushBase extends ApiBase {
 			__METHOD__
 		);
 
-		if ( !is_null( $cookieJar ) ) {
+		if ( $cookieJar !== null ) {
 			$req->setCookieJar( $cookieJar );
 		}
 
@@ -146,7 +146,7 @@ abstract class ApiPushBase extends ApiBase {
 		if ( property_exists( $response->query->tokens, 'csrftoken' ) ) {
 			$token = $response->query->tokens->csrftoken;
 		} elseif (
-			!is_null( $response )
+			$response !== null
 			&& property_exists( $response, 'query' )
 			&& property_exists( $response->query, 'error' )
 		) {
