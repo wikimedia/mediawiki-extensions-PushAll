@@ -23,7 +23,7 @@ class SpecialPush extends SpecialPage {
 	}
 
 	/**
-	 * @see SpecialPage::getDescription
+	 * @inheritDoc
 	 */
 	public function getDescription() {
 		return $this->msg( 'special-' . strtolower( $this->getName() ) )->text();
