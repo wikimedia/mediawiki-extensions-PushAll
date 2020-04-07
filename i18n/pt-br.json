@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jaideraf",
-			"Luckas",
+			"Eduardo Addad de Oliveira",
 			"Felipe L. Ewald",
-			"Eduardo Addad de Oliveira"
+			"Jaideraf",
+			"Luckas"
 		]
 	},
 	"push-desc": "Uma extensão leve para enviar conteúdo para outras wikis",

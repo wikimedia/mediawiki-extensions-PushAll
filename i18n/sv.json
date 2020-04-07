@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jopparn",
-			"Freked"
+			"Freked",
+			"Jopparn"
 		]
 	},
 	"push-err-authentication": "Autentisering på $1 misslyckades. $2",
