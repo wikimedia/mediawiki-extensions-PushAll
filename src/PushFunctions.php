@@ -94,7 +94,7 @@ final class PushFunctions {
 	 *
 	 * @since 0.5
 	 *
-	 * @param array $arr
+	 * @param array &$arr
 	 * @param string $id Some string to identify the array and keep track of it having been flipped.
 	 */
 	public static function flipKeys( array &$arr, $id ) {
