@@ -15,7 +15,7 @@ final class PushTab {
 	/**
 	 * Adds an "action" (i.e., a tab) to allow pushing the current article.
 	 * @param $obj
-	 * @param $content_actions
+	 * @param &$content_actions
 	 * @return bool
 	 */
 	public static function displayTab( $obj, &$content_actions ) {
@@ -49,7 +49,7 @@ final class PushTab {
 	 * Function currently called only for the 'Vector' skin, added in
 	 * MW 1.16 - will possibly be called for additional skins later
 	 * @param $obj
-	 * @param $links
+	 * @param &$links
 	 * @return bool
 	 */
 	public static function displayTab2( $obj, &$links ) {
