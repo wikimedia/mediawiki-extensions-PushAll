@@ -81,6 +81,6 @@
 	"push-special-obtaining-fileinfo": "$1: Kinukuha ang kabatiran ng talaksan...",
 	"push-special-pushing-file": "$1: Itinutulak ang talaksang $2...",
 	"push-special-return": "Magtulak ng marami pang mga pahina",
-	"push-api-err-nocurl": "Hindi naitalaga ang cURL.\nItakda ang $egPushDirectFileUploads upang maging mali sa pangmadlang mga wiki, o italaga ang cURL para sa pribadong mga wiki",
-	"push-api-err-nofilesupport": "Ang katutubong MediaWiki ay walang pagtangkilik para sa pagpapaskil ng mga talaksan.\nSa pangmadlang mga wiki, itakda ang $egPushDirectFileUploads sa mali.\nSa pribadong mga wiki, ilapat ang pantapal na nakakawing mula sa dokumentasyon ng Itulak o isapanahon mismo ang MediaWiki."
+	"push-api-err-nocurl": "Hindi naitalaga ang cURL.\nItakda ang $egPushAllDirectFileUploads upang maging mali sa pangmadlang mga wiki, o italaga ang cURL para sa pribadong mga wiki",
+	"push-api-err-nofilesupport": "Ang katutubong MediaWiki ay walang pagtangkilik para sa pagpapaskil ng mga talaksan.\nSa pangmadlang mga wiki, itakda ang $egPushAllDirectFileUploads sa mali.\nSa pribadong mga wiki, ilapat ang pantapal na nakakawing mula sa dokumentasyon ng Itulak o isapanahon mismo ang MediaWiki."
 }

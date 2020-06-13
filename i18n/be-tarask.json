@@ -65,6 +65,6 @@
 	"push-special-obtaining-fileinfo": "$1: Атрыманьне інфармацыі пра файл…",
 	"push-special-pushing-file": "$1: Распаўсюджваньне файла $2…",
 	"push-special-return": "Распаўсюдзіць болей старонак",
-	"push-api-err-nocurl": "cURL не ўсталяваны.\nУстанавіце парамэтар $egPushDirectFileUploads у false ў публічнай вікі, ці ўсталюйце cURL на прыватнай вікі.",
-	"push-api-err-nofilesupport": "Лякальная MediaWiki не падтрымлівае адпраўку файлаў.\nДля публічных вікі ўстанавіце парамэтар $egPushDirectFileUploads у значэньне false.\nУ прыватных вікі трэба ўжыць выпраўленьне linkd з дакумэнтацыі Push, ці наўпрост абнавіць MediaWiki."
+	"push-api-err-nocurl": "cURL не ўсталяваны.\nУстанавіце парамэтар $egPushAllDirectFileUploads у false ў публічнай вікі, ці ўсталюйце cURL на прыватнай вікі.",
+	"push-api-err-nofilesupport": "Лякальная MediaWiki не падтрымлівае адпраўку файлаў.\nДля публічных вікі ўстанавіце парамэтар $egPushAllDirectFileUploads у значэньне false.\nУ прыватных вікі трэба ўжыць выпраўленьне linkd з дакумэнтацыі Push, ці наўпрост абнавіць MediaWiki."
 }

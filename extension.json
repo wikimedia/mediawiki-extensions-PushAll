@@ -1,6 +1,6 @@
 {
 	"name": "PushAll",
-	"version": "1.4.0",
+	"version": "1.0.0",
 	"author": [
 		"[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]",
 		"[https://www.mediawiki.org/wiki/User:Karima_Rafes Karima Rafes]"
@@ -144,7 +144,7 @@
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
-		"remoteExtPath": "Push"
+		"remoteExtPath": "PushAll"
 	},
 	"Hooks": {
 		"MediaWikiPerformAction": "PushTab::onMediaWikiPerformAction",
@@ -153,12 +153,12 @@
 		"AdminLinks": "PushHooks::addToAdminLinks"
 	},
 	"ConfigRegistry": {
-		"egPush": "Push::makeConfig"
+		"egPushAll": "Push::makeConfig"
 	},
-	"config_prefix": "egPush",
+	"config_prefix": "egPushAll",
 	"config": {
 		"Targets": {
-			"description": "List of targets that can be pushed to. The array keys are the target names, and the values are the target urls (path to api.php without the '/api.php' part). Example: $egPushTargets['English Wikipedia'] = 'http://en.wikipedia.org/w';",
+			"description": "List of targets that can be pushed to. The array keys are the target names, and the values are the target urls (path to api.php without the '/api.php' part). Example: $egPushAllTargets['English Wikipedia'] = 'http://en.wikipedia.org/w';",
 			"value": {},
 			"merge_strategy": "array_plus"
 		},
@@ -195,18 +195,18 @@
 			"value": ""
 		},
 		"LoginUsers": {
-			"description": "Default login data per target. Overrides $egPushLoginUser and $egPushLoginPass when specified. Array keys should be the urls assigned in the $egPushTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
+			"description": "Default login data per target. Overrides $egPushAllLoginUser and $egPushAllLoginPass when specified. Array keys should be the urls assigned in the $egPushAllTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
 			"value": {},
 			"merge_strategy": "array_plus"
 		},
 		"LoginPasswords": {
-			"description": "Default login data per target. Overrides $egPushLoginUser and $egPushLoginPass when specified. Array keys should be the urls assigned in the $egPushTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
+			"description": "Default login data per target. Overrides $egPushAllLoginUser and $egPushAllLoginPass when specified. Array keys should be the urls assigned in the $egPushAllTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
 			"value": {
 			},
 			"merge_strategy": "array_plus"
 		},
 		"LoginDomains": {
-			"description": "Default login data per target. Overrides $egPushLoginUser and $egPushLoginPass when specified. Array keys should be the urls assigned in the $egPushTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
+			"description": "Default login data per target. Overrides $egPushAllLoginUser and $egPushAllLoginPass when specified. Array keys should be the urls assigned in the $egPushAllTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
 			"value": {},
 			"merge_strategy": "array_plus"
 		},

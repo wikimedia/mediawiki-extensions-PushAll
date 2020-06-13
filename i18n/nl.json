@@ -76,6 +76,6 @@
 	"push-special-obtaining-fileinfo": "$1: bestandsgegevens aan het ophalen...",
 	"push-special-pushing-file": "$1: bestand $2 aan het verzenden...",
 	"push-special-return": "Meer pagina's verzenden",
-	"push-api-err-nocurl": "cURL is niet geïnstalleerd.\nStel op publieke wiki's $egPushDirectFileUploads in op \"false\" of installeer cURL in een besloten wiki.",
-	"push-api-err-nofilesupport": "De lokale MediaWiki heeft geen ondersteuning voor het doorsturen van bestanden. \nStel op openbare wiki's $egPushDirectFileUploads in op \"false\".\nVoer de patch waarnaar wordt verwezen in de documentatie van Push uit op besloten wiki's of werk MediaWiki zelf bij."
+	"push-api-err-nocurl": "cURL is niet geïnstalleerd.\nStel op publieke wiki's $egPushAllDirectFileUploads in op \"false\" of installeer cURL in een besloten wiki.",
+	"push-api-err-nofilesupport": "De lokale MediaWiki heeft geen ondersteuning voor het doorsturen van bestanden. \nStel op openbare wiki's $egPushAllDirectFileUploads in op \"false\".\nVoer de patch waarnaar wordt verwezen in de documentatie van Push uit op besloten wiki's of werk MediaWiki zelf bij."
 }

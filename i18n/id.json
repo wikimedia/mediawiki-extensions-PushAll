@@ -62,6 +62,6 @@
 	"push-special-obtaining-fileinfo": "$1: Mencari informasi berkas...",
 	"push-special-pushing-file": "$1: Mendorong berkas $2...",
 	"push-special-return": "Dorong halaman lain",
-	"push-api-err-nocurl": "cURL tidak diinstal.\nSetel $egPushDirectFileUploads menjadi false pada wiki publik atau instal cURL untuk wiki pribadi",
-	"push-api-err-nofilesupport": "MediaWiki lokal tidak memiliki dukungan untuk mengirim berkas.\nPada wiki publik, setel $egPushDirectFileUploads menjadi false.\nPada wiki pribadi, terapkan tambalan linkd dari dokumentasi Push atau perbarui MediaWiki itu sendiri."
+	"push-api-err-nocurl": "cURL tidak diinstal.\nSetel $egPushAllDirectFileUploads menjadi false pada wiki publik atau instal cURL untuk wiki pribadi",
+	"push-api-err-nofilesupport": "MediaWiki lokal tidak memiliki dukungan untuk mengirim berkas.\nPada wiki publik, setel $egPushAllDirectFileUploads menjadi false.\nPada wiki pribadi, terapkan tambalan linkd dari dokumentasi Push atau perbarui MediaWiki itu sendiri."
 }

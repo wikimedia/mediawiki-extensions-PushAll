@@ -77,8 +77,8 @@
 	"push-special-obtaining-fileinfo": "$1: Pobieranie informacji o pliku...",
 	"push-special-pushing-file": "$1: Przesuwanie pliku $2...",
 	"push-special-return": "Przesuń więcej stron",
-	"push-api-err-nocurl": "cURL nie jest zainstalowany.\nNa publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false, na prywatnej wiki zainstaluj cURL.",
-	"push-api-err-nofilesupport": "Lokalne MediaWiki nie obsługuje przesyłania plików.\nNa publicznej wiki ustaw parametr $egPushDirectFileUploads na wartość false.\nNa prywatnej wiki zastosuj patch linkd z dokumentacji rozszerzenia Push lub zaktualizuj MediaWiki.",
+	"push-api-err-nocurl": "cURL nie jest zainstalowany.\nNa publicznej wiki ustaw parametr $egPushAllDirectFileUploads na wartość false, na prywatnej wiki zainstaluj cURL.",
+	"push-api-err-nofilesupport": "Lokalne MediaWiki nie obsługuje przesyłania plików.\nNa publicznej wiki ustaw parametr $egPushAllDirectFileUploads na wartość false.\nNa prywatnej wiki zastosuj patch linkd z dokumentacji rozszerzenia Push lub zaktualizuj MediaWiki.",
 	"apihelp-push-description": "Przesuwanie treści jednej lub wielu stron do jednej lub wielu docelowych wiki.",
 	"apihelp-pushimages-param-images": "Nazwy ilustracji do przesunięcia."
 }

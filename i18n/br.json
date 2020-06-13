@@ -56,5 +56,5 @@
 	"push-special-obtaining-fileinfo": "$1: O tastum titouroù diwar-benn ar restr...",
 	"push-special-pushing-file": "$1: O vountañ ar restr $2...",
 	"push-special-return": "Bountañ muioc'h a bajennoù",
-	"push-api-err-nocurl": "N'eo ket staliet cURL.\nLakaat $egPushDirectFileUploads da <code>false</code> evit wikioù foran, pe staliañ cURL evit ar wikioù prevez"
+	"push-api-err-nocurl": "N'eo ket staliet cURL.\nLakaat $egPushAllDirectFileUploads da <code>false</code> evit wikioù foran, pe staliañ cURL evit ar wikioù prevez"
 }

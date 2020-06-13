@@ -77,6 +77,6 @@
 	"push-special-obtaining-fileinfo": "$1: קבלת מידע על הקובץ...",
 	"push-special-pushing-file": "$1: דחיפת הקובץ $2...",
 	"push-special-return": "לדחוף יותר דפים",
-	"push-api-err-nocurl": "cURL לא מותקן.\nהגדירו את המשתנה ‎$egPushDirectFileUploads כ־false באתרי ויקי ציבוריים, או התקינו את cURL באתרי ויקי פרטיים",
-	"push-api-err-nofilesupport": "התקנת מדיה־ויקי מקומית לא תומכת בפעולת post על קבצים.\nבאתרי ויקי ציבוריים הגדירו את המשתנה ‎$egPushDirectFileUploads כ־false.\nבאתרי ויקי פרטיים התקינו את התיקון המקושר מהתיעוד של Push או שדרגו את תוכנת מדיה־ויקי עצמה."
+	"push-api-err-nocurl": "cURL לא מותקן.\nהגדירו את המשתנה ‎$egPushAllDirectFileUploads כ־false באתרי ויקי ציבוריים, או התקינו את cURL באתרי ויקי פרטיים",
+	"push-api-err-nofilesupport": "התקנת מדיה־ויקי מקומית לא תומכת בפעולת post על קבצים.\nבאתרי ויקי ציבוריים הגדירו את המשתנה ‎$egPushAllDirectFileUploads כ־false.\nבאתרי ויקי פרטיים התקינו את התיקון המקושר מהתיעוד של Push או שדרגו את תוכנת מדיה־ויקי עצמה."
 }

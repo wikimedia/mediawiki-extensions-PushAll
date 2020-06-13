@@ -75,6 +75,6 @@
 	"push-special-obtaining-fileinfo": "$1: Oteniment d'anformassion an sl'archivi...",
 	"push-special-pushing-file": "$1: possé l'archivi $2...",
 	"push-special-return": "Possé pi 'd pàgine",
-	"push-api-err-nocurl": "cURL a l'é pa istalà.\nAmposté $egPushDirectFileUploads a fàuss për le wiki pùbliche, o anstalé cURL për le wiki privà",
-	"push-api-err-nofilesupport": "La MediaWiki local a manten nen la spedission d'archivi.\nDzora le wiki pùbliche, amposté $egPushDirectFileUploads a fàuss.\nDzora le wiki privà, apliché ël pachèt linkd da la documentassion ëd Possé o agiorné MediaWiki midema."
+	"push-api-err-nocurl": "cURL a l'é pa istalà.\nAmposté $egPushAllDirectFileUploads a fàuss për le wiki pùbliche, o anstalé cURL për le wiki privà",
+	"push-api-err-nofilesupport": "La MediaWiki local a manten nen la spedission d'archivi.\nDzora le wiki pùbliche, amposté $egPushAllDirectFileUploads a fàuss.\nDzora le wiki privà, apliché ël pachèt linkd da la documentassion ëd Possé o agiorné MediaWiki midema."
 }

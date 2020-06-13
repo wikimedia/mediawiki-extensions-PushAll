@@ -57,6 +57,9 @@ abstract class ApiPushBase extends ApiBase {
 
 		$token = false;
 
+		// for debug :
+		//error_log( print_r( $req->getContent(), true ) );
+
 		if (
 			$response === null
 			|| !property_exists( $response, 'query' )
@@ -191,6 +194,9 @@ abstract class ApiPushBase extends ApiBase {
 		$status = $req->execute();
 
 		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
+
+		// for debug :
+		//error_log( print_r( $req->getContent(), true ) );
 
 		$token = false;
 

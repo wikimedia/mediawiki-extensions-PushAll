@@ -79,6 +79,6 @@
 	"push-special-obtaining-fileinfo": "$1: Obteniendo información del archivo...",
 	"push-special-pushing-file": "$1: Transfiriendo archivo $2...",
 	"push-special-return": "Transferir más páginas",
-	"push-api-err-nocurl": "cURL no está instalado.\nEstablezca $egPushDirectFileUploads como falso en los wikis públicos, o instale cURL en los wikis privados",
-	"push-api-err-nofilesupport": "La instalación local de MediaWiki no admite publicar archivos.\nEn wikis públicos, establezca a «false» la opción $egPushDirectFileUploads.\nEn wikis privados, aplique el parche mencionado en la documentación de Push o actualice MediaWiki."
+	"push-api-err-nocurl": "cURL no está instalado.\nEstablezca $egPushAllDirectFileUploads como falso en los wikis públicos, o instale cURL en los wikis privados",
+	"push-api-err-nofilesupport": "La instalación local de MediaWiki no admite publicar archivos.\nEn wikis públicos, establezca a «false» la opción $egPushAllDirectFileUploads.\nEn wikis privados, aplique el parche mencionado en la documentación de Push o actualice MediaWiki."
 }

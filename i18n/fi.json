@@ -76,7 +76,7 @@
 	"push-special-obtaining-fileinfo": "$1: Noudetaan tiedoston tietoja...",
 	"push-special-pushing-file": "$1: Työnnetään tiedostoa $2...",
 	"push-special-return": "Työnnä lisää sivuja",
-	"push-api-err-nocurl": "cURL laajennusta ei ole asennettu.\nAseta $egPushDirectFileUploads arvoksi false julkisissa wikeissä tai yksityisissä wikeissä asenna cURL",
+	"push-api-err-nocurl": "cURL laajennusta ei ole asennettu.\nAseta $egPushAllDirectFileUploads arvoksi false julkisissa wikeissä tai yksityisissä wikeissä asenna cURL",
 	"apihelp-push-example": "Siirrä sivu 'Main page' englanninkieliseen Wikipediaan.",
 	"apihelp-pushimages-example": "Siirrä tiedosto 'Foo.bar' englanninkieliseen Wikipediaan"
 }

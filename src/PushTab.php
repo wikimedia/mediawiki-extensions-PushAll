@@ -391,12 +391,12 @@ final class PushTab {
 	 */
 	protected static function displayIncTemplatesOption( array $templates, array $templatesSubpage ) {
 		global $wgOut;
-		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPush' );
-		$egPushIncTemplates = false;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllIncTemplates = false;
 		if ( !$config->has( "IncTemplates" ) ) {
-			// throw new MWException( "$egPushIncTemplates is not precised in the localsettings." );
+			// throw new MWException( "$egPushAllIncTemplates is not precised in the localsettings." );
 		} else {
-			$egPushIncTemplates = $config->get( "IncTemplates" );
+			$egPushAllIncTemplates = $config->get( "IncTemplates" );
 		}
 
 		foreach ( $templates as &$template ) {
@@ -410,7 +410,7 @@ final class PushTab {
 			Html::rawElement(
 				'div',
 				[ 'id' => 'divIncTemplates', 'style' => 'display: table-row' ],
-				Xml::check( 'checkIncTemplates', $egPushIncTemplates, [ 'id' => 'checkIncTemplates' ] ) .
+				Xml::check( 'checkIncTemplates', $egPushAllIncTemplates, [ 'id' => 'checkIncTemplates' ] ) .
 				Html::element(
 					'label',
 					[ 'id' => 'lblIncTemplates', 'for' => 'checkIncTemplates' ],
@@ -435,12 +435,12 @@ final class PushTab {
 	 */
 	protected static function displayIncSubpagesOption( array $subpages ) {
 		global $wgOut, $wgLang;
-		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPush' );
-		$egPushIncSubpages = false;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllIncSubpages = false;
 		if ( !$config->has( "IncSubpages" ) ) {
-			// throw new MWException( "$egPushIncSubpages is not precised in the localsettings." );
+			// throw new MWException( "$egPushAllIncSubpages is not precised in the localsettings." );
 		} else {
-			$egPushIncSubpages = $config->get( "IncSubpages" );
+			$egPushAllIncSubpages = $config->get( "IncSubpages" );
 		}
 
 		foreach ( $subpages as &$subpage ) {
@@ -451,7 +451,7 @@ final class PushTab {
 			Html::rawElement(
 				'div',
 				[ 'id' => 'divIncSubpages', 'style' => 'display: table-row' ],
-				Xml::check( 'checkIncSubpages', $egPushIncSubpages, [ 'id' => 'checkIncSubpages' ] ) .
+				Xml::check( 'checkIncSubpages', $egPushAllIncSubpages, [ 'id' => 'checkIncSubpages' ] ) .
 				Html::element(
 					'label',
 					[ 'id' => 'lblIncSubpages', 'for' => 'checkIncSubpages' ],
@@ -478,19 +478,19 @@ final class PushTab {
 	 */
 	protected static function displayIncFilesOption() {
 		global $wgOut;
-		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPush' );
-		$egPushIncFiles = false;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllIncFiles = false;
 		if ( !$config->has( "IncFiles" ) ) {
-			// throw new MWException( "$egPushIncFiles is not precised in the localsettings." );
+			// throw new MWException( "$egPushAllIncFiles is not precised in the localsettings." );
 		} else {
-			$egPushIncFiles = $config->get( "IncFiles" );
+			$egPushAllIncFiles = $config->get( "IncFiles" );
 		}
 
 		$wgOut->addHTML(
 			Html::rawElement(
 				'div',
 				[ 'id' => 'divIncFiles', 'style' => 'display: table-row' ],
-				Xml::check( 'checkIncFiles', $egPushIncFiles, [ 'id' => 'checkIncFiles' ] ) .
+				Xml::check( 'checkIncFiles', $egPushAllIncFiles, [ 'id' => 'checkIncFiles' ] ) .
 				Html::element(
 					'label',
 					[ 'id' => 'lblIncFiles', 'for' => 'checkIncFiles' ],

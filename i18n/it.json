@@ -20,5 +20,5 @@
 	"push-tab-template-override": "{{PLURAL:$2|Questo template esiste|Questi template esistono}} già: $1",
 	"push-special-target-is": "Wiki di destinazione: $1",
 	"push-special-select-targets": "Wiki di destinazione:",
-	"push-api-err-nocurl": "cURL non è installato.\nImposta $egPushDirectFileUploads a 'false' sui wiki pubblici, o installa cURL per i wiki privati"
+	"push-api-err-nocurl": "cURL non è installato.\nImposta $egPushAllDirectFileUploads a 'false' sui wiki pubblici, o installa cURL per i wiki privati"
 }

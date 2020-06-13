@@ -75,6 +75,6 @@
 	"push-special-obtaining-fileinfo": "$1: Am Abruefe vu Dateiinformatione …",
 	"push-special-pushing-file": "$1: Am Transferiere vu dr Datei $2 …",
 	"push-special-return": "Meh Syte transferiere",
-	"push-api-err-nocurl": "cURL isch nit installiert.\nDe Parameter $egPushDirectFileUploads muess wäge däm für alli öffentlichi Wikis uff \"false\" gsetzt werde. Alternativ cURL für alli nitöffentlichi Wikis installiere.",
-	"push-api-err-nofilesupport": "Di lokali MediaWiki-Installation unterstützt s Uffelade vo Dateie nit.\nUff öffentliche Wikis muess de Parameter $egPushDirectFileUploads uff \"false\" gsetzt werde.\nUff nit-öffentliche Wikis muess de Patch aagwändet werde, wo über d Dokumentationssyte zu derre Softwareerwyyterig erhältli isch, oder d MediaWiki-Installation sälber muess aktualisiert werde."
+	"push-api-err-nocurl": "cURL isch nit installiert.\nDe Parameter $egPushAllDirectFileUploads muess wäge däm für alli öffentlichi Wikis uff \"false\" gsetzt werde. Alternativ cURL für alli nitöffentlichi Wikis installiere.",
+	"push-api-err-nofilesupport": "Di lokali MediaWiki-Installation unterstützt s Uffelade vo Dateie nit.\nUff öffentliche Wikis muess de Parameter $egPushAllDirectFileUploads uff \"false\" gsetzt werde.\nUff nit-öffentliche Wikis muess de Patch aagwändet werde, wo über d Dokumentationssyte zu derre Softwareerwyyterig erhältli isch, oder d MediaWiki-Installation sälber muess aktualisiert werde."
 }

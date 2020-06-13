@@ -74,6 +74,6 @@
 	"push-special-obtaining-fileinfo": "$1: Datajowe informacije so wobstaruja...",
 	"push-special-pushing-file": "$1: Dataja $2 so přenošuje...",
 	"push-special-return": "Dalše strony přenjesć",
-	"push-api-err-nocurl": "cURL njeje instalowany.\nStaj $egPushDirectFileUploads na false na zjawnych wikijach abo instaluj cURL za priwatne wikije",
-	"push-api-err-nofilesupport": "Lokalna instalacija MediaWiki njepodpěruje nahrawanje datajow.\nStaj na zjawnych wikijach parameter $egPushDirectFileUploads na \"false\".\nNa priwatnych wikijach nałož patch linkd z dokumentacije Push abo zaktualizuj MediaWiki."
+	"push-api-err-nocurl": "cURL njeje instalowany.\nStaj $egPushAllDirectFileUploads na false na zjawnych wikijach abo instaluj cURL za priwatne wikije",
+	"push-api-err-nofilesupport": "Lokalna instalacija MediaWiki njepodpěruje nahrawanje datajow.\nStaj na zjawnych wikijach parameter $egPushAllDirectFileUploads na \"false\".\nNa priwatnych wikijach nałož patch linkd z dokumentacije Push abo zaktualizuj MediaWiki."
 }
