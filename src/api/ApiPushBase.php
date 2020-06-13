@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * ApiPushBase is the abstract class for all Api modules.
+ *
+ * @file ApiPushBase.php
+ * @ingroup Push
+ *
+ * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Karima Rafes < karima.rafes@gmail.com >
+ */
 abstract class ApiPushBase extends ApiBase {
 	/**
 	 * Associative array containing CookieJar objects (values) to be passed in
@@ -10,6 +18,75 @@ abstract class ApiPushBase extends ApiBase {
 	 * @var array
 	 */
 	protected $cookieJars = [];
+	protected $tokens = [];
+
+	/**
+	 * Obtains the needed login token by making an HTTP POST request
+	 * to the remote wikis API.
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param string $target
+	 *
+	 * @return string|false
+	 */
+	protected function getLoginToken( $target ) {
+		$requestData = [
+			'action' => 'query',
+			'format' => 'json',
+			'meta' => 'tokens',
+			'type' => 'login',
+		];
+
+		Http::$httpEngine = 'curl';
+		$req = MWHttpRequest::factory( wfAppendQuery( $target . "/api.php", $requestData ),
+			[
+				'method' => 'POST',
+				'timeout' => 'default'
+			],
+			__METHOD__
+		);
+
+		if ( array_key_exists( $target, $this->cookieJars ) ) {
+			$req->setCookieJar( $this->cookieJars[$target] );
+		}
+
+		$status = $req->execute();
+
+		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
+
+		$token = false;
+
+		if (
+			$response === null
+			|| !property_exists( $response, 'query' )
+			|| !property_exists( $response->query, 'tokens' )
+			|| empty( $response->query->tokens )
+		) {
+			$this->dieWithError(
+				wfMessage( 'push-special-err-token-failed' )->text(),
+				'token-request-failed'
+			);
+		}
+		// error_log(print_r(property_exists( $response->query->tokens, 'logintoken' ) , TRUE));
+		if ( property_exists( $response->query->tokens, 'logintoken' ) ) {
+			$token = $response->query->tokens->logintoken;
+		} elseif (
+			$response !== null
+			&& property_exists( $response, 'query' )
+			&& property_exists( $response->query, 'error' )
+		) {
+			$this->dieWithError( $response->query->error->message, 'token-request-failed' );
+		} else {
+			$this->dieWithError(
+				wfMessage( 'push-special-err-token-failed' )->text(),
+				'token-request-failed'
+			);
+		}
+
+		$this->tokens[$target] = $token;
+		$this->cookieJars[$target] = $req->getCookieJar();
+	}
 
 	/**
 	 * Logs in into a target wiki using the provided username and password.
@@ -20,14 +97,9 @@ abstract class ApiPushBase extends ApiBase {
 	 * @param string $password
 	 * @param string $domain
 	 * @param string $target
-	 * @param string|null $token
-	 * @param null $cookieJar
-	 * @param int $attemtNr
 	 * @throws ApiUsageException
 	 */
-	protected function doLogin(
-		$user, $password, $domain, $target, $token = null, $cookieJar = null, $attemtNr = 0
-	) {
+	protected function doLogin( $user, $password, $domain, $target ) {
 		$requestData = [
 			'action' => 'login',
 			'format' => 'json',
@@ -38,11 +110,12 @@ abstract class ApiPushBase extends ApiBase {
 			$requestData['lgdomain'] = $domain;
 		}
 
-		if ( $token !== null ) {
-			$requestData['lgtoken'] = $token;
+		if ( array_key_exists( $target, $this->tokens ) ) {
+			$requestData['lgtoken'] = $this->tokens[$target];
 		}
 
-		$req = MWHttpRequest::factory( $target,
+		Http::$httpEngine = 'curl';
+		$req = MWHttpRequest::factory( $target . "/api.php",
 			[
 				'postData' => $requestData,
 				'method' => 'POST',
@@ -51,45 +124,34 @@ abstract class ApiPushBase extends ApiBase {
 			__METHOD__
 		);
 
-		if ( $cookieJar !== null ) {
-			$req->setCookieJar( $cookieJar );
+		if ( array_key_exists( $target, $this->cookieJars ) ) {
+			$req->setCookieJar( $this->cookieJars[$target] );
 		}
 
 		$status = $req->execute();
 
-		$attemtNr++;
-
 		if ( !$status->isOK() ) {
-			$this->dieUsage(
+			$this->dieWithError(
 				wfMessage( 'push-err-authentication', $target, '' )->parse(),
 				'authentication-failed'
 			);
 		}
 
 		$response = FormatJson::decode( $req->getContent() );
-
+		// for debug :
+		// error_log( print_r( $response, true ) );
 		if ( !property_exists( $response, 'login' ) || !property_exists( $response->login, 'result' ) ) {
-			$this->dieUsage(
+			$this->dieWithError(
 				wfMessage( 'push-err-authentication', $target, '' )->parse(),
 				'authentication-failed'
 			);
 		}
 
-		if ( $response->login->result == 'NeedToken' && $attemtNr < 3 ) {
-			$this->doLogin(
-				$user,
-				$password,
-				$domain,
-				$target,
-				$response->login->token,
-				$req->getCookieJar(),
-				$attemtNr
-			);
-		} elseif ( $response->login->result == 'Success' ) {
+		if ( $response->login->result == 'Success' ) {
 			$this->cookieJars[$target] = $req->getCookieJar();
 		} else {
-			$this->dieUsage(
-				wfMessage( 'push-err-authentication', $target, '' )->parse(),
+			$this->dieWithError(
+				wfMessage( 'push-err-authentication', $target, '' ),
 				'authentication-failed'
 			);
 		}
@@ -113,7 +175,8 @@ abstract class ApiPushBase extends ApiBase {
 			'type' => 'csrf',
 		];
 
-		$req = MWHttpRequest::factory( wfAppendQuery( $target, $requestData ),
+		Http::$httpEngine = 'curl';
+		$req = MWHttpRequest::factory( wfAppendQuery( $target . "/api.php", $requestData ),
 			[
 				'method' => 'GET',
 				'timeout' => 'default'
@@ -135,9 +198,9 @@ abstract class ApiPushBase extends ApiBase {
 			$response === null
 			|| !property_exists( $response, 'query' )
 			|| !property_exists( $response->query, 'tokens' )
-			|| count( $response->query->tokens ) !== 1
+			|| empty( $response->query->tokens )
 		) {
-			$this->dieUsage(
+			$this->dieWithError(
 				wfMessage( 'push-special-err-token-failed' )->text(),
 				'token-request-failed'
 			);
@@ -150,9 +213,9 @@ abstract class ApiPushBase extends ApiBase {
 			&& property_exists( $response, 'query' )
 			&& property_exists( $response->query, 'error' )
 		) {
-			$this->dieUsage( $response->query->error->message, 'token-request-failed' );
+			$this->dieWithError( $response->query->error->message, 'token-request-failed' );
 		} else {
-			$this->dieUsage(
+			$this->dieWithError(
 				wfMessage( 'push-special-err-token-failed' )->text(),
 				'token-request-failed'
 			);
@@ -162,18 +225,36 @@ abstract class ApiPushBase extends ApiBase {
 	}
 
 	public function execute() {
-		global $wgUser, $egPushLoginUser, $egPushLoginPass, $egPushLoginUsers,
-			$egPushLoginPasswords, $egPushLoginDomain, $egPushLoginDomains;
-
+		global $wgUser;
 		if ( !$wgUser->isAllowed( 'push' ) || $wgUser->isBlocked() ) {
-			$this->dieUsageMsg( [ 'badaccess-groups' ] );
+			$this->dieWithErrorMsg( [ 'badaccess-groups' ] );
 		}
 
 		$params = $this->extractRequestParams();
 
-		PushFunctions::flipKeys( $egPushLoginUsers, 'users' );
-		PushFunctions::flipKeys( $egPushLoginPasswords, 'passwds' );
-		PushFunctions::flipKeys( $egPushLoginDomains, 'domains' );
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllLoginUsers = [];
+		$egPushAllLoginPasswords = [];
+		$egPushAllLoginDomains = [];
+		if ( !$config->has( "LoginUsers" ) ) {
+			// throw new MWException( "egPushAllPushLoginUsers is not precised in the localsettings." );
+		} else {
+			$egPushAllLoginUsers = $config->get( "LoginUsers" );
+		}
+		if ( !$config->has( "LoginPasswords" ) ) {
+			// throw new MWException( "egPushAllPushLoginPasswords is not precised in the localsettings." );
+		} else {
+			$egPushAllLoginPasswords = $config->get( "LoginPasswords" );
+		}
+		if ( !$config->has( "LoginDomains" ) ) {
+			// throw new MWException( "egPushAllPushLoginDomains is not precised in the localsettings." );
+		} else {
+			$egPushAllLoginDomains = $config->get( "LoginDomains" );
+		}
+
+		PushFunctions::flipKeys( $egPushAllLoginUsers, 'users' );
+		PushFunctions::flipKeys( $egPushAllLoginPasswords, 'passwds' );
+		PushFunctions::flipKeys( $egPushAllLoginDomains, 'domains' );
 
 		foreach ( $params['targets'] as &$target ) {
 			$user = false;
@@ -181,29 +262,23 @@ abstract class ApiPushBase extends ApiBase {
 			$domain = false;
 
 			if (
-				array_key_exists( $target, $egPushLoginUsers )
-				&& array_key_exists( $target, $egPushLoginPasswords )
+				array_key_exists( $target, $egPushAllLoginUsers )
+				&& array_key_exists( $target, $egPushAllLoginPasswords )
 			) {
-				$user = $egPushLoginUsers[$target];
-				$pass = $egPushLoginPasswords[$target];
-			} elseif ( $egPushLoginUser !== '' && $egPushLoginPass !== '' ) {
-				$user = $egPushLoginUser;
-				$pass = $egPushLoginPass;
+				$user = $egPushAllLoginUsers[$target];
+				$pass = $egPushAllLoginPasswords[$target];
 			}
-			if ( array_key_exists( $target, $egPushLoginDomains ) ) {
-				$domain = $egPushLoginDomains[$target];
-			} elseif ( $egPushLoginDomain !== '' ) {
-				$domain = $egPushLoginDomain;
+			if ( array_key_exists( $target, $egPushAllLoginDomains ) ) {
+				$domain = $egPushAllLoginDomains[$target];
 			}
-
-			if ( substr( $target, -1 ) !== '/' ) {
-				$target .= '/';
-			}
-
-			$target .= 'api.php';
 
 			if ( $user !== false ) {
-				$this->doLogin( $user, $pass, $domain, $target );
+				$this->getLoginToken( $target );
+				$this->doLogin(
+					$user,
+					$pass,
+					$domain,
+					$target );
 			}
 		}
 

@@ -38,13 +38,20 @@
 		var errorDiv = $( '#targeterrors' + $(this).attr( 'targetid' ) );
 		errorDiv.fadeOut( 'fast' );
 
-		if ( $('#checkIncTemplates').attr('checked') ) {
-			pages = window.wgPushTemplates;
-			pages.unshift( $('#pageName').attr('value') );
+		pages = [$('#pageName').attr('value')];
+
+		if ( $('#checkIncTemplates').is(':checked') ) {
+			pages = pages.concat(window.wgPushTemplates);
+
+            if ( $('#checkIncSubpages').is(':checked') ) {
+                pages = pages.concat(window.wgPushSubpagesTemplates);
+            }
 		}
-		else {
-			pages = [$('#pageName').attr('value')];
-		}
+
+        if ( $('#checkIncSubpages').is(':checked') ) {
+            pages = pages.concat(window.wgPushSubpages);
+        }
+
 
 		setButtonToImgPush(
 			this,
@@ -68,6 +75,7 @@
 
 			if ( isHidden ) {
 				$('#txtTemplateList').css( 'display', 'inline' );
+				setIncludeTemplatesText();
 			}
 
 			$('#txtTemplateList').fadeTo(
@@ -82,6 +90,32 @@
 
 	$('#divIncTemplates').click(function() {
 		setIncludeFilesText();
+		setIncludeTemplatesText();
+		displayTargetsConflictStatus();
+	});
+
+
+	$('#divIncSubpages').hover(
+		function() {
+			var isHidden = $('#txtSubpageList').css( 'opacity' ) == 0;
+
+			if ( isHidden ) {
+				$('#txtSubpageList').css( 'display', 'inline' );
+			}
+
+			$('#txtSubpageList').fadeTo(
+				isHidden? 'slow' : 'fast',
+				1
+			);
+		},
+		function() {
+			$('#txtSubpageList').fadeTo( 'fast', 0.5 )
+		}
+	);
+
+	$('#divIncSubpages').click(function() {
+		setIncludeFilesText();
+		setIncludeTemplatesText();
 		displayTargetsConflictStatus();
 	});
 
@@ -112,8 +146,12 @@
 		if ( $('#checkIncFiles').length != 0 ) {
 			var files = window.wgPushPageFiles;
 
-			if ( $('#checkIncTemplates').attr('checked') ) {
+			if ( $('#checkIncTemplates').is(':checked') ) {
 				files = files.concat( window.wgPushTemplateFiles );
+			}
+
+			if ( $('#checkIncSubpages').is(':checked') ) {
+				files = files.concat( window.wgPushSubpagesFiles );
 			}
 
 			if ( files.length > 0 ) {
@@ -132,11 +170,35 @@
 		}
 	}
 
+	function setIncludeTemplatesText() {
+		if ( $('#checkIncFiles').length != 0 ) {
+			var templates = window.wgPushTemplates;
+
+			if ( $('#checkIncSubpages').is(':checked') ) {
+				templates = templates.concat( window.wgPushSubpagesTemplates );
+			}
+
+			if ( templates.length > 0 ) {
+				$('#txtTemplateList').text( '(' + mw.msg( 'push-tab-used-templates' ) + ' ' );
+
+				for ( i in templates ) {
+					if ( i > 0 ) $('#txtTemplateList').append( ', ' );
+					$('#txtTemplateList').append( $( '<a>' ).attr( 'href', window.wgPushIndexPath + '?title=' + templates[i] ).text( templates[i] ) );
+				}
+
+				$('#txtTemplateList').append( ')' );
+			}
+			else {
+				$('#txtTemplateList').text( mw.msg( 'push-tab-no-used-templates' ) );
+			}
+		}
+	}
+
 	function getRemoteArticleInfo( targetId, targetUrl ) {
 		var pageName = $('#pageName').attr('value');
 
-		$.getJSON(
-			targetUrl + '/api.php?callback=?',
+		$.post(
+			targetUrl + '/api.php',
 			{
 				'action': 'query',
 				'format': 'json',
@@ -146,6 +208,9 @@
 					.concat( window.wgPushTemplates )
 					.concat( window.wgPushPageFiles )
 					.concat( window.wgPushTemplateFiles )
+					.concat( window.wgPushSubpages )
+					.concat( window.wgPushSubpagesTemplates )
+					.concat( window.wgPushSubpagesFiles )
 					.join( '|' )
 			},
 			function( data ) {
@@ -192,7 +257,7 @@
 					displayTargetConflictStatus( targetId );
 				}
 			}
-		);
+			, "jsonp");
 	}
 
 	function displayTargetsConflictStatus() {
@@ -207,7 +272,7 @@
 			return;
 		}
 
-		if ( $('#checkIncTemplates').attr('checked') ) {
+		if ( $('#checkIncTemplates').is(':checked') ) {
 			var overideTemplates = [];
 
 			for ( remotePageId in targetData[targetId].existingPages ) {
@@ -233,7 +298,7 @@
 			$( '#targettemplateconflicts' + targetId ).fadeOut( 'fast' );
 		}
 
-		if ( $('#checkIncFiles').length != 0 && $('#checkIncFiles').attr('checked') ) {
+		if ( $('#checkIncFiles').length != 0 && $('#checkIncFiles').is(':checked') ) {
 			var overideFiles = [];
 
 			for ( remotePageId in targetData[targetId].existingPages ) {
@@ -263,8 +328,8 @@
 	function initiatePush( sender, pages, targetUrl, targetName ) {
 		sender.innerHTML = mw.msg( 'push-button-pushing' );
 
-		$.getJSON(
-			wgScriptPath + '/api.php',
+		$.post(
+			mw.config.get( 'wgScriptPath' )  + '/api.php',
 			{
 				'action': 'push',
 				'format': 'json',
@@ -282,7 +347,7 @@
 					handlePushingCompletion( sender, targetUrl, targetName );
 				}
 			}
-		);
+			, "json");
 	}
 
 	function handlePushingCompletion( sender, targetUrl, targetName ) {
@@ -294,12 +359,23 @@
 	}
 
 	function setButtonToImgPush( button, pages, targetUrl, targetName ) {
-		var images = window.wgPushPageFiles.concat( window.wgPushTemplateFiles );
+		//var images = window.wgPushPageFiles.concat( window.wgPushTemplateFiles );
 
-		if ( images.length > 0 && $('#checkIncFiles').length != 0 && $('#checkIncFiles').attr('checked') ) {
-			var currentFile = images.pop();
+                var files = window.wgPushPageFiles;
+
+                if ( $('#checkIncTemplates').is(':checked') ) {
+                    files = files.concat( window.wgPushTemplateFiles );
+                }
+
+                if ( $('#checkIncSubpages').is(':checked') ) {
+                    files = files.concat( window.wgPushSubpagesFiles );
+                }
+
+
+                if ( files.length > 0 && $('#checkIncFiles').length != 0 && $('#checkIncFiles').is(':checked') ) {
+			var currentFile = files.pop();
 			button.innerHTML = mw.msg( 'push-button-pushing-files' );
-			initiateImagePush( button, pages, targetUrl, targetName, images, currentFile );
+			initiateImagePush( button, pages, targetUrl, targetName, files, currentFile );
 		}
 		else {
 			initiatePush( button, pages, targetUrl, targetName );
@@ -307,8 +383,8 @@
 	}
 
 	function initiateImagePush( sender, pages, targetUrl, targetName, images, fileName ) {
-		$.getJSON(
-			wgScriptPath + '/api.php',
+		$.post(
+			mw.config.get( 'wgScriptPath' )  + '/api.php',
 			{
 				'action': 'pushimages',
 				'format': 'json',
@@ -326,10 +402,12 @@
 				else {
 					for ( i in data ) {
 						if ( data[i].error ) {
-							data[i].error.info = mw.msg( 'push-tab-err-filepush', data[i].error.info );
-							handleError( sender, targetUrl, data[i].error );
-							fail = true;
-							break;
+                                                     if(data[i].error.code !== "fileexists-no-change"){
+                                                         data[i].error.info = mw.msg( 'push-tab-err-filepush', data[i].error.info );
+                                                         handleError( sender, targetUrl, data[i].error );
+                                                         fail = true;
+                                                         break;
+                                                     }
 						}
 						else if ( !data[i].upload ) {
 							data[i].error.info = mw.msg( 'push-tab-err-filepush-unknown' );
@@ -350,7 +428,7 @@
 					}
 				}
 			}
-		);
+			, "json");
 	}
 
 	function reEnableButton( button, targetUrl, targetName ) {

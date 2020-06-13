@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Static class with methods to create and handle the push tab.
  *
@@ -9,17 +8,26 @@
  * @ingroup Push
  *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Karima Rafes < karima.rafes@gmail.com >
  */
 final class PushTab {
 
 	/**
 	 * Adds an "action" (i.e., a tab) to allow pushing the current article.
-	 * @param $obj
-	 * @param &$content_actions
+	 * @param Object $obj
+	 * @param array &$content_actions
 	 * @return bool
 	 */
 	public static function displayTab( $obj, &$content_actions ) {
-		global $wgUser, $egPushTargets;
+		global $wgUser;
+
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = [];
+		if ( !$config->has( "Targets" ) ) {
+			// throw new MWException( "$egPushAllTargets is not precised in the localsettings." );
+		} else {
+			$egPushAllTargets = $config->get( "Targets" );
+		}
 
 		/**
 		 * Make sure that this is not a special page, the page has contents, and the user can push.
@@ -31,7 +39,7 @@ final class PushTab {
 			$title->getNamespace() !== NS_SPECIAL
 			&& $title->exists()
 			&& $wgUser->isAllowed( 'push' )
-			&& count( $egPushTargets ) > 0 ) {
+			&& count( $egPushAllTargets ) > 0 ) {
 
 			global $wgRequest;
 
@@ -48,17 +56,25 @@ final class PushTab {
 	/**
 	 * Function currently called only for the 'Vector' skin, added in
 	 * MW 1.16 - will possibly be called for additional skins later
-	 * @param $obj
-	 * @param &$links
+	 *
+	 * @param Object $obj
+	 * @param array &$links
 	 * @return bool
 	 */
 	public static function displayTab2( $obj, &$links ) {
-		global $egPushShowTab;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllShowTab = false;
+		if ( !$config->has( "ShowTab" ) ) {
+			// throw new MWException(
+			// "$egPushAllShowTab is not precised in the localsettings." );
+		} else {
+			$egPushAllShowTab = $config->get( "ShowTab" );
+		}
 
 		// The old '$content_actions' array is thankfully just a sub-array of this one
-		$views_links = $links[$egPushShowTab ? 'views' : 'actions'];
+		$views_links = $links[$egPushAllShowTab ? 'views' : 'actions'];
 		self::displayTab( $obj, $views_links );
-		$links[$egPushShowTab ? 'views' : 'actions'] = $views_links;
+		$links[$egPushAllShowTab ? 'views' : 'actions'] = $views_links;
 
 		return true;
 	}
@@ -76,8 +92,27 @@ final class PushTab {
 		if ( $action !== 'push' ) {
 			return true;
 		}
+	}
 
-		return self::displayPushPage( $article );
+	/**
+	 * Function for opening the push page
+	 *
+	 * @param Object $output
+	 * @param Object $article
+	 * @param Object $title
+	 * @param Object $user
+	 * @param Object $request
+	 * @param Object $mediaWiki
+	 * @return bool
+	 */
+	public static function  onMediaWikiPerformAction(
+		$output, $article, $title, $user, $request, $mediaWiki ) {
+		if ( $mediaWiki->getAction() === 'nosuchaction' ) {
+			if ( $request->getText( 'action' ) === 'push' ) {
+				return self::displayPushPage( $article );
+			}
+		}
+		return true;
 	}
 
 	/**
@@ -90,7 +125,17 @@ final class PushTab {
 	 * @throws PermissionsError
 	 */
 	public static function displayPushPage( Article $article ) {
-		global $wgOut, $wgUser, $wgTitle, $wgSitename, $egPushTargets;
+		global $wgOut, $wgUser, $wgSitename, $wgRequest;
+		$wgTitle = Title::newFromText( $wgRequest->getVal( 'title' ) );
+
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = [];
+		if ( !$config->has( "Targets" ) ) {
+			// throw new MWException(
+			// "$egPushAllTargets is not precised in the localsettings." );
+		} else {
+			$egPushAllTargets = $config->get( "Targets" );
+		}
 
 		$wgOut->setPageTitle( wfMessage( 'push-tab-title', $article->getTitle()->getText() )->parse() );
 
@@ -100,7 +145,7 @@ final class PushTab {
 
 		$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-desc' )->escaped() . '</p>' );
 
-		if ( count( $egPushTargets ) == 0 ) {
+		if ( count( $egPushAllTargets ) == 0 ) {
 			$wgOut->addHTML( '<p>' . wfMessage( 'push-tab-no-targets' )->escaped() . '</p>' );
 			return false;
 		}
@@ -125,7 +170,7 @@ final class PushTab {
 	 * @since 0.1
 	 */
 	protected static function displayPushList() {
-		global $wgOut, $egPushTargets;
+		global $wgOut, $egPushAllTargets;
 
 		$items = [
 			Html::rawElement(
@@ -149,19 +194,19 @@ final class PushTab {
 			)
 		];
 
-		foreach ( $egPushTargets as $name => $url ) {
+		foreach ( $egPushAllTargets as $name => $url ) {
 			$items[] = self::getPushItem( $name, $url );
 		}
 
 		// If there is more then one item, display the 'push all' row.
-		if ( count( $egPushTargets ) > 1 ) {
+		if ( count( $egPushAllTargets ) > 1 ) {
 			$items[] = Html::rawElement(
 				'tr',
 				[],
 				Html::element(
 					'th',
 					[ 'colspan' => 2, 'style' => 'text-align: left' ],
-					wfMessage( 'push-targets-total' )->numParams( count( $egPushTargets ) )->parse()
+					wfMessage( 'push-targets-total' )->numParams( count( $egPushAllTargets ) )->parse()
 				) .
 				Html::rawElement(
 					'th',
@@ -276,24 +321,63 @@ final class PushTab {
 	 * @since 0.4
 	 */
 	protected static function displayPushOptions() {
-		global $wgOut, $wgUser, $wgTitle;
+		global $wgOut, $wgUser, $wgRequest ,$wgScript;
+		$wgTitle = Title::newFromText( $wgRequest->getVal( 'title' ) );
 
 		$wgOut->addHTML( '<h3>' . wfMessage( 'push-tab-push-options' )->escaped() . '</h3>' );
 
-		$usedTemplates = array_keys(
-			PushFunctions::getTemplates(
-				[ $wgTitle->getFullText() ],
-				[ $wgTitle->getFullText() => true ]
-			)
+		$allpages = PushFunctions::getSubpages(
+			[ $wgTitle->getFullText() ],
+			[ $wgTitle->getFullText() => true ]
 		);
 
+		$subpages = array_keys( $allpages );
 		// Get rid of the page itself.
-		array_shift( $usedTemplates );
+		array_shift( $subpages );
 
-		self::displayIncTemplatesOption( $usedTemplates );
+		$templates =
+			array_keys(
+				PushFunctions::getTemplates(
+					[ $wgTitle->getFullText() ],
+					[ $wgTitle->getFullText() => true ]
+				)
+			);
+		// Get rid of the page itself.
+		array_shift( $templates );
+
+		$wgOut->addInlineScript(
+			'var wgPushTemplates = ' . FormatJson::encode( $templates ) . ';'
+		);
+
+		$subpagesTemplates =
+			array_values( array_diff( array_keys(
+				PushFunctions::getTemplates(
+					array_keys( $allpages ),
+					$allpages
+				)
+			), $templates, $subpages, [ $wgTitle->getFullText() ] ) );
+
+		$pageFiles = PushFunctions::getImages( [ $wgTitle->getFullText() ] );
+		$templateFiles = PushFunctions::getImages( $templates );
+
+		$wgOut->addInlineScript(
+			'var wgPushPageFiles = ' . FormatJson::encode( $pageFiles ) . ';' .
+			'var wgPushTemplateFiles = ' . FormatJson::encode( $templateFiles ) . ';' .
+			'var wgPushIndexPath = ' . FormatJson::encode( $wgScript )
+		);
+
+		$subpageFiles = PushFunctions::getImages( array_merge( $subpages, $subpagesTemplates ) );
+		$wgOut->addInlineScript(
+			'var wgPushSubpages = ' . FormatJson::encode( $subpages ) . ';' . "\n" .
+			'var wgPushSubpagesTemplates = ' . FormatJson::encode( $subpagesTemplates ) . ';' . "\n" .
+			'var wgPushSubpagesFiles = ' . FormatJson::encode( $subpageFiles ) . ';' . "\n"
+		);
+
+		self::displayIncSubpagesOption( $subpages );
+		self::displayIncTemplatesOption( $templates, $subpagesTemplates );
 
 		if ( $wgUser->isAllowed( 'filepush' ) ) {
-			self::displayIncFilesOption( $usedTemplates );
+			self::displayIncFilesOption();
 		}
 	}
 
@@ -303,13 +387,22 @@ final class PushTab {
 	 * @since 0.4
 	 *
 	 * @param array $templates
+	 * @param array $templatesSubpage
 	 */
-	protected static function displayIncTemplatesOption( array $templates ) {
-		global $wgOut, $wgLang, $egPushIncTemplates;
-
-		$wgOut->addJsConfigVars( 'wgPushTemplates', $templates );
+	protected static function displayIncTemplatesOption( array $templates, array $templatesSubpage ) {
+		global $wgOut;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPush' );
+		$egPushIncTemplates = false;
+		if ( !$config->has( "IncTemplates" ) ) {
+			// throw new MWException( "$egPushIncTemplates is not precised in the localsettings." );
+		} else {
+			$egPushIncTemplates = $config->get( "IncTemplates" );
+		}
 
 		foreach ( $templates as &$template ) {
+			$template = "[[$template]]";
+		}
+		foreach ( $templatesSubpage as &$template ) {
 			$template = "[[$template]]";
 		}
 
@@ -327,10 +420,51 @@ final class PushTab {
 				Html::rawElement(
 					'div',
 					[ 'style' => 'display:none; opacity:0', 'id' => 'txtTemplateList' ],
-					count( $templates ) > 0 ?
-						wfMessage( 'push-tab-used-templates',
-							$wgLang->listToText( $templates ), count( $templates ) )->parse() :
-							wfMessage( 'push-tab-no-used-templates' )->escaped()
+					''
+				)
+			)
+		);
+	}
+
+	/**
+	 * Outputs the HTML for the "include subpages" option.
+	 *
+	 * @since 1.4.0
+	 *
+	 * @param array $subpages
+	 */
+	protected static function displayIncSubpagesOption( array $subpages ) {
+		global $wgOut, $wgLang;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPush' );
+		$egPushIncSubpages = false;
+		if ( !$config->has( "IncSubpages" ) ) {
+			// throw new MWException( "$egPushIncSubpages is not precised in the localsettings." );
+		} else {
+			$egPushIncSubpages = $config->get( "IncSubpages" );
+		}
+
+		foreach ( $subpages as &$subpage ) {
+			$subpage = "[[$subpage]]";
+		}
+
+		$wgOut->addHTML(
+			Html::rawElement(
+				'div',
+				[ 'id' => 'divIncSubpages', 'style' => 'display: table-row' ],
+				Xml::check( 'checkIncSubpages', $egPushIncSubpages, [ 'id' => 'checkIncSubpages' ] ) .
+				Html::element(
+					'label',
+					[ 'id' => 'lblIncSubpages', 'for' => 'checkIncSubpages' ],
+					wfMessage( 'push-tab-inc-subpages' )->text()
+				) .
+				'&#160;' .
+				Html::rawElement(
+					'div',
+					[ 'style' => 'display:none; opacity:0', 'id' => 'txtSubpageList' ],
+					count( $subpages ) > 0 ?
+						wfMessage( 'push-tab-used-subpages',
+							$wgLang->listToText( $subpages ), count( $subpages ) )->parse() :
+						wfMessage( 'push-tab-no-used-subpages' )->escaped()
 				)
 			)
 		);
@@ -341,26 +475,16 @@ final class PushTab {
 	 *
 	 * @since 0.4
 	 *
-	 * @param array $templates
 	 */
-	protected static function displayIncFilesOption( array $templates ) {
-		global $wgOut, $wgTitle, $egPushIncFiles, $wgScript;
-
-		$allFiles = self::getImagesForPages( [ $wgTitle->getFullText() ] );
-		$templateFiles = self::getImagesForPages( $templates );
-		$pageFiles = [];
-
-		foreach ( $allFiles as $file ) {
-			if ( !in_array( $file, $templateFiles ) ) {
-				$pageFiles[] = $file;
-			}
+	protected static function displayIncFilesOption() {
+		global $wgOut;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPush' );
+		$egPushIncFiles = false;
+		if ( !$config->has( "IncFiles" ) ) {
+			// throw new MWException( "$egPushIncFiles is not precised in the localsettings." );
+		} else {
+			$egPushIncFiles = $config->get( "IncFiles" );
 		}
-
-		$wgOut->addInlineScript(
-			'var wgPushPageFiles = ' . FormatJson::encode( $pageFiles ) . ';' .
-			'var wgPushTemplateFiles = ' . FormatJson::encode( $templateFiles ) . ';' .
-			'var wgPushIndexPath = ' . FormatJson::encode( $wgScript )
-		);
 
 		$wgOut->addHTML(
 			Html::rawElement(
@@ -380,53 +504,6 @@ final class PushTab {
 				)
 			)
 		);
-	}
-
-	/**
-	 * Returns the names of the images embedded in a set of pages.
-	 *
-	 * @param array $pages
-	 *
-	 * @return array
-	 */
-	protected static function getImagesForPages( array $pages ) {
-		$images = [];
-
-		$requestData = [
-			'action' => 'query',
-			'format' => 'json',
-			'prop' => 'images',
-			'titles' => implode( '|', $pages ),
-			'imlimit' => 500
-		];
-
-		$api = new ApiMain( new FauxRequest( $requestData, true ), true );
-		$api->execute();
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$response = $api->getResult()->getResultData( null, [ 'Strip' => 'all' ] );
-		} else {
-			$response = $api->getResultData();
-		}
-
-		if (
-			is_array( $response )
-			&& array_key_exists( 'query', $response )
-			&& array_key_exists( 'pages', $response['query'] )
-		) {
-			foreach ( $response['query']['pages'] as $page ) {
-				if ( array_key_exists( 'images', $page ) ) {
-					foreach ( $page['images'] as $image ) {
-						$title = Title::newFromText( $image['title'], NS_FILE );
-
-						if ( $title !== null && $title->getNamespace() == NS_FILE && $title->exists() ) {
-							$images[] = $image['title'];
-						}
-					}
-				}
-			}
-		}
-
-		return array_unique( $images );
 	}
 
 }

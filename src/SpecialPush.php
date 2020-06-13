@@ -1,5 +1,4 @@
 <?php
-
 /**
  * A special page that allows pushing one or more pages to one or more targets.
  * Partly based on MediaWiki's Special:Export.
@@ -10,6 +9,7 @@
  * @ingroup Push
  *
  * @author Jeroen De Dauw  < jeroendedauw@gmail.com >
+ * @author Karima Rafes < karima.rafes@gmail.com >
  */
 class SpecialPush extends SpecialPage {
 
@@ -23,7 +23,9 @@ class SpecialPush extends SpecialPage {
 	}
 
 	/**
-	 * @inheritDoc
+	 * @see SpecialPage::getDescription
+	 *
+	 * @return mixed
 	 */
 	public function getDescription() {
 		return $this->msg( 'special-' . strtolower( $this->getName() ) )->text();
@@ -47,7 +49,15 @@ class SpecialPush extends SpecialPage {
 	 * @param string $arg
 	 */
 	public function execute( $arg ) {
-		global $egPushTargets;
+		// global $egPushAllTargets;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = [];
+		if ( !$config->has( "Targets" ) ) {
+			// throw new MWException( "$egPushAllTargets is not precised in the bundle/Push/extension.json
+			// of the LinkedWiki extension." );
+		} else {
+			$egPushAllTargets = $config->get( "Targets" );
+		}
 
 		$req = $this->getRequest();
 
@@ -60,7 +70,7 @@ class SpecialPush extends SpecialPage {
 			return;
 		}
 
-		if ( count( $egPushTargets ) == 0 ) {
+		if ( count( $egPushAllTargets ) == 0 ) {
 			$this->getOutput()->addHTML( '<p>' . $this->msg( 'push-tab-no-targets' )->escaped() . '</p>' );
 			return;
 		}
@@ -123,7 +133,26 @@ class SpecialPush extends SpecialPage {
 	 * @param string $pages
 	 */
 	protected function doPush( $pages ) {
-		global $wgSitename, $egPushTargets, $egPushBulkWorkers, $egPushBatchSize;
+		global $wgSitename;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = [];
+		$egPushAllBulkWorkers = 3;
+		$egPushAllBatchSize = 3;
+		if ( !$config->has( "Targets" ) ) {
+			// throw new MWException( "egPushAllPushTargets  is not precised in the localsettings." );
+		} else {
+			$egPushAllTargets = $config->get( "Targets" );
+		}
+		if ( !$config->has( "BulkWorkers" ) ) {
+			// throw new MWException( "egPushAllPushBulkWorkers  is not precised in the localsettings." );
+		} else {
+			$egPushAllBulkWorkers = $config->get( "BulkWorkers" );
+		}
+		if ( !$config->has( "BatchSize" ) ) {
+			// throw new MWException( "egPushAllPushBatchSize  is not precised in the localsettings." );
+		} else {
+			$egPushAllBatchSize = $config->get( "BatchSize" );
+		}
 
 		// Inverted index of all pages to look up
 		$pageSet = [];
@@ -148,15 +177,15 @@ class SpecialPush extends SpecialPage {
 		$targets = [];
 		$links = [];
 
-		if ( count( $egPushTargets ) > 1 ) {
-			foreach ( $egPushTargets as $targetName => $targetUrl ) {
+		if ( count( $egPushAllTargets ) > 1 ) {
+			foreach ( $egPushAllTargets as $targetName => $targetUrl ) {
 				if ( $this->getRequest()->getCheck( str_replace( ' ', '_', $targetName ) ) ) {
 					$targets[$targetName] = $targetUrl;
 					$links[] = "[$targetUrl $targetName]";
 				}
 			}
 		} else {
-			$targets = $egPushTargets;
+			$targets = $egPushAllTargets;
 		}
 
 		$out = $this->getOutput();
@@ -188,13 +217,13 @@ class SpecialPush extends SpecialPage {
 			)
 		);
 
-		$out->addJsConfigVars( [
-			'wgPushPages' => $pages,
-			'wgPushTargets' => $targets,
-			'wgPushWorkerCount' => $egPushBulkWorkers,
-			'wgPushBatchSize' => $egPushBatchSize,
-			'wgPushIncFiles' => $this->getRequest()->getCheck( 'files' ),
-		] );
+		$out->addInlineScript(
+			'var wgPushPages = ' . FormatJson::encode( $pages ) . ';' .
+			'var wgPushTargets = ' . FormatJson::encode( $targets ) . ';' .
+			'var wgPushWorkerCount = ' . $egPushAllBulkWorkers . ';' .
+			'var wgPushBatchSize = ' . $egPushAllBatchSize . ';' .
+			'var wgPushIncFiles = ' . ( $this->getRequest()->getCheck( 'files' ) ? 'true' : 'false' ) . ';'
+		);
 
 		$out->addModules( 'ext.push.special' );
 	}
@@ -204,7 +233,26 @@ class SpecialPush extends SpecialPage {
 	 * @param string $pages
 	 */
 	protected function displayPushInterface( $pages ) {
-		global $egPushTargets, $egPushIncTemplates, $egPushIncFiles;
+		// global $egPushAllTargets, $egPushAllIncTemplates, $egPushAllIncFiles;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = [];
+		$egPushAllIncTemplates = [];
+		$egPushAllIncFiles = [];
+		if ( !$config->has( "Targets" ) ) {
+			// throw new MWException( "egPushAllTargets  is not precised in the localsettings." );
+		} else {
+			$egPushAllTargets = $config->get( "Targets" );
+		}
+		if ( !$config->has( "IncTemplates" ) ) {
+			// throw new MWException( "egPushAllBulkWorkers  is not precised in the localsettings." );
+		} else {
+			$egPushAllIncTemplates = $config->get( "IncTemplates" );
+		}
+		if ( !$config->has( "IncFiles" ) ) {
+			// throw new MWException( "egPushAllIncFiles  is not precised in the localsettings." );
+		} else {
+			$egPushAllIncFiles = $config->get( "IncFiles" );
+		}
 
 		$req = $this->getRequest();
 
@@ -360,6 +408,11 @@ class SpecialPush extends SpecialPage {
 		return $pages;
 	}
 
+	/**
+	 * get GroupName : pagetools
+	 *
+	 * @return string
+	 */
 	protected function getGroupName() {
 		return 'pagetools';
 	}

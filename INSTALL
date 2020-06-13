@@ -82,6 +82,16 @@ $wgEnableUploads = true;
 $wgAllowCopyUploads = true;
 </source>
 
+
+=== Pushing namespaces ===
+
+You can push in same time other namespaces with the same title for each target.
+ Example:
+<source lang="php">
+$egPushTargetsNamespace['English Wikipedia'][0] = 'Talk';
+$egPushTargetsNamespace['English Wikipedia'][1] = 'Help';
+</source>
+
 === Push workers ===
 
 Special:Push pushes multiple pages simultaneously. By default this is limited to 3, but you can increase this by

@@ -3,6 +3,12 @@ These are the release notes for the Push extension.
 Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Push
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push/RELEASE-NOTES?view=co
 
+=== Version 1.4.0 ===
+2018-12-28
+
+* Updated for the Mediawiki API in the version 3.1
+* Added ability to upload subpages only via the push tab
+* Added ability to upload page with other namespaces only via the push tab
 
 === Version 1.1.4 ===
 (trunk)

@@ -1,15 +1,17 @@
 {
-	"name": "Push",
-	"version": "1.3.0 alpha",
+	"name": "PushAll",
+	"version": "1.4.0",
 	"author": [
-		"[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]"
+		"[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]",
+		"[https://www.mediawiki.org/wiki/User:Karima_Rafes Karima Rafes]"
 	],
-	"url": "https://www.mediawiki.org/wiki/Extension:Push",
+	"url": "https://www.mediawiki.org/wiki/Extension:PushAll",
 	"descriptionmsg": "push-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "other",
+	"manifest_version": 2,
 	"requires": {
-		"MediaWiki": ">= 1.29.0"
+		"MediaWiki": ">= 1.31.1"
 	},
 	"APIModules": {
 		"push": "ApiPush",
@@ -56,6 +58,8 @@
 		"PushAlias": "Push.alias.php"
 	},
 	"AutoloadClasses": {
+		"Push": "Push.php",
+
 		"PushHooks": "src/PushHooks.php",
 		"ApiPushBase": "src/api/ApiPushBase.php",
 		"ApiPush": "src/api/ApiPush.php",
@@ -67,7 +71,7 @@
 	"ResourceModules": {
 		"ext.push.tab": {
 			"group": "ext.push",
-			"scripts": "ext.push.tab.js",
+			"scripts": "modules/ext.push.tab.js",
 			"dependencies": [
 				"mediawiki.jqueryMsg"
 			],
@@ -97,12 +101,14 @@
 				"push-tab-no-embedded-files",
 				"push-tab-files-override",
 				"push-tab-template-override",
-				"push-tab-err-uploaddisabled"
+				"push-tab-err-uploaddisabled",
+				"push-tab-used-templates",
+				"push-tab-no-used-templates"
 			]
 		},
 		"ext.push.special": {
 			"group": "ext.push",
-			"scripts": "ext.push.special.js",
+			"scripts": "modules/ext.push.special.js",
 			"dependencies": [],
 			"messages": [
 				"push-button-pushing",
@@ -130,78 +136,97 @@
 				"push-tab-no-embedded-files",
 				"push-tab-files-override",
 				"push-tab-template-override",
-				"push-tab-err-uploaddisabled"
+				"push-tab-err-uploaddisabled",
+				"push-tab-used-templates",
+				"push-tab-no-used-templates"
 			]
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "modules",
-		"remoteExtPath": "Push/modules"
+		"localBasePath": "",
+		"remoteExtPath": "Push"
 	},
 	"Hooks": {
-		"UnknownAction": "PushTab::onUnknownAction",
+		"MediaWikiPerformAction": "PushTab::onMediaWikiPerformAction",
 		"SkinTemplateTabs": "PushTab::displayTab",
 		"SkinTemplateNavigation": "PushTab::displayTab2",
 		"AdminLinks": "PushHooks::addToAdminLinks"
 	},
-	"config_prefix": "eg",
+	"ConfigRegistry": {
+		"egPush": "Push::makeConfig"
+	},
+	"config_prefix": "egPush",
 	"config": {
-		"PushTargets": {
+		"Targets": {
 			"description": "List of targets that can be pushed to. The array keys are the target names, and the values are the target urls (path to api.php without the '/api.php' part). Example: $egPushTargets['English Wikipedia'] = 'http://en.wikipedia.org/w';",
-			"value": []
+			"value": {},
+			"merge_strategy": "array_plus"
 		},
-		"PushShowTab": {
+		"ShowTab": {
 			"description": "Show the push action as a tab (if not, it's displayed in the actions dropdown). This only works for skins with an actions dropdown. For others push will always appear as a tab.",
 			"value": false
 		},
-		"PushIncTemplates": {
+		"IncTemplates": {
 			"description": "You can choose to include templates when pushing a page.",
 			"value": false
 		},
-		"PushIncFiles": {
+		"IncSubpages": {
+			"description": "You can choose to include subpages when pushing a page.",
+			"value": false
+		},
+		"IncFiles": {
 			"description": "You can choose to push files used in a page.",
 			"value": false
 		},
-		"PushAllowLogin": {
+		"AllowLogin": {
 			"description": "Indicate if login options should be added to the push interface or not.",
 			"value": true
 		},
-		"PushLoginUser": {
+		"LoginUser": {
 			"description": "Default login data. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
 			"value": ""
 		},
-		"PushLoginPass": {
+		"LoginPass": {
 			"description": "Default login data. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
 			"value": ""
 		},
-		"PushLoginDomain": {
+		"LoginDomain": {
 			"description": "Default login data. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
 			"value": ""
 		},
-		"PushLoginUsers": {
+		"LoginUsers": {
 			"description": "Default login data per target. Overrides $egPushLoginUser and $egPushLoginPass when specified. Array keys should be the urls assigned in the $egPushTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": []
+			"value": {},
+			"merge_strategy": "array_plus"
 		},
-		"PushLoginPasswords": {
+		"LoginPasswords": {
 			"description": "Default login data per target. Overrides $egPushLoginUser and $egPushLoginPass when specified. Array keys should be the urls assigned in the $egPushTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": []
+			"value": {
+			},
+			"merge_strategy": "array_plus"
 		},
-		"PushLoginDomains": {
+		"LoginDomains": {
 			"description": "Default login data per target. Overrides $egPushLoginUser and $egPushLoginPass when specified. Array keys should be the urls assigned in the $egPushTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": []
+			"value": {},
+			"merge_strategy": "array_plus"
 		},
-		"PushBulkWorkers": {
+		"BulkWorkers": {
 			"description": "The amount of push 'workers' (simultanious push requests) on Special:Push.",
 			"value": 3
 		},
-		"PushBatchSize": {
+		"BatchSize": {
 			"description": "The maximum amount of targets to push a page to in one go.",
 			"value": 3
 		},
-		"PushDirectFileUploads": {
+		"DirectFileUploads": {
 			"description": "This is needed when pushing to a wiki that cannot access the source file (for example from a private wiki to a wiki on the internet).",
 			"value": true
+		},
+		"TargetsNamespace": {
+			"description": "Other namespaces to push with the same title page.",
+			"value": {
+			},
+			"merge_strategy": "array_plus_2d"
 		}
-	},
-	"manifest_version": 2
+	}
 }

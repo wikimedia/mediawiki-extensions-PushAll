@@ -1,5 +1,4 @@
 <?php
-
 /**
  * API module to push wiki pages to other MediaWiki wikis.
  *
@@ -9,17 +8,28 @@
  * @ingroup Push
  *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Karima Rafes < karima.rafes@gmail.com >
  */
 class ApiPush extends ApiPushBase {
-
 	protected $editResponses = [];
 
+	/**
+	 * ApiPush constructor.
+	 *
+	 * @param string $main main parameter
+	 * @param string $action action parameter
+	 *
+	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
 	}
 
+	/**
+	 * Push pages
+	 */
 	public function doModuleExecute() {
 		$params = $this->extractRequestParams();
+		$target = $params['targets'];
 
 		foreach ( $params['page'] as $page ) {
 			$title = Title::newFromText( $page );
@@ -27,7 +37,7 @@ class ApiPush extends ApiPushBase {
 			$revision = $this->getPageRevision( $title );
 
 			if ( $revision !== false ) {
-				$this->doPush( $title, $revision, $params['targets'] );
+				$this->doPush( $title, $revision,  $target );
 			}
 		}
 
@@ -91,10 +101,13 @@ class ApiPush extends ApiPushBase {
 				&& count( $response['query']['pages'][$first]['revisions'] ) > 0 ) {
 				$revision = $response['query']['pages'][$first]['revisions'][0];
 			} else {
-				$this->dieUsage( wfMessage( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
+				$this->dieWithError(
+					wfMessage( 'push-special-err-pageget-failed' )->text(),
+					'page-get-failed'
+				);
 			}
 		} else {
-			$this->dieUsage( wfMessage( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
+			$this->dieWithError( wfMessage( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
 		}
 
 		return $revision;
@@ -110,6 +123,20 @@ class ApiPush extends ApiPushBase {
 	 * @param array $targets
 	 */
 	protected function doPush( Title $title, array $revision, array $targets ) {
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = [];
+		$egPushAllTargetsNamespace = [];
+		if ( !$config->has( "Targets" ) ) {
+			// throw new MWException( "egPushAllPushTargets is not precised in the localsettings." );
+		} else {
+			$egPushAllTargets = $config->get( "Targets" );
+		}
+		if ( !$config->has( "TargetsNamespace" ) ) {
+			// throw new MWException( "egPushAllPushTargetsNamespace is not precised in the localsettings." );
+		} else {
+			$egPushAllTargetsNamespace = $config->get( "TargetsNamespace" );
+		}
+
 		foreach ( $targets as $target ) {
 			$token = $this->getEditToken( $target );
 
@@ -120,6 +147,19 @@ class ApiPush extends ApiPushBase {
 
 				if ( $doPush ) {
 					$this->pushToTarget( $title, $revision, $target, $token );
+
+					$targetKey = array_search( $target, $egPushAllTargets, true );
+					if ( is_array( $egPushAllTargetsNamespace[$targetKey] ) ) {
+						foreach ( $egPushAllTargetsNamespace[$targetKey] as $namespace ) {
+							$titleNamespace = Title::newFromText( $namespace . ":" . $title->getDBKey() );
+							if ( $titleNamespace->exists() ) {
+								$revisionamespace = $this->getPageRevision( $titleNamespace );
+								if ( $revisionamespace !== false ) {
+									$this->pushToTarget( $titleNamespace, $revisionamespace, $target, $token );
+								}
+							}
+						}
+					}
 				}
 			}
 		}
@@ -153,7 +193,8 @@ class ApiPush extends ApiPushBase {
 			'token' => $token,
 		];
 
-		$req = MWHttpRequest::factory( $target,
+		Http::$httpEngine = 'curl';
+		$req = MWHttpRequest::factory( $target . "/api.php",
 			[
 				'method' => 'POST',
 				'timeout' => 'default',
@@ -170,13 +211,26 @@ class ApiPush extends ApiPushBase {
 
 		if ( $status->isOK() ) {
 			$response = $req->getContent();
-			$this->editResponses[] = $response;
-			Hooks::run( 'PushAPIAfterPush', [ $title, $revision, $target, $token, $response ] );
+			$responseObj = FormatJson::decode( $req->getContent() );
+
+			if ( isset( $responseObj->error ) ) {
+				$this->dieWithError( $responseObj->error->info, 'page-push-failed' );
+			} else {
+				$this->editResponses[] = $response;
+
+				Hooks::run( 'PushAPIAfterPush', [ $title, $revision, $target, $token, $response ] );
+			}
+
 		} else {
-			$this->dieUsage( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
+			$this->dieWithError( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
 		}
 	}
 
+	/**
+	 * List parameters
+	 *
+	 * @return array
+	 */
 	public function getAllowedParams() {
 		return [
 			'page' => [
@@ -193,7 +247,9 @@ class ApiPush extends ApiPushBase {
 	}
 
 	/**
-	 * @inheritDoc
+	 * @see ApiBase::getExamplesMessages()
+	 *
+	 * @return array
 	 */
 	protected function getExamplesMessages() {
 		return [

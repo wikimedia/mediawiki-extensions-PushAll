@@ -9,6 +9,7 @@
  * @ingroup Push
  *
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
+ * @author Karima Rafes < karima.rafes@gmail.com >
  */
 final class PushHooks {
 
@@ -17,6 +18,7 @@ final class PushHooks {
 	 *
 	 * @since 0.1
 	 *
+	 * @param Object &$admin_links_tree
 	 * @return true
 	 */
 	public static function addToAdminLinks( &$admin_links_tree ) {
