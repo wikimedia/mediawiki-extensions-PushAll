@@ -1,21 +1,21 @@
-These is the install file for the Push extension.
+These is the install file for the PushAll extension.
 
-Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Push
-Latest version of the install file: https://github.com/wikimedia/mediawiki-extensions-Push/blob/master/INSTALL
+Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:PushAll
+Latest version of the install file: https://github.com/BorderCloud/PushAll
 
 == Installation ==
 
-Once you have downloaded the code, place the ''Push'' directory within your MediaWiki 'extensions' directory.
+Once you have downloaded the code, place the ''PushAll'' directory within your MediaWiki 'extensions' directory.
 Then add the following code to your [[Manual:LocalSettings.php|LocalSettings.php]] file:
 
 # Push
-wfLoadExtension( 'Push' );
+wfLoadExtension( 'PushAll' );
 
 == Configuration ==
 
 Configuration of push is done by adding simple PHP statements to your [[Manual:LocalSettings.php|LocalSettings.php]]
-file. These statements need to be placed AFTER the inclusion of Push. The options are listed below and their default
-is set in the [https://github.com/wikimedia/mediawiki-extensions-Push/blob/master/extension.json push
+file. These statements need to be placed AFTER the inclusion of PushAll. The options are listed below and their default
+is set in the [https://github.com/BorderCloud/PushAll/blob/master/extension.json push
 settings file]. You should NOT modify the settings file, but can have a look at it to get an idea of how to use the
 ettings, in case the below descriptions do not suffice.
 
@@ -36,7 +36,7 @@ By default there are no targets, which will cause the push tab to not be shown a
 
 === Rights ===
 
-Push adds the following rights to MediaWiki:
+PushAll adds the following rights to MediaWiki:
 
 * push: Indicates whether you are able to use the push functionality or not.
 * bulkpush: Indicates whether you are able to use Special:Push or not. (as of v0.3)
@@ -68,7 +68,7 @@ Cookie::validateCookieDomain. It can be fixed by replacing this method by it's M
 
 === Pushing files ===
 
-As of version 0.5 of Push, you can choose to push the files used in the page you are pushing. This is done by checking
+You can choose to push the files used in the page you are pushing. This is done by checking
 'Include files' on the push interface. You can set the default check-state with the <code>$egPushAllIncFiles</code> setting.
 Keep in mind you need the 'filepush' right to use this functionality, so the checkbox won't show up when you are not
 logged in using the default rights.
