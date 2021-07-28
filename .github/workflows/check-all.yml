@@ -5,7 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
+
   workflow_dispatch:
 
 jobs:
@@ -29,7 +29,9 @@ jobs:
           ${{ runner.os }}-php-
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress
+      run: |
+        composer install --prefer-dist --no-progress
+        yarn install
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
@@ -37,6 +39,6 @@ jobs:
       run: |
         composer test
         yarn test
-    
+
     # - name: Run test suite
     #   run: composer run-script test
