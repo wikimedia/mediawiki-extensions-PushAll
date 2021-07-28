@@ -6,3 +6,7 @@ composer.lock
 *~
 *.kate-swp
 .*.swp
+
+.idea
+.eslintcache
+.gitreview

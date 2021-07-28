@@ -202,8 +202,9 @@ final class PushTab {
 	 * @since 0.1
 	 */
 	protected static function displayPushList() {
-		global $wgOut, $egPushAllTargets;
-
+		global $wgOut;
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllTargets = $config->get( "Targets" );
 		$items = [
 			Html::rawElement(
 				'tr',
@@ -275,7 +276,8 @@ final class PushTab {
 	 * @return string
 	 */
 	protected static function getPushItem( $name, $url ) {
-		global $wgTitle;
+		$context = new RequestContext();
+		$title = $context->getTitle()->getFullText();
 
 		static $targetId = 0;
 		$targetId++;
@@ -294,11 +296,11 @@ final class PushTab {
 				Html::element(
 					'a',
 					[
-						'href' => $url . '/index.php?title=' . $wgTitle->getFullText(),
+						'href' => $url . '/index.php?title=' . $title,
 						'rel' => 'nofollow',
 						'id' => 'targetlink' . $targetId
 					],
-					wfMessage( 'push-remote-page-link', $wgTitle->getFullText(), $name )->parse()
+					wfMessage( 'push-remote-page-link', $title, $name )->parse()
 				) .
 				Html::element(
 					'div',
