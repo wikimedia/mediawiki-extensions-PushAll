@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"Joseph"
 		]
 	},
 	"push-desc": "İçeriği diğer wikilere aktarmak için hafif uzantı",
@@ -39,7 +40,7 @@
 	"push-tab-no-targets": "Hedeflenecek hedef yok. Lütfen LocalSettings.php dosyanıza bir miktar ekleyin.",
 	"push-tab-push-to": "$1 üzerinde aktar",
 	"push-remote-pages": "Uzak sayfalar",
-	"push-remote-page-link": "$1 üzerinde $2",
+	"push-remote-page-link": "$2 vikisinde $1",
 	"push-remote-page-link-full": "$1 sayfasını $2 üzerinde gör",
 	"push-targets-total": "Toplam $1 {{PLURAL:$1|hedef|hedef}} var.",
 	"push-button-all": "Tümünü aktar",

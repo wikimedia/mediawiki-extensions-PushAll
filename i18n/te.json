@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Chaduvari",
 			"Veeven"
 		]
 	},
+	"push-tab-used-templates": "({{PLURAL:$2|మూస|మూసలు}} వాడారు: $1)",
 	"push-special-target-is": "లక్ష్యిత వికీ: $1",
 	"push-special-select-targets": "లక్ష్యిత వికీలు:"
 }
