@@ -11,6 +11,11 @@
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
 class ApiPushImages extends ApiPushBase {
+	/**
+	 * array containing the targets responses
+	 *
+	 * @var array
+	 */
 	protected $editResponses = [];
 
 	/**
@@ -120,7 +125,7 @@ class ApiPushImages extends ApiPushBase {
 		if ( $egPushAllDirectFileUploads ) {
 			if ( !function_exists( 'curl_init' ) ) {
 				$this->dieWithError(
-					wfMessage( 'push-api-err-nocurl' )->text(),
+					$this->msg( 'push-api-err-nocurl' )->text(),
 					'image-push-nocurl'
 				);
 			} elseif (
@@ -128,7 +133,7 @@ class ApiPushImages extends ApiPushBase {
 				|| !CurlHttpRequest::SUPPORTS_FILE_POSTS
 			) {
 				$this->dieWithError(
-					wfMessage( 'push-api-err-nofilesupport' )->text(),
+					$this->msg( 'push-api-err-nofilesupport' )->text(),
 					'image-push-nofilesupport'
 				);
 			} else {
@@ -161,7 +166,7 @@ class ApiPushImages extends ApiPushBase {
 			Hooks::run( 'PushAPIAfterImagePush', [ $title, $target, $token, $response ] );
 
 		} else {
-			$this->dieWithError( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
+			$this->dieWithError( $this->msg( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
 		}
 	}
 

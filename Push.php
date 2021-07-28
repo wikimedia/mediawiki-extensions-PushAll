@@ -1,6 +1,6 @@
 <?php
 /**
- * Documentation:	 		https://www.mediawiki.org/wiki/Extension:Push
+ * Documentation:	 		https://www.mediawiki.org/wiki/Extension:PushAll
  * Support					https://www.mediawiki.org/wiki/Extension_talk:Push
  * Source code:             http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Push
  *

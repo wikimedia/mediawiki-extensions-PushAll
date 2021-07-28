@@ -12,13 +12,69 @@
  */
 final class PushTab {
 
+// TODO: DELETE ?
+//	/**
+//	 * Adds an "action" (i.e., a tab) to allow pushing the current article.
+//	 * @param Object $obj
+//	 * @param array &$content_actions
+//	 * @return bool
+//	 */
+//	public static function displayTab( $obj, &$content_actions ) {
+//		global $wgUser;
+//
+//		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+//		$egPushAllTargets = [];
+//		if ( !$config->has( "Targets" ) ) {
+//			// throw new MWException( "$egPushAllTargets is not precised in the localsettings." );
+//		} else {
+//			$egPushAllTargets = $config->get( "Targets" );
+//		}
+//
+//		/**
+//		 * Make sure that this is not a special page, the page has contents, and the user can push.
+//		 *
+//		 * @var Title $title
+//		 */
+//		$title = $obj->getTitle();
+//		if (
+//			$title->getNamespace() !== NS_SPECIAL
+//			&& $title->exists()
+//			&& $wgUser->isAllowed( 'push' )
+//			&& count( $egPushAllTargets ) > 0 ) {
+//
+//			global $wgRequest;
+//
+//			$content_actions['push'] = [
+//				'text' => wfMessage( 'push-tab-text' )->text(),
+//				'class' => $wgRequest->getVal( 'action' ) == 'push' ? 'selected' : '',
+//				'href' => $title->getLocalURL( 'action=push' )
+//			];
+//		}
+//
+//		return true;
+//	}
+
 	/**
 	 * Adds an "action" (i.e., a tab) to allow pushing the current article.
-	 * @param Object $obj
-	 * @param array &$content_actions
+	 *
+	 * @param SkinTemplate $sktemplate
+	 * @param array &$links
 	 * @return bool
 	 */
-	public static function displayTab( $obj, &$content_actions ) {
+	public static function onSkinTemplateNavigationUniversal( SkinTemplate $sktemplate, array &$links ) {
+		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
+		$egPushAllShowTab = false;
+		if ( !$config->has( "ShowTab" ) ) {
+			// throw new MWException(
+			// "$egPushAllShowTab is not precised in the localsettings." );
+		} else {
+			$egPushAllShowTab = $config->get( "ShowTab" );
+		}
+
+		// The old '$content_actions' array is thankfully just a sub-array of this one
+		$views_links = $links[$egPushAllShowTab ? 'views' : 'actions'];
+		// self::displayTab( $obj, $views_links );
+
 		global $wgUser;
 
 		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
@@ -34,7 +90,7 @@ final class PushTab {
 		 *
 		 * @var Title $title
 		 */
-		$title = $obj->getTitle();
+		$title = $sktemplate->getTitle();
 		if (
 			$title->getNamespace() !== NS_SPECIAL
 			&& $title->exists()
@@ -50,30 +106,6 @@ final class PushTab {
 			];
 		}
 
-		return true;
-	}
-
-	/**
-	 * Function currently called only for the 'Vector' skin, added in
-	 * MW 1.16 - will possibly be called for additional skins later
-	 *
-	 * @param Object $obj
-	 * @param array &$links
-	 * @return bool
-	 */
-	public static function displayTab2( $obj, &$links ) {
-		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
-		$egPushAllShowTab = false;
-		if ( !$config->has( "ShowTab" ) ) {
-			// throw new MWException(
-			// "$egPushAllShowTab is not precised in the localsettings." );
-		} else {
-			$egPushAllShowTab = $config->get( "ShowTab" );
-		}
-
-		// The old '$content_actions' array is thankfully just a sub-array of this one
-		$views_links = $links[$egPushAllShowTab ? 'views' : 'actions'];
-		self::displayTab( $obj, $views_links );
 		$links[$egPushAllShowTab ? 'views' : 'actions'] = $views_links;
 
 		return true;
@@ -97,15 +129,15 @@ final class PushTab {
 	/**
 	 * Function for opening the push page
 	 *
-	 * @param Object $output
-	 * @param Object $article
-	 * @param Object $title
-	 * @param Object $user
-	 * @param Object $request
-	 * @param Object $mediaWiki
+	 * @param Output $output
+	 * @param Article $article
+	 * @param Title $title
+	 * @param User $user
+	 * @param Request $request
+	 * @param Mediawiki $mediaWiki
 	 * @return bool
 	 */
-	public static function  onMediaWikiPerformAction(
+	public static function onMediaWikiPerformAction(
 		$output, $article, $title, $user, $request, $mediaWiki ) {
 		if ( $mediaWiki->getAction() === 'nosuchaction' ) {
 			if ( $request->getText( 'action' ) === 'push' ) {
@@ -126,7 +158,7 @@ final class PushTab {
 	 */
 	public static function displayPushPage( Article $article ) {
 		global $wgOut, $wgUser, $wgSitename, $wgRequest;
-		$wgTitle = Title::newFromText( $wgRequest->getVal( 'title' ) );
+		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
 
 		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
 		$egPushAllTargets = [];
@@ -153,7 +185,7 @@ final class PushTab {
 		$wgOut->addModules( 'ext.push.tab' );
 
 		$wgOut->addHTML(
-			Html::hidden( 'pageName', $wgTitle->getFullText(), [ 'id' => 'pageName' ] ) .
+			Html::hidden( 'pageName', $title->getFullText(), [ 'id' => 'pageName' ] ) .
 			Html::hidden( 'siteName', $wgSitename, [ 'id' => 'siteName' ] )
 		);
 
@@ -322,13 +354,13 @@ final class PushTab {
 	 */
 	protected static function displayPushOptions() {
 		global $wgOut, $wgUser, $wgRequest ,$wgScript;
-		$wgTitle = Title::newFromText( $wgRequest->getVal( 'title' ) );
+		$title = Title::newFromText( $wgRequest->getVal( 'title' ) );
 
 		$wgOut->addHTML( '<h3>' . wfMessage( 'push-tab-push-options' )->escaped() . '</h3>' );
 
 		$allpages = PushFunctions::getSubpages(
-			[ $wgTitle->getFullText() ],
-			[ $wgTitle->getFullText() => true ]
+			[ $title->getFullText() ],
+			[ $title->getFullText() => true ]
 		);
 
 		$subpages = array_keys( $allpages );
@@ -338,8 +370,8 @@ final class PushTab {
 		$templates =
 			array_keys(
 				PushFunctions::getTemplates(
-					[ $wgTitle->getFullText() ],
-					[ $wgTitle->getFullText() => true ]
+					[ $title->getFullText() ],
+					[ $title->getFullText() => true ]
 				)
 			);
 		// Get rid of the page itself.
@@ -355,9 +387,9 @@ final class PushTab {
 					array_keys( $allpages ),
 					$allpages
 				)
-			), $templates, $subpages, [ $wgTitle->getFullText() ] ) );
+			), $templates, $subpages, [ $title->getFullText() ] ) );
 
-		$pageFiles = PushFunctions::getImages( [ $wgTitle->getFullText() ] );
+		$pageFiles = PushFunctions::getImages( [ $title->getFullText() ] );
 		$templateFiles = PushFunctions::getImages( $templates );
 
 		$wgOut->addInlineScript(

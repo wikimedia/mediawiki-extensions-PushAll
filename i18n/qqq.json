@@ -12,10 +12,10 @@
 			"Siebrand",
 			"Umherirrender",
 			"아라",
-		  "Karima Rafes"
+			"Karima Rafes"
 		]
 	},
-	"push-desc": "{{desc|name=Push|url=https://www.mediawiki.org/wiki/Extension:Push}}",
+	"push-desc": "{{desc|name=Push|url=https://www.mediawiki.org/wiki/Extension:PushAll}}",
 	"action-push": "{{doc-action|push}}",
 	"right-push": "{{doc-right|push}}",
 	"action-bulkpush": "{{doc-action|bulkpush}}",

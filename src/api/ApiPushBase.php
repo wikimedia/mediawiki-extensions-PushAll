@@ -18,6 +18,11 @@ abstract class ApiPushBase extends ApiBase {
 	 * @var array
 	 */
 	protected $cookieJars = [];
+	/**
+	 * Associative array containing tokens.
+	 *
+	 * @var array
+	 */
 	protected $tokens = [];
 
 	/**
@@ -67,7 +72,7 @@ abstract class ApiPushBase extends ApiBase {
 			|| empty( $response->query->tokens )
 		) {
 			$this->dieWithError(
-				wfMessage( 'push-special-err-token-failed' )->text(),
+				$this->msg( 'push-special-err-token-failed' )->text(),
 				'token-request-failed'
 			);
 		}
@@ -82,7 +87,7 @@ abstract class ApiPushBase extends ApiBase {
 			$this->dieWithError( $response->query->error->message, 'token-request-failed' );
 		} else {
 			$this->dieWithError(
-				wfMessage( 'push-special-err-token-failed' )->text(),
+				$this->msg( 'push-special-err-token-failed' )->text(),
 				'token-request-failed'
 			);
 		}
@@ -135,7 +140,7 @@ abstract class ApiPushBase extends ApiBase {
 
 		if ( !$status->isOK() ) {
 			$this->dieWithError(
-				wfMessage( 'push-err-authentication', $target, '' )->parse(),
+				$this->msg( 'push-err-authentication', $target, '' )->parse(),
 				'authentication-failed'
 			);
 		}
@@ -145,7 +150,7 @@ abstract class ApiPushBase extends ApiBase {
 		// error_log( print_r( $response, true ) );
 		if ( !property_exists( $response, 'login' ) || !property_exists( $response->login, 'result' ) ) {
 			$this->dieWithError(
-				wfMessage( 'push-err-authentication', $target, '' )->parse(),
+				$this->msg( 'push-err-authentication', $target, '' )->parse(),
 				'authentication-failed'
 			);
 		}
@@ -154,7 +159,7 @@ abstract class ApiPushBase extends ApiBase {
 			$this->cookieJars[$target] = $req->getCookieJar();
 		} else {
 			$this->dieWithError(
-				wfMessage( 'push-err-authentication', $target, '' ),
+				$this->msg( 'push-err-authentication', $target, '' ),
 				'authentication-failed'
 			);
 		}
@@ -207,7 +212,7 @@ abstract class ApiPushBase extends ApiBase {
 			|| empty( $response->query->tokens )
 		) {
 			$this->dieWithError(
-				wfMessage( 'push-special-err-token-failed' )->text(),
+				$this->msg( 'push-special-err-token-failed' )->text(),
 				'token-request-failed'
 			);
 		}
@@ -222,7 +227,7 @@ abstract class ApiPushBase extends ApiBase {
 			$this->dieWithError( $response->query->error->message, 'token-request-failed' );
 		} else {
 			$this->dieWithError(
-				wfMessage( 'push-special-err-token-failed' )->text(),
+				$this->msg( 'push-special-err-token-failed' )->text(),
 				'token-request-failed'
 			);
 		}
@@ -231,8 +236,7 @@ abstract class ApiPushBase extends ApiBase {
 	}
 
 	public function execute() {
-		global $wgUser;
-		if ( !$wgUser->isAllowed( 'push' ) || $wgUser->isBlocked() ) {
+		if ( !$this->getUser()->isAllowed( 'push' ) || $this->getUser()->isBlocked() ) {
 			$this->dieWithErrorMsg( [ 'badaccess-groups' ] );
 		}
 

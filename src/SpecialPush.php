@@ -133,7 +133,6 @@ class SpecialPush extends SpecialPage {
 	 * @param string $pages
 	 */
 	protected function doPush( $pages ) {
-		global $wgSitename;
 		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'egPushAll' );
 		$egPushAllTargets = [];
 		$egPushAllBulkWorkers = 3;
@@ -197,7 +196,7 @@ class SpecialPush extends SpecialPage {
 		);
 
 		$out->addHTML(
-			Html::hidden( 'siteName', $wgSitename, [ 'id' => 'siteName' ] ) .
+			Html::hidden( 'siteName', $this->getConfig()->get( 'Sitename' ), [ 'id' => 'siteName' ] ) .
 			Html::rawElement(
 				'div',
 				[
@@ -301,7 +300,7 @@ class SpecialPush extends SpecialPage {
 			$this->msg( 'export-templates' )->text(),
 			'templates',
 			'wpPushTemplates',
-			$req->wasPosted() ? $req->getCheck( 'templates' ) : $egPushIncTemplates
+			$req->wasPosted() ? $req->getCheck( 'templates' ) : $egPushAllIncTemplates
 		) . '<br />';
 
 		if ( $this->getUser()->isAllowed( 'filepush' ) ) {
@@ -309,17 +308,17 @@ class SpecialPush extends SpecialPage {
 				$this->msg( 'push-special-inc-files' )->text(),
 				'files',
 				'wpPushFiles',
-				$req->wasPosted() ? $req->getCheck( 'files' ) : $egPushIncFiles
+				$req->wasPosted() ? $req->getCheck( 'files' ) : $egPushAllIncFiles
 			) . '<br />';
 		}
 
-		if ( count( $egPushTargets ) == 1 ) {
-			$names = array_keys( $egPushTargets );
+		if ( count( $egPushAllTargets ) == 1 ) {
+			$names = array_keys( $egPushAllTargets );
 			$form .= '<b>' . $this->msg( 'push-special-target-is', $names[0] )->parse() . '</b><br />';
 		} else {
 			$form .= '<b>' . $this->msg( 'push-special-select-targets' )->escaped() . '</b><br />';
 
-			foreach ( $egPushTargets as $targetName => $targetUrl ) {
+			foreach ( $egPushAllTargets as $targetName => $targetUrl ) {
 				$checkName = str_replace( ' ', '_', $targetName );
 				$checked = $req->wasPosted() ? $req->getCheck( $checkName ) : true;
 				$form .= Xml::checkLabel( $targetName, $checkName, $targetName, $checked ) . '<br />';

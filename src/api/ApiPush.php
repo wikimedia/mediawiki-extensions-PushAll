@@ -10,7 +10,16 @@
  * @author Jeroen De Dauw < jeroendedauw@gmail.com >
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
+
+/**
+ * Class ApiPush
+ */
 class ApiPush extends ApiPushBase {
+	/**
+	 * array containing the targets responses
+	 *
+	 * @var array
+	 */
 	protected $editResponses = [];
 
 	/**
@@ -102,12 +111,12 @@ class ApiPush extends ApiPushBase {
 				$revision = $response['query']['pages'][$first]['revisions'][0];
 			} else {
 				$this->dieWithError(
-					wfMessage( 'push-special-err-pageget-failed' )->text(),
+					$this->msg( 'push-special-err-pageget-failed' )->text(),
 					'page-get-failed'
 				);
 			}
 		} else {
-			$this->dieWithError( wfMessage( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
+			$this->dieWithError( $this->msg( 'push-special-err-pageget-failed' )->text(), 'page-get-failed' );
 		}
 
 		return $revision;
@@ -178,7 +187,7 @@ class ApiPush extends ApiPushBase {
 	protected function pushToTarget( Title $title, array $revision, $target, $token ) {
 		global $wgSitename;
 
-		$summary = wfMessage(
+		$summary = $this->msg(
 			'push-import-revision-message',
 			$wgSitename
 			// $revision['user']
@@ -222,7 +231,7 @@ class ApiPush extends ApiPushBase {
 			}
 
 		} else {
-			$this->dieWithError( wfMessage( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
+			$this->dieWithError( $this->msg( 'push-special-err-push-failed' )->text(), 'page-push-failed' );
 		}
 	}
 

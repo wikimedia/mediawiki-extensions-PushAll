@@ -1,6 +1,6 @@
 {
 	"name": "PushAll",
-	"version": "1.0.1",
+	"version": "1.5.0",
 	"author": [
 		"[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]",
 		"[https://www.mediawiki.org/wiki/User:Karima_Rafes Karima Rafes]"
@@ -148,9 +148,8 @@
 	},
 	"Hooks": {
 		"MediaWikiPerformAction": "PushTab::onMediaWikiPerformAction",
-		"SkinTemplateTabs": "PushTab::displayTab",
-		"SkinTemplateNavigation::Universal": "PushTab::displayTab2",
-		"AdminLinks": "PushHooks::addToAdminLinks"
+		"SkinTemplateNavigation::Universal": "PushTab::onSkinTemplateNavigationUniversal",
+		"AdminLinks": "PushHooks::onAdminLinks"
 	},
 	"ConfigRegistry": {
 		"egPushAll": "Push::makeConfig"
