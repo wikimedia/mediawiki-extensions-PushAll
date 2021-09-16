@@ -54,11 +54,11 @@
 	"pushall-remote-content-status-obsolete-and-diverge": "Vous devez fusionner les modifications du contenu distant avant d'exporter en activant l'option \"ignorer les avertissements\".",
 	"pushall-remote-content-status-unknown": "Le statut du contenu distant est inconnu.",
 
-	"pushall-checkbox-tooltip-will-push" : "Ce contenu sera exporté.",
-	"pushall-checkbox-tooltip-wont-push" : "Ce contenu ne sera pas exporté.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-protected" : "Ce contenu ne sera pas exporté car il est protégé dans le wiki distant.",
-	"pushall-checkbox-tooltip-push-useless" : "Ce contenu ne sera pas exporté car c'est inutile.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force" : "Ce contenu ne sera pas exporté car il y a un avertissement.",
+	"pushall-checkbox-tooltip-will-push": "Ce contenu sera exporté.",
+	"pushall-checkbox-tooltip-wont-push": "Ce contenu ne sera pas exporté.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Ce contenu ne sera pas exporté car il est protégé dans le wiki distant.",
+	"pushall-checkbox-tooltip-push-useless": "Ce contenu ne sera pas exporté car c'est inutile.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Ce contenu ne sera pas exporté car il y a un avertissement.",
 
 	"pushall-special-description": "Cette page vous permet d'exporter le contenu d'une ou plusieurs pages vers un ou plusieurs wikis MediaWiki.\n\nPour exporter des pages, entrez les titres dans la zone de texte ci-dessous, un titre par ligne et appuyez sur Analysez.\nIl collectera toutes les dépendances de ces pages et vous pourrez sélectionner les wikis de destination et les contenus finales à exporter.",
 	"pushall-special-page-action-field-top-label": "Ajouter un contenu :",

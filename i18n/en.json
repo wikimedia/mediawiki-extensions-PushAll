@@ -54,11 +54,11 @@
 	"pushall-remote-content-status-obsolete-and-diverge": "You need to merge the modifications of the remote page before to push with the option ignore warnings.",
 	"pushall-remote-content-status-unknown": "The status of remote content is unknown.",
 
-	"pushall-checkbox-tooltip-will-push" : "This content will be pushed.",
-	"pushall-checkbox-tooltip-wont-push" : "This content will not be pushed.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-protected" : "This content will not be pushed because it is protected in the remote wiki.",
-	"pushall-checkbox-tooltip-push-useless" :  "This content will not be pushed because it is useless.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force" : "This content will not be pushed because there is a warnings.",
+	"pushall-checkbox-tooltip-will-push": "This content will be pushed.",
+	"pushall-checkbox-tooltip-wont-push": "This content will not be pushed.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "This content will not be pushed because it is protected in the remote wiki.",
+	"pushall-checkbox-tooltip-push-useless": "This content will not be pushed because it is useless.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "This content will not be pushed because there is a warnings.",
 
 	"pushall-special-description": "This page enables you to push content of one or more pages to one or more MediaWiki wikis.\n\nTo push pages, enter the titles in the text box below, one title per line and hit Analyze.\nIt will collect all dependencies of these pages and you could select the wikis and the final pages to push.",
 	"pushall-special-page-action-field-top-label": "Add a page:",

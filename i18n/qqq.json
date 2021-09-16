@@ -54,6 +54,12 @@
 	"pushall-remote-content-status-obsolete-and-diverge": "Used as status message of remote content before pushing",
 	"pushall-remote-content-status-unknown": "Used as status message of remote content before pushing",
 
+	"pushall-checkbox-tooltip-will-push": "Tooltip message",
+	"pushall-checkbox-tooltip-wont-push": "Tooltip message",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Tooltip message",
+	"pushall-checkbox-tooltip-push-useless": "Tooltip message",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Tooltip message",
+
 	"pushall-special-description": "Used as description message",
 	"pushall-special-page-action-field-top-label": "Used as label of a action field",
 	"pushall-special-page-action-field-button": "Used as button label of a action field",
