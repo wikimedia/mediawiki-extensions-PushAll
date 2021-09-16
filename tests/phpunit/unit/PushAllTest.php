@@ -1,10 +1,5 @@
 <?php
 
-use MediaWiki\Config\ServiceOptions;
-use MediaWiki\MediaWikiServices;
-use MediaWiki\User\UserIdentityValue;
-use MediaWiki\User\UserOptionsManager;
-use PHPUnit\Framework\Assert;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -15,18 +10,15 @@ use Wikimedia\TestingAccessWrapper;
  */
 class PushAllTest extends MediaWikiUnitTestCase {
 
-	public static function sampleAttachedNamespaces()
-	{
-		return
-			[
+	public static function sampleAttachedNamespaces() {
+		return [
 				0 => "Data",
 				1 => "Discussion"
 			];
 	}
 
 	public static function provideExportExtractedDataGlobals() {
-		return
-			[
+		return [
 				[
 					'AttachedNamespaces',
 					[
@@ -39,8 +31,7 @@ class PushAllTest extends MediaWikiUnitTestCase {
 			];
 	}
 
-	private static function extractData($globals)
-	{
+	private static function extractData( $globals ) {
 		PushAll::clean();
 		$registry = new ExtensionRegistry();
 		$registry->queue( __DIR__ . "/../../../extension.json" );
@@ -54,14 +45,13 @@ class PushAllTest extends MediaWikiUnitTestCase {
 			'autoloaderPaths' => []
 		];
 		TestingAccessWrapper::newFromObject( $registry )->exportExtractedData( $info );
-
 	}
 
 	/**
 	 * @dataProvider provideExportExtractedDataGlobals
 	 */
 	public function testExportExtractedDataGlobals( $desc, $globals, $expected ) {
-		self::extractData($globals);
+		self::extractData( $globals );
 		foreach ( $expected as $name => $value ) {
 			$this->assertArrayHasKey( $name, $GLOBALS, $desc );
 			$this->assertEquals( $value, $GLOBALS[$name], $desc );
