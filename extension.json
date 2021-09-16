@@ -1,12 +1,11 @@
 {
 	"name": "PushAll",
-	"version": "1.5.0",
+	"version": "2.0.0",
 	"author": [
-		"[https://www.mediawiki.org/wiki/User:Jeroen_De_Dauw Jeroen De Dauw] for [http://www.wikiworks.com WikiWorks]",
 		"[https://www.mediawiki.org/wiki/User:Karima_Rafes Karima Rafes]"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:PushAll",
-	"descriptionmsg": "push-desc",
+	"descriptionmsg": "pushall-desc",
 	"license-name": "GPL-3.0-or-later",
 	"type": "other",
 	"manifest_version": 2,
@@ -14,218 +13,175 @@
 		"MediaWiki": ">= 1.31.1"
 	},
 	"APIModules": {
-		"push": "ApiPush",
-		"pushimages": "ApiPushImages"
-	},
-	"AvailableRights": [
-		"push",
-		"pushadmin",
-		"filepush",
-		"bulkpush"
-	],
-	"GroupPermissions": {
-		"autoconfirmed": {
-			"push": true,
-			"bulkpush": true,
-			"filepush": true
-		},
-		"sysop": {
-			"push": true,
-			"bulkpush": true,
-			"filepush": true
-		},
-		"pusher": {
-			"push": true
-		},
-		"bulkpusher": {
-			"bulkpush": true,
-			"push": true
-		},
-		"filepusher": {
-			"filepush": true,
-			"push": true
-		}
+		"pushall": "ApiPushAll",
+		"pushallinfo": "ApiPushAllInfo"
 	},
 	"SpecialPages": {
-		"Push": "SpecialPush"
+		"PushAll": "SpecialPushAll"
 	},
 	"MessagesDirs": {
-		"Push": [
+		"PushAll": [
 			"i18n"
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"PushAlias": "Push.alias.php"
+		"PushAll": "srs/ui/SpecialPushAll.alias.php"
 	},
 	"AutoloadClasses": {
-		"Push": "Push.php",
-
-		"PushHooks": "src/PushHooks.php",
-		"ApiPushBase": "src/api/ApiPushBase.php",
-		"ApiPush": "src/api/ApiPush.php",
-		"ApiPushImages": "src/api/ApiPushImages.php",
-		"PushTab": "src/PushTab.php",
-		"PushFunctions": "src/PushFunctions.php",
-		"SpecialPush": "src/SpecialPush.php"
+		"PushAll": "src/PushAll.php",
+		"PushAllTargets": "src/PushAllTargets.php",
+		"PushAllTarget": "src/PushAllTarget.php",
+		"PushAllHooks": "src/PushAllHooks.php",
+		"ApiPushAllBase": "src/api/ApiPushAllBase.php",
+		"ApiPushAll": "src/api/ApiPushAll.php",
+		"ApiPushAllImages": "src/api/ApiPushAllImages.php",
+		"ApiPushAllInfo": "src/api/ApiPushAllInfo.php",
+		"TabPushAll": "src/ui/TabPushAll.php",
+		"SpecialPushAll": "src/ui/SpecialPushAll.php",
+		"PushAllComponents": "src/ui/PushAllComponents.php",
+		"PushAllContents": "src/PushAllContents.php",
+		"PushAllContent": "src/PushAllContent.php",
+		"PushAllTags": "src/PushAllTags.php",
+		"PushallCategorySelector": "src/ui/PushallCategorySelector.php",
+		"PushallPageSelector": "src/ui/PushallPageSelector.php"
 	},
 	"ResourceModules": {
-		"ext.push.tab": {
-			"group": "ext.push",
-			"scripts": "modules/ext.push.tab.js",
+		"ext.pushall": {
+			"scripts": [
+				"src/ui/js/ext.pushall.js"
+			],
 			"dependencies": [
+				"mediawiki.api",
 				"mediawiki.jqueryMsg"
 			],
 			"messages": [
-				"push-button-pushing",
-				"push-button-completed",
-				"push-button-failed",
-				"push-import-revision-message",
-				"push-button-text",
-				"push-button-all",
-				"push-special-item-pushing",
-				"push-special-item-completed",
-				"push-special-item-failed",
-				"push-special-push-done",
-				"push-err-captacha",
-				"push-tab-last-edit",
-				"push-tab-not-created",
-				"push-err-captcha-page",
-				"push-button-pushing-files",
-				"push-special-err-imginfo-failed",
-				"push-special-obtaining-fileinfo",
-				"push-special-pushing-file",
-				"push-tab-err-fileinfo",
-				"push-tab-err-filepush",
-				"push-tab-err-filepush-unknown",
-				"push-tab-embedded-files",
-				"push-tab-no-embedded-files",
-				"push-tab-files-override",
-				"push-tab-template-override",
-				"push-tab-err-uploaddisabled",
-				"push-tab-used-templates",
-				"push-tab-no-used-templates"
+				"pushall-status-search-in-progress",
+				"pushall-remote-content-status-not-exist",
+				"pushall-remote-content-status-protected",
+				"pushall-remote-content-status-equal",
+				"pushall-remote-content-status-diverge",
+				"pushall-remote-content-status-obsolete",
+				"pushall-remote-content-status-obsolete-and-diverge",
+				"pushall-remote-content-status-unknown",
+
+				"pushall-checkbox-tooltip-will-push",
+				"pushall-checkbox-tooltip-wont-push",
+				"pushall-checkbox-tooltip-push-not-allowed-remote-protected",
+				"pushall-checkbox-tooltip-push-useless",
+				"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force",
+
+				"pushall-error-title-not-exist",
+				"pushall-error-title-not-allow",
+				"pushall-error-user-not-allow",
+				"pushall-error-not-credentials-for-this-target",
+				"pushall-error-pushall-failed",
+				"pushall-error-authentication",
+				"pushall-error-api-nocurl",
+				"pushall-error-api-nofilesupport",
+
+				"pushall-button-pushing",
+				"pushall-button-completed",
+				"pushall-button-nothing-to-push",
+				"pushall-button-failed",
+
+				"pushall-import-revision-message"
 			]
 		},
-		"ext.push.special": {
-			"group": "ext.push",
-			"scripts": "modules/ext.push.special.js",
-			"dependencies": [],
+		"ext.pushall.tab": {
+			"group": "ext.pushall.tab",
+			"scripts": [
+				"src/ui/js/ext.pushall.tab.js"
+			],
+			"dependencies": [
+				"ext.pushall"
+			],
 			"messages": [
-				"push-button-pushing",
-				"push-button-completed",
-				"push-button-failed",
-				"push-import-revision-message",
-				"push-button-text",
-				"push-button-all",
-				"push-special-item-pushing",
-				"push-special-item-completed",
-				"push-special-item-failed",
-				"push-special-push-done",
-				"push-err-captacha",
-				"push-tab-last-edit",
-				"push-tab-not-created",
-				"push-err-captcha-page",
-				"push-button-pushing-files",
-				"push-special-err-imginfo-failed",
-				"push-special-obtaining-fileinfo",
-				"push-special-pushing-file",
-				"push-tab-err-fileinfo",
-				"push-tab-err-filepush",
-				"push-tab-err-filepush-unknown",
-				"push-tab-embedded-files",
-				"push-tab-no-embedded-files",
-				"push-tab-files-override",
-				"push-tab-template-override",
-				"push-tab-err-uploaddisabled",
-				"push-tab-used-templates",
-				"push-tab-no-used-templates"
+			]
+		},
+		"ext.pushall.special": {
+			"group": "ext.pushall.special",
+			"scripts": [
+				"src/ui/js/ext.pushall.special.js",
+				"src/ui/js/ext.pushall.widgets.CategorySelector.js",
+				"src/ui/js/ext.pushall.widgets.PageSelector.js"
+			],
+			"dependencies": [
+				"ext.pushall",
+				"oojs-ui-core",
+				"oojs-ui-widgets",
+				"oojs-ui.styles.icons-content",
+				"oojs-ui-windows",
+				"mediawiki.widgets"
+			],
+			"messages": [
+			]
+		},
+		"ext.pushall.preferences": {
+			"group": "ext.pushall.preferences",
+			"scripts": [
+				"src/ui/js/ext.pushall.preferences.js"
+			],
+			"dependencies": [
+				"oojs-ui-core",
+				"oojs-ui-windows"
+			],
+			"messages": [
+				"prefs-pushall",
+				"prefs-pushall-preference-targets-description",
+				"pushall-preference-targets-action-field-button-change",
+				"pushall-preference-targets-action-field-button-delete",
+				"pushall-preference-targets-button-add",
+				"pushall-preference-targets-header",
+				"pushall-preference-dialog-help-new-bot",
+				"pushall-preference-dialog-field-help",
+				"pushall-preference-dialog-field-articlepath-label",
+				"pushall-preference-dialog-field-endpoint-label",
+				"pushall-preference-dialog-field-login-label",
+				"pushall-preference-dialog-field-key-label",
+				"pushall-preference-dialog-field-wikiname-label",
+				"pushall-preference-dialog-message-remove"
 			]
 		}
+	},
+	"QUnitTestModule": {
+		"localBasePath": "",
+		"remoteExtPath": "PushAll",
+		"scripts": [
+			"tests/ui/js/ext.pushall.test.js"
+		],
+		"dependencies": [
+			"ext.pushall"
+		]
 	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "PushAll"
 	},
 	"Hooks": {
-		"MediaWikiPerformAction": "PushTab::onMediaWikiPerformAction",
-		"SkinTemplateNavigation::Universal": "PushTab::onSkinTemplateNavigationUniversal",
-		"AdminLinks": "PushHooks::onAdminLinks"
+		"MediaWikiPerformAction": "PushAllHooks::onMediaWikiPerformAction",
+		"SkinTemplateNavigation::Universal": "PushAllHooks::onSkinTemplateNavigationUniversal",
+		"ListDefinedTags": "PushAllHooks::onRegisterTags",
+		"ChangeTagsListActive": "PushAllHooks::onRegisterTags",
+		"GetPreferences": "PushAllHooks::onGetPreferences",
+		"BeforePageDisplay": "PushAllHooks::onBeforePageDisplay"
 	},
 	"ConfigRegistry": {
-		"egPushAll": "Push::makeConfig"
+		"egPushAll": "PushAll::makeConfig"
+	},
+	"DefaultUserOptions": {
+		"pushall-targets": "",
+		"pushall-showtab": false,
+		"pushall-defaultIncTemplates": false,
+		"pushall-defaultIncAttachedNamespaces": false,
+		"pushall-defaultIncSubpages": false,
+		"pushall-defaultIncFiles": false
 	},
 	"config_prefix": "egPushAll",
 	"config": {
-		"Targets": {
-			"description": "List of targets that can be pushed to. The array keys are the target names, and the values are the target urls (path to api.php without the '/api.php' part). Example: $egPushAllTargets['English Wikipedia'] = 'http://en.wikipedia.org/w';",
+		"AttachedNamespaces": {
+			"description": "You can attach pages by their namespaces (such as discussion pages) when pushing a page.",
 			"value": {},
-			"merge_strategy": "array_plus"
-		},
-		"ShowTab": {
-			"description": "Show the push action as a tab (if not, it's displayed in the actions dropdown). This only works for skins with an actions dropdown. For others push will always appear as a tab.",
-			"value": false
-		},
-		"IncTemplates": {
-			"description": "You can choose to include templates when pushing a page.",
-			"value": false
-		},
-		"IncSubpages": {
-			"description": "You can choose to include subpages when pushing a page.",
-			"value": false
-		},
-		"IncFiles": {
-			"description": "You can choose to push files used in a page.",
-			"value": false
-		},
-		"AllowLogin": {
-			"description": "Indicate if login options should be added to the push interface or not.",
-			"value": true
-		},
-		"LoginUser": {
-			"description": "Default login data. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": ""
-		},
-		"LoginPass": {
-			"description": "Default login data. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": ""
-		},
-		"LoginDomain": {
-			"description": "Default login data. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": ""
-		},
-		"LoginUsers": {
-			"description": "Default login data per target. Overrides $egPushAllLoginUser and $egPushAllLoginPass when specified. Array keys should be the urls assigned in the $egPushAllTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": {},
-			"merge_strategy": "array_plus"
-		},
-		"LoginPasswords": {
-			"description": "Default login data per target. Overrides $egPushAllLoginUser and $egPushAllLoginPass when specified. Array keys should be the urls assigned in the $egPushAllTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": {
-			},
-			"merge_strategy": "array_plus"
-		},
-		"LoginDomains": {
-			"description": "Default login data per target. Overrides $egPushAllLoginUser and $egPushAllLoginPass when specified. Array keys should be the urls assigned in the $egPushAllTargets array. When set, the values will always be used when there is no login interface. If there is, they will be filled in as default.",
-			"value": {},
-			"merge_strategy": "array_plus"
-		},
-		"BulkWorkers": {
-			"description": "The amount of push 'workers' (simultanious push requests) on Special:Push.",
-			"value": 3
-		},
-		"BatchSize": {
-			"description": "The maximum amount of targets to push a page to in one go.",
-			"value": 3
-		},
-		"DirectFileUploads": {
-			"description": "This is needed when pushing to a wiki that cannot access the source file (for example from a private wiki to a wiki on the internet).",
-			"value": true
-		},
-		"TargetsNamespace": {
-			"description": "Other namespaces to push with the same title page.",
-			"value": {
-			},
-			"merge_strategy": "array_plus_2d"
+			"merge_strategy": "array_merge"
 		}
 	}
 }

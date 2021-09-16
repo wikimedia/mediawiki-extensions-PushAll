@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="../../../../tests/phpunit/bootstrap.maintenance.php"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.8/phpunit.xsd"
+
+	colors="true"
+	backupGlobals="false"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	forceCoversAnnotation="true"
+	failOnWarning="true"
+	stopOnFailure="false"
+	failOnRisky="true"
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	beStrictAboutOutputDuringTests="true"
+	verbose="false">
+	<testsuites>
+		<testsuite name="pushall">
+			<directory>extensions/PushAll</directory>
+			<file>unit/PushAllTest.php</file>
+			<file>unit/PushAllComponentsTest.php</file>
+		</testsuite>
+	</testsuites>
+</phpunit>

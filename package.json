@@ -1,8 +1,7 @@
 {
 	"private": true,
 	"scripts": {
-		"test": "grunt test",
-		"api-testing": "mocha --timeout 0 --recursive tests/api-testing"
+		"test": "grunt test && qunit tests/qunit/setup.js tests/qunit"
 	},
 	"devDependencies": {
 		"api-testing": "^1.4.2",
@@ -10,9 +9,12 @@
 		"grunt": "1.4.0",
 		"grunt-banana-checker": "0.9.0",
 		"grunt-eslint": "23.0.0",
+		"grunt-jsonlint": "1.1.0",
 		"grunt-stylelint": "0.16.0",
-		"stylelint-config-wikimedia": "0.10.3",
-		"grunt-jsonlint": "1.1.0"
+		"jquery": "^3.6.0",
+		"jsdom": "^17.0.0",
+		"qunit": "^2.17.0",
+		"stylelint-config-wikimedia": "0.10.3"
 	},
 	"eslintIgnore": [
 		"coverage",
