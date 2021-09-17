@@ -6,9 +6,9 @@ Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:PushAl
 2021-09-20
 
 * Rewrite all files
-** Each user can put in their preferences their own targeted wiki with their own bots.
-** Each content is now a visible graph where the user can select or not each dependency with their status on the remote wiki.
-** The UI of the Special page respects the standard of mediawiki with OOUI.
+    * Each user can put in their preferences their own targeted wiki with their own bots.
+    * Each content is now a visible graph where the user can select or not each dependency with their status on the remote wiki.
+    * The UI of the Special page respects the standard of mediawiki with OOUI.
 * Insert tests
 * Api is tested in the project BorderCloud/mediawiki-extension-LinkedWiki-CI on two instances of Mediawiki
 

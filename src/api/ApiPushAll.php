@@ -37,10 +37,7 @@ class ApiPushAll extends ApiPushAllBase {
 		$this->targets = PushAll::getTargets( $this->getUser() );
 		foreach ( $params['targets'] as $targetName ) {
 			if ( !$this->targets->exist( $targetName ) ) {
-				$this->dieWithError(
-					$this->msg( 'pushall-error-not-credentials-for-this-target' )->text(),
-					$this->errorCode( 'pushall-error-not-credentials-for-this-target' )
-				);
+				$this->dieWithErrorCodeRemoteWiki( 'pushall-error-not-credentials-for-this-target', $targetName );
 			}
 		}
 		$target = $this->targets->get( $params['target'] );
@@ -53,10 +50,7 @@ class ApiPushAll extends ApiPushAllBase {
 			if ( $title->exists() ) {
 				$this->doRequestUpload( $target, $title );
 			} else {
-				$this->dieWithError(
-					$this->msg( 'pushall-error-title-not-exist' )->text(),
-					$this->errorCode( 'pushall-error-title-not-exist' )
-				);
+				$this->dieWithErrorCodeLocalWiki( 'pushall-error-title-not-exist', $pageTitle );
 			}
 		}
 
@@ -65,12 +59,11 @@ class ApiPushAll extends ApiPushAllBase {
 			if ( $title->exists() ) {
 				$this->doRequestEdit( $target, $title );
 			} else {
-				$this->dieWithError(
-					$this->msg( 'pushall-error-title-not-exist' )->text(),
-					$this->errorCode( 'pushall-error-title-not-exist' )
-				);
+				$this->dieWithErrorCodeLocalWiki( 'pushall-error-title-not-exist', $pageTitle );
 			}
 		}
+
+		$this->doRequestPurge( $target, implode( "|", $params['titles'] ) );
 	}
 
 	/**
@@ -84,10 +77,7 @@ class ApiPushAll extends ApiPushAllBase {
 		$wikipage = WikiPage::factory( $title );
 		$content = $wikipage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
 		if ( empty( $content ) ) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-title-not-allow' )->text(),
-				$this->errorCode( 'pushall-error-title-not-allow' )
-			);
+			$this->dieWithErrorCodeLocalWiki( 'pushall-error-title-not-allow', $title->getPrefixedText() );
 		}
 		$summary = $this->msg(
 			'pushall-import-revision-message',
@@ -119,11 +109,9 @@ class ApiPushAll extends ApiPushAllBase {
 		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
 
 		if ( $response === null ) {
-			$this->dieWithError( print_r( $status->getErrors(), true ),
-				$this->errorCode( 'pushall-error-pushall-failed', $target->name ) );
+			$this->dieWithErrorUnknown( print_r( $status->getErrors(), true ), $target->name );
 		} elseif ( property_exists( $response, 'error' ) && $response->error->code != 'protectedpage' ) {
-			$this->dieWithError( $response->error->info,
-				$this->errorCode( $response->error->info, $target->name ) );
+			$this->dieWithErrorCodeRemoteWiki( $response->error->info, $target->name );
 		}
 
 		if ( property_exists( $response, 'edit' )
@@ -171,6 +159,42 @@ class ApiPushAll extends ApiPushAllBase {
 	}
 
 	/**
+	 * Purge the page in the targeted wiki.
+	 *
+	 * @param PushAllTarget $target
+	 * @param string $titles
+	 */
+	private function doRequestPurge( PushAllTarget $target, string $titles ) {
+		$requestData = [
+			'action' => 'purge',
+			'titles' => $titles,
+			'format' => 'json'
+		];
+
+		$options = [
+			'method' => 'POST',
+			'postData' => $requestData,
+		];
+
+		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
+			->create( $target->endpoint, $options, __METHOD__ );
+
+		if ( !empty( $target->cookie ) ) {
+			$req->setCookieJar( $target->cookie );
+		}
+
+		$status = $req->execute();
+
+		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
+
+		if ( $response === null ) {
+			$this->dieWithErrorUnknown( print_r( $status->getErrors(), true ), $target->name );
+		} elseif ( property_exists( $response, 'error' ) && $response->error->code != 'protectedpage' ) {
+			$this->dieWithErrorUnknown( $response->error->info, $target->name );
+		}
+	}
+
+	/**
 	 * Upload the file with this title in the remote wiki
 	 *
 	 * @param PushAllTarget $target
@@ -181,18 +205,12 @@ class ApiPushAll extends ApiPushAllBase {
 	private function doRequestUpload( PushAllTarget $target, Title $title ) {
 		global $wgSitename;
 		if ( !function_exists( 'curl_init' ) ) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-api-nocurl' )->text(),
-				$this->errorCode( 'pushall-error-api-nocurl' )
-			);
+			$this->dieWithErrorCodeLocalWiki( 'pushall-error-api-nocurl' );
 		} elseif (
 			!defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' )
 			|| !CurlHttpRequest::SUPPORTS_FILE_POSTS
 		) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-api-nofilesupport' )->text(),
-				$this->errorCode( 'pushall-error-api-nofilesupport' )
-			);
+			$this->dieWithErrorCodeLocalWiki( 'pushall-error-api-nofilesupport' );
 		}
 		// TODO remove Http::$httpEngine = 'curl';
 		// Http::$httpEngine is deprecated but it does not work without Curl
@@ -202,10 +220,7 @@ class ApiPushAll extends ApiPushAllBase {
 		$wikipage = WikiPage::factory( $title );
 		$content = $wikipage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
 		if ( empty( $content ) ) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-title-not-allow' )->text(),
-				$this->errorCode( 'pushall-error-title-not-allow' )
-			);
+			$this->dieWithErrorCodeLocalWiki( 'pushall-error-title-not-allow', $title->getPrefixedText() );
 		}
 		$summary = $this->msg(
 			'pushall-import-revision-message',
@@ -245,16 +260,13 @@ class ApiPushAll extends ApiPushAllBase {
 
 		$status = $req->execute();
 		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
-
 		if ( $response === null ) {
-			$this->dieWithError( print_r( $status->getErrors(), true ),
-				$this->errorCode( 'pushall-error-pushall-failed', $target->name ) );
+			$this->dieWithErrorUnknown( print_r( $status->getErrors(), true ), $target->name );
 		} elseif (
 			property_exists( $response, 'error' )
 			&& isset( $response->code ) && $response->code != "fileexists-no-change"
 		) {
-			$this->dieWithError( $response->error->info,
-				$this->errorCode( $response->error->info, $target->name ) );
+			$this->dieWithErrorCodeRemoteWiki( $response->error->info, $target->name );
 		}
 	}
 

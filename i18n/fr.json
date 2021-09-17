@@ -96,12 +96,14 @@
 	"pushall-preference-defaultincsubpages-label": "Inclure par défaut les sous-pages de la page à exporter",
 	"pushall-preference-defaultincfiles-label": "Inclure par défaut les fichiers utilisés dans la page à exporter",
 
-	"pushall-error-title-not-exist": "Le contenu \"$1\" n'existe pas",
-	"pushall-error-title-not-allow": "Vous n'êtes pas autorisé à ouvrir \"$1\"",
+	"pushall-error-title-not-exist": "Le contenu \"$1\" n'existe pas dans ce wiki. Il ne peut être exporté.",
+	"pushall-error-title-not-allow": "Vous n'êtes pas autorisé à ouvrir \"$1\" dans ce wiki.",
 	"pushall-error-user-not-allow": "Vous n'êtes pas autorisé à utiliser l'extension d'exportation (PushAll).",
 	"pushall-error-not-credentials-for-this-target": "Il n'existe pas les informations d'authentification dans vos préférences pour ce wiki distant.",
 	"pushall-error-pushall-failed": "L'exportation a échoué.",
 	"pushall-error-authentication": " L'authentification à $1 a échoué. $2 ",
-	"pushall-error-api-nocurl": "Le logiciel Curl n'est pas installé.",
-	"pushall-error-api-nofilesupport": "Le MediaWiki local ne prend pas en charge le téléversement de fichiers."
+	"pushall-error-api-nocurl": "Le logiciel Curl n'est pas installé. Veuillez contacter l'administrateur de ce wiki.",
+	"pushall-error-api-nofilesupport": "Le MediaWiki local ne prend pas en charge le téléversement de fichiers. Veuillez contacter l'administrateur de ce wiki.",
+	"pushall-error-api-unknown": "Erreur interne de l'api. Voir le détail de l'erreur dans la console de votre navigateur.",
+	"pushall-error-api-known": "Erreur de l'api PushAll."
 }

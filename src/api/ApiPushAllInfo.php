@@ -31,10 +31,7 @@ class ApiPushAllInfo extends ApiPushAllBase {
 		$contents = new PushAllContents( $targets );
 		foreach ( $params['targets'] as $targetName ) {
 			if ( !$targets->exist( $targetName ) ) {
-				$this->dieWithError(
-					$this->msg( 'pushall-error-not-credentials-for-this-target' )->text(),
-					$this->errorCode( 'pushall-error-not-credentials-for-this-target' )
-				);
+				$this->dieWithErrorCodeRemoteWiki( 'pushall-error-not-credentials-for-this-target', $targetName );
 			}
 		}
 		foreach ( $params['targets'] as $targetName ) {
@@ -85,11 +82,9 @@ class ApiPushAllInfo extends ApiPushAllBase {
 		$status = $req->execute();
 		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
 		if ( $response === null ) {
-			$this->dieWithError( print_r( $status->getErrors(), true ),
-				$this->errorCode( 'pushall-error-pushall-failed', $target->name ) );
+			$this->dieWithErrorUnknown( print_r( $status->getErrors(), true ), $target->name );
 		} elseif ( property_exists( $response, 'error' ) ) {
-			$this->dieWithError( $response->error->info,
-				$this->errorCode( $response->error->info, $target->name ) );
+			$this->dieWithErrorCodeRemoteWiki( $response->error->info, $target->name );
 		}
 
 		$this->getResult()->addValue(

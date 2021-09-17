@@ -17,22 +17,58 @@ abstract class ApiPushAllBase extends ApiBase {
 
 	public function execute() {
 		if ( !PushAll::isAllowedToPush( $this->getUser() ) ) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-user-not-allow"' )->text(),
-				$this->errorCode( 'pushall-error-user-not-allow"' )
-			);
+			$this->dieWithErrorCodeLocalWiki( 'pushall-error-user-not-allow"' );
 		}
 		$this->doModuleExecute();
 	}
 
 	/**
-	 * Generate a code to associate a error with a target
+	 * Make an unknown error
+	 *
+	 * @param string $msg
+	 * @param string $targetName
+	 * @throws ApiUsageException
+	 */
+	protected function dieWithErrorUnknown( string $msg, string $targetName = '' ) {
+		$this->dieWithError( 'pushall-error-api-unknown', 'pushall-error-api-unknown',
+			[
+				"text" => $msg,
+				"target" => $targetName
+			]
+		);
+	}
+
+	/**
+	 * Make an error with a code to associate a error with a target
 	 * @param string $msg Tag of the error message
 	 * @param string $targetName Name of targeted wiki
-	 * @return string
 	 */
-	protected static function errorCode( string $msg, string $targetName = '' ) {
-		return 'pushall-errormsg-' . $msg . '-target-' . $targetName;
+	protected function dieWithErrorCodeRemoteWiki( string $msg, string $targetName = '' ) {
+		$this->dieWithError(
+			[ $msg,$targetName ],
+			'pushall-error-api-known',
+
+			[
+				"msg" => $msg,
+				"target" => $targetName
+			]
+		);
+	}
+
+	/**
+	 * Make an error with a code to associate a error with the local wiki
+	 * @param string $msg Tag of the error message
+	 * @param string $titleStr Name of content
+	 */
+	protected function dieWithErrorCodeLocalWiki( string $msg, string $titleStr = '' ) {
+		$this->dieWithError(
+			[ $msg,$titleStr ],
+			'pushall-error-api-known',
+			[
+				"msg" => $msg,
+				"title" => $titleStr
+			]
+		);
 	}
 
 	/**
@@ -62,10 +98,7 @@ abstract class ApiPushAllBase extends ApiBase {
 			|| !property_exists( $response->query->tokens, 'logintoken' )
 			|| empty( $response->query->tokens->logintoken )
 		) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-login-token-failed' )->text(),
-				$this->errorCode( 'pushall-error-token-request-failed', $target->name )
-			);
+			$this->dieWithErrorCodeRemoteWiki( 'pushall-error-token-request-failed', $target->name );
 		}
 		$target->tokenLogin = $response->query->tokens->logintoken;
 		$target->cookie = $req->getCookieJar();
@@ -103,19 +136,13 @@ abstract class ApiPushAllBase extends ApiBase {
 			|| !property_exists( $response, 'login' )
 			|| !property_exists( $response->login, 'result' )
 		) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-authentication', $target->name, '' )->parse(),
-				$this->errorCode( 'pushall-error-authentication', $target->name )
-			);
+			$this->dieWithErrorCodeRemoteWiki( 'pushall-error-authentication', $target->name );
 		}
 
 		if ( $response->login->result == 'Success' ) {
 			$target->cookie = $req->getCookieJar();
 		} else {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-authentication', $target->name, '' )->parse(),
-				$this->errorCode( 'pushall-error-authentication', $target->id )
-			);
+			$this->dieWithErrorCodeRemoteWiki( 'pushall-error-authentication', $target->name );
 		}
 	}
 
@@ -149,10 +176,7 @@ abstract class ApiPushAllBase extends ApiBase {
 			|| !property_exists( $response->query->tokens, 'csrftoken' )
 			|| empty( $response->query->tokens->csrftoken )
 		) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-token-failed' )->text(),
-				$this->errorCode( 'pushall-error-token-failed', $target->name )
-			);
+			$this->dieWithErrorCodeRemoteWiki( 'pushall-error-token-failed', $target->name );
 		}
 		$target->tokenEdit = $response->query->tokens->csrftoken;
 		$target->cookie = $req->getCookieJar();
@@ -195,10 +219,7 @@ abstract class ApiPushAllBase extends ApiBase {
 			|| !array_key_exists( 'query', $response )
 			|| !array_key_exists( 'pages', $response['query'] )
 		) {
-			$this->dieWithError(
-				$this->msg( 'pushall-error-info-failed' )->text(),
-				$this->errorCode( 'pushall-error-info-failed', $target->name )
-			);
+			$this->dieWithErrorCodeRemoteWiki( 'pushall-error-info-failed', $target->name );
 		}
 
 		if ( count( $response['query']['pages'] ) > 0 ) {

@@ -1,7 +1,8 @@
 {
 	"private": true,
 	"scripts": {
-		"test": "grunt test && qunit tests/qunit/setup.js tests/qunit"
+		"test": "grunt test && qunit tests/qunit/setup.js tests/qunit",
+		"fix": "grunt test --fix"
 	},
 	"devDependencies": {
 		"api-testing": "^1.4.2",

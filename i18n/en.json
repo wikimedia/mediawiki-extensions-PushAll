@@ -96,12 +96,14 @@
 	"pushall-preference-defaultincsubpages-label": "Include by default the subpages of the page to push",
 	"pushall-preference-defaultincfiles-label": "Include by default the files used in the page to push",
 
-	"pushall-error-title-not-exist": "The page \"$1\" doesn't exist",
-	"pushall-error-title-not-allow": "You are not allowed to open the page \"$1\"",
+	"pushall-error-title-not-exist": "The page \"$1\" doesn't exist in this wiki. You cannot push it.",
+	"pushall-error-title-not-allow": "You are not allowed to open the page \"$1\" in this wiki.",
 	"pushall-error-user-not-allow": "You are not allowed to use PushAll.",
 	"pushall-error-not-credentials-for-this-target": "There are not credentials in your preferences for this remote wiki.",
 	"pushall-error-pushall-failed": "The push failed.",
 	"pushall-error-authentication": "Authentication at $1 failed. $2",
-	"pushall-error-api-nocurl": "cURL is not installed.\nSet $egPushAllDirectFileUploads to false on public wikis, or install cURL for private wikis",
-	"pushall-error-api-nofilesupport": "The local MediaWiki does not have support for posting files.\nOn public wikis, set $egPushAllDirectFileUploads to false.\nOn private wikis, apply the patch linked from the Push documentation or update MediaWiki itself."
+	"pushall-error-api-nocurl": "Curl is not installed. Please, contact the administrator of this wiki.",
+	"pushall-error-api-nofilesupport": "The local MediaWiki does not have support for posting files. Please, contact the administrator of this wiki.",
+	"pushall-error-api-unknown": "Internal api error. See details in the console of browser.",
+	"pushall-error-api-known": "PushAll api error."
 }

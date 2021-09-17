@@ -78,6 +78,8 @@
 				"pushall-error-authentication",
 				"pushall-error-api-nocurl",
 				"pushall-error-api-nofilesupport",
+				"pushall-error-api-unknown",
+				"pushall-error-api-known",
 
 				"pushall-button-pushing",
 				"pushall-button-completed",

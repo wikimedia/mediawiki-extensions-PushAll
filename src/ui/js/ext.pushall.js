@@ -349,41 +349,50 @@
 		$errorPushAll.hide();
 		$errorPushAll.text( '' );
 		for ( const targetName in wgPushAllTargets ) {
-			const $errorTarget = $( '#errortarget' + wgPushAllTargets[ targetName ].id );
+			const $errorTarget = $( '#errorpushalltarget' + wgPushAllTargets[ targetName ].id );
 			$errorTarget.hide();
 			$errorTarget.text( '' );
 		}
 	};
-	PushAll.handleError = function ( errorCode ) {
-		const regexpError = /pushall-errormsg-(.*)-target-(.*)/;
-		const matchError = errorCode.match( regexpError );
+	PushAll.handleError = function ( errorCode, details ) {
 		const $errorDiv = $( '#errorpushall' );
-		if ( matchError ) {
-			if ( matchError[ 2 ] ) {
-				const $errorTargetDiv = $( '#errorpushalltarget' + wgPushAllTargets[ matchError[ 2 ] ].id );
-				// todo doc
+		if ( errorCode === 'pushall-error-api-known' ) {
+			if ( 'target' in details.error && 'msg' in details.error ) {
+				const $errorTargetDiv = $( '#errorpushalltarget' + wgPushAllTargets[ details.error.target ].id );
 				// Messages that can be used here:
-				// * pushall-errormsg-*-target-*
+				// * todo doc
 				// eslint-disable-next-line mediawiki/msg-doc
-				$errorTargetDiv.append( mw.msg( matchError[ 1 ] ) );
+				$errorTargetDiv.append( mw.msg( details.error.msg ) );
 				$errorTargetDiv.show();
 				PushAll.displayStatusUnknownForTarget(
-					wgPushAllTargets[ matchError[ 2 ] ],
+					wgPushAllTargets[ details.error.target ],
 					wgPushAllContents
 				);
-			} else {
-				// todo doc
+			} else if ( 'title' in details.error && 'msg' in details.error ) {
 				// Messages that can be used here:
-				// * pushall-err-*
+				// * todo doc
 				// eslint-disable-next-line mediawiki/msg-doc
-				$errorDiv.append( mw.msg( matchError[ 1 ] ) );
+				$errorDiv.append( mw.msg( details.error.msg, details.error.title ) );
+				$errorDiv.show();
+			}
+		} else {
+			if ( 'target' in details.error && details.error.target !== '' && 'text' in details.error ) {
+				const $errorTargetDiv = $( '#errorpushalltarget' + wgPushAllTargets[ details.error.target ].id );
+				$errorTargetDiv.append( details.error.text );
+				$errorTargetDiv.show();
+				PushAll.displayStatusUnknownForTarget(
+					wgPushAllTargets[ details.error.target ],
+					wgPushAllContents
+				);
+			} else if ( 'text' in details.error ) {
+				$errorDiv.append( details.error.text );
+				$errorDiv.show();
+				PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
+			} else if ( 'info' in details.error ) {
+				$errorDiv.append( details.error.info );
 				$errorDiv.show();
 				PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
 			}
-		} else {
-			$errorDiv.append( errorCode );
-			$errorDiv.show();
-			PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
 		}
 	};
 	PushAll.displayStatusUnknownForTarget = function ( target, contents ) {
@@ -499,9 +508,9 @@
 				PushAll.refreshInfo();
 				buttonPushAll.disabled = false;
 			} )
-			.fail( function ( errorCode ) {
+			.fail( function ( errorCode, details ) {
 				buttonPushAll.innerHTML = mw.msg( 'pushall-button-failed' );
-				PushAll.handleError( errorCode );
+				PushAll.handleError( errorCode, details );
 				buttonPushAll.disabled = false;
 			} );
 	};
@@ -535,8 +544,8 @@
 					PushAll.refreshContentsToPush();
 				}
 			} )
-			.fail( function ( errorCode ) {
-				PushAll.handleError( errorCode );
+			.fail( function ( errorCode, details ) {
+				PushAll.handleError( errorCode, details );
 			} );
 	};
 	/**
