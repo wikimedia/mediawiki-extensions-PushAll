@@ -26,7 +26,8 @@
 		} );
 
 		function refreshTargetsList() {
-			const targets = JSON.parse( $targets.val() );
+			const valueJson = $targets.val();
+			const targets = valueJson === '' ? [] : JSON.parse( valueJson );
 			const list = [];
 			for ( const key in targets ) {
 				list.push( createItemOfTargetActionField( key ) );

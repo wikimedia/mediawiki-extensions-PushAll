@@ -80,6 +80,7 @@
 				"pushall-error-api-nofilesupport",
 				"pushall-error-api-unknown",
 				"pushall-error-api-known",
+				"pushall-error-token-request-failed",
 
 				"pushall-button-pushing",
 				"pushall-button-completed",
