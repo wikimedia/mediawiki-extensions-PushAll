@@ -105,5 +105,6 @@
 	"pushall-error-api-nocurl": "{{doc-important|Do not translate \"<code>$egPushAllDirectFileUploads</code>\".}}",
 	"pushall-error-api-nofilesupport": "{{doc-important|Do not translate \"<code>$egPushAllDirectFileUploads</code>\".}}",
 	"pushall-error-api-unknown": "Used as error message",
-	"pushall-error-api-known": "Used as error message"
+	"pushall-error-api-known": "Used as error message",
+	"pushall-error-captcha-enable-with-bot-for-this-target": "Used as error message"
 }

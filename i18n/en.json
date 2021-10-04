@@ -105,5 +105,6 @@
 	"pushall-error-api-nocurl": "Curl is not installed. Please, contact the administrator of this wiki.",
 	"pushall-error-api-nofilesupport": "The local MediaWiki does not have support for posting files. Please, contact the administrator of this wiki.",
 	"pushall-error-api-unknown": "Internal api error. See details in the console of browser.",
-	"pushall-error-api-known": "PushAll api error."
+	"pushall-error-api-known": "PushAll api error.",
+	"pushall-error-captcha-enable-with-bot-for-this-target": "Your bot cannot save pages in the remote wiki because the captcha is enabled for bots. Ask to administrator of target wiki to disable captcha for bots (with $wgGroupPermissions['bot']['skipcaptcha'] = true; in the localsettings)"
 }

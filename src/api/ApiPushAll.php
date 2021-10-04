@@ -116,25 +116,33 @@ class ApiPushAll extends ApiPushAllBase {
 
 		if ( property_exists( $response, 'edit' )
 			&& property_exists( $response->edit, 'result' )
-			&& $response->edit->result == 'Success'
 		) {
-			if ( property_exists( $response->edit, 'newrevid' )
-				&& property_exists( $response->edit, 'newtimestamp' )
-			) {
-				PushAllTags::addTags(
-					$wikipage->getLatest(),
-					$target->name,
-					$response->edit->newrevid,
-					$response->edit->newtimestamp
-				);
-			} elseif ( property_exists( $response->edit, 'nochange' ) ) {
-				$info = $this->getInfo( $target, $title );
-				if ( !empty( $info ) ) {
+			if ( $response->edit->result == 'Success' ) {
+				if ( property_exists( $response->edit, 'newrevid' )
+					&& property_exists( $response->edit, 'newtimestamp' )
+				) {
 					PushAllTags::addTags(
 						$wikipage->getLatest(),
 						$target->name,
-						$info['lasterevid'],
-						$info['touched']
+						$response->edit->newrevid,
+						$response->edit->newtimestamp
+					);
+				} elseif ( property_exists( $response->edit, 'nochange' ) ) {
+					$info = $this->getInfo( $target, $title );
+					if ( !empty( $info ) ) {
+						PushAllTags::addTags(
+							$wikipage->getLatest(),
+							$target->name,
+							$info['lasterevid'],
+							$info['touched']
+						);
+					}
+				}
+			} elseif ( $response->edit->result == 'Failure' ) {
+				if ( property_exists( $response->edit, 'captcha' ) ) {
+					$this->dieWithErrorCodeRemoteWiki(
+						'pushall-error-captcha-enable-with-bot-for-this-target',
+						$target->name
 					);
 				}
 			}

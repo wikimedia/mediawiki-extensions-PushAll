@@ -2,6 +2,12 @@ These are the release notes for the Push extension.
 
 Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:PushAll
 
+=== Version 2.0.1 ===
+2021-10-04
+
+* Fixes the dependency with the LinkedWiki extension
+* Add error message when target wikis did not disable captcha for bots
+
 === Version 2.0.0 ===
 2021-09-20
 

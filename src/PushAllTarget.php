@@ -80,8 +80,25 @@ class PushAllTarget {
 		$this->name = $name;
 		$this->id = uniqid();
 		$this->endpoint = $endpoint;
-		$this->articlePath = $articlePath . ( str_ends_with( $articlePath, '/' ) ? '' : '/' );
+		// todo: with PHP8
+		// $this->articlePath = $articlePath . ( str_ends_with( $articlePath, '/' ) ? '' : '/' );
+		$this->articlePath = $articlePath . ( self::endsWith( $articlePath, '/' ) ? '' : '/' );
 		$this->login = $login;
 		$this->key = $key;
+	}
+
+	/**
+	 * This function replace temporary the future function str_ends_with in PHP8
+	 *
+	 * @param string $haystack
+	 * @param string $needle
+	 * @return bool
+	 */
+	private static function endsWith( $haystack, $needle ) {
+		$length = strlen( $needle );
+		if ( !$length ) {
+			return true;
+		}
+		return substr( $haystack, -$length ) === $needle;
 	}
 }

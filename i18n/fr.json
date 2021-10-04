@@ -105,5 +105,6 @@
 	"pushall-error-api-nocurl": "Le logiciel Curl n'est pas installé. Veuillez contacter l'administrateur de ce wiki.",
 	"pushall-error-api-nofilesupport": "Le MediaWiki local ne prend pas en charge le téléversement de fichiers. Veuillez contacter l'administrateur de ce wiki.",
 	"pushall-error-api-unknown": "Erreur interne de l'api. Voir le détail de l'erreur dans la console de votre navigateur.",
-	"pushall-error-api-known": "Erreur de l'api PushAll."
+	"pushall-error-api-known": "Erreur de l'api PushAll.",
+	"pushall-error-captcha-enable-with-bot-for-this-target": "Votre bot ne peut pas transférer de pages dans le wiki distant car le captcha est activé pour les bots. Demandez à l'administrateur du wiki cible de désactiver le captcha pour les bots (avec $wgGroupPermissions['bot']['skipcaptcha'] = true; dans le localsettings)"
 }
