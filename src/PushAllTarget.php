@@ -80,6 +80,13 @@ class PushAllTarget {
 		$this->name = $name;
 		$this->id = uniqid();
 		$this->endpoint = $endpoint;
+
+		$parts = parse_url( $endpoint );
+		if ( $parts !== false ) {
+			$this->endpointPath = $parts['path'];
+			$this->endpointDomain = $parts['host'];
+		}
+
 		// todo: with PHP8
 		// $this->articlePath = $articlePath . ( str_ends_with( $articlePath, '/' ) ? '' : '/' );
 		$this->articlePath = $articlePath . ( self::endsWith( $articlePath, '/' ) ? '' : '/' );
@@ -100,5 +107,23 @@ class PushAllTarget {
 			return true;
 		}
 		return substr( $haystack, -$length ) === $needle;
+	}
+
+	/**
+	 * Read the host of the target
+	 *
+	 * @return string
+	 */
+	public function getEndpointHost() {
+		return $this->endpointDomain;
+	}
+
+	/**
+	 * Read the path of the target
+	 *
+	 * @return string
+	 */
+	public function getEndpointPath() {
+		return $this->endpointPath;
 	}
 }

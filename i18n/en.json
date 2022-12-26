@@ -43,7 +43,7 @@
 	"pushall-tools-button-checkall": "Check all",
 	"pushall-tools-button-uncheckall": "Uncheck all",
 
-	"pushall-option-force-push": "Ignore the warnings",
+	"pushall-option-force-push": "Ignore warnings",
 
 	"pushall-status-search-in-progress": "Search status in progress",
 	"pushall-remote-content-status-not-exist": "Remote page does not exist. You can push the local version.",

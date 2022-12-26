@@ -214,11 +214,33 @@ class PushAllContent {
 	 * @return array associative array index by titles
 	 */
 	private static function getTemplates( $pageName ) {
-		return self::getLinks( [ $pageName ],
-			'templatelinks',
-			[ 'tl_namespace AS namespace', 'tl_title AS title' ],
-			[ 'page_id=tl_from' ]
-		);
+		$result = [];
+		$dbr = wfGetDB( DB_REPLICA );
+		$title = Title::newFromText( $pageName );
+		if ( $title ) {
+			$pageSet[$title->getPrefixedText()] = true;
+			$resultDb = $dbr->select(
+				[ 'page', 'templatelinks', 'linktarget' ],
+				[ 'lt_namespace AS namespace', 'lt_title AS title' ],
+				[
+					'page_namespace' => $title->getNamespace(),
+					'page_title' => $title->getDBkey()
+				],
+
+				__METHOD__,
+				[],
+				[
+					'templatelinks' => [ 'INNER JOIN', [ 'page_id = tl_from' ] ],
+					'linktarget' => [ 'INNER JOIN', [ 'tl_target_id = lt_id' ] ]
+				]
+			);
+			foreach ( $resultDb as $row ) {
+				$rowTitle = Title::makeTitle( $row->namespace, $row->title );
+				$result[] = $rowTitle->getPrefixedText();
+			}
+		}
+		// error_log( "TEMPLATES" . print_r($result,true) );
+		return $result;
 	}
 
 	/**
@@ -262,11 +284,35 @@ class PushAllContent {
 	 * @return array associative array index by titles
 	 */
 	private static function getLocalFiles( $pageName ) {
-		return self::getLinks( [ $pageName ],
-			'imagelinks',
-			[ NS_FILE . ' AS namespace', 'il_to AS title' ],
-			[ 'page_id=il_from','page_namespace=il_from_namespace' ]
-		);
+		$result = [];
+		$dbr = wfGetDB( DB_REPLICA );
+		// foreach ( $pageNames as $pageName ) {
+		$title = Title::newFromText( $pageName );
+		if ( $title ) {
+			$resultDb = null;
+			$pageSet[$title->getPrefixedText()] = true;
+				$resultDb = $dbr->select(
+				[ 'page', 'imagelinks' ],
+					[ NS_FILE . ' AS namespace', 'il_to AS title' ],
+					[
+					'page_namespace' => $title->getNamespace(),
+					'page_title' => $title->getDBkey()
+					],
+				__METHOD__,
+				[],
+					[
+					'imagelinks' => [ 'INNER JOIN', [ 'page_id=il_from','page_namespace=il_from_namespace' ] ]
+				]
+				);
+			if ( $resultDb ) {
+				foreach ( $resultDb as $row ) {
+					$rowTitle = Title::makeTitle( $row->namespace, $row->title );
+					$result[] = $rowTitle->getPrefixedText();
+				}
+			}
+		}
+		// error_log( "FILES" . print_r($result,true) );
+		return $result;
 	}
 
 	/**
@@ -311,7 +357,6 @@ class PushAllContent {
 					'page',
 					'revision',
 					'comment',
-					'revision_actor_temp',
 					'actor',
 					// phpcs:ignore
 					'(SELECT ct_rev_id,ct_params FROM `change_tag_def`, `change_tag` WHERE ctd_id = ct_tag_id AND  ctd_name = "pushall-push") as pushtags'
@@ -332,13 +377,9 @@ class PushAllContent {
 						'LEFT JOIN',
 						[ 'rev_comment_id=comment_id' ]
 					],
-					'revision_actor_temp' => [
-						'LEFT JOIN',
-						[ 'revactor_rev=rev_id' ]
-					],
 					'actor' => [
 						'LEFT JOIN',
-						[ 'rev_actor=actor_id OR revactor_actor=actor_id' ]
+						[ 'rev_actor=actor_id' ]
 					],
 					// phpcs:ignore
 					'(SELECT ct_rev_id,ct_params FROM `change_tag_def`, `change_tag` WHERE ctd_id = ct_tag_id AND  ctd_name = "'
@@ -379,43 +420,6 @@ class PushAllContent {
 				}
 				if ( !$continue ) {
 					break;
-				}
-			}
-		}
-		return $result;
-	}
-
-	/**
-	 * Expand a list of pages to include items used in those pages.
-	 *
-	 * @param array $pageNames
-	 * @param string $table
-	 * @param array $fields
-	 * @param array $join
-	 * @return array
-	 */
-	private static function getLinks( $pageNames, $table, $fields, $join ) {
-		$result = [];
-		$dbr = wfGetDB( DB_REPLICA );
-		foreach ( $pageNames as $pageName ) {
-			$title = Title::newFromText( $pageName );
-			if ( $title ) {
-				$pageSet[$title->getPrefixedText()] = true;
-				$resultDb = $dbr->select(
-					[ 'page', $table ],
-					$fields,
-					array_merge(
-						$join,
-						[
-							'page_namespace' => $title->getNamespace(),
-							'page_title' => $title->getDBkey()
-						]
-					),
-					__METHOD__
-				);
-				foreach ( $resultDb as $row ) {
-					$rowTitle = Title::makeTitle( $row->namespace, $row->title );
-					$result[] = $rowTitle->getPrefixedText();
 				}
 			}
 		}

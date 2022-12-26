@@ -258,7 +258,7 @@ final class PushAllComponents {
 		return Html::rawElement(
 				'div',
 				[
-					'class' => 'errorbox mw-content-ltr',
+					'class' => 'mw-message-box mw-message-box-error mw-content-ltr',
 					'style' => ( count( $errors ) > 0 ? '' : 'display:none;' ) . 'max-width: 900px;',
 					'id' => 'errorpushall'
 				],
@@ -307,7 +307,7 @@ final class PushAllComponents {
 					'div',
 					[
 						'id' => 'errorpushalltarget' . $target->id,
-						'class' => 'errorbox mw-content-ltr',
+						'class' => 'mw-message-box mw-message-box-error mw-content-ltr',
 						'style' => 'display:none'
 					]
 				)

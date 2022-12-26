@@ -129,7 +129,7 @@ class SpecialPushAll extends SpecialPage {
 			Html::rawElement(
 				'div',
 				[
-					'class' => 'errorbox mw-content-ltr',
+					'class' => 'mw-message-box mw-message-box-error mw-content-ltr',
 					'style' => 'display:none;max-width: 50em;',
 					'id' => 'errorpushallspecial'
 				]

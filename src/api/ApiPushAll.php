@@ -8,6 +8,7 @@
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
 
+use GuzzleHttp\Psr7;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 
@@ -212,18 +213,6 @@ class ApiPushAll extends ApiPushAllBase {
 	 */
 	private function doRequestUpload( PushAllTarget $target, Title $title ) {
 		global $wgSitename;
-		if ( !function_exists( 'curl_init' ) ) {
-			$this->dieWithErrorCodeLocalWiki( 'pushall-error-api-nocurl' );
-		} elseif (
-			!defined( 'CurlHttpRequest::SUPPORTS_FILE_POSTS' )
-			|| !CurlHttpRequest::SUPPORTS_FILE_POSTS
-		) {
-			$this->dieWithErrorCodeLocalWiki( 'pushall-error-api-nofilesupport' );
-		}
-		// TODO remove Http::$httpEngine = 'curl';
-		// Http::$httpEngine is deprecated but it does not work without Curl
-		// => Bug report : https://phabricator.wikimedia.org/T289237
-		Http::$httpEngine = 'curl';
 
 		$wikipage = WikiPage::factory( $title );
 		$content = $wikipage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
@@ -242,32 +231,60 @@ class ApiPushAll extends ApiPushAllBase {
 			[ 'src' => $file->getPath() ]
 		);
 
-		$requestData = [
-			'action' => 'upload',
-			'format' => 'json',
-			'token' => $target->tokenEdit,
-			'filename' => $title->getFullText(),
-			'comment' => $summary,
-			'ignorewarnings' => '1',
-			// $requestData['file'] = '@' . $localFile->getPath();
-			'file' => new CurlFile( $localFile->getPath() )
+		$multipart = [
+			[
+				'Content-type' => 'multipart/form-data',
+				'name'     => 'file',
+				'contents' => Psr7\Utils::tryFopen( $localFile->getPath(), 'r' ),
+			],
+			[
+				'name'     => 'filename',
+				'contents' => $file->getName(),
+			],
+			[
+				'name'     => 'action',
+				'contents' => 'upload',
+			],
+			[
+				'name'     => 'format',
+				'contents' => 'json',
+			],
+			[
+				'name'     => 'token',
+				'contents' => $target->tokenEdit,
+			],
+			[
+				'name'     => 'comment',
+				'contents' => $summary,
+			],
+			[
+				'name'     => 'ignorewarnings',
+				'contents' => '1',
+			]
+			];
+
+		// error_log( "options " . print_r($multipart,true) );
+
+		$guzzleClient = MediaWikiServices::getInstance()->getHttpRequestFactory()->createGuzzleClient();
+
+		$headers = [
+			'Accept'        => 'application/json',
 		];
-
-		$options = [
-			'method' => 'POST',
-			'timeout' => 'default',
-			'postData' => $requestData
-		];
-
-		$req = MediaWikiServices::getInstance()->getHttpRequestFactory()
-			->create( $target->endpoint, $options, __METHOD__ );
-
 		if ( !empty( $target->cookie ) ) {
-			$req->setCookieJar( $target->cookie );
+			$headers['Cookie'] = $target->cookie->serializeToHttpRequest(
+				$target->getEndpointPath() ?: '/',
+				$target->getEndpointHost()
+			);
 		}
+		// error_log( "cookies " . print_r($target->cookie,true) . print_r($headers,true));
 
-		$status = $req->execute();
-		$response = $status->isOK() ? FormatJson::decode( $req->getContent() ) : null;
+		$req = $guzzleClient->request( 'POST', $target->endpoint, [
+			'multipart' => $multipart,
+			'headers' => $headers
+			// ,'debug' => fopen('/var/log/php-fpm/www-error.log', 'a+'),
+		] );
+
+		$response = $req->getStatusCode() === 200 ? FormatJson::decode( $req->getBody()->__toString() ) : null;
 		if ( $response === null ) {
 			$this->dieWithErrorUnknown( print_r( $status->getErrors(), true ), $target->name );
 		} elseif (

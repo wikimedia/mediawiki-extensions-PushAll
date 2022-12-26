@@ -77,6 +77,17 @@ class PushAllContents {
 	 */
 	public function addContentToRoot( string $titlePrefixed ) {
 		$content = PushAllContent::factory( $titlePrefixed, $this, $this->targets );
+
+		$title = Title::newFromText( $titlePrefixed );
+		$namespace = $title->getNamespace();
+
+		if ( $namespace == NS_FILE ) {
+			$content->isFile = true;
+			$this->addFile( $content );
+		} elseif ( $namespace == NS_TEMPLATE ) {
+			$content->isTemplate = true;
+		}
+
 		$this->contentsGraph[$titlePrefixed] = $content;
 		$this->addPage( $content );
 	}
