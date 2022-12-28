@@ -10,7 +10,7 @@
 	"type": "other",
 	"manifest_version": 2,
 	"requires": {
-		"MediaWiki": ">= 1.39"
+		"MediaWiki": ">= 1.38"
 	},
 	"APIModules": {
 		"pushall": "ApiPushAll",
