@@ -2,8 +2,7 @@
 	"name": "bordercloud/pushall",
 	"description": "This extension push all content (images, modules, templates), subpages and associated namespaces to other wikis.",
 	"type": "mediawiki-extension",
-	"require": {
-	},
+	"require": {},
 	"license": "GPL-3.0-or-later",
 	"authors": [
 		{
@@ -21,11 +20,12 @@
 		"test": [
 			"parallel-lint . --exclude vendor --exclude node_modules",
 			"minus-x check .",
-			"phpcs -p -s"
+			"@phpcs"
 		],
 		"fix": [
 			"minus-x fix .",
 			"phpcbf"
-		]
+		],
+		"phpcs": "phpcs -sp --cache"
 	}
 }

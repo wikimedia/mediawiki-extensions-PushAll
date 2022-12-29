@@ -1,4 +1,5 @@
 {
+	"name": "PushAll",
 	"private": true,
 	"scripts": {
 		"test": "grunt test && qunit tests/qunit/setup.js tests/qunit",
