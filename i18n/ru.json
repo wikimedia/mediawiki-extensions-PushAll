@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kareyac"
+		]
+	},
+	"pushall-tools-header": "Инструменты",
+	"pushall-tools-header-contents": "Содержание",
+	"pushall-tools-header-check": "Проверить",
+	"pushall-tools-header-subpages": "Подстраницы",
+	"pushall-tools-header-files": "Файлы",
+	"pushall-tools-button-collapse": "Свернуть",
+	"pushall-special-page-action-field-top-label": "Добавить страницу:",
+	"pushall-special-page-action-field-button": "Добавить",
+	"pushall-special-category-action-field-button": "Добавить",
+	"pushall-special-namespace-action-field-button": "Добавить",
+	"pushall-preference-dialog-field-help": "Пример:",
+	"pushall-preference-dialog-field-wikiname-label": "Название вики"
+}

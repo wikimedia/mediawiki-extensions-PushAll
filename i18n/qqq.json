@@ -6,7 +6,6 @@
 	},
 	"pushall-special": "{{doc-special|Push}}",
 	"pushall-tab-text": "{{Identical|Push}}",
-
 	"pushall-tab-options": "Used as header",
 	"pushall-button-text": "{{Identical|Push}}",
 	"pushall-tab-desc": "Used as description for the tab.\n\nThe page title for this message is {{msg-mw|pushall-tab-title}}.",
@@ -28,7 +27,6 @@
 	"pushall-legend-red": "Used in the legend",
 	"pushall-legend-purple": "Used in the legend",
 	"pushall-legend-black": "Used in the legend",
-
 	"pushall-tools-header": "Used as header",
 	"pushall-tools-header-contents": "Used as header",
 	"pushall-tools-header-check": "Used as header",
@@ -42,9 +40,7 @@
 	"pushall-tools-button-exclude": "Used as button text",
 	"pushall-tools-button-checkall": "Used as header",
 	"pushall-tools-button-uncheckall": "Used as header",
-
 	"pushall-option-force-push": "Used as label",
-
 	"pushall-status-search-in-progress": "Used in the status label of a page/file",
 	"pushall-remote-content-status-not-exist": "Used as status message of remote content before pushing",
 	"pushall-remote-content-status-protected": "Used as status message of remote content before pushing",
@@ -53,13 +49,11 @@
 	"pushall-remote-content-status-obsolete": "Used as status message of remote content before pushing",
 	"pushall-remote-content-status-obsolete-and-diverge": "Used as status message of remote content before pushing",
 	"pushall-remote-content-status-unknown": "Used as status message of remote content before pushing",
-
 	"pushall-checkbox-tooltip-will-push": "Tooltip message",
 	"pushall-checkbox-tooltip-wont-push": "Tooltip message",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Tooltip message",
 	"pushall-checkbox-tooltip-push-useless": "Tooltip message",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Tooltip message",
-
 	"pushall-special-description": "Used as description message",
 	"pushall-special-page-action-field-top-label": "Used as label of a action field",
 	"pushall-special-page-action-field-button": "Used as button label of a action field",
@@ -72,12 +66,10 @@
 	"pushall-special-namespace-action-field-placeholder": "Used as placeholder of a action field",
 	"pushall-special-pages-selectarea-top-label": "Used as label of a textarea field",
 	"pushall-special-button-submit-analyze": "Used as button label",
-
 	"prefs-pushall": "Tab name in the preferences",
 	"prefs-pushall-preference-targets": "Name of a section in the preferences",
 	"prefs-pushall-preference-targets-description": "Description of a section in the preferences",
 	"prefs-pushall-preference-parameters": "Description of a section in the preferences",
-
 	"pushall-preference-targets-action-field-button-change": "Used as button label",
 	"pushall-preference-targets-action-field-button-delete": "Used as button label",
 	"pushall-preference-targets-button-add": "Used as button label",
@@ -95,7 +87,6 @@
 	"pushall-preference-defaultincattachednamespaces-label": "Used as label",
 	"pushall-preference-defaultincsubpages-label": "Used as label",
 	"pushall-preference-defaultincfiles-label": "Used as label",
-
 	"pushall-error-title-not-exist": "Used as error message",
 	"pushall-error-title-not-allow": "Used as error message",
 	"pushall-error-user-not-allow": "Used as error message",

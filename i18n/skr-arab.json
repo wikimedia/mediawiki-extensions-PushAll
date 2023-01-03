@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saraiki"
+		]
+	},
+	"pushall-tools-header": "آوزار",
+	"pushall-tools-header-subpages": "ذیلی ورقے",
+	"pushall-tools-header-files": "فائلاں",
+	"pushall-tools-button-expand": "ودھاؤ",
+	"pushall-tools-button-collapse": "لکاؤ",
+	"pushall-special-category-action-field-button": "شامل کرو",
+	"pushall-special-namespace-action-field-button": "شامل کرو",
+	"pushall-preference-targets-action-field-button-delete": "مٹاؤ",
+	"pushall-preference-dialog-field-help": "مثال:"
+}
