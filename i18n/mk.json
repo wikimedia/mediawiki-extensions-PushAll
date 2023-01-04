@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Bjankuloski06"
+		]
+	},
+	"pushall-special": "Пренесување страници",
+	"pushall-tab-text": "Пренеси",
+	"pushall-tab-options": "Нагодувања",
+	"pushall-button-text": "Пренеси",
+	"pushall-tab-desc": "Ова јазиче ви овозможува да ја пренесете тековната преработка на страницава на едно или повеќе викија.",
+	"pushall-button-pushing": "Пренесувам",
+	"pushall-button-completed": "Преносот заврши",
+	"pushall-button-nothing-to-push": "Нема што да се пренесе",
+	"pushall-button-failed": "Преносот не успеа",
+	"pushall-targets-total": "Има вкупно $1 {{PLURAL:$1|одредница|одредници}}.",
+	"pushall-button-all": "Пренеси сè",
+	"pushall-tab-title": "Пренеси ја $1",
+	"pushall-targets": "Одредници за преносот",
+	"pushall-import-revision-message": "Пренесено од $1.",
+	"pushall-remote-pages": "Далечински страници",
+	"pushall-legend-title": "Толкување:",
+	"pushall-legend-gray": "Состојба на пребарувањето на оддалечената страница/податотека.",
+	"pushall-legend-chartreuse": "Оддалечената страница/податотека е веќе подновена. Нема што да се прави.",
+	"pushall-legend-green": "Оддалечената страница не постои или не се развила од последното пренесување, па затоа сега е застарена. Можете да ја пренесете последната верзија.",
+	"pushall-legend-darkorange": "Ќе треба да ги споите измените на оддалечената страница пред да направите пренос со можноста „занемари предупредувања“.",
+	"pushall-legend-red": "Месната страница е веќе пренесена, а оддалечената страница се има изменето. За да презапишете врз овие промени, можете да го направите преносот со можноста „занемари предупредувања“.",
+	"pushall-legend-purple": "Оддалечената страница е заштитена. Не можете да ја пренесете оваа страница/податотека.",
+	"pushall-legend-black": "Оддалечената состојба е непозната.",
+	"pushall-tools-header": "Алатки",
+	"pushall-tools-header-contents": "Содржина",
+	"pushall-tools-header-check": "Провери",
+	"pushall-tools-header-subpages": "Потстраници"
+}

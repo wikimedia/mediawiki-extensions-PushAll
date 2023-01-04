@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"MathXplore"
+		]
+	},
+	"pushall-tab-text": "プッシュ",
+	"pushall-tab-options": "オプション",
+	"pushall-button-text": "プッシュ",
+	"pushall-tools-header": "ツール",
+	"pushall-tools-header-contents": "内容",
+	"pushall-tools-header-check": "チェック",
+	"pushall-tools-header-subpages": "下位ページ",
+	"pushall-tools-header-files": "ファイル",
+	"pushall-tools-header-templates": "テンプレート/モジュール",
+	"pushall-tools-button-expand": "展開する",
+	"pushall-tools-button-collapse": "折り畳む",
+	"pushall-tools-button-exclude": "除外",
+	"pushall-tools-button-checkall": "すべてチェック",
+	"pushall-tools-button-uncheckall": "すべてのチェックを外す",
+	"pushall-option-force-push": "警告を無視",
+	"pushall-special-page-action-field-button": "追加",
+	"pushall-special-category-action-field-button": "追加",
+	"pushall-special-namespace-action-field-button": "追加",
+	"pushall-special-namespace-action-field-placeholder": "名前空間を選択",
+	"prefs-pushall": "対象となるウィキ",
+	"prefs-pushall-preference-parameters": "オプション:",
+	"pushall-preference-targets-action-field-button-change": "改変",
+	"pushall-preference-targets-action-field-button-delete": "削除",
+	"pushall-preference-dialog-field-help": "例"
+}

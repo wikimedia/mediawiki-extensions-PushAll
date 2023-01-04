@@ -5,9 +5,13 @@
 		]
 	},
 	"pushall-tab-options": "Opcije",
+	"pushall-legend-title": "Legenda:",
 	"pushall-tools-header": "Alati",
 	"pushall-tools-header-contents": "Sadržaj",
 	"pushall-tools-header-check": "Provjeri",
 	"pushall-tools-header-subpages": "Podstranice",
-	"pushall-tools-header-files": "Datoteke"
+	"pushall-tools-header-files": "Datoteke",
+	"pushall-tools-button-expand": "Proširi",
+	"pushall-tools-button-collapse": "Sakrij",
+	"pushall-option-force-push": "Zanemari upozorenja"
 }

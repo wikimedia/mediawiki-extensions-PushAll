@@ -5,12 +5,19 @@
 		]
 	},
 	"pushall-tools-header": "آوزار",
+	"pushall-tools-header-contents": "شامل حصے",
+	"pushall-tools-header-check": "پڑتال",
 	"pushall-tools-header-subpages": "ذیلی ورقے",
 	"pushall-tools-header-files": "فائلاں",
 	"pushall-tools-button-expand": "ودھاؤ",
 	"pushall-tools-button-collapse": "لکاؤ",
+	"pushall-tools-button-checkall": "سارے پڑتال کرو",
+	"pushall-special-page-action-field-top-label": "ورقہ شامل کرو:",
+	"pushall-special-page-action-field-button": "شامل کرو",
 	"pushall-special-category-action-field-button": "شامل کرو",
 	"pushall-special-namespace-action-field-button": "شامل کرو",
+	"prefs-pushall-preference-parameters": "اختیارات:",
 	"pushall-preference-targets-action-field-button-delete": "مٹاؤ",
-	"pushall-preference-dialog-field-help": "مثال:"
+	"pushall-preference-dialog-field-help": "مثال:",
+	"pushall-preference-dialog-field-wikiname-label": "وکی دا ناں"
 }

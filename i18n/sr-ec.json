@@ -4,11 +4,20 @@
 			"Milicevic01"
 		]
 	},
+	"pushall-tab-options": "Опције",
 	"pushall-legend-title": "Легенда:",
 	"pushall-tools-header": "Алатке",
+	"pushall-tools-header-subpages": "Подстранице",
+	"pushall-tools-header-files": "Датотеке",
+	"pushall-tools-button-expand": "Прошири",
+	"pushall-tools-button-collapse": "Скупи",
+	"pushall-tools-button-exclude": "Изузми",
+	"pushall-special-category-action-field-button": "Додај",
 	"pushall-special-namespace-action-field-button": "Додај",
 	"prefs-pushall-preference-parameters": "Опције:",
 	"pushall-preference-targets-action-field-button-change": "Измени",
 	"pushall-preference-targets-action-field-button-delete": "Обриши",
-	"pushall-preference-dialog-field-wikiname-label": "Име викија"
+	"pushall-preference-dialog-field-help": "Пример:",
+	"pushall-preference-dialog-field-wikiname-label": "Име викија",
+	"pushall-error-authentication": "Аутентификација на $1 није успела. $2"
 }
