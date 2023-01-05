@@ -1,0 +1,31 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hehua",
+			"XtexChooser"
+		]
+	},
+	"pushall-special": "推送页面",
+	"pushall-tab-text": "推送",
+	"pushall-tab-options": "选项",
+	"pushall-button-text": "推送",
+	"pushall-button-pushing": "推送中",
+	"pushall-button-failed": "推送失败",
+	"pushall-tab-title": "推送$1",
+	"pushall-targets": "推送目标",
+	"pushall-remote-pages": "远程页面",
+	"pushall-tools-header": "工具",
+	"pushall-tools-header-subpages": "子页面",
+	"pushall-tools-header-files": "文件",
+	"pushall-tools-button-expand": "展开",
+	"pushall-tools-button-collapse": "折叠",
+	"pushall-tools-button-exclude": "排除",
+	"pushall-special-page-action-field-top-label": "添加一个页面：",
+	"pushall-special-page-action-field-placeholder": "搜索要添加的页面",
+	"pushall-special-category-action-field-button": "添加",
+	"pushall-special-namespace-action-field-button": "添加",
+	"prefs-pushall-preference-parameters": "选项：",
+	"pushall-preference-targets-action-field-button-change": "修改",
+	"pushall-preference-targets-action-field-button-delete": "删除",
+	"pushall-preference-dialog-field-help": "示例："
+}

@@ -5,8 +5,11 @@
 		]
 	},
 	"pushall-tab-options": "विकल्प",
+	"pushall-tools-header-contents": "सामग्री",
 	"pushall-tools-button-collapse": "छोटा करें",
+	"pushall-special-page-action-field-button": "जोड़ें",
 	"pushall-special-category-action-field-button": "जोड़ें",
 	"pushall-special-namespace-action-field-button": "जोड़ें",
+	"pushall-preference-targets-action-field-button-change": "बदलें",
 	"pushall-preference-targets-action-field-button-delete": "हटाएँ"
 }
