@@ -1,10 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Beta16"
+			"Beta16",
+			"Salvemm el lombard"
 		]
 	},
+	"pushall-tools-header-subpages": "Sottopagine",
+	"pushall-tools-header-files": "File",
 	"pushall-tools-button-collapse": "Comprimi",
+	"pushall-tools-button-uncheckall": "Deseleziona tutto",
 	"pushall-special-page-action-field-placeholder": "Cerca una pagina da aggiungere",
-	"pushall-preference-targets-action-field-button-change": "Modifica"
+	"prefs-pushall-preference-parameters": "Opzioni:",
+	"pushall-preference-targets-action-field-button-change": "Modifica",
+	"pushall-preference-dialog-field-help": "Esempio:"
 }

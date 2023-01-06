@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"pushall-tab-options": "옵션",
+	"pushall-tools-header-subpages": "하위 문서",
+	"pushall-tools-header-files": "파일",
+	"pushall-tools-button-collapse": "접기",
+	"pushall-tools-button-checkall": "모두 체크",
+	"pushall-tools-button-uncheckall": "모두 체크 해제",
+	"pushall-option-force-push": "경고 무시",
+	"pushall-special-page-action-field-button": "추가",
+	"pushall-special-page-action-field-placeholder": "추가할 문서 검색",
+	"pushall-special-category-action-field-button": "추가",
+	"pushall-special-namespace-action-field-button": "추가",
+	"prefs-pushall-preference-parameters": "옵션:",
+	"pushall-preference-targets-action-field-button-change": "수정",
+	"pushall-preference-targets-action-field-button-delete": "삭제",
+	"pushall-preference-dialog-field-login-label": "내 봇 로그인",
+	"pushall-preference-dialog-field-wikiname-label": "위키 이름",
+	"pushall-error-user-not-allow": "PushAll을 사용할 권한이 없습니다."
+}

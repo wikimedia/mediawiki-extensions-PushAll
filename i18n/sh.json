@@ -4,8 +4,19 @@
 			"Vlad5250"
 		]
 	},
+	"pushall-special": "Prijenos stranica",
+	"pushall-tab-text": "Prijenos",
 	"pushall-tab-options": "Opcije",
+	"pushall-button-text": "Prijenos",
+	"pushall-tab-desc": "Ova kartica vam omogućuje da prenesete trenutnu izmjenu ove stranice na jedan ili više vikija.",
+	"pushall-button-pushing": "Prijenos",
+	"pushall-button-completed": "Prijenos završen",
+	"pushall-button-nothing-to-push": "Ništa za prijenos",
+	"pushall-targets-total": "Postoji ukupno $1 {{PLURAL:$1|cilj|ciljeva}}.",
 	"pushall-legend-title": "Legenda:",
+	"pushall-legend-gray": "Status pretrage udaljene stranice/datoteke.",
+	"pushall-legend-chartreuse": "Udaljena stranica/datoteka već je podnovljena. Ništa za raditi.",
+	"pushall-legend-green": "Udaljena stranica ne postoji ili se nije razvila od posljednjeg prijenosa, i sada je zastarjela. Možete prenesti posljednju verziju.",
 	"pushall-tools-header": "Alati",
 	"pushall-tools-header-contents": "Sadržaj",
 	"pushall-tools-header-check": "Provjeri",
@@ -13,5 +24,11 @@
 	"pushall-tools-header-files": "Datoteke",
 	"pushall-tools-button-expand": "Proširi",
 	"pushall-tools-button-collapse": "Sakrij",
-	"pushall-option-force-push": "Zanemari upozorenja"
+	"pushall-option-force-push": "Zanemari upozorenja",
+	"pushall-status-search-in-progress": "Status pretrage",
+	"pushall-remote-content-status-not-exist": "Udaljena stranica ne postoji. Možete prenesti lokalnu verziju.",
+	"pushall-remote-content-status-protected": "Udaljena stranica zaštićena. Ne možete prenesti ovu stranicu/datoteku.",
+	"pushall-remote-content-status-equal": "Stranica/datoteka neće biti prenesena jer je udaljena stranica/datoteka već podnovljena.",
+	"pushall-remote-content-status-diverge": "Lokalna stranica je već prenesena, ali je udaljena stranica promijenjena. Da biste prepisali ove promjene, možete prenesti s opcijom za ignoriranje prethodnika.",
+	"pushall-remote-content-status-obsolete": "Udaljena stranica se nije razvila od posljednjeg prijenosa, i sada je zastarjela. Možete prenesti posljednju verziju."
 }
