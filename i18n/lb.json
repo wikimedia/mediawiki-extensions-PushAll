@@ -6,7 +6,9 @@
 	},
 	"pushall-tab-options": "Optiounen",
 	"pushall-legend-title": "Erklärung:",
+	"pushall-tools-header": "Geschierkëscht",
 	"pushall-tools-header-contents": "Inhalter",
+	"pushall-tools-header-check": "Kontrolléieren",
 	"pushall-tools-header-subpages": "Ënnersäiten",
 	"pushall-tools-header-files": "Fichieren",
 	"pushall-tools-header-templates": "Schablounen / Moduler",
@@ -21,11 +23,13 @@
 	"pushall-special-category-action-field-button": "Derbäisetzen",
 	"pushall-special-category-action-field-placeholder": "Eng Kategorie sichen",
 	"pushall-special-namespace-action-field-button": "Derbäisetzen",
+	"pushall-special-namespace-action-field-placeholder": "Wielt en Nummraum",
 	"prefs-pushall-preference-parameters": "Optiounen:",
 	"pushall-preference-targets-action-field-button-change": "Änneren",
 	"pushall-preference-targets-action-field-button-delete": "Läschen",
 	"pushall-preference-targets-button-add": "Eng nei Wiki derbäisetzen",
 	"pushall-preference-targets-header": "Hei d'Lëscht vun disponibelen Ziler:",
 	"pushall-preference-dialog-field-help": "Beispill:",
+	"pushall-preference-dialog-field-wikiname-label": "Numm vun der Wiki",
 	"pushall-error-api-nocurl": "Curl ass net installéiert. Kontaktéiert wgl. den Administrateur vun dëser Wiki."
 }

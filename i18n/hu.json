@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hanna Tardos"
+		]
+	},
+	"pushall-tab-options": "Beállítások",
+	"pushall-tools-header-contents": "Tartalom",
+	"pushall-special-namespace-action-field-button": "Hozzáadás",
+	"prefs-pushall-preference-parameters": "Beállítások:",
+	"pushall-preference-targets-action-field-button-delete": "Törlés",
+	"pushall-preference-targets-button-add": "Új wiki hozzáadása",
+	"pushall-preference-dialog-field-help": "Példa:",
+	"pushall-preference-dialog-field-wikiname-label": "Wiki neve"
+}
