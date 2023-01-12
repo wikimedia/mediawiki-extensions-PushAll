@@ -5,13 +5,17 @@
 		]
 	},
 	"pushall-tab-options": "विकल्प",
+	"pushall-legend-title": "कुंजी:",
 	"pushall-tools-header": "उपकरण",
 	"pushall-tools-header-contents": "सामग्री",
+	"pushall-tools-header-check": "जाँचें",
 	"pushall-tools-button-expand": "विस्तार करें",
 	"pushall-tools-button-collapse": "छोटा करें",
 	"pushall-special-page-action-field-button": "जोड़ें",
 	"pushall-special-category-action-field-button": "जोड़ें",
 	"pushall-special-namespace-action-field-button": "जोड़ें",
+	"prefs-pushall-preference-parameters": "विकल्प:",
 	"pushall-preference-targets-action-field-button-change": "बदलें",
-	"pushall-preference-targets-action-field-button-delete": "हटाएँ"
+	"pushall-preference-targets-action-field-button-delete": "हटाएँ",
+	"pushall-preference-dialog-field-help": "उदाहरण:"
 }
