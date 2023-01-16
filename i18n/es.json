@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"pushall-tools-header-files": "Archivos",
+	"pushall-tools-header-templates": "Plantillas/módulos",
+	"pushall-tools-header-attachednamespaces": "Páginas adjuntas",
+	"pushall-special-page-action-field-button": "Añadir",
+	"pushall-special-category-action-field-button": "Añadir",
+	"pushall-special-namespace-action-field-button": "Añadir",
+	"pushall-preference-targets-action-field-button-change": "Modificar",
+	"pushall-preference-dialog-field-help": "Ejemplo:",
+	"pushall-preference-dialog-field-wikiname-label": "Nombre del wiki"
+}
