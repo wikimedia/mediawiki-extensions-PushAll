@@ -16,6 +16,7 @@
 	"pushall-targets-total": "Postoji ukupno $1 {{PLURAL:$1|cilj|ciljeva}}.",
 	"pushall-button-all": "Prenesi sve",
 	"pushall-tab-title": "Prenesi $1",
+	"pushall-targets": "Prijenos ciljeva",
 	"pushall-remote-pages": "Udaljene stranice",
 	"pushall-legend-title": "Legenda:",
 	"pushall-legend-gray": "Status pretrage udaljene stranice/datoteke.",
@@ -58,6 +59,7 @@
 	"pushall-special-namespace-action-field-button": "Dodaj",
 	"pushall-special-namespace-action-field-placeholder": "Izaberi imenski prostor",
 	"pushall-special-pages-selectarea-top-label": "Stranice za prijenos:",
+	"pushall-special-button-submit-analyze": "Analiziraj stranice prije prijenosa",
 	"prefs-pushall-preference-parameters": "Opcije:",
 	"pushall-preference-targets-action-field-button-change": "Promijeni",
 	"pushall-preference-targets-action-field-button-delete": "Izbriši",
@@ -70,6 +72,7 @@
 	"pushall-preference-dialog-field-login-label": "Prijava vašeg bota",
 	"pushall-preference-dialog-field-key-label": "Ključ vašeg bota",
 	"pushall-preference-dialog-field-wikiname-label": "Ime vikija",
+	"pushall-preference-dialog-message-remove": "Želite li ukloniti ovaj ciljani viki?",
 	"pushall-error-user-not-allow": "Nije vam dozvoljeno da koristite PushAll.",
 	"pushall-error-not-credentials-for-this-target": "Nema vjerodajnica u vašim postavkama za ovaj udaljeni viki."
 }

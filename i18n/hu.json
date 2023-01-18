@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Eukarióta",
 			"Hanna Tardos"
 		]
 	},
 	"pushall-tab-options": "Beállítások",
 	"pushall-tools-header-contents": "Tartalom",
+	"pushall-special-namespace-action-field-top-label": "Lapok hozzadása ebből a névtérből",
 	"pushall-special-namespace-action-field-button": "Hozzáadás",
 	"prefs-pushall-preference-parameters": "Beállítások:",
 	"pushall-preference-targets-action-field-button-delete": "Törlés",
