@@ -73,7 +73,7 @@
 	"pushall-preference-targets-action-field-button-change": "Измени",
 	"pushall-preference-targets-action-field-button-delete": "Избриши",
 	"pushall-preference-targets-button-add": "Додај ново вики",
-	"pushall-preference-targets-header": "Еве список на расположиви цели:",
+	"pushall-preference-targets-header": "Еве список на расположливи цели:",
 	"pushall-preference-dialog-help-new-bot": "Ќе треба да создадете нов бот преку страницата Special:BotPasswords на целното вики за да имате најава и клуч.",
 	"pushall-preference-dialog-field-help": "Пример:",
 	"pushall-preference-dialog-field-articlepath-label": "Патека на статиите на ова вики",
