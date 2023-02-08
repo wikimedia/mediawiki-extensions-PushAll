@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ajeje Brazorf"
+		]
+	},
+	"pushall-tab-options": "Opzioni",
+	"pushall-tools-header-subpages": "Suttapàggini",
+	"pushall-tools-header-files": "File",
+	"pushall-tools-button-expand": "Spanni",
+	"pushall-tools-button-collapse": "Strinci",
+	"pushall-tools-button-include": "Ncludi",
+	"pushall-special-page-action-field-top-label": "Agghiunci na pàggina:",
+	"pushall-special-page-action-field-button": "Agghiunci",
+	"pushall-special-page-action-field-placeholder": "Arricerca na pàggina d'agghiùnciri:",
+	"pushall-special-category-action-field-top-label": "Agghiunci pàggini d'una catigurìa:",
+	"pushall-special-category-action-field-button": "Agghiunci",
+	"pushall-special-category-action-field-placeholder": "Arricerca na catigurìa",
+	"pushall-special-namespace-action-field-top-label": "Agghiunci pàggini d'un namespace:",
+	"pushall-special-namespace-action-field-button": "Agghiunci",
+	"prefs-pushall-preference-parameters": "Opzioni:",
+	"pushall-preference-targets-action-field-button-change": "Cancia",
+	"pushall-preference-targets-action-field-button-delete": "Cancella",
+	"pushall-preference-targets-button-add": "Agghiunci nu wiki novu",
+	"pushall-preference-dialog-field-help": "Asempiu:",
+	"pushall-preference-dialog-field-wikiname-label": "Nomu dû wiki"
+}
