@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": []
+	},
+	"pushall-tab-options": "Opcije",
+	"pushall-legend-title": "Legenda:",
+	"pushall-tools-header": "Alatke",
+	"pushall-tools-header-subpages": "Podstranice",
+	"pushall-tools-header-files": "Datoteke",
+	"pushall-tools-button-expand": "Proširi",
+	"pushall-tools-button-collapse": "Skupi",
+	"pushall-tools-button-exclude": "Izuzmi",
+	"pushall-special-category-action-field-button": "Dodaj",
+	"pushall-special-namespace-action-field-button": "Dodaj",
+	"prefs-pushall-preference-parameters": "Opcije:",
+	"pushall-preference-targets-action-field-button-change": "Izmeni",
+	"pushall-preference-targets-action-field-button-delete": "Obriši",
+	"pushall-preference-dialog-field-help": "Primer:",
+	"pushall-preference-dialog-field-wikiname-label": "Ime vikija",
+	"pushall-error-authentication": "Autentifikacija na $1 nije uspela. $2"
+}
