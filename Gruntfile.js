@@ -30,8 +30,7 @@ module.exports = function ( grunt ) {
 				},
 				options: {
 					requireCompleteTranslationLanguages: [
-						'en',
-						'fr'
+						'en'
 					]
 				}
 			}

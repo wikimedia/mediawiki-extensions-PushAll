@@ -5,6 +5,10 @@
 			"Robby"
 		]
 	},
+	"apihelp-pushall-summary": "{{doc-apihelp-summary|pushall}}",
+	"apihelp-pushallinfo-summary": "{{doc-apihelp-summary|pushallinfo}}",
+	"apihelp-pushall-example": "{{doc-apihelp-example|pushall}}",
+	"apihelp-pushallinfo-example": "{{doc-apihelp-example|pushallinfo}}",
 	"pushall-special": "{{doc-special|Push}}",
 	"pushall-tab-text": "{{Identical|Push}}",
 	"pushall-tab-options": "Used as header\n{{identical|Options}}",
@@ -98,5 +102,6 @@
 	"pushall-error-api-nofilesupport": "{{doc-important|Do not translate \"<code>$egPushAllDirectFileUploads</code>\".}}",
 	"pushall-error-api-unknown": "Used as error message",
 	"pushall-error-api-known": "Used as error message",
+	"pushall-error-token-request-failed": "Error message shown to the user when fectching an edit token from the remote wiki's API failed",
 	"pushall-error-captcha-enable-with-bot-for-this-target": "Used as error message"
 }

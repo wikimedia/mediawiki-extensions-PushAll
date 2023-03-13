@@ -15,9 +15,9 @@ $specialPageAliases['en'] = [
 	'PushAll' => [ 'PushAll' ],
 ];
 
-/** French (French) */
+/** French (français) */
 $specialPageAliases['fr'] = [
-	'PushAll' => [ 'Exporter tout' ],
+	'PushAll' => [ 'Exporter_tout' ],
 ];
 
 /** Arabic (العربية) */
