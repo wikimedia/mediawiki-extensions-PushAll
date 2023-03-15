@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardoaddad"
+			"Eduardoaddad",
+			"Re demz"
 		]
 	},
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Esse conteúdo não será impulsionado, pois há um aviso.",
 	"pushall-special-category-action-field-button": "Adicionar",
 	"pushall-preference-targets-action-field-button-change": "Modificar"
 }
