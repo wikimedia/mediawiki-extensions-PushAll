@@ -25,7 +25,7 @@
 		]
 	},
 	"ExtensionMessagesFiles": {
-		"PushAll": "srs/ui/SpecialPushAll.alias.php"
+		"PushAllAlias": "src/ui/SpecialPushAll.alias.php"
 	},
 	"AutoloadClasses": {
 		"PushAll": "src/PushAll.php",
@@ -34,7 +34,6 @@
 		"PushAllHooks": "src/PushAllHooks.php",
 		"ApiPushAllBase": "src/api/ApiPushAllBase.php",
 		"ApiPushAll": "src/api/ApiPushAll.php",
-		"ApiPushAllImages": "src/api/ApiPushAllImages.php",
 		"ApiPushAllInfo": "src/api/ApiPushAllInfo.php",
 		"TabPushAll": "src/ui/TabPushAll.php",
 		"SpecialPushAll": "src/ui/SpecialPushAll.php",
@@ -150,7 +149,7 @@
 		"localBasePath": "",
 		"remoteExtPath": "PushAll",
 		"scripts": [
-			"tests/ui/js/ext.pushall.test.js"
+			"tests/qunit/ui/js/ext.pushall.test.js"
 		],
 		"dependencies": [
 			"ext.pushall"
