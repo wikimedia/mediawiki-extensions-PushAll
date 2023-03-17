@@ -4,6 +4,10 @@
 			"Bjankuloski06"
 		]
 	},
+	"apihelp-pushall-summary": "Пренесување на викистраници на други викија на МедијаВики",
+	"apihelp-pushallinfo-summary": "Пренесување на викистраници на други викија на МедијаВики",
+	"apihelp-pushall-example": "Пренесување на сите податоци и слики на укажаната целна страница",
+	"apihelp-pushallinfo-example": "Дај информации за преносот од укажаните целни страници",
 	"pushall-special": "Пренесување страници",
 	"pushall-tab-text": "Пренеси",
 	"pushall-tab-options": "Нагодувања",
@@ -53,7 +57,7 @@
 	"pushall-checkbox-tooltip-wont-push": "Оваа содржина нема да биде пренесена.",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Оваа содржина нема да биде пренесена бидејќи е заштитена на оддалеченото вики.",
 	"pushall-checkbox-tooltip-push-useless": "Оваа содржина нема да биде пренесена бидејќи е бескорисна.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Оваа содржина нема да биде пренесена бидејќи има предупредувања.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Оваа содржина нема да биде пренесена бидејќи има предупредување.",
 	"pushall-special-description": "Оваа страница ви овозможува да пренесувате содржини од една или повеќе страници на едно или повеќе Викимедиини викија.\n\nЗа да пренесувате, внесете ги насловите во полињата подолу, (по еден наслов за секое поле) и стиснете на „Анализирај“.\nЌе се соберат сите зависности на овие страници и ќе можете да ги изберете викијата и конечните страници за пренос.",
 	"pushall-special-page-action-field-top-label": "Додај страница:",
 	"pushall-special-page-action-field-button": "Додај",
@@ -97,5 +101,6 @@
 	"pushall-error-api-nofilesupport": "Месниото МедијаВики не поддржува ставање на податотеки. Обратете се кај администраторот на ова вики.",
 	"pushall-error-api-unknown": "Внатрешна грешка во прилогот. Погледајте ги поединостите во конзолата на прелистувачот.",
 	"pushall-error-api-known": "Грешка во приложникот PushAll.",
+	"pushall-error-token-request-failed": "Барањето за шифра не успеа.",
 	"pushall-error-captcha-enable-with-bot-for-this-target": "Вашиот бот не може да зачувува страници во оддалеченото вики бидејќи вклучена е captcha за ботови. Побарајте од администратор на тамошното вики да ја исклучи captcha-та за ботови (со $wgGroupPermissions['bot']['skipcaptcha'] = true; во localsettings)"
 }
