@@ -7,8 +7,8 @@
 	},
 	"devDependencies": {
 		"api-testing": "1.5.1",
-		"eslint-config-wikimedia": "0.23.0",
-		"grunt": "1.5.3",
+		"eslint-config-wikimedia": "0.24.0",
+		"grunt": "1.6.1",
 		"grunt-banana-checker": "0.10.0",
 		"grunt-eslint": "24.0.1",
 		"grunt-jsonlint": "2.1.3",
@@ -16,7 +16,7 @@
 		"jquery": "^3.6.0",
 		"jsdom": "^20.0.3",
 		"qunit": "2.19.4",
-		"stylelint-config-wikimedia": "0.13.1"
+		"stylelint-config-wikimedia": "0.14.0"
 	},
 	"eslintIgnore": [
 		"coverage",
