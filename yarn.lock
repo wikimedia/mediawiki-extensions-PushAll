@@ -119,14 +119,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@prantlf/jsonlint@10.2.0":
-  "integrity" "sha512-KMFfds0peWLLfCu3bhClTiEN0tdj/Z86QJvn1awKHws6r+Sx6T3a44Eadz6OvqN6ZpsRkqaRpZxqddvvDAdDZQ=="
-  "resolved" "https://registry.npmjs.org/@prantlf/jsonlint/-/jsonlint-10.2.0.tgz"
-  "version" "10.2.0"
-  dependencies:
-    "ajv" "6.10.2"
-    "commander" "4.0.1"
-
 "@tootallnate/once@2":
   "integrity" "sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A=="
   "resolved" "https://registry.npmjs.org/@tootallnate/once/-/once-2.0.0.tgz"
@@ -180,7 +172,7 @@
   "resolved" "https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.2.0.tgz"
   "version" "8.2.0"
 
-"acorn@^8.1.0", "acorn@^8.8.0", "acorn@^8.8.1":
+"acorn@^6.0.0 || ^7.0.0 || ^8.0.0", "acorn@^8.1.0", "acorn@^8.8.0", "acorn@^8.8.1":
   "integrity" "sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA=="
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-8.8.1.tgz"
   "version" "8.8.1"
@@ -210,16 +202,6 @@
     "fast-deep-equal" "^3.1.1"
     "json-schema-traverse" "^1.0.0"
     "require-from-string" "^2.0.2"
-    "uri-js" "^4.2.2"
-
-"ajv@6.10.2":
-  "integrity" "sha512-TXtUUEYHuaTEbLZWIKUr5pmBuhDLy+8KYtPYdcV8qC+pOZL+NKqYwvWSRrVXHn+ZmRRAu8vJTAznH7Oag6RVRw=="
-  "resolved" "https://registry.npmjs.org/ajv/-/ajv-6.10.2.tgz"
-  "version" "6.10.2"
-  dependencies:
-    "fast-deep-equal" "^2.0.1"
-    "fast-json-stable-stringify" "^2.0.0"
-    "json-schema-traverse" "^0.4.1"
     "uri-js" "^4.2.2"
 
 "ansi-regex@^5.0.1":
@@ -353,7 +335,7 @@
   "resolved" "https://registry.npmjs.org/browserslist-config-wikimedia/-/browserslist-config-wikimedia-0.4.0.tgz"
   "version" "0.4.0"
 
-"browserslist@^4.16.1", "browserslist@^4.16.8":
+"browserslist@^4.16.1", "browserslist@^4.16.8", "browserslist@>= 4.21.0":
   "integrity" "sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw=="
   "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.21.4.tgz"
   "version" "4.21.4"
@@ -496,11 +478,6 @@
   "version" "1.0.8"
   dependencies:
     "delayed-stream" "~1.0.0"
-
-"commander@4.0.1":
-  "integrity" "sha512-IPF4ouhCP+qdlcmCedhxX4xiGBPyigb8v5NeUp+0LyhwLgxMqyp3S0vl7TAPfS/hiP7FC3caI/PB9lTmP8r1NA=="
-  "resolved" "https://registry.npmjs.org/commander/-/commander-4.0.1.tgz"
-  "version" "4.0.1"
 
 "commander@7.2.0":
   "integrity" "sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw=="
@@ -983,7 +960,7 @@
   "resolved" "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz"
   "version" "3.3.0"
 
-"eslint@^8.0.1", "eslint@^8.31.0":
+"eslint@^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^6.0.0 || ^7.0.0 || >=8.0.0", "eslint@^6.2.0 || ^7.0.0 || ^8.0.0", "eslint@^7.0.0 || ^8.0.0", "eslint@^8.0.1", "eslint@^8.31.0", "eslint@>= 7", "eslint@>=2.3.0", "eslint@>=4.19.1", "eslint@>=5", "eslint@>=5.0.0", "eslint@>=5.16.0", "eslint@>=6.0.0", "eslint@>=7.0.0", "eslint@>=8.8.0":
   "integrity" "sha512-Y956lmS7vDqomxlaaQAHVmeb4tNMp2FWIvU/RnU5BD3IKMD/MJPr76xdyr68P8tV1iNMvN2mRK0yy3c+UjL+bw=="
   "resolved" "https://registry.npmjs.org/eslint/-/eslint-8.36.0.tgz"
   "version" "8.36.0"
@@ -1068,7 +1045,7 @@
   "version" "2.0.3"
 
 "eventemitter2@~0.4.13":
-  "integrity" "sha1-j2G3XN4BKy6esoTUVFWDtWQ7Yas="
+  "integrity" "sha1-j2G3XN4BKy6esoTUVFWDtWQ7Yas= sha512-K7J4xq5xAD5jHsGM5ReWXRTFa3JRGofHiMcVgQ8PRwgWxzjHpMWCIzsmyf60+mh8KLsqYPcjUMa0AC4hd6lPyQ=="
   "resolved" "https://registry.npmjs.org/eventemitter2/-/eventemitter2-0.4.14.tgz"
   "version" "0.4.14"
 
@@ -1088,11 +1065,6 @@
   "integrity" "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g=="
   "resolved" "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz"
   "version" "3.0.2"
-
-"fast-deep-equal@^2.0.1":
-  "integrity" "sha512-bCK/2Z4zLidyB4ReuIsvALH6w31YfAQDmXMqMx6FyfHqvBxtjC0eRumeSu4Bs3XtXwpyIywtSTrVT99BxY1f9w=="
-  "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz"
-  "version" "2.0.1"
 
 "fast-deep-equal@^3.1.1", "fast-deep-equal@^3.1.3":
   "integrity" "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
@@ -1410,13 +1382,6 @@
     "chalk" "^4.1.2"
     "eslint" "^8.0.1"
 
-"grunt-jsonlint@2.1.3":
-  "integrity" "sha512-h04qC969LIyhsJaASeJ/hDnnKnsnSNZKqjYHra6cc/WQzrfMZinQPdr11FhU4T8OzAq6ecMX5QauYiJkbjUV/Q=="
-  "resolved" "https://registry.npmjs.org/grunt-jsonlint/-/grunt-jsonlint-2.1.3.tgz"
-  "version" "2.1.3"
-  dependencies:
-    "@prantlf/jsonlint" "10.2.0"
-
 "grunt-known-options@~2.0.0":
   "integrity" "sha512-GD7cTz0I4SAede1/+pAbmJRG44zFLPipVtdL9o3vqx9IEyb7b4/Y3s7r6ofI3CchR5GvYJ+8buCSioDv5dQLiA=="
   "resolved" "https://registry.npmjs.org/grunt-known-options/-/grunt-known-options-2.0.0.tgz"
@@ -1460,7 +1425,7 @@
   dependencies:
     "chalk" "^4.1.2"
 
-"grunt@1.6.1":
+"grunt@>=1", "grunt@1.6.1":
   "integrity" "sha512-/ABUy3gYWu5iBmrUSRBP97JLpQUm0GgVveDCp6t3yRNIoltIYw7rEj3g5y1o2PGPR2vfTRGa7WC/LZHLTXnEzA=="
   "resolved" "https://registry.npmjs.org/grunt/-/grunt-1.6.1.tgz"
   "version" "1.6.1"
@@ -2363,7 +2328,7 @@
   "resolved" "https://registry.npmjs.org/postcss-safe-parser/-/postcss-safe-parser-6.0.0.tgz"
   "version" "6.0.0"
 
-"postcss-selector-parser@^6.0.11", "postcss-selector-parser@^6.0.9":
+"postcss-selector-parser@^6.0.10", "postcss-selector-parser@^6.0.11", "postcss-selector-parser@^6.0.9":
   "integrity" "sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g=="
   "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.11.tgz"
   "version" "6.0.11"
@@ -2376,7 +2341,7 @@
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
 
-"postcss@^8.2.4", "postcss@^8.4.0", "postcss@^8.4.16", "postcss@^8.4.19":
+"postcss@^8.2.4", "postcss@^8.3.3", "postcss@^8.3.5", "postcss@^8.4", "postcss@^8.4.0", "postcss@^8.4.16", "postcss@^8.4.19":
   "integrity" "sha512-6Q04AXR1212bXr5fh03u8aAwbLxAQNGQ/Q1LNa0VfOI06ZAlhPHtQvE4OIdpj4kLThXilalPnmDSOD65DcHt+g=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.20.tgz"
   "version" "8.4.20"
@@ -2806,7 +2771,7 @@
     "lodash" "^4.17.15"
     "postcss" "^8.4.16"
 
-"stylelint@14.16.1":
+"stylelint@^14.0.0||^15.0.0", "stylelint@^14.10.0", "stylelint@14.16.1", "stylelint@14.x":
   "integrity" "sha512-ErlzR/T3hhbV+a925/gbfc3f3Fep9/bnspMiJPorfGEmcBbXdS+oo6LrVtoUZ/w9fqD6o6k7PtUlCOsCRdjX/A=="
   "resolved" "https://registry.npmjs.org/stylelint/-/stylelint-14.16.1.tgz"
   "version" "14.16.1"
