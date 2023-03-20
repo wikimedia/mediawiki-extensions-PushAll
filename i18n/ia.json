@@ -4,6 +4,10 @@
 			"McDutchie"
 		]
 	},
+	"apihelp-pushall-summary": "Transferer paginas wiki a altere wikis de MediaWiki",
+	"apihelp-pushallinfo-summary": "Transferer paginas wiki a altere wikis de MediaWiki",
+	"apihelp-pushall-example": "Transferer tote le datos e imagines al pagina de destination specificate",
+	"apihelp-pushallinfo-example": "Obtener informationes de transferimento sur le paginas de destination fornite",
 	"pushall-special": "Transferer paginas",
 	"pushall-tab-text": "Transferer",
 	"pushall-tab-options": "Optiones",
@@ -97,5 +101,6 @@
 	"pushall-error-api-nofilesupport": "Le MediaWiki local non supporta le publication de files. Per favor contacta le administrator de iste wiki.",
 	"pushall-error-api-unknown": "Error interne del API. Vide le detalios in le consola del navigator.",
 	"pushall-error-api-known": "Error del API PushAll.",
+	"pushall-error-token-request-failed": "Le requesta de token ha fallite.",
 	"pushall-error-captcha-enable-with-bot-for-this-target": "Tu robot non pote salveguardar paginas in le wiki distante perque le CAPTCHA es activate pro le robots. Demanda a un administrator del wiki de destination de disactivar le CAPTCHA pro robots (con $wgGroupPermissions['bot']['skipcaptcha'] = true; in \"localsettings\")."
 }

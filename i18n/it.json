@@ -12,5 +12,6 @@
 	"pushall-special-page-action-field-placeholder": "Cerca una pagina da aggiungere",
 	"prefs-pushall-preference-parameters": "Opzioni:",
 	"pushall-preference-targets-action-field-button-change": "Modifica",
-	"pushall-preference-dialog-field-help": "Esempio:"
+	"pushall-preference-dialog-field-help": "Esempio:",
+	"pushall-error-token-request-failed": "Richiesta token non riuscita."
 }

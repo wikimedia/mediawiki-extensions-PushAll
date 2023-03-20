@@ -4,6 +4,10 @@
 			"Eleassar"
 		]
 	},
+	"apihelp-pushall-summary": "Potisk vikistrani v druge vikije MediaWiki",
+	"apihelp-pushallinfo-summary": "Potisk vikistrani v druge vikije MediaWiki",
+	"apihelp-pushall-example": "Potisk vseh podatkov in slik na navedeno ciljno stran",
+	"apihelp-pushallinfo-example": "Pridobitev potisnih informacij o posredovanih ciljnih straneh",
 	"pushall-special": "Prenesi strani",
 	"pushall-tab-text": "Prenesi",
 	"pushall-tab-options": "Možnosti",
@@ -97,5 +101,6 @@
 	"pushall-error-api-nofilesupport": "Lokalni MediaWiki nima podpore za objavljanje datotek. Prosimo, kontaktirajte skrbnika tega vikija.",
 	"pushall-error-api-unknown": "Notranja napaka API-ja. Oglejte si podrobnosti v konzoli brskalnika.",
 	"pushall-error-api-known": "Napaka API-ja PushAll.",
+	"pushall-error-token-request-failed": "Zahtevek za žeton ni uspel.",
 	"pushall-error-captcha-enable-with-bot-for-this-target": "Vaš bot ne more shraniti strani v oddaljenem vikiju, ker je za bote vklopljena captcha. Prosite skrbnika ciljnega vikija, da izklopi captcha za robote (z $wgGroupPermissions['bot']['skipcaptcha'] = true; v localsettings)"
 }
