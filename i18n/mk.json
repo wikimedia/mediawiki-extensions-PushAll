@@ -53,7 +53,7 @@
 	"pushall-checkbox-tooltip-wont-push": "Оваа содржина нема да биде пренесена.",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Оваа содржина нема да биде пренесена бидејќи е заштитена на оддалеченото вики.",
 	"pushall-checkbox-tooltip-push-useless": "Оваа содржина нема да биде пренесена бидејќи е бескорисна.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Оваа содржина нема да биде пренесена бидејќи има предупредувања.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Оваа содржина нема да биде пренесена бидејќи има предупредување.",
 	"pushall-special-description": "Оваа страница ви овозможува да пренесувате содржини од една или повеќе страници на едно или повеќе Викимедиини викија.\n\nЗа да пренесувате, внесете ги насловите во полињата подолу, (по еден наслов за секое поле) и стиснете на „Анализирај“.\nЌе се соберат сите зависности на овие страници и ќе можете да ги изберете викијата и конечните страници за пренос.",
 	"pushall-special-page-action-field-top-label": "Додај страница:",
 	"pushall-special-page-action-field-button": "Додај",
