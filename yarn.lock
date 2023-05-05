@@ -172,7 +172,7 @@
   "resolved" "https://registry.npmjs.org/acorn-walk/-/acorn-walk-8.2.0.tgz"
   "version" "8.2.0"
 
-"acorn@^6.0.0 || ^7.0.0 || ^8.0.0", "acorn@^8.1.0", "acorn@^8.8.0", "acorn@^8.8.1":
+"acorn@^8.1.0", "acorn@^8.8.0", "acorn@^8.8.1":
   "integrity" "sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA=="
   "resolved" "https://registry.npmjs.org/acorn/-/acorn-8.8.1.tgz"
   "version" "8.8.1"
@@ -330,12 +330,17 @@
   dependencies:
     "fill-range" "^7.0.1"
 
-"browserslist-config-wikimedia@^0.4.0", "browserslist-config-wikimedia@0.4.0":
+"browserslist-config-wikimedia@^0.5.0":
+  "integrity" "sha512-t+tvSnTeVhVF2lNRxoAlE51/ZCfUs5SNNZUnWu2N8xXOGMPTMyKk5l4mayvDdm+5L8oqmnALU+TjnN2Z+ZTCTw=="
+  "resolved" "https://registry.npmjs.org/browserslist-config-wikimedia/-/browserslist-config-wikimedia-0.5.0.tgz"
+  "version" "0.5.0"
+
+"browserslist-config-wikimedia@0.4.0":
   "integrity" "sha512-U/fmsaGlCKOqRIjKqXwQ44qFqiStngRTphj1Cf6IHV6J8OK8T0gu9dKc7Ljq4v7bwhnhN+YCCa4fA3nZlPNivQ=="
   "resolved" "https://registry.npmjs.org/browserslist-config-wikimedia/-/browserslist-config-wikimedia-0.4.0.tgz"
   "version" "0.4.0"
 
-"browserslist@^4.16.1", "browserslist@^4.16.8", "browserslist@>= 4.21.0":
+"browserslist@^4.16.1", "browserslist@^4.16.8":
   "integrity" "sha512-CBHJJdDmgjl3daYjN5Cp5kbTf1mUhZoS+beLklHIvkOWscs83YAhLlF3Wsh/lciQYAcbBJgTOD44VtG31ZM4Hw=="
   "resolved" "https://registry.npmjs.org/browserslist/-/browserslist-4.21.4.tgz"
   "version" "4.21.4"
@@ -763,22 +768,23 @@
   optionalDependencies:
     "source-map" "~0.6.1"
 
-"eslint-config-wikimedia@0.24.0":
-  "integrity" "sha512-8oH/YhJ87ONSmuRfATgx8U7Jcwz3tBemrh6YOezIfj9f2QfE71ZhaKZrNPdfS7vIklLor/cB9vX7sxN10nz8xw=="
-  "resolved" "https://registry.npmjs.org/eslint-config-wikimedia/-/eslint-config-wikimedia-0.24.0.tgz"
-  "version" "0.24.0"
+"eslint-config-wikimedia@0.25.0":
+  "integrity" "sha512-xLvXPyPmBLMPCE/FDy69ViFNsA3+uvFpH63IKtiqS9Olv1kWU2TWFlpJMFFEu0RWVnbciUKFOoLy3P36UvNHag=="
+  "resolved" "https://registry.npmjs.org/eslint-config-wikimedia/-/eslint-config-wikimedia-0.25.0.tgz"
+  "version" "0.25.0"
   dependencies:
-    "browserslist-config-wikimedia" "^0.4.0"
+    "browserslist-config-wikimedia" "^0.5.0"
     "eslint" "^8.31.0"
     "eslint-plugin-compat" "^4.0.2"
     "eslint-plugin-es-x" "^5.2.1"
     "eslint-plugin-jsdoc" "39.2.2"
     "eslint-plugin-json-es" "^1.5.7"
-    "eslint-plugin-mediawiki" "^0.4.0"
+    "eslint-plugin-mediawiki" "^0.5.0"
     "eslint-plugin-mocha" "^9.0.0"
     "eslint-plugin-no-jquery" "^2.7.0"
     "eslint-plugin-node" "^11.1.0"
-    "eslint-plugin-qunit" "^7.2.0"
+    "eslint-plugin-qunit" "^7.3.0"
+    "eslint-plugin-security" "^1.7.1"
     "eslint-plugin-unicorn" "^42.0.0"
     "eslint-plugin-vue" "^8.7.1"
     "eslint-plugin-wdio" "^7.19.4"
@@ -835,10 +841,10 @@
     "eslint-visitor-keys" "^3.3.0"
     "espree" "^9.3.1"
 
-"eslint-plugin-mediawiki@^0.4.0":
-  "integrity" "sha512-Eufptb8lrElYwIONvgxlMBnPD6PYT4xAFprWlBxV5brCmUh8MZ41+lMxt2TPwEC6C85ngflkVez8BV8tWS9RyQ=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-mediawiki/-/eslint-plugin-mediawiki-0.4.0.tgz"
-  "version" "0.4.0"
+"eslint-plugin-mediawiki@^0.5.0":
+  "integrity" "sha512-rjkHFyv3VDan/dmu7YpD1Rl9h64NOlz4mqqesRN316R+571+ymmb6lXVOdNMbT8H1iPhmtHc+nijVLVkn7pYDw=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-mediawiki/-/eslint-plugin-mediawiki-0.5.0.tgz"
+  "version" "0.5.0"
   dependencies:
     "eslint-plugin-vue" "^8.7.1"
     "upath" "^2.0.1"
@@ -868,13 +874,20 @@
     "resolve" "^1.10.1"
     "semver" "^6.1.0"
 
-"eslint-plugin-qunit@^7.2.0":
+"eslint-plugin-qunit@^7.3.0":
   "integrity" "sha512-EbDM0zJerH9zVdUswMJpcFF7wrrpvsGuYfNexUpa5hZkkdFhaFcX+yD+RSK4Nrauw4psMGlcqeWUMhaVo+Manw=="
   "resolved" "https://registry.npmjs.org/eslint-plugin-qunit/-/eslint-plugin-qunit-7.3.4.tgz"
   "version" "7.3.4"
   dependencies:
     "eslint-utils" "^3.0.0"
     "requireindex" "^1.2.0"
+
+"eslint-plugin-security@^1.7.1":
+  "integrity" "sha512-sMStceig8AFglhhT2LqlU5r+/fn9OwsA72O5bBuQVTssPCdQAOQzL+oMn/ZcpeUY6KcNfLJArgcrsSULNjYYdQ=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-security/-/eslint-plugin-security-1.7.1.tgz"
+  "version" "1.7.1"
+  dependencies:
+    "safe-regex" "^2.1.1"
 
 "eslint-plugin-unicorn@^42.0.0":
   "integrity" "sha512-ixBsbhgWuxVaNlPTT8AyfJMlhyC5flCJFjyK3oKE8TRrwBnaHvUbuIkCM1lqg8ryYrFStL/T557zfKzX4GKSlg=="
@@ -960,7 +973,7 @@
   "resolved" "https://registry.npmjs.org/eslint-visitor-keys/-/eslint-visitor-keys-3.3.0.tgz"
   "version" "3.3.0"
 
-"eslint@^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0", "eslint@^6.0.0 || ^7.0.0 || >=8.0.0", "eslint@^6.2.0 || ^7.0.0 || ^8.0.0", "eslint@^7.0.0 || ^8.0.0", "eslint@^8.0.1", "eslint@^8.31.0", "eslint@>= 7", "eslint@>=2.3.0", "eslint@>=4.19.1", "eslint@>=5", "eslint@>=5.0.0", "eslint@>=5.16.0", "eslint@>=6.0.0", "eslint@>=7.0.0", "eslint@>=8.8.0":
+"eslint@^8.0.1", "eslint@^8.31.0":
   "integrity" "sha512-Y956lmS7vDqomxlaaQAHVmeb4tNMp2FWIvU/RnU5BD3IKMD/MJPr76xdyr68P8tV1iNMvN2mRK0yy3c+UjL+bw=="
   "resolved" "https://registry.npmjs.org/eslint/-/eslint-8.36.0.tgz"
   "version" "8.36.0"
@@ -1425,7 +1438,7 @@
   dependencies:
     "chalk" "^4.1.2"
 
-"grunt@>=1", "grunt@1.6.1":
+"grunt@1.6.1":
   "integrity" "sha512-/ABUy3gYWu5iBmrUSRBP97JLpQUm0GgVveDCp6t3yRNIoltIYw7rEj3g5y1o2PGPR2vfTRGa7WC/LZHLTXnEzA=="
   "resolved" "https://registry.npmjs.org/grunt/-/grunt-1.6.1.tgz"
   "version" "1.6.1"
@@ -2328,7 +2341,7 @@
   "resolved" "https://registry.npmjs.org/postcss-safe-parser/-/postcss-safe-parser-6.0.0.tgz"
   "version" "6.0.0"
 
-"postcss-selector-parser@^6.0.10", "postcss-selector-parser@^6.0.11", "postcss-selector-parser@^6.0.9":
+"postcss-selector-parser@^6.0.11", "postcss-selector-parser@^6.0.9":
   "integrity" "sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g=="
   "resolved" "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.0.11.tgz"
   "version" "6.0.11"
@@ -2341,7 +2354,7 @@
   "resolved" "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz"
   "version" "4.2.0"
 
-"postcss@^8.2.4", "postcss@^8.3.3", "postcss@^8.3.5", "postcss@^8.4", "postcss@^8.4.0", "postcss@^8.4.16", "postcss@^8.4.19":
+"postcss@^8.2.4", "postcss@^8.4.0", "postcss@^8.4.16", "postcss@^8.4.19":
   "integrity" "sha512-6Q04AXR1212bXr5fh03u8aAwbLxAQNGQ/Q1LNa0VfOI06ZAlhPHtQvE4OIdpj4kLThXilalPnmDSOD65DcHt+g=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-8.4.20.tgz"
   "version" "8.4.20"
@@ -2771,7 +2784,7 @@
     "lodash" "^4.17.15"
     "postcss" "^8.4.16"
 
-"stylelint@^14.0.0||^15.0.0", "stylelint@^14.10.0", "stylelint@14.16.1", "stylelint@14.x":
+"stylelint@14.16.1":
   "integrity" "sha512-ErlzR/T3hhbV+a925/gbfc3f3Fep9/bnspMiJPorfGEmcBbXdS+oo6LrVtoUZ/w9fqD6o6k7PtUlCOsCRdjX/A=="
   "resolved" "https://registry.npmjs.org/stylelint/-/stylelint-14.16.1.tgz"
   "version" "14.16.1"
