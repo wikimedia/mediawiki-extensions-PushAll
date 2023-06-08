@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Karima Rafes",
 			"Robby"
 		]
@@ -28,8 +29,8 @@
 	"pushall-legend-gray": "Used in the legend",
 	"pushall-legend-chartreuse": "Used in the legend",
 	"pushall-legend-green": "Used in the legend",
-	"pushall-legend-darkorange": "Used in the legend",
-	"pushall-legend-red": "Used in the legend",
+	"pushall-legend-darkorange": "Used in the legend.\n\nMentions {{msg-mw|Pushall-option-force-push}}",
+	"pushall-legend-red": "Used in the legend.\n\nMentions {{msg-mw|Pushall-option-force-push}}",
 	"pushall-legend-purple": "Used in the legend",
 	"pushall-legend-black": "Used in the legend",
 	"pushall-tools-header": "Used as header",
@@ -43,7 +44,7 @@
 	"pushall-tools-button-collapse": "Used as button text\n{{identical|Collapse}}",
 	"pushall-tools-button-include": "Used as button text",
 	"pushall-tools-button-exclude": "Used as button text",
-	"pushall-tools-button-checkall": "Used as header",
+	"pushall-tools-button-checkall": "Used as header. In the sense of \"check a box\".",
 	"pushall-tools-button-uncheckall": "Used as header",
 	"pushall-option-force-push": "Used as label",
 	"pushall-status-search-in-progress": "Used in the status label of a page/file",
