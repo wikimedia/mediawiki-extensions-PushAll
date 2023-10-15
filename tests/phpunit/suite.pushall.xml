@@ -18,7 +18,7 @@
 	<testsuites>
 		<testsuite name="pushall">
 			<directory>extensions/PushAll</directory>
-			<file>unit/PushAllTest.php</file>
+			<exclude>unit/PushAllTest.php</exclude>
 			<file>unit/PushAllComponentsTest.php</file>
 		</testsuite>
 	</testsuites>

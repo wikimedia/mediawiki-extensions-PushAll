@@ -254,7 +254,7 @@ class PushAllContent {
 		$title = Title::newFromText( $pageName );
 		if ( $title ) {
 			$dbr = wfGetDB( DB_REPLICA );
-			$resultDb = TitleArray::newFromResult(
+			$resultDb = new TitleArrayFromResult(
 				$dbr->select( 'page',
 					// [ 'tl_namespace AS namespace', 'tl_title AS title' ],
 					[ 'page_id', 'page_namespace', 'page_title', 'page_is_redirect' ],

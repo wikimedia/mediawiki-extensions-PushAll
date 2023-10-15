@@ -75,7 +75,7 @@ class ApiPushAll extends ApiPushAllBase {
 	 */
 	private function doRequestEdit( PushAllTarget $target, Title $title ) {
 		global $wgSitename;
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = $wikipage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
 		if ( empty( $content ) ) {
 			$this->dieWithErrorCodeLocalWiki( 'pushall-error-title-not-allow', $title->getPrefixedText() );
@@ -214,7 +214,7 @@ class ApiPushAll extends ApiPushAllBase {
 	private function doRequestUpload( PushAllTarget $target, Title $title ) {
 		global $wgSitename;
 
-		$wikipage = WikiPage::factory( $title );
+		$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		$content = $wikipage->getContent( RevisionRecord::FOR_THIS_USER, $this->getUser() );
 		if ( empty( $content ) ) {
 			$this->dieWithErrorCodeLocalWiki( 'pushall-error-title-not-allow', $title->getPrefixedText() );

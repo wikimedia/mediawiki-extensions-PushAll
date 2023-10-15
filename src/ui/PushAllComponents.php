@@ -33,7 +33,7 @@ final class PushAllComponents {
 				$titlesNotExist[] = $title;
 				$errors[] = wfMessage( 'pushall-error-title-not-exist', $title )->parse();
 			} else {
-				$wikipage = WikiPage::factory( $title );
+				$wikipage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 				$content = $wikipage->getContent( RevisionRecord::FOR_THIS_USER, $user );
 				if ( empty( $content ) ) {
 					$errors[] = wfMessage( 'pushall-error-title-not-allow', $title )->parse();

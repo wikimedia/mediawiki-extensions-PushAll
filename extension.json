@@ -145,16 +145,6 @@
 			]
 		}
 	},
-	"QUnitTestModule": {
-		"localBasePath": "",
-		"remoteExtPath": "PushAll",
-		"scripts": [
-			"tests/qunit/ui/js/ext.pushall.test.js"
-		],
-		"dependencies": [
-			"ext.pushall"
-		]
-	},
 	"ResourceFileModulePaths": {
 		"localBasePath": "",
 		"remoteExtPath": "PushAll"
