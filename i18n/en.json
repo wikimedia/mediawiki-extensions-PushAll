@@ -8,6 +8,11 @@
 	"apihelp-pushallinfo-summary": "Push wiki pages to other MediaWiki wikis",
 	"apihelp-pushall-example": "Push all data and images to the specified target page",
 	"apihelp-pushallinfo-example": "Fetch push info about the supplied target pages",
+	"apihelp-pushall-param-titles": "Pages to push to destination wiki",
+	"apihelp-pushall-param-files": "Files to push to destination wiki",
+	"apihelp-pushall-param-target": "Name of destination wiki",
+	"apihelp-pushallinfo-param-titles": "Pages to compare with the targeted wikis",
+	"apihelp-pushallinfo-param-targets": "Names of targeted wikis",
 
 	"pushall-special": "Push pages",
 	"pushall-tab-text": "Push",
