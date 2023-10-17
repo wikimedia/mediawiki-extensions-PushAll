@@ -8,6 +8,7 @@
 	"apihelp-pushallinfo-summary": "Potisk vikistrani v druge vikije MediaWiki",
 	"apihelp-pushall-example": "Potisk vseh podatkov in slik na navedeno ciljno stran",
 	"apihelp-pushallinfo-example": "Pridobitev potisnih informacij o posredovanih ciljnih straneh",
+	"apihelp-pushall-param-target": "Ime ciljnega vikija",
 	"pushall-special": "Prenesi strani",
 	"pushall-tab-text": "Prenesi",
 	"pushall-tab-options": "Možnosti",

@@ -2,6 +2,10 @@
 	"@metadata": {
 		"authors": []
 	},
+	"apihelp-pushall-summary": "Verschieben von Wikiseiten in andere MediaWiki-Wikis",
+	"apihelp-pushallinfo-summary": "Verschieben von Wikiseiten in andere MediaWiki-Wikis",
+	"apihelp-pushall-example": "Alle Daten und Bilder werden auf die angegebene Zielseite",
+	"apihelp-pushallinfo-example": "Abrufen von Push-Informationen über die angegebenen Zielseiten",
 	"pushall-special": "Seiten transferieren",
 	"pushall-tab-text": "Transferieren",
 	"pushall-tab-options": "Optionen",

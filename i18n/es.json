@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"No se"
 		]
 	},
+	"apihelp-pushall-param-titles": "Páginas para enviar a la wiki de destino",
+	"apihelp-pushallinfo-param-titles": "Páginas para comparar con las wikis específicas",
 	"pushall-tools-header-files": "Archivos",
 	"pushall-tools-header-templates": "Plantillas/módulos",
 	"pushall-tools-header-attachednamespaces": "Páginas adjuntas",
