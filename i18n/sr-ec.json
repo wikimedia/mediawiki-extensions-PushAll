@@ -4,6 +4,8 @@
 			"Milicevic01"
 		]
 	},
+	"apihelp-pushall-param-target": "Име одредишног викија",
+	"apihelp-pushallinfo-param-targets": "Име циљаног викија",
 	"pushall-tab-options": "Опције",
 	"pushall-legend-title": "Легенда:",
 	"pushall-tools-header": "Алатке",

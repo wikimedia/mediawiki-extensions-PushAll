@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ukhant Erdemt"
+		]
+	},
+	"apihelp-pushall-param-titles": "Зөрлттә викид орулх халхс",
+	"apihelp-pushall-param-files": "Зөрлттә вики-д орулх файлмуд",
+	"apihelp-pushall-param-target": "Викин одх һазрин нерн",
+	"apihelp-pushallinfo-param-titles": "Зөрлттә викитә хәрцүлх халхс",
+	"apihelp-pushallinfo-param-targets": "Зөрлттә викин нерд"
+}
