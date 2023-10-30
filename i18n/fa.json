@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jeeputer"
+			"Jeeputer",
+			"Rulebased"
 		]
 	},
+	"apihelp-pushall-param-target": "نام ویکی مقصد",
 	"pushall-tools-header-subpages": "زیرصفحه‌ها"
 }
