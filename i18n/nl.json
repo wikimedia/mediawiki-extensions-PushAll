@@ -4,6 +4,15 @@
 			"McDutchie"
 		]
 	},
+	"apihelp-pushall-summary": "Wikipagina’s naar andere MediaWiki-wiki’s overplaatsen",
+	"apihelp-pushallinfo-summary": "Wikipagina’s naar andere MediaWiki-wiki’s overplaatsen",
+	"apihelp-pushall-example": "Alle gegevens en afbeeldingen naar de opgegeven doelpagina overplaatsen",
+	"apihelp-pushallinfo-example": "Overplaatsingsinformatie over de opgegeven doelpagina’s opvragen",
+	"apihelp-pushall-param-titles": "De naar de bestemmingswiki over te plaatsen pagina’s",
+	"apihelp-pushall-param-files": "De naar de bestemmingswiki over te plaatsen bestanden",
+	"apihelp-pushall-param-target": "Naam van de bestemmingswiki",
+	"apihelp-pushallinfo-param-titles": "De met de beoogde wiki’s te vergelijken pagina’s",
+	"apihelp-pushallinfo-param-targets": "Namen van de doelwiki’s",
 	"pushall-special": "Pagina's verzenden",
 	"pushall-tab-text": "Verzenden",
 	"pushall-tab-options": "Opties",
@@ -97,5 +106,6 @@
 	"pushall-error-api-nofilesupport": "De lokale MediaWiki heeft geen ondersteuning voor het plaatsen van bestanden. Neem contact op met de beheerder van deze wiki.",
 	"pushall-error-api-unknown": "Interne API-fout. Zie details in de console van de browser.",
 	"pushall-error-api-known": "PushAll API-fout.",
+	"pushall-error-token-request-failed": "Het tokenverzoek is mislukt.",
 	"pushall-error-captcha-enable-with-bot-for-this-target": "Uw bot kan geen pagina's opslaan in de externe wiki omdat de captcha is ingeschakeld voor bots. Vraag de beheerder van de doelwiki om captcha voor bots uit te schakelen (met $wgGroupPermissions['bot']['skipcaptcha'] = true; in de lokale instellingen)"
 }
