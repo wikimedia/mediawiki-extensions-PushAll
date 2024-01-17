@@ -107,5 +107,5 @@
 	"pushall-error-api-unknown": "Notranja napaka API-ja. Oglejte si podrobnosti v konzoli brskalnika.",
 	"pushall-error-api-known": "Napaka API-ja PushAll.",
 	"pushall-error-token-request-failed": "Zahtevek za žeton ni uspel.",
-	"pushall-error-captcha-enable-with-bot-for-this-target": "Vaš bot ne more shraniti strani v oddaljenem vikiju, ker je za bote vklopljena captcha. Prosite skrbnika ciljnega vikija, da izklopi captcha za robote (z $wgGroupPermissions['bot']['skipcaptcha'] = true; v localsettings)"
+	"pushall-error-captcha-enable-with-bot-for-this-target": "Vaš bot ne more shraniti strani v oddaljenem vikiju, ker je za bote vklopljena CAPTCHA. Prosite administratorja ciljnega vikija, da za robote izklopi CAPTCHA (z $wgGroupPermissions['bot']['skipcaptcha'] = true; v localsettings)."
 }
