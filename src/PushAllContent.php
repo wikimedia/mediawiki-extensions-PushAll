@@ -149,15 +149,15 @@ class PushAllContent {
 
 		$subpages = self::getSubpages( $contentObj->titlePrefixed );
 		foreach ( $subpages as $subpage ) {
-				if ( $contents->isKnownPage( $subpage ) ) {
-					$contentObj->subpages[$subpage] = clone $contents->getPage( $subpage );
-					$contentObj->subpages[$subpage]->id = uniqid();
-				} else {
-					$content = self::factory( $subpage, $contents, $targets );
-					$content->isSubpage = true;
-					$contentObj->subpages[$subpage] = $content;
-					$contents->addPage( $content );
-				}
+			if ( $contents->isKnownPage( $subpage ) ) {
+				$contentObj->subpages[$subpage] = clone $contents->getPage( $subpage );
+				$contentObj->subpages[$subpage]->id = uniqid();
+			} else {
+				$content = self::factory( $subpage, $contents, $targets );
+				$content->isSubpage = true;
+				$contentObj->subpages[$subpage] = $content;
+				$contents->addPage( $content );
+			}
 		}
 
 		$templates = self::getTemplates( $contentObj->titlePrefixed );
@@ -301,7 +301,7 @@ class PushAllContent {
 				__METHOD__,
 				[],
 					[
-					'imagelinks' => [ 'INNER JOIN', [ 'page_id=il_from','page_namespace=il_from_namespace' ] ]
+					'imagelinks' => [ 'INNER JOIN', [ 'page_id=il_from', 'page_namespace=il_from_namespace' ] ]
 				]
 				);
 			if ( $resultDb ) {
@@ -361,13 +361,13 @@ class PushAllContent {
 					// phpcs:ignore
 					'(SELECT ct_rev_id,ct_params FROM `change_tag_def`, `change_tag` WHERE ctd_id = ct_tag_id AND  ctd_name = "pushall-push") as pushtags'
 				],
-				[ 'rev_id', 'actor_name', 'rev_len' ,'comment_text', 'rev_timestamp','ct_params' ],
+				[ 'rev_id', 'actor_name', 'rev_len', 'comment_text', 'rev_timestamp', 'ct_params' ],
 				[
 					'page_namespace' => $title->getNamespace(),
 					'page_title' => $title->getDBkey(),
 				],
 				__METHOD__,
-				[ 'LIMIT' => 100,"ORDER BY" => 'rev_timestamp DESC' ],
+				[ 'LIMIT' => 100, "ORDER BY" => 'rev_timestamp DESC' ],
 				[
 					'revision' => [
 						'INNER JOIN',

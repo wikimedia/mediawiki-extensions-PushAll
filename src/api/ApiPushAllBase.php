@@ -45,7 +45,7 @@ abstract class ApiPushAllBase extends ApiBase {
 	 */
 	protected function dieWithErrorCodeRemoteWiki( string $msg, string $targetName = '' ) {
 		$this->dieWithError(
-			[ $msg,$targetName ],
+			[ $msg, $targetName ],
 			'pushall-error-api-known',
 
 			[
@@ -62,7 +62,7 @@ abstract class ApiPushAllBase extends ApiBase {
 	 */
 	protected function dieWithErrorCodeLocalWiki( string $msg, string $titleStr = '' ) {
 		$this->dieWithError(
-			[ $msg,$titleStr ],
+			[ $msg, $titleStr ],
 			'pushall-error-api-known',
 			[
 				"msg" => $msg,

@@ -378,8 +378,7 @@ final class PushAllComponents {
 			'div',
 			[
 				'class' => 'mw-collapsible mw-made-collapsible toccolours'
-					. ( $isCollapsed ? ' mw-collapsed' : '' )
-				,
+					. ( $isCollapsed ? ' mw-collapsed' : '' ),
 				'style' => 'position: relative;'
 			],
 			Html::rawElement(
