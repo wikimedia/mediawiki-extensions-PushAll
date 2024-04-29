@@ -63,7 +63,7 @@ class PushAllTags {
 		$result = [];
 		$db = wfGetDB( DB_REPLICA );
 		$resultDb = $db->select(
-			[ 'change_tag','change_tag_def' ],
+			[ 'change_tag', 'change_tag_def' ],
 			[ 'ct_tag_id', 'ct_params' ],
 			[
 				'ct_rev_id' => $rev_id,

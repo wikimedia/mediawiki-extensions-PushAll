@@ -114,7 +114,7 @@ class SpecialPushAll extends SpecialPage {
 			] ),
 
 			new OOUI\ButtonInputWidget( [
-				'label' => $this->msg( 'pushall-special-namespace-action-field-button' )->text() ,
+				'label' => $this->msg( 'pushall-special-namespace-action-field-button' )->text(),
 				'type' => 'button',
 				'flags' => [ 'progressive' ],
 				'id' => 'pushallNamespaceAddButton'
@@ -179,7 +179,7 @@ class SpecialPushAll extends SpecialPage {
 					]
 				] )
 			]
-		] ) );
+			 ] ) );
 	}
 
 	/**

@@ -87,7 +87,7 @@ class ApiPushAll extends ApiPushAllBase {
 		$requestData = [
 			'action' => 'edit',
 			'title' => $title->getFullText(),
-			'text' => $content->getText()  ,
+			'text' => $content->getText(),
 			'format' => 'json',
 			'summary' => $summary,
 			'token' => $target->tokenEdit,
