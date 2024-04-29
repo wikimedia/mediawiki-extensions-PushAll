@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hehua",
-			"XtexChooser"
+			"XtexChooser",
+			"沈澄心"
 		]
 	},
 	"pushall-special": "推送页面",
@@ -15,10 +16,14 @@
 	"pushall-targets": "推送目标",
 	"pushall-remote-pages": "远程页面",
 	"pushall-tools-header": "工具",
+	"pushall-tools-header-contents": "内容",
+	"pushall-tools-header-check": "检查",
 	"pushall-tools-header-subpages": "子页面",
 	"pushall-tools-header-files": "文件",
+	"pushall-tools-header-templates": "模板/模块",
 	"pushall-tools-button-expand": "展开",
 	"pushall-tools-button-collapse": "折叠",
+	"pushall-tools-button-include": "包含",
 	"pushall-tools-button-exclude": "排除",
 	"pushall-special-page-action-field-top-label": "添加一个页面：",
 	"pushall-special-page-action-field-placeholder": "搜索要添加的页面",
