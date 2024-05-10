@@ -1462,10 +1462,10 @@ graphemer@^1.4.0:
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
-grunt-banana-checker@0.11.1:
-  version "0.11.1"
-  resolved "https://registry.npmjs.org/grunt-banana-checker/-/grunt-banana-checker-0.11.1.tgz"
-  integrity sha512-CF0h/TXaX9sbF2yIz+fUfJc4Zvms7XGYQ7ZYMD5+vv0LMZzSFf7JSHXDaBEs72nQWw4r4ap5fOW3baAliW+0bQ==
+grunt-banana-checker@0.12.0:
+  version "0.12.0"
+  resolved "https://registry.npmjs.org/grunt-banana-checker/-/grunt-banana-checker-0.12.0.tgz"
+  integrity sha512-rdu8YqGxfyBUNMSLmqusSg8RUzGE61+kqrge4fRYb32Vqu5hzDGeomDQIkILEsSrZjtNTTcJ8iTwIswQ+POCGw==
 
 grunt-cli@~1.4.3:
   version "1.4.3"
