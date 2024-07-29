@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Don Alessandro",
 			"Ильгиз"
 		]
 	},
 	"pushall-tools-button-collapse": "Төрү",
-	"pushall-tools-button-checkall": "Барысын тикшерергә",
+	"pushall-tools-button-checkall": "Барысын тикшерү",
 	"pushall-special-page-action-field-placeholder": "Кертү өчен бит эзләү",
 	"pushall-preference-targets-action-field-button-change": "Үзгәртү",
 	"pushall-preference-dialog-field-login-label": "Ботыгызның логины"
