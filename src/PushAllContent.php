@@ -8,6 +8,8 @@
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Class PushAllContent
  */
@@ -215,7 +217,7 @@ class PushAllContent {
 	 */
 	private static function getTemplates( $pageName ) {
 		$result = [];
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$title = Title::newFromText( $pageName );
 		if ( $title ) {
 			$pageSet[$title->getPrefixedText()] = true;
@@ -253,7 +255,7 @@ class PushAllContent {
 		$result = [];
 		$title = Title::newFromText( $pageName );
 		if ( $title ) {
-			$dbr = wfGetDB( DB_REPLICA );
+			$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 			$resultDb = new TitleArrayFromResult(
 				$dbr->select( 'page',
 					// [ 'tl_namespace AS namespace', 'tl_title AS title' ],
@@ -285,7 +287,7 @@ class PushAllContent {
 	 */
 	private static function getLocalFiles( $pageName ) {
 		$result = [];
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		// foreach ( $pageNames as $pageName ) {
 		$title = Title::newFromText( $pageName );
 		if ( $title ) {
@@ -348,7 +350,7 @@ class PushAllContent {
 	 */
 	public static function getRevisions( string $pageName, PushAllTargets $targets ) {
 		$result = [];
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$title = Title::newFromText( $pageName );
 		if ( $title ) {
 			$pageSet[$title->getPrefixedText()] = true;
