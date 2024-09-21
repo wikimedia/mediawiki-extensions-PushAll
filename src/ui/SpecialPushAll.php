@@ -188,7 +188,7 @@ class SpecialPushAll extends SpecialPage {
 	 * @return string
 	 */
 	public function getDescription() {
-		return $this->msg( 'pushall-special' )->text();
+		return $this->msg( 'pushall-special' );
 	}
 
 	/**
@@ -198,6 +198,6 @@ class SpecialPushAll extends SpecialPage {
 		$out = $this->getOutput();
 		$out->setArticleRelated( false );
 		$out->setRobotPolicy( "noindex,nofollow" );
-		$out->setPageTitle( $this->getDescription() );
+		$out->setPageTitle( $this->getDescription()->text() );
 	}
 }
