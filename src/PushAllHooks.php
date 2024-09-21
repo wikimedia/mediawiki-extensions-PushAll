@@ -20,23 +20,19 @@ final class PushAllHooks {
 	 * @param array &$links
 	 */
 	public static function onSkinTemplateNavigationUniversal( SkinTemplate $sktemplate, array &$links ) {
-		$config = PushAll::getConfig();
-
 		// Make sure that this is not a special page, the page has contents, and the user can push.
 		$title = $sktemplate->getTitle();
 		$user = $sktemplate->getUser();
-		$pushShowTab = PushAll::isPrefUserShowTab( $user );
-		$request = $sktemplate->getRequest();
 		if (
 			$title
 			&& $title->getNamespace() !== NS_SPECIAL
 			&& $title->exists()
 			&& PushAll::isAllowedToPush( $user )
 		) {
-			$location = $pushShowTab ? 'views' : 'actions';
+			$location = PushAll::isPrefUserShowTab( $user ) ? 'views' : 'actions';
 			$links[$location]['pushall'] = [
 				'text' => wfMessage( 'pushall-tab-text' )->text(),
-				'class' => $request->getVal( 'action' ) == 'pushall' ? 'selected' : '',
+				'class' => $sktemplate->getRequest()->getVal( 'action' ) == 'pushall' ? 'selected' : '',
 				'href' => $title->getLocalURL( 'action=pushall' )
 			];
 		}
