@@ -1,11 +1,18 @@
 {
 	"@metadata": {
-		"authors": []
+		"authors": [
+			"Justman10000"
+		]
 	},
 	"apihelp-pushall-summary": "Verschieben von Wikiseiten in andere MediaWiki-Wikis",
 	"apihelp-pushallinfo-summary": "Verschieben von Wikiseiten in andere MediaWiki-Wikis",
 	"apihelp-pushall-example": "Alle Daten und Bilder werden auf die angegebene Zielseite",
 	"apihelp-pushallinfo-example": "Abrufen von Push-Informationen über die angegebenen Zielseiten",
+	"apihelp-pushall-param-titles": "Seiten, die ins Ziel-Wiki verschoben werden sollen",
+	"apihelp-pushall-param-files": "Dateien, die ins Ziel-Wiki übertragen werden sollen",
+	"apihelp-pushall-param-target": "Name des Ziel-Wikis",
+	"apihelp-pushallinfo-param-titles": "Seiten zum Vergleich mit den Ziel-Wikis",
+	"apihelp-pushallinfo-param-targets": "Namen der Ziel-Wikis",
 	"pushall-special": "Seiten transferieren",
 	"pushall-tab-text": "Transferieren",
 	"pushall-tab-options": "Optionen",
@@ -22,6 +29,10 @@
 	"pushall-import-revision-message": "Aus $1 transferiert.",
 	"pushall-remote-pages": "Entfernte Seiten",
 	"pushall-legend-title": "Legende:",
+	"pushall-legend-gray": "Aktueller Suchstatus der entfernten Seite/Datei.",
+	"pushall-legend-chartreuse": "Die entfernte Seite/Datei wurde bereits aktualisiert. Nichts zu tun.",
+	"pushall-legend-green": "Die Remote-Seite existiert nicht oder hat sich seit dem letzten Push nicht weiterentwickelt und ist jetzt veraltet. Du kannst die letzte Version pushen.",
+	"pushall-legend-darkorange": "Du musst die Änderungen an der entfernten Seite zusammenführen, bevor du mit der Option \"Warnungen ignorieren\" pushst.",
 	"pushall-tools-header": "Werkzeuge",
 	"pushall-tools-header-contents": "Inhalte",
 	"pushall-tools-header-check": "Abfragen",
