@@ -59,11 +59,9 @@
 	 * @inheritdoc OO.ui.mixin.LookupElement
 	 */
 	mw.widgets.PushallPageSelector.prototype.getLookupMenuOptionsFromData = function ( response ) {
-		return response.map( function ( res ) {
-			return new OO.ui.MenuOptionWidget( { data: res.title, label: res.title
-				// , title: res.description
-			} );
-		} );
+		return response.map( ( res ) => new OO.ui.MenuOptionWidget( { data: res.title, label: res.title
+			// , title: res.description
+		} ) );
 	};
 	/**
 	 * Get API params for a given query

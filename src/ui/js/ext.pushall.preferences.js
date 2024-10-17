@@ -7,7 +7,7 @@
  */
 /* globals mediaWiki jQuery */
 ( function ( mw, $ ) {
-	$( function () {
+	$( () => {
 		// button submit of the section
 		const buttonSubmitTab = OO.ui.infuse( $( '#prefcontrol' ) );
 
@@ -239,7 +239,7 @@
 			const dialog = ProcessDialog.prototype;
 			const fields = ProcessDialog.prototype.fieldsInput;
 			for ( const fieldKey in fields ) {
-				dialog[ fields[ fieldKey ] ].fieldWidget.on( 'change', function () {
+				dialog[ fields[ fieldKey ] ].fieldWidget.on( 'change', () => {
 					clearErrors( dialog );
 				} );
 			}
@@ -336,7 +336,7 @@
 					dialog.messageError.setLabel( $( '<ul><li>' + errors.join( '<li>' ) + '</ul>' ) );
 					dialog.messageError.$element.show();
 				} else {
-					return new OO.ui.Process( function () {
+					return new OO.ui.Process( () => {
 						dialog.close( {
 							action: action,
 							name: dialog.wikiNameField.fieldWidget.value,
@@ -386,8 +386,8 @@
 				align: 'top'
 			}
 		);
-		buttonAddTarget.on( 'click', function () {
-			windowManager.openWindow( processDialog, { action: 'add', itemKey: -1 } ).closed.then( function ( data ) {
+		buttonAddTarget.on( 'click', () => {
+			windowManager.openWindow( processDialog, { action: 'add', itemKey: -1 } ).closed.then( ( data ) => {
 				// Code here runs after the window is closed.
 				// console.log( data );
 				if ( data ) {
@@ -402,8 +402,8 @@
 				type: 'button',
 				flags: [ 'progressive' ]
 			} );
-			buttonModify.on( 'click', function () {
-				windowManager.openWindow( processDialog, { action: 'modify', itemKey: keyTarget } ).closed.then( function ( data ) {
+			buttonModify.on( 'click', () => {
+				windowManager.openWindow( processDialog, { action: 'modify', itemKey: keyTarget } ).closed.then( ( data ) => {
 					// Code here runs after the window is closed.
 					// console.log( data );
 					if ( data ) {
@@ -416,10 +416,10 @@
 				type: 'button',
 				flags: [ 'progressive' ]
 			} );
-			buttonDelete.on( 'click', function () {
+			buttonDelete.on( 'click', () => {
 				windowManager.openWindow( confirmDeleteDialog, {
 					message: mw.msg( 'pushall-preference-dialog-message-remove' )
-				} ).closed.then( function ( data ) {
+				} ).closed.then( ( data ) => {
 					// Code here runs after the window is closed.
 					// console.log( data );
 					if ( data && data.action === 'accept' ) {

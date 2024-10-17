@@ -502,13 +502,13 @@
 		};
 
 		PushAll.api.get( params )
-			.done( function ( data ) {
+			.done( ( data ) => {
 				buttonPushAll.innerHTML = mw.msg( 'pushall-button-completed' );
 				PushAll.setRevisions( wgPushAllContents, data );
 				PushAll.refreshInfo();
 				buttonPushAll.disabled = false;
 			} )
-			.fail( function ( errorCode, details ) {
+			.fail( ( errorCode, details ) => {
 				buttonPushAll.innerHTML = mw.msg( 'pushall-button-failed' );
 				PushAll.handleError( errorCode, details );
 				buttonPushAll.disabled = false;
@@ -521,7 +521,7 @@
 			titles: PushAll.concatTitlesOfContents()
 		};
 		PushAll.api.get( params )
-			.done( function ( data ) {
+			.done( ( data ) => {
 				// console.log( data );
 				for ( const targetName in wgPushAllTargets ) {
 					const target = wgPushAllTargets[ targetName ];
@@ -544,7 +544,7 @@
 					PushAll.refreshContentsToPush();
 				}
 			} )
-			.fail( function ( errorCode, details ) {
+			.fail( ( errorCode, details ) => {
 				PushAll.handleError( errorCode, details );
 			} );
 	};
@@ -562,50 +562,50 @@
 
 		PushAll.api = new mw.Api();
 
-		$( '#buttonExpandAll' ).on( 'click', function () {
+		$( '#buttonExpandAll' ).on( 'click', () => {
 			for ( const targetName in wgPushAllTargets ) {
 				PushAll.expand( wgPushAllTargets[ targetName ], wgPushAllContents );
 			}
 		} );
-		$( '#buttonCollapseAll' ).on( 'click', function () {
+		$( '#buttonCollapseAll' ).on( 'click', () => {
 			for ( const targetName in wgPushAllTargets ) {
 				PushAll.collapse( wgPushAllTargets[ targetName ], wgPushAllContents );
 			}
 			$( window ).scrollTop( 0 );
 		} );
 
-		$( '#buttonCheckAll' ).on( 'click', function () {
+		$( '#buttonCheckAll' ).on( 'click', () => {
 			for ( const targetName in wgPushAllTargets ) {
 				PushAll.checkall( wgPushAllTargets[ targetName ], wgPushAllContents );
 			}
 		} );
-		$( '#buttonUncheckAll' ).on( 'click', function () {
+		$( '#buttonUncheckAll' ).on( 'click', () => {
 			for ( const targetName in wgPushAllTargets ) {
 				PushAll.uncheckall( wgPushAllTargets[ targetName ], wgPushAllContents );
 			}
 		} );
-		$( '#buttonIncludeSubpages' ).on( 'click', function () {
+		$( '#buttonIncludeSubpages' ).on( 'click', () => {
 			PushAll.includeAll( 'isSubpage' );
 		} );
-		$( '#buttonExcludeSubpages' ).on( 'click', function () {
+		$( '#buttonExcludeSubpages' ).on( 'click', () => {
 			PushAll.excludeAll( 'isSubpage' );
 		} );
-		$( '#buttonIncludeFiles' ).on( 'click', function () {
+		$( '#buttonIncludeFiles' ).on( 'click', () => {
 			PushAll.includeAll( 'isFile' );
 		} );
-		$( '#buttonExcludeFiles' ).on( 'click', function () {
+		$( '#buttonExcludeFiles' ).on( 'click', () => {
 			PushAll.excludeAll( 'isFile' );
 		} );
-		$( '#buttonIncludeTemplates' ).on( 'click', function () {
+		$( '#buttonIncludeTemplates' ).on( 'click', () => {
 			PushAll.includeAll( 'isTemplate' );
 		} );
-		$( '#buttonExcludeTemplates' ).on( 'click', function () {
+		$( '#buttonExcludeTemplates' ).on( 'click', () => {
 			PushAll.excludeAll( 'isTemplate' );
 		} );
-		$( '#buttonIncludeAttachedNamespaces' ).on( 'click', function () {
+		$( '#buttonIncludeAttachedNamespaces' ).on( 'click', () => {
 			PushAll.includeAll( 'isAttachedPageByNamespace' );
 		} );
-		$( '#buttonExcludeAttachedNamespaces' ).on( 'click', function () {
+		$( '#buttonExcludeAttachedNamespaces' ).on( 'click', () => {
 			PushAll.excludeAll( 'isAttachedPageByNamespace' );
 		} );
 
@@ -619,11 +619,11 @@
 		$allButton.on( 'click', function () {
 			PushAll.doPushAll( this );
 		} );
-		$( '#pushall-all-button' ).on( 'click', function () {
+		$( '#pushall-all-button' ).on( 'click', () => {
 			$allButton.trigger( 'click' );
 		} );
 
-		$( '#forcePush' ).on( 'click', function () {
+		$( '#forcePush' ).on( 'click', () => {
 			for ( const targetName in wgPushAllTargets ) {
 				const target = wgPushAllTargets[ targetName ];
 				PushAll.displayInfoContent( target, wgPushAllContents, PushAll.wgPushAllRemotePagesArray, $( '#forcePush' ).is( ':checked' ) );

@@ -60,9 +60,7 @@
 	 */
 	mw.widgets.PushallCategorySelector.prototype.getLookupMenuOptionsFromData =
 		function ( response ) {
-			return response.map( function ( res ) {
-				return new OO.ui.MenuOptionWidget( { data: res.title, label: res.title } );
-			} );
+			return response.map( ( res ) => new OO.ui.MenuOptionWidget( { data: res.title, label: res.title } ) );
 		};
 	/**
 	 * Get API params for a given query

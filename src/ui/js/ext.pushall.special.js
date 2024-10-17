@@ -8,7 +8,7 @@
 /* globals mediaWiki jQuery */
 const PushAll = require( 'ext.pushall' );
 ( function ( mw, $ ) {
-	$( function () {
+	$( () => {
 
 		const api = new mw.Api();
 		const $titles = $( '#pushallTitles' ).find( 'textarea[name="pushallTitles"]' );
@@ -23,7 +23,7 @@ const PushAll = require( 'ext.pushall' );
 			$errorDiv.show();
 		}
 
-		$( '#pushallCategoryAddButton' ).on( 'click', function () {
+		$( '#pushallCategoryAddButton' ).on( 'click', () => {
 			// console.log($('#pushallCategorySelector input[type="search"]').val());
 			const categorySelected = $( '#pushallCategorySelector' ).find( 'input[type="search"]' ).val();
 			if ( categorySelected && categorySelected !== '' ) {
@@ -33,20 +33,20 @@ const PushAll = require( 'ext.pushall' );
 					cmtitle: categorySelected
 				};
 				api.get( params )
-					.done( function ( data ) {
+					.done( ( data ) => {
 						const titles = $titles.val() !== '' ? $titles.val().split( '\n' ).filter( ( n ) => n ) : [];
 						for ( const key in data.query.categorymembers ) {
 							titles.push( data.query.categorymembers[ key ].title );
 						}
 						$titles.val( [ ...new Set( titles ) ].join( '\n' ) );
 					} )
-					.fail( function ( errorCode ) {
+					.fail( ( errorCode ) => {
 						handleError( errorCode );
 					} );
 			}
 		} );
 
-		$( '#pushallNamespaceAddButton' ).on( 'click', function () {
+		$( '#pushallNamespaceAddButton' ).on( 'click', () => {
 			const namespaceSelected = $( '#pushallNamespaceSelector' )
 				.find( 'select[name="pushallNamespaceSelector"]' ).on( 'option:selected' ).val();
 			if ( namespaceSelected >= 0 ) {
@@ -57,20 +57,20 @@ const PushAll = require( 'ext.pushall' );
 					apnamespace: namespaceSelected
 				};
 				api.get( params )
-					.done( function ( data ) {
+					.done( ( data ) => {
 						const titles = $titles.val() !== '' ? $titles.val().split( '\n' ).filter( ( n ) => n ) : [];
 						for ( const key in data.query.allpages ) {
 							titles.push( data.query.allpages[ key ].title );
 						}
 						$titles.val( [ ...new Set( titles ) ].join( '\n' ) );
 					} )
-					.fail( function ( errorCode ) {
+					.fail( ( errorCode ) => {
 						handleError( errorCode );
 					} );
 			}
 		} );
 
-		$( '#pushallPageAddButton' ).on( 'click', function () {
+		$( '#pushallPageAddButton' ).on( 'click', () => {
 			const pageSelected = $( '#pushallPageSelector' ).find( 'input[type="search"]' ).val();
 			if ( pageSelected && pageSelected !== '' ) {
 				const titles = $titles.val() !== '' ? $titles.val().split( '\n' ).filter( ( n ) => n ) : [];

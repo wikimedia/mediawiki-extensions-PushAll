@@ -8,7 +8,7 @@
 const PushAll = require( 'ext.pushall' );
 /* globals jQuery */
 ( function ( $ ) {
-	$( function () {
+	$( () => {
 		PushAll.initialize();
 	} );
 }( jQuery ) );
