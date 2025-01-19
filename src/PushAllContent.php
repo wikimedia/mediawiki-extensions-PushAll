@@ -9,6 +9,7 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\Subquery;
 
 /**
  * Class PushAllContent
@@ -361,7 +362,7 @@ class PushAllContent {
 					'comment',
 					'actor',
 					// phpcs:ignore
-					'(SELECT ct_rev_id,ct_params FROM `change_tag_def`, `change_tag` WHERE ctd_id = ct_tag_id AND  ctd_name = "pushall-push") as pushtags'
+					'pushtags' => new Subquery( 'SELECT ct_rev_id,ct_params FROM `change_tag_def`, `change_tag` WHERE ctd_id = ct_tag_id AND  ctd_name = "pushall-push"' )
 				],
 				[ 'rev_id', 'actor_name', 'rev_len', 'comment_text', 'rev_timestamp', 'ct_params' ],
 				[
@@ -383,10 +384,7 @@ class PushAllContent {
 						'LEFT JOIN',
 						[ 'rev_actor=actor_id' ]
 					],
-					// phpcs:ignore
-					'(SELECT ct_rev_id,ct_params FROM `change_tag_def`, `change_tag` WHERE ctd_id = ct_tag_id AND  ctd_name = "'
-					. PushAllTags::TAG_PUSH
-					. '") as pushtags' => [
+					'pushtags' => [
 						'LEFT JOIN',
 						[ 'ct_rev_id = rev_id' ]
 					]
