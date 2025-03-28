@@ -14,7 +14,7 @@
 		"grunt-stylelint": "0.20.1",
 		"jquery": "^3.7.1",
 		"jsdom": "^22.1.0",
-		"qunit": "2.20.0",
+		"qunit": "2.24.1",
 		"stylelint-config-wikimedia": "0.18.0"
 	},
 	"eslintIgnore": [
