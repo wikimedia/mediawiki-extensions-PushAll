@@ -11,6 +11,7 @@
 use GuzzleHttp\Psr7;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 
 /**
  * Class ApiPushAll

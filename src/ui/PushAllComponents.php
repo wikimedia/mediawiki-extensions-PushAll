@@ -8,8 +8,10 @@
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
 
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Title\Title;
 
 /**
  * Class PushAllComponents

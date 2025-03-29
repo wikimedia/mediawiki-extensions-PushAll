@@ -8,6 +8,8 @@
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
 
+use MediaWiki\Title\Title;
+
 /**
  * Class TabPushAll
  */
