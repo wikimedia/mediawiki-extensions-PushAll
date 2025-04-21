@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"pushall-tab-options": "Optiounen",
@@ -15,6 +16,7 @@
 	"pushall-tools-button-expand": "Opklappen",
 	"pushall-tools-button-collapse": "Zesummeklappen",
 	"pushall-tools-button-exclude": "Ausschléissen",
+	"pushall-tools-button-checkall": "Alles uwielen",
 	"pushall-option-force-push": "Warnungen ignoréieren",
 	"pushall-special-page-action-field-top-label": "Eng Säit dobäisetzen:",
 	"pushall-special-page-action-field-button": "Derbäisetzen",
