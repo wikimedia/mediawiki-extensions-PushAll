@@ -2,6 +2,8 @@
 	"@metadata": {
 		"authors": []
 	},
+	"apihelp-pushall-param-target": "Ime odredišnog vikija",
+	"apihelp-pushallinfo-param-targets": "Ime ciljanog vikija",
 	"pushall-tab-options": "Opcije",
 	"pushall-legend-title": "Legenda:",
 	"pushall-tools-header": "Alatke",
