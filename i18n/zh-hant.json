@@ -66,7 +66,7 @@
 	"pushall-checkbox-tooltip-push-useless": "不會推送此內容，因為這沒有用途。",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "不會推送此內容，因為出現警告。",
 	"pushall-special-description": "此頁面能讓您將一個或多個頁面的內容推送到一個或多個 MediaWiki wiki。\n\n要推送頁面，請在以下的文字框裡輸入標題，每行一個標題，然後點擊分析。\n這將會收集這些頁面的所有依賴內容，而且您可以選擇要推送的 wiki 與最終頁面。",
-	"pushall-special-page-action-field-top-label": "新增一個頁面：",
+	"pushall-special-page-action-field-top-label": "新增頁面：",
 	"pushall-special-page-action-field-button": "新增",
 	"pushall-special-page-action-field-placeholder": "搜尋要新增的頁面",
 	"pushall-special-category-action-field-top-label": "新增分類的頁面：",
