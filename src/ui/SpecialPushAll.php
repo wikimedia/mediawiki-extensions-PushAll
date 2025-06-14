@@ -66,7 +66,6 @@ class SpecialPushAll extends SpecialPage {
 	 * Form to select titles
 	 *
 	 * @param string $paramTitles
-	 * @throws \OOUI\Exception
 	 */
 	private function showFormSelectTitles( $paramTitles = "" ) {
 		$pageSearchField = new OOUI\ActionFieldLayout(
