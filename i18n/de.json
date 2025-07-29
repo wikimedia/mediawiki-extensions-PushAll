@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Justman10000"
+			"Justman10000",
+			"PretzelRocky"
 		]
 	},
 	"apihelp-pushall-summary": "Verschieben von Wikiseiten in andere MediaWiki-Wikis",
@@ -48,6 +49,8 @@
 	"pushall-option-force-push": "Warnungen ignorieren",
 	"pushall-special-page-action-field-top-label": "Seite hinzufügen:",
 	"pushall-special-page-action-field-button": "Hinzufügen",
+	"pushall-special-page-action-field-placeholder": "Suche nach einer hinzuzufügenden Seite",
+	"pushall-special-category-action-field-top-label": "Füge Seiten aus einer Kategorie hinzu:",
 	"pushall-special-category-action-field-button": "Hinzufügen",
 	"pushall-special-category-action-field-placeholder": "Eine Kategorie suchen",
 	"pushall-special-namespace-action-field-top-label": "Seiten eines Namensraums hinzufügen:",
