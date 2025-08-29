@@ -30,22 +30,24 @@ class ApiPushAllInfo extends ApiPushAllBase {
 		$params = $this->extractRequestParams();
 		$targets = PushAll::getTargets( $this->getUser() );
 		$contents = new PushAllContents( $targets );
-		foreach ( $params['targets'] as $targetName ) {
-			if ( !$targets->exist( $targetName ) ) {
-				$this->dieWithErrorCodeRemoteWiki( 'pushall-error-not-credentials-for-this-target', $targetName );
-			}
-		}
-		foreach ( $params['targets'] as $targetName ) {
-			$target = $targets->get( $targetName );
-			$this->doRequestLoginToken( $target );
-			$this->doRequestLogin( $target );
-			foreach ( $params['titles'] as $pageTitle ) {
-				$title = Title::newFromText( $pageTitle );
-				if ( $title->exists() ) {
-					$contents->addTitleToPush( $title );
+		if ( isset( $params['targets'] ) && is_array( $params['targets'] ) ) {
+			foreach ( $params['targets'] as $targetName ) {
+				if ( !$targets->exist( $targetName ) ) {
+					$this->dieWithErrorCodeRemoteWiki( 'pushall-error-not-credentials-for-this-target', $targetName );
 				}
 			}
-			$this->doRequestPageRevision( $target, $contents->getPagesList() );
+			foreach ( $params['targets'] as $targetName ) {
+				$target = $targets->get( $targetName );
+				$this->doRequestLoginToken( $target );
+				$this->doRequestLogin( $target );
+				foreach ( $params['titles'] as $pageTitle ) {
+					$title = Title::newFromText( $pageTitle );
+					if ( $title->exists() ) {
+						$contents->addTitleToPush( $title );
+					}
+				}
+				$this->doRequestPageRevision( $target, $contents->getPagesList() );
+			}
 		}
 	}
 

@@ -68,6 +68,18 @@ class PushAllTarget {
 	public $tokenEdit = null;
 
 	/**
+	 * Endpoint path
+	 * @var string
+	 */
+	private $endpointPath;
+
+	/**
+	 * Endpoint domain
+	 * @var string
+	 */
+	private $endpointDomain;
+
+	/**
 	 * Constructor.
 	 *
 	 * @param string $name

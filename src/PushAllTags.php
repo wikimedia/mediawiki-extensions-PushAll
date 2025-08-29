@@ -32,7 +32,9 @@ class PushAllTags {
 		// read old tag
 		$precTag = self::getData( $rev_id, self::TAG_PUSH );
 		// clean tag
-		ChangeTags::updateTags( [], [ self::TAG_PUSH ], $rc_id, $rev_id );
+		$changeTagStore = \MediaWiki\MediaWikiServices::getInstance()->getChangeTagsStore();
+		$changeTagStore->updateTags( [], [ self::TAG_PUSH ], $rc_id, $rev_id );
+
 		// clean prec data
 		unset( $precTag[$targetName] );
 		// create new data
@@ -43,7 +45,7 @@ class PushAllTags {
 			]
 		];
 		// Save
-		ChangeTags::addTags(
+		$changeTagStore->addTags(
 			self::TAG_PUSH,
 			null,
 			$rev_id,

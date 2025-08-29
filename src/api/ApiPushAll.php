@@ -37,9 +37,11 @@ class ApiPushAll extends ApiPushAllBase {
 	protected function doModuleExecute() {
 		$params = $this->extractRequestParams();
 		$this->targets = PushAll::getTargets( $this->getUser() );
-		foreach ( $params['targets'] as $targetName ) {
-			if ( !$this->targets->exist( $targetName ) ) {
-				$this->dieWithErrorCodeRemoteWiki( 'pushall-error-not-credentials-for-this-target', $targetName );
+		if ( isset( $params['targets'] ) && is_array( $params['targets'] ) ) {
+			foreach ( $params['targets'] as $targetName ) {
+				if ( !$this->targets->exist( $targetName ) ) {
+					$this->dieWithErrorCodeRemoteWiki( 'pushall-error-not-credentials-for-this-target', $targetName );
+				}
 			}
 		}
 		$target = $this->targets->get( $params['target'] );

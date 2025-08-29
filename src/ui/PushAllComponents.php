@@ -182,7 +182,7 @@ final class PushAllComponents {
 			.
 			Html::rawElement(
 				'div', [ 'class' => 'mw-htmlform-nolabel' ],
-				Xml::check( $idforcepush, false, [ 'id' => $idforcepush ] )
+				Html::check( $idforcepush, false, [ 'id' => $idforcepush ] )
 				. '&nbsp;' .
 				Html::element(
 					'label',
@@ -388,7 +388,7 @@ final class PushAllComponents {
 				[
 					'style' => 'float: left;'
 				],
-				Xml::check( 'target' . $target->id . 'content' . $contentRoot->id, $checked,
+				Html::check( 'target' . $target->id . 'content' . $contentRoot->id, $checked,
 					[
 						'id' => 'target' . $target->id . 'content' . $contentRoot->id,
 						'class' => 'pushallCheckContent',
