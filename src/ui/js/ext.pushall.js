@@ -376,20 +376,26 @@
 				$errorDiv.show();
 			}
 		} else {
-			if ( 'target' in details.error && details.error.target !== '' && 'text' in details.error ) {
-				const $errorTargetDiv = $( '#errorpushalltarget' + wgPushAllTargets[ details.error.target ].id );
-				$errorTargetDiv.append( details.error.text );
-				$errorTargetDiv.show();
-				PushAll.displayStatusUnknownForTarget(
-					wgPushAllTargets[ details.error.target ],
-					wgPushAllContents
-				);
-			} else if ( 'text' in details.error ) {
-				$errorDiv.append( details.error.text );
-				$errorDiv.show();
-				PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
-			} else if ( 'info' in details.error ) {
-				$errorDiv.append( details.error.info );
+			if ( typeof details.error !== 'undefined' && details.error !== null ) {
+				if ( 'target' in details.error && details.error.target !== '' && 'text' in details.error ) {
+					const $errorTargetDiv = $( '#errorpushalltarget' + wgPushAllTargets[ details.error.target ].id );
+					$errorTargetDiv.append( details.error.text );
+					$errorTargetDiv.show();
+					PushAll.displayStatusUnknownForTarget(
+						wgPushAllTargets[ details.error.target ],
+						wgPushAllContents
+					);
+				} else if ( 'text' in details.error ) {
+					$errorDiv.append( details.error.text );
+					$errorDiv.show();
+					PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
+				} else if ( 'info' in details.error ) {
+					$errorDiv.append( details.error.info );
+					$errorDiv.show();
+					PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
+				}
+			} else {
+				$errorDiv.append( JSON.stringify( details, null, 2 ) );
 				$errorDiv.show();
 				PushAll.displayStatusUnknownForAllContents( wgPushAllContents );
 			}
