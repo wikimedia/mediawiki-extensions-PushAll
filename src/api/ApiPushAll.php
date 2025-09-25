@@ -28,7 +28,6 @@ class ApiPushAll extends ApiPushAllBase {
 	 *
 	 * @param ApiMain $main main parameter
 	 * @param string $action action parameter
-	 *
 	 */
 	public function __construct( $main, $action ) {
 		parent::__construct( $main, $action );
