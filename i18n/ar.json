@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Alshamiri1"
+			"Alshamiri1",
+			"Mohammed Qays"
 		]
 	},
 	"apihelp-pushall-summary": "ادفع صفحات wiki إلى ميدياويكي ويكي أخرى",
@@ -15,7 +16,7 @@
 	"pushall-button-all": "دفع الكل",
 	"pushall-tab-title": "دفع $1",
 	"pushall-targets": "أهداف الدفع",
-	"pushall-import-revision-message": "تم الدفع من $1.",
+	"pushall-import-revision-message": "دُفع من $1.",
 	"pushall-remote-pages": "الصفحات البعيدة",
 	"pushall-legend-gray": "حالة البحث قيد التقدم للصفحة / الملف البعيد.",
 	"pushall-legend-chartreuse": "تم تحديث الصفحة / الملف البعيد بالفعل. لا شيء لأفعله.",
