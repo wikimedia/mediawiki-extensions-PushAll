@@ -12,6 +12,7 @@
  * @author Karima Rafes < karima.rafes@gmail.com >
  */
 
+use MediaWiki\Config\GlobalVarConfig;
 use MediaWiki\MediaWikiServices;
 
 /**
