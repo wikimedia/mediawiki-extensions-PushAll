@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sabelöga"
+			"Sabelöga",
+			"Stefan2255"
 		]
 	},
 	"pushall-special": "Exportera sidor",
@@ -53,7 +54,7 @@
 	"pushall-checkbox-tooltip-wont-push": "Innehållet kommer inte exporteras.",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Innehållet kommer inte exporteras efter det är skrivskyddat på distanswikin.",
 	"pushall-checkbox-tooltip-push-useless": "Innehållet kommer inte exporteras eftersom det är värdelöst.",
-	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Innehållet kommer inte exporteras eftersom det finns varningar.",
+	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Innehållet kommer inte exporteras eftersom det finns en varning.",
 	"pushall-special-description": "På den här sidan kan du exportera innehåll från en eller fler sidor till en eller fler MediaWiki-wikier.\n\nFör att exportera sidor behöver du ange titeln i textrutan nedanför, en titel per rad och klicka på analysera.\nDen kommer samla in alla dessa sidors beroenden och du kan välja wikier och sista sidor att exportera.",
 	"pushall-special-page-action-field-top-label": "Lägg till en sida:",
 	"pushall-special-page-action-field-button": "Lägg till",
