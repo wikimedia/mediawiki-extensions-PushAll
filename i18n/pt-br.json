@@ -5,7 +5,18 @@
 			"Re demz"
 		]
 	},
+	"pushall-tools-header": "Ferramentas",
+	"pushall-tools-header-contents": "Conteúdo",
+	"pushall-tools-header-subpages": "Subpáginas",
+	"pushall-tools-header-files": "Arquivos",
+	"pushall-tools-header-templates": "Predefinições/Módulos",
+	"pushall-tools-header-attachednamespaces": "Páginas anexadas",
+	"pushall-tools-button-expand": "Expandir",
+	"pushall-tools-button-collapse": "Recolher",
+	"pushall-tools-button-include": "Incluir",
+	"pushall-tools-button-exclude": "Excluir",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Esse conteúdo não será impulsionado, pois há um aviso.",
+	"pushall-special-page-action-field-button": "Adicionar",
 	"pushall-special-category-action-field-button": "Adicionar",
 	"pushall-preference-targets-action-field-button-change": "Modificar"
 }
