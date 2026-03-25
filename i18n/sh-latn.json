@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"pushall-special": "Prijenos stranica",
@@ -48,7 +49,7 @@
 	"pushall-checkbox-tooltip-push-not-allowed-remote-protected": "Ovaj sadržaj neće biti prenesen jer je zaštićen na udaljenom vikiju.",
 	"pushall-checkbox-tooltip-push-useless": "Ovaj sadržaj neće biti prenesen jer je beskoristan.",
 	"pushall-checkbox-tooltip-push-not-allowed-remote-diverge-need-option-force": "Ovaj sadržaj neće biti prenesen jer postoje upozorenja.",
-	"pushall-special-description": "Ova stranica vam omogućuje da prenesete sadržaj jedne ili više stranica na jedan ili više vikija na Medijavikiju.\n\nDa biste prenesli, unesite naslove u polja ispod, (jedan naslov po retku) i pritisnite Analiziraj.\nPrikupit će sve ovisnosti ovih stranica i možete odabrati vikije i konačne stranice za prijenos.",
+	"pushall-special-description": "Ova stranica vam omogućuje da prenesete sadržaj jedne ili više stranica na jedan ili više vikija na Medijavikiju.\n\nDa biste prenesli, unesite naslove u polja ispod, (jedan naslov po retku) i pritisnite Analiziraj.\nPrikupit će sve ovisnosti ovih stranica i možete izabrati vikije i konačne stranice za prijenos.",
 	"pushall-special-page-action-field-top-label": "Dodaj stranicu:",
 	"pushall-special-page-action-field-button": "Dodaj",
 	"pushall-special-page-action-field-placeholder": "Pretraži stranicu za dodavanje",
