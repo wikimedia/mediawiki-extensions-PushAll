@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"McDutchie"
+			"McDutchie",
+			"Siebrand"
 		]
 	},
 	"apihelp-pushall-summary": "Wikipagina’s naar andere MediaWiki-wiki’s overplaatsen",
@@ -91,7 +92,7 @@
 	"pushall-preference-dialog-field-key-label": "Sleutel van uw robot",
 	"pushall-preference-dialog-field-wikiname-label": "Naam van de wiki",
 	"pushall-preference-dialog-message-remove": "Wilt u deze doelwiki verwijderen?",
-	"pushall-preference-showtab-label": "Toon het tabblad Push",
+	"pushall-preference-showtab-label": "Tabblad Push weergeven",
 	"pushall-preference-defaultinctemplates-label": "Standaard de sjablonen opnemen van de te pushen pagina",
 	"pushall-preference-defaultincattachednamespaces-label": "Standaard de bijgevoegde pagina's toevoegen (zie de documentatie van de extensie PushAll)",
 	"pushall-preference-defaultincsubpages-label": "Standaard de subpagina's opnemen van de pagina die moet worden gepusht",
