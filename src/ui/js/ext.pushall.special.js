@@ -18,7 +18,7 @@ const PushAll = require( 'ext.pushall' );
 			// todo doc
 			// Messages that can be used here:
 			// *
-			// eslint-disable-next-line mediawiki/msg-doc
+
 			$errorDiv.append( mw.msg( errorCode ) );
 			$errorDiv.show();
 		}
