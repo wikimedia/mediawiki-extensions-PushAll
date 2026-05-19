@@ -18,6 +18,7 @@
 	"pushall-tab-text": "밀어넣기",
 	"pushall-tab-options": "옵션",
 	"pushall-button-text": "밀어넣기",
+	"pushall-tab-desc": "이 탭을 사용하면 하나 이상의 다른 위키에 이 문서의 현재 판을 밀어 넣을 수 있습니다.",
 	"pushall-button-pushing": "밀어넣기",
 	"pushall-button-completed": "밀어넣기 완료",
 	"pushall-button-nothing-to-push": "밀어넣을 것이 없습니다",
