@@ -88,13 +88,13 @@
 	"pushall-preference-dialog-field-help": "Voorbeeld:",
 	"pushall-preference-dialog-field-articlepath-label": "Pad van artikelen in deze wiki",
 	"pushall-preference-dialog-field-endpoint-label": "Pad van de API in deze wiki",
-	"pushall-preference-dialog-field-login-label": "Account van uw bot",
+	"pushall-preference-dialog-field-login-label": "Account van uw robot",
 	"pushall-preference-dialog-field-key-label": "Sleutel van uw robot",
 	"pushall-preference-dialog-field-wikiname-label": "Naam van de wiki",
 	"pushall-preference-dialog-message-remove": "Wilt u deze doelwiki verwijderen?",
 	"pushall-preference-showtab-label": "Tabblad Push weergeven",
 	"pushall-preference-defaultinctemplates-label": "Standaard de sjablonen opnemen van de te pushen pagina",
-	"pushall-preference-defaultincattachednamespaces-label": "Standaard de bijgevoegde pagina's toevoegen (zie de documentatie van de extensie PushAll)",
+	"pushall-preference-defaultincattachednamespaces-label": "Standaard de bijgevoegde pagina's toevoegen (zie de documentatie van de uitbreiding PushAll)",
 	"pushall-preference-defaultincsubpages-label": "Standaard de subpagina's opnemen van de pagina die moet worden gepusht",
 	"pushall-preference-defaultincfiles-label": "Standaard de bestanden bijsluiten die op de te pushen pagina worden gebruikt",
 	"pushall-error-title-not-exist": "De pagina \"$1\" bestaat niet op deze wiki. U kunt deze niet pushen.",
@@ -108,5 +108,5 @@
 	"pushall-error-api-unknown": "Interne API-fout. Zie details in de console van de browser.",
 	"pushall-error-api-known": "PushAll API-fout.",
 	"pushall-error-token-request-failed": "Het tokenverzoek is mislukt.",
-	"pushall-error-captcha-enable-with-bot-for-this-target": "Uw bot kan geen pagina's opslaan in de externe wiki omdat de captcha is ingeschakeld voor bots. Vraag de beheerder van de doelwiki om captcha voor bots uit te schakelen (met $wgGroupPermissions['bot']['skipcaptcha'] = true; in de lokale instellingen)"
+	"pushall-error-captcha-enable-with-bot-for-this-target": "Uw robot kan geen pagina's opslaan in de externe wiki omdat de captcha is ingeschakeld voor robots. Vraag de beheerder van de doelwiki om captcha voor robots uit te schakelen (met $wgGroupPermissions['bot']['skipcaptcha'] = true; in de lokale instellingen)"
 }
