@@ -33,5 +33,6 @@
 	"pushall-preference-targets-header": "Hei d'Lëscht vun disponibelen Ziler:",
 	"pushall-preference-dialog-field-help": "Beispill:",
 	"pushall-preference-dialog-field-wikiname-label": "Numm vun der Wiki",
-	"pushall-error-api-nocurl": "Curl ass net installéiert. Kontaktéiert wgl. den Administrateur vun dëser Wiki."
+	"pushall-error-api-nocurl": "Curl ass net installéiert. Kontaktéiert wgl. den Administrateur vun dëser Wiki.",
+	"pushall-error-api-known": "PushAll-API-Feeler."
 }
