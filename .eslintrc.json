@@ -16,9 +16,9 @@
 				"allowIds": true
 			}
 		],
-		"mediawiki/msg-doc": "warn",
 		"no-use-before-define": "off",
 		"no-jquery/no-fade": "off",
-		"no-jquery/no-done-fail": "warn"
+		"no-jquery/no-done-fail": "warn",
+		"no-redeclare": "warn"
 	}
 }

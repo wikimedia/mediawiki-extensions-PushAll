@@ -361,7 +361,6 @@
 				const $errorTargetDiv = $( '#errorpushalltarget' + wgPushAllTargets[ details.error.target ].id );
 				// Messages that can be used here:
 				// * todo doc
-				// eslint-disable-next-line mediawiki/msg-doc
 				$errorTargetDiv.append( mw.msg( details.error.msg ) );
 				$errorTargetDiv.show();
 				PushAll.displayStatusUnknownForTarget(
@@ -371,7 +370,6 @@
 			} else if ( 'title' in details.error && 'msg' in details.error ) {
 				// Messages that can be used here:
 				// * todo doc
-				// eslint-disable-next-line mediawiki/msg-doc
 				$errorDiv.append( mw.msg( details.error.msg, details.error.title ) );
 				$errorDiv.show();
 			}
@@ -471,7 +469,6 @@
 			// todo doc
 			// Messages that can be used here:
 			// *
-			// eslint-disable-next-line mediawiki/msg-doc
 			$statusMessage.text( mw.msg( remoteStatus ) );
 			$statusicon.css( 'background-color', PushAll.getColor( remoteStatus ) );
 			PushAll.setLinkClass( remoteStatus, $link );
@@ -481,7 +478,6 @@
 				// todo doc
 				// Messages that can be used here:
 				// *
-				// eslint-disable-next-line mediawiki/msg-doc
 				mw.msg( PushAll.getMsgTooltipCheckbox( remoteStatus, $checkbox.is( ':checked' ), force ) )
 			);
 		}
